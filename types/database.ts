@@ -138,6 +138,8 @@ export type QuickNoteRow = BaseRow & {
   body: string;
   color: "cyan" | "indigo" | "rose" | "gold";
   is_pinned: boolean;
+  completed: boolean;
+  sort_order: number;
 };
 
 export type RecurringTaskTemplateRow = BaseRow & {

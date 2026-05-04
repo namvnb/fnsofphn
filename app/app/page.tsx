@@ -18,7 +18,7 @@ export default async function DashboardPage() {
       <PageHeader
         eyebrow="Trung tâm vận hành"
         title="Tổng quan hôm nay"
-        description="Một ảnh chụp mềm nhưng rõ: ưu tiên, dòng tiền, học tập, cảm xúc, chiến lược và năng lượng đang được tích lũy."
+        description="Ưu tiên, tài chính, học tập, cảm xúc, chiến lược và năng lượng hôm nay."
       />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -33,7 +33,7 @@ export default async function DashboardPage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <h2 className="text-2xl font-bold text-text-primary">Bản đồ cân bằng</h2>
-              <p className="mt-2 text-sm leading-6 text-text-secondary">Các trụ cột chính được quy đổi về cùng thang điểm để nhìn nhanh vùng đang mạnh và vùng cần chăm sóc.</p>
+              <p className="mt-2 text-sm leading-6 text-text-secondary">Tổng hợp điểm từ các module chính.</p>
             </div>
             <Badge variant="default">Điểm hôm nay: {data.lifeBalanceScore}</Badge>
           </div>

@@ -1,7 +1,8 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   Activity,
   BookOpen,
@@ -55,6 +56,14 @@ function isActivePath(pathname: string, href: string) {
 
 export function AppShell({ children, profile, quickNotes }: AppShellProps) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+
+  useEffect(() => {
+    navItems.forEach((item) => router.prefetch(item.href));
+  }, [router]);
+
+  const isNavigating = pendingHref !== null && !isActivePath(pathname, pendingHref);
 
   return (
     <div className="min-h-screen">
@@ -66,7 +75,7 @@ export function AppShell({ children, profile, quickNotes }: AppShellProps) {
           </span>
           <span>
             <span className="block text-sm font-bold text-text-primary">Life & Work OS</span>
-            <span className="block text-xs text-text-secondary">22nd-century cockpit</span>
+            <span className="block text-xs text-text-secondary">Không gian cá nhân</span>
           </span>
         </Link>
 
@@ -77,6 +86,10 @@ export function AppShell({ children, profile, quickNotes }: AppShellProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch
+                onClick={() => {
+                  if (!active) setPendingHref(item.href);
+                }}
                 className={cn(
                   "group flex items-center justify-between rounded-2xl px-3 py-2.5 text-sm font-semibold transition duration-200",
                   active
@@ -124,7 +137,14 @@ export function AppShell({ children, profile, quickNotes }: AppShellProps) {
         </div>
       </header>
 
-      <div className="px-4 pb-28 pt-6 lg:ml-80 lg:px-8 lg:pb-10 lg:pt-8">{children}</div>
+      <div className="relative px-4 pb-28 pt-6 lg:ml-80 lg:px-8 lg:pb-10 lg:pt-8">
+        {isNavigating ? (
+          <div className="absolute inset-x-4 top-6 z-20 rounded-[24px] border border-border-soft bg-white/82 px-5 py-4 text-sm font-semibold text-text-secondary shadow-[0_18px_50px_rgba(15,23,42,0.1)] backdrop-blur-xl lg:inset-x-8 lg:top-8">
+            Đang mở module...
+          </div>
+        ) : null}
+        <div className={cn("transition duration-200", isNavigating && "opacity-45")}>{children}</div>
+      </div>
       <QuickNoteDock initialNotes={quickNotes} />
 
       <nav className="fixed bottom-3 left-3 right-3 z-40 grid grid-cols-5 gap-1 rounded-[24px] border border-border-soft bg-white/82 p-2 shadow-[0_22px_70px_rgba(15,23,42,0.15)] backdrop-blur-2xl lg:hidden">
@@ -134,6 +154,10 @@ export function AppShell({ children, profile, quickNotes }: AppShellProps) {
             <Link
               key={item.href}
               href={item.href}
+              prefetch
+              onClick={() => {
+                if (!active) setPendingHref(item.href);
+              }}
               className={cn(
                 "grid place-items-center gap-1 rounded-2xl px-1 py-2 text-[11px] font-semibold transition",
                 active ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_12px_28px_rgba(91,108,255,0.25)]" : "text-text-secondary"
