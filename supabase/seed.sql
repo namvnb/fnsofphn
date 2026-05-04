@@ -134,6 +134,21 @@ begin
     (demo_user_id, 'Dọn góc làm việc', 'done', 'Nền sống', 2, current_date - interval '1 day', 'Giữ mặt phẳng sạch để dễ vào flow.')
   on conflict do nothing;
 
+  insert into public.recurring_task_templates (user_id, title, category, priority, cadence, next_due_on, notes, is_active)
+  select demo_user_id, seed.title, seed.category, seed.priority, seed.cadence, seed.next_due_on, seed.notes, true
+  from (
+    values
+      ('Làm bảng công', 'Công việc', 4, 'monthly', current_date, 'Tổng hợp ngày công, giờ làm, nghỉ phép và ghi chú cần gửi.'),
+      ('Dọn dẹp bộ nhớ máy tính', 'Bảo trì cá nhân', 3, 'weekly', current_date, 'Xóa file tạm, gom thư mục tải xuống, kiểm tra dung lượng ổ đĩa.'),
+      ('Lên kế hoạch chi tiêu hàng tháng', 'Tài chính', 5, 'monthly', current_date, 'Xem thu nhập dự kiến, khoản cố định, khoản tiết kiệm và ngân sách linh hoạt.')
+  ) as seed(title, category, priority, cadence, next_due_on, notes)
+  where not exists (
+    select 1
+    from public.recurring_task_templates existing
+    where existing.user_id = demo_user_id
+      and existing.title = seed.title
+  );
+
   insert into public.daily_priorities (user_id, title, rank, completed, planned_on)
   values
     (demo_user_id, 'Một khối coding sâu với nhạc nền êm', 1, false, current_date),

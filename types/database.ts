@@ -2,6 +2,7 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 
 export type TaskStatus = "todo" | "doing" | "done";
 export type FinanceType = "income" | "expense" | "saving";
+export type RecurringTaskCadence = "daily" | "weekly" | "monthly" | "quarterly" | "yearly";
 export type EnergyCategory =
   | "emotional_release"
   | "body_rhythm"
@@ -34,6 +35,8 @@ export type TaskRow = BaseRow & {
   priority: number;
   due_on: string | null;
   notes: string | null;
+  source_recurring_task_id: string | null;
+  recurrence_due_on: string | null;
 };
 
 export type DailyPriorityRow = BaseRow & {
@@ -130,6 +133,16 @@ export type EnergyActivityLogRow = BaseRow & {
   notes: string | null;
 };
 
+export type RecurringTaskTemplateRow = BaseRow & {
+  title: string;
+  category: string;
+  priority: number;
+  cadence: RecurringTaskCadence;
+  next_due_on: string;
+  notes: string | null;
+  is_active: boolean;
+};
+
 type TableDefinition<Row, Insert = Partial<Row>, Update = Partial<Row>> = {
   Row: Row;
   Insert: Insert;
@@ -151,6 +164,7 @@ export interface Database {
       emotion_logs: TableDefinition<EmotionLogRow>;
       spiritual_profiles: TableDefinition<SpiritualProfileRow>;
       strategy_profiles: TableDefinition<StrategyProfileRow>;
+      recurring_task_templates: TableDefinition<RecurringTaskTemplateRow>;
       energy_activity_types: TableDefinition<EnergyActivityTypeRow>;
       energy_activity_logs: TableDefinition<EnergyActivityLogRow>;
     };

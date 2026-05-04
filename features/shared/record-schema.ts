@@ -42,6 +42,14 @@ export const financeTypeOptions = [
   { label: "Tiết kiệm", value: "saving" }
 ];
 
+export const recurringCadenceOptions = [
+  { label: "Hằng ngày", value: "daily" },
+  { label: "Hằng tuần", value: "weekly" },
+  { label: "Hằng tháng", value: "monthly" },
+  { label: "Hằng quý", value: "quarterly" },
+  { label: "Hằng năm", value: "yearly" }
+];
+
 export const energyCategoryOptions = [
   { label: "Giải tỏa cảm xúc", value: "emotional_release" },
   { label: "Nhịp cơ thể", value: "body_rhythm" },
@@ -183,6 +191,21 @@ export const tableSchemas = {
       { name: "next_90_days_plan", label: "Kế hoạch 90 ngày", type: "textarea", list: true, wide: true },
       { name: "non_negotiables", label: "Điều không thương lượng", type: "lines", helper: "Mỗi dòng là một nguyên tắc.", list: true, wide: true },
       { name: "focus_level_score", label: "Điểm tập trung", type: "number", required: true, min: 1, max: 100, step: 1, list: true }
+    ]
+  },
+  recurring_task_templates: {
+    table: "recurring_task_templates",
+    titleField: "title",
+    subtitleField: "next_due_on",
+    defaultValues: { category: "Công việc", priority: 3, cadence: "monthly", next_due_on: new Date().toISOString().slice(0, 10), is_active: true },
+    fields: [
+      { name: "title", label: "Tên việc lặp lại", type: "text", required: true, placeholder: "Làm bảng công, dọn bộ nhớ máy tính...", list: true, wide: true },
+      { name: "cadence", label: "Chu kỳ", type: "select", required: true, options: recurringCadenceOptions, list: true },
+      { name: "next_due_on", label: "Lần đến hạn kế tiếp", type: "date", required: true, list: true },
+      { name: "category", label: "Nhóm", type: "text", required: true, placeholder: "Công việc, bảo trì, tài chính...", list: true },
+      { name: "priority", label: "Ưu tiên", type: "number", required: true, min: 1, max: 5, step: 1, list: true },
+      { name: "is_active", label: "Đang kích hoạt", type: "checkbox", list: true },
+      { name: "notes", label: "Ghi chú", type: "textarea", placeholder: "Tiêu chí hoàn thành, checklist nhỏ...", wide: true }
     ]
   },
   energy_activity_types: {

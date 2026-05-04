@@ -17,6 +17,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi">
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body className="font-sans antialiased">
         {children}
         <Toaster />

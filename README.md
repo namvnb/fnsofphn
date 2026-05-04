@@ -87,6 +87,7 @@ The migration creates:
 
 - `profiles`
 - `tasks`
+- `recurring_task_templates`
 - `daily_priorities`
 - `finance_entries`
 - `health_logs`

@@ -1,19 +1,33 @@
+import { format } from "date-fns";
 import { CalendarClock, MonitorSmartphone, TimerReset } from "lucide-react";
 import { FloatingStatCard } from "@/components/shared/floating-stat-card";
 import { PageHeader } from "@/components/shared/page-header";
 import { PageTransition } from "@/components/shared/page-transition";
-import { PremiumCard } from "@/components/shared/premium-card";
 import { RecordManager } from "@/features/shared/record-manager";
 import { getRows } from "@/features/shared/data";
 import { tableSchemas } from "@/features/shared/record-schema";
+import { TodayPriorityPanel, type TodayPriorityWithTask } from "@/features/time/today-priority-panel";
 import { requireUser } from "@/lib/auth/guards";
+import type { DailyPriorityRow, TaskRow, TimeLogRow } from "@/types/database";
 
 export default async function TimePage() {
   const user = await requireUser();
-  const [timeRows, priorityRows] = await Promise.all([
+  const today = format(new Date(), "yyyy-MM-dd");
+  const [timeRecordRows, priorityRecordRows, taskRecordRows] = await Promise.all([
     getRows("time_logs", user.id, { orderBy: "logged_on", limit: 14 }),
-    getRows("daily_priorities", user.id, { orderBy: "planned_on", limit: 21 })
+    getRows("daily_priorities", user.id, { orderBy: "planned_on", limit: 30 }),
+    getRows("tasks", user.id, { orderBy: "created_at", limit: 100 })
   ]);
+  const timeRows = timeRecordRows as TimeLogRow[];
+  const priorityRows = priorityRecordRows as DailyPriorityRow[];
+  const taskRows = taskRecordRows as TaskRow[];
+  const taskById = new Map(taskRows.map((task) => [task.id, task]));
+  const todayPriorities: TodayPriorityWithTask[] = priorityRows
+    .filter((priority) => priority.planned_on === today)
+    .map((priority) => ({
+      ...priority,
+      sourceTask: priority.source_task_id ? taskById.get(priority.source_task_id) ?? null : null
+    }));
   const latest = timeRows[0];
   const deepWork = timeRows.reduce((total, row) => total + Number(row.deep_work_minutes ?? 0), 0);
   const screenTime = timeRows.reduce((total, row) => total + Number(row.screen_time_minutes ?? 0), 0);
@@ -32,10 +46,7 @@ export default async function TimePage() {
         <FloatingStatCard icon={CalendarClock} label="Log mới nhất" value={`${latest?.deep_work_minutes ?? 0}p`} helper={latest ? String(latest.logged_on) : "Chưa có log thời gian."} tone="cyan" />
       </section>
 
-      <PremiumCard hover={false}>
-        <h2 className="text-2xl font-bold text-text-primary">Top 3 ưu tiên hằng ngày</h2>
-        <p className="mt-2 text-sm leading-6 text-text-secondary">Bảng này tách riêng khỏi nhiệm vụ dài hạn để mỗi ngày có một mặt phẳng quyết định thật gọn.</p>
-      </PremiumCard>
+      <TodayPriorityPanel priorities={todayPriorities} today={today} />
 
       <RecordManager
         table="daily_priorities"
@@ -46,7 +57,7 @@ export default async function TimePage() {
         emptyTitle="Chưa có ưu tiên ngày"
         emptyDescription="Đặt một ưu tiên đầu tiên để ngày hôm nay có hướng."
         schema={tableSchemas.daily_priorities}
-        rows={priorityRows}
+        rows={priorityRows as unknown as Array<Record<string, unknown>>}
         filterFields={["planned_on", "completed"]}
       />
 
@@ -59,7 +70,7 @@ export default async function TimePage() {
         emptyTitle="Chưa có log thời gian"
         emptyDescription="Một bản ghi đơn giản sẽ giúp bạn thấy ngày đang bị tiêu hao ở đâu."
         schema={tableSchemas.time_logs}
-        rows={timeRows}
+        rows={timeRows as unknown as Array<Record<string, unknown>>}
       />
     </PageTransition>
   );
