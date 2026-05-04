@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   Activity,
   ArrowRight,
@@ -34,7 +34,7 @@ export default function LandingPage() {
       <MorphBackground intensity="strong" />
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-white shadow-[0_16px_38px_rgba(91,108,255,0.28)]">
+          <span className="grid size-10 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-[0_16px_38px_rgba(91,108,255,0.28)]">
             <Sparkles className="size-5" />
           </span>
           <span className="text-sm font-bold tracking-normal text-text-primary">Life & Work OS</span>
@@ -77,7 +77,7 @@ export default function LandingPage() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-8 top-4 h-72 w-72 rounded-[45%_55%_61%_39%/50%_42%_58%_50%] bg-[var(--gradient-cyan)] opacity-25 blur-3xl" />
+          <div className="absolute left-8 top-4 h-72 w-72 rounded-[45%_55%_61%_39%/50%_42%_58%_50%] bg-[image:var(--gradient-cyan)] opacity-25 blur-3xl" />
           <div className="relative grid gap-4">
             <PremiumCard className="p-5" hover={false}>
               <div className="flex items-start justify-between">

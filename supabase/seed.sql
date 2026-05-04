@@ -156,6 +156,20 @@ begin
     (demo_user_id, 'Ghi lại một điều học được có thể dùng ngay', 3, true, current_date)
   on conflict (user_id, planned_on, rank) do update set title = excluded.title;
 
+  insert into public.quick_notes (user_id, title, body, color, is_pinned)
+  select demo_user_id, seed.title, seed.body, seed.color, seed.is_pinned
+  from (
+    values
+      ('Ý tưởng R&D', 'Thử gom các việc lặp lại thành hàng chờ riêng ở góc task.', 'cyan', true),
+      ('Ghi chú nhanh', 'Nhớ kiểm tra tương phản CTA sau khi đổi gradient utility.', 'indigo', false)
+  ) as seed(title, body, color, is_pinned)
+  where not exists (
+    select 1
+    from public.quick_notes existing
+    where existing.user_id = demo_user_id
+      and existing.title = seed.title
+  );
+
   insert into public.finance_entries (user_id, type, category, amount, occurred_on, notes)
   values
     (demo_user_id, 'income', 'Lương / dự án', 42000000, current_date - interval '2 day', 'Dòng tiền chính của tháng.'),

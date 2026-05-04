@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
@@ -46,7 +46,7 @@ export function RecurringTaskPanel({ templates, today }: RecurringTaskPanelProps
     <PremiumCard hover={false}>
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-center gap-3">
-          <span className="grid size-11 place-items-center rounded-2xl bg-[var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
+          <span className="grid size-11 place-items-center rounded-2xl bg-[image:var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
             <Repeat2 className="size-5" />
           </span>
           <div>

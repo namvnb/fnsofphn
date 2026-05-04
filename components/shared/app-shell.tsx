@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,7 +20,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signOutAction } from "@/features/auth/actions";
+import { QuickNoteDock } from "@/features/quick-notes/quick-note-dock";
 import { cn } from "@/lib/utils/cn";
+import type { QuickNoteRow } from "@/types/database";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -28,6 +30,7 @@ type AppShellProps = {
     full_name: string | null;
     email: string | null;
   } | null;
+  quickNotes: QuickNoteRow[];
 };
 
 const navItems = [
@@ -50,7 +53,7 @@ function isActivePath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function AppShell({ children, profile }: AppShellProps) {
+export function AppShell({ children, profile, quickNotes }: AppShellProps) {
   const pathname = usePathname();
 
   return (
@@ -58,7 +61,7 @@ export function AppShell({ children, profile }: AppShellProps) {
       <div className="fixed inset-0 -z-20 bg-[linear-gradient(180deg,#F7F8FC_0%,#EEF2F8_100%)]" />
       <aside className="fixed left-5 top-5 z-40 hidden h-[calc(100vh-40px)] w-72 flex-col rounded-[28px] border border-border-soft bg-white/70 p-4 shadow-[0_26px_90px_rgba(15,23,42,0.12)] backdrop-blur-2xl lg:flex">
         <Link href="/app" className="mb-5 flex items-center gap-3 rounded-[22px] bg-white/70 p-3">
-          <span className="grid size-11 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-white shadow-[0_16px_36px_rgba(91,108,255,0.28)]">
+          <span className="grid size-11 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-[0_16px_36px_rgba(91,108,255,0.28)]">
             <Sparkles className="size-5" />
           </span>
           <span>
@@ -77,7 +80,7 @@ export function AppShell({ children, profile }: AppShellProps) {
                 className={cn(
                   "group flex items-center justify-between rounded-2xl px-3 py-2.5 text-sm font-semibold transition duration-200",
                   active
-                    ? "bg-[var(--gradient-primary)] text-white shadow-[0_15px_34px_rgba(91,108,255,0.26)]"
+                    ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_15px_34px_rgba(91,108,255,0.26)]"
                     : "text-text-secondary hover:bg-white/78 hover:text-text-primary"
                 )}
               >
@@ -108,7 +111,7 @@ export function AppShell({ children, profile }: AppShellProps) {
       <header className="sticky top-0 z-30 border-b border-border-soft bg-white/70 px-4 py-3 backdrop-blur-2xl lg:hidden">
         <div className="flex items-center justify-between">
           <Link href="/app" className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-white">
+            <span className="grid size-10 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white">
               <Sparkles className="size-5" />
             </span>
             <span className="text-sm font-bold text-text-primary">Life & Work OS</span>
@@ -122,6 +125,7 @@ export function AppShell({ children, profile }: AppShellProps) {
       </header>
 
       <div className="px-4 pb-28 pt-6 lg:ml-80 lg:px-8 lg:pb-10 lg:pt-8">{children}</div>
+      <QuickNoteDock initialNotes={quickNotes} />
 
       <nav className="fixed bottom-3 left-3 right-3 z-40 grid grid-cols-5 gap-1 rounded-[24px] border border-border-soft bg-white/82 p-2 shadow-[0_22px_70px_rgba(15,23,42,0.15)] backdrop-blur-2xl lg:hidden">
         {navItems.slice(0, 5).map((item) => {
@@ -132,7 +136,7 @@ export function AppShell({ children, profile }: AppShellProps) {
               href={item.href}
               className={cn(
                 "grid place-items-center gap-1 rounded-2xl px-1 py-2 text-[11px] font-semibold transition",
-                active ? "bg-[var(--gradient-primary)] text-white shadow-[0_12px_28px_rgba(91,108,255,0.25)]" : "text-text-secondary"
+                active ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_12px_28px_rgba(91,108,255,0.25)]" : "text-text-secondary"
               )}
             >
               <item.icon className="size-4" />

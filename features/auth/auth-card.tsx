@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -48,7 +48,7 @@ export function AuthCard({ mode }: AuthCardProps) {
   return (
     <PremiumCard className="w-full max-w-md p-7" hover={false}>
       <div className="mb-7">
-        <div className="mb-5 grid size-12 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-white shadow-[0_18px_42px_rgba(91,108,255,0.28)]">
+        <div className="mb-5 grid size-12 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-[0_18px_42px_rgba(91,108,255,0.28)]">
           <LockKeyhole className="size-5" />
         </div>
         <h1 className="text-3xl font-bold text-text-primary">{isSignUp ? "Tạo không gian vận hành" : "Mở Life & Work OS"}</h1>

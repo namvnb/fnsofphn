@@ -1,4 +1,4 @@
-import { Activity, BookOpen, Brain, CalendarClock, CheckCircle2, Flame, LineChart, Target, WalletCards } from "lucide-react";
+﻿import { Activity, BookOpen, Brain, CalendarClock, CheckCircle2, Flame, LineChart, Target, WalletCards } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { FloatingStatCard } from "@/components/shared/floating-stat-card";
 import { PageHeader } from "@/components/shared/page-header";
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
           <div className="mt-5 space-y-3">
             {data.topPriorities.slice(0, 3).map((priority, index) => (
               <div key={priority.id} className="flex items-center gap-3 rounded-[22px] border border-border-soft bg-white/58 p-4">
-                <span className="grid size-9 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-sm font-bold text-white">{index + 1}</span>
+                <span className="grid size-9 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-sm font-bold text-white">{index + 1}</span>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-bold text-text-primary">{priority.title}</p>
                   <p className="text-xs text-text-secondary">{priority.completed ? "Đã hoàn tất" : "Đang chờ xử lý"}</p>

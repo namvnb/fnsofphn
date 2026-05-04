@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
@@ -97,7 +97,7 @@ export function EnergyTracker({ activityTypes, logs, loggedOn }: EnergyTrackerPr
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-2xl bg-[var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
+            <span className="grid size-11 place-items-center rounded-2xl bg-[image:var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
               <Sparkles className="size-5" />
             </span>
             <div>
@@ -106,7 +106,7 @@ export function EnergyTracker({ activityTypes, logs, loggedOn }: EnergyTrackerPr
             </div>
           </div>
           <div className="mt-5 h-3 overflow-hidden rounded-full bg-slate-200/70">
-            <div className="h-full rounded-full bg-[var(--gradient-primary)] transition-all duration-300" style={{ width: `${score}%` }} />
+            <div className="h-full rounded-full bg-[image:var(--gradient-primary)] transition-all duration-300" style={{ width: `${score}%` }} />
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
@@ -56,7 +56,7 @@ export function TodayPriorityPanel({ priorities, today }: TodayPriorityPanelProp
     <PremiumCard hover={false}>
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-center gap-3">
-          <span className="grid size-11 place-items-center rounded-2xl bg-[var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
+          <span className="grid size-11 place-items-center rounded-2xl bg-[image:var(--gradient-cyan)] text-white shadow-[0_16px_36px_rgba(103,232,249,0.24)]">
             <ListChecks className="size-5" />
           </span>
           <div>
@@ -76,7 +76,7 @@ export function TodayPriorityPanel({ priorities, today }: TodayPriorityPanelProp
             return (
               <article key={priority.id} className="flex min-h-[220px] flex-col rounded-[24px] border border-border-soft bg-white/58 p-5 shadow-[0_14px_42px_rgba(15,23,42,0.05)]">
                 <div className="flex items-start justify-between gap-3">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-sm font-bold text-white">{priority.rank}</span>
+                  <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-sm font-bold text-white">{priority.rank}</span>
                   {priority.completed ? <CheckCircle2 className="size-5 shrink-0 text-cyan-600" /> : <CircleDot className="size-5 shrink-0 text-text-secondary" />}
                 </div>
 

@@ -133,6 +133,13 @@ export type EnergyActivityLogRow = BaseRow & {
   notes: string | null;
 };
 
+export type QuickNoteRow = BaseRow & {
+  title: string;
+  body: string;
+  color: "cyan" | "indigo" | "rose" | "gold";
+  is_pinned: boolean;
+};
+
 export type RecurringTaskTemplateRow = BaseRow & {
   title: string;
   category: string;
@@ -165,6 +172,7 @@ export interface Database {
       spiritual_profiles: TableDefinition<SpiritualProfileRow>;
       strategy_profiles: TableDefinition<StrategyProfileRow>;
       recurring_task_templates: TableDefinition<RecurringTaskTemplateRow>;
+      quick_notes: TableDefinition<QuickNoteRow>;
       energy_activity_types: TableDefinition<EnergyActivityTypeRow>;
       energy_activity_logs: TableDefinition<EnergyActivityLogRow>;
     };

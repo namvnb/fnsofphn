@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useTransition } from "react";
 import { useRouter } from "next/navigation";
@@ -78,7 +78,7 @@ export function TaskCommandPanel({ tasks, today, todayPriorityTaskIds }: TaskCom
       <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-2xl bg-[var(--gradient-primary)] text-white shadow-[0_16px_36px_rgba(91,108,255,0.24)]">
+            <span className="grid size-11 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-[0_16px_36px_rgba(91,108,255,0.24)]">
               <Flame className="size-5" />
             </span>
             <div>
