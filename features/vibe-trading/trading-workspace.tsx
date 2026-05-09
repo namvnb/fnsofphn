@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { BarChart3, BrainCircuit, CandlestickChart, LineChart, NotebookPen, Plus, Sparkles, Target, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -236,6 +236,53 @@ function BacktestItem({ item }: { item: TradingBacktestRow }) {
   );
 }
 
+function IdeaBoard({ ideas }: { ideas: TradingIdeaRow[] }) {
+  const [isAdding, setIsAdding] = useState(false);
+
+  return (
+    <PremiumCard
+      hover={false}
+      className="border-primary-indigo/25 bg-[linear-gradient(135deg,rgba(91,108,255,0.18),rgba(103,232,249,0.14)_46%,rgba(255,184,107,0.18))] shadow-[0_28px_90px_rgba(91,108,255,0.18)]"
+    >
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-12 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-[0_18px_42px_rgba(91,108,255,0.28)]">
+            <BrainCircuit className="size-5" />
+          </span>
+          <div>
+            <h2 className="text-3xl font-bold text-text-primary">Idea board</h2>
+            <p className="mt-1 text-sm leading-6 text-text-secondary">Các setup, prompt và thesis trading đang được theo dõi.</p>
+          </div>
+        </div>
+        <Button
+          type="button"
+          size="sm"
+          onClick={() => setIsAdding((current) => !current)}
+          aria-expanded={isAdding}
+        >
+          <Plus />
+          Thêm thủ công
+        </Button>
+      </div>
+
+      {isAdding ? (
+        <div className="mt-5 rounded-[24px] border border-white/70 bg-white/72 p-4 shadow-[0_18px_48px_rgba(15,23,42,0.08)]">
+          <IdeaForm />
+        </div>
+      ) : null}
+
+      <div className="mt-5 grid gap-3 lg:grid-cols-2">
+        {ideas.length ? ideas.map((item) => <IdeaItem key={item.id} item={item} />) : (
+          <SurfacePanel>
+            <p className="text-sm font-semibold text-text-primary">Chua co y tuong nao.</p>
+            <p className="mt-1 text-sm text-text-secondary">Bam dau cong de them y tuong trading dau tien.</p>
+          </SurfacePanel>
+        )}
+      </div>
+    </PremiumCard>
+  );
+}
+
 export function TradingWorkspace({ data }: TradingWorkspaceProps) {
   const promisingCount = data.backtests.filter((item) => item.verdict === "promising").length;
   const activeSymbols = data.watchlist.filter((item) => item.is_active).length;
@@ -248,16 +295,17 @@ export function TradingWorkspace({ data }: TradingWorkspaceProps) {
         <FloatingStatCard icon={TrendingUp} label="Promising tests" value={String(promisingCount)} helper="Backtest dang co tin hieu tot." />
       </section>
 
+      <IdeaBoard ideas={data.ideas} />
+
       <section className="grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
         <PremiumCard hover={false}>
           <div className="flex items-center gap-3">
             <CandlestickChart className="size-5 text-primary-indigo" />
             <h2 className="text-2xl font-bold text-text-primary">Research prompt</h2>
           </div>
-          <p className="mt-2 text-sm leading-6 text-text-secondary">Khung nhap y tuong giong Vibe Trading, tam thoi luu vao Supabase de phat trien engine sau.</p>
+          <p className="mt-2 text-sm leading-6 text-text-secondary">Dung Gemini de tao thesis, risk notes va test plan tu prompt trading.</p>
           <div className="mt-5 space-y-5">
             <AiIdeaForm />
-            <IdeaForm />
           </div>
         </PremiumCard>
 
@@ -293,18 +341,6 @@ export function TradingWorkspace({ data }: TradingWorkspaceProps) {
         </PremiumCard>
 
         <div className="space-y-6">
-          <PremiumCard hover={false}>
-            <h2 className="text-2xl font-bold text-text-primary">Idea board</h2>
-            <div className="mt-5 space-y-3">
-              {data.ideas.length ? data.ideas.map((item) => <IdeaItem key={item.id} item={item} />) : (
-                <SurfacePanel>
-                  <p className="text-sm font-semibold text-text-primary">Chua co y tuong nao.</p>
-                  <p className="mt-1 text-sm text-text-secondary">Luu prompt dau tien de bat dau xay trading workflow.</p>
-                </SurfacePanel>
-              )}
-            </div>
-          </PremiumCard>
-
           <PremiumCard hover={false}>
             <h2 className="text-2xl font-bold text-text-primary">Ket qua gan day</h2>
             <div className="mt-5 space-y-3">
