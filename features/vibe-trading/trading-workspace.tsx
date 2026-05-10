@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { BarChart3, BrainCircuit, CandlestickChart, LineChart, NotebookPen, Plus, Sparkles, Target, TrendingUp } from "lucide-react";
+import { AlertTriangle, BarChart3, BrainCircuit, CandlestickChart, LineChart, NotebookPen, Plus, ShieldCheck, Sparkles, Target, TrendingUp, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,6 +27,37 @@ const marketOptions = [
   ["forex", "Forex"],
   ["futures", "Futures"],
   ["other", "Other"]
+];
+
+const squeezeCriteria = [
+  { label: "Top Trader L/S", long: "> 1.1", short: "< 0.9 hoặc crowded long bất thường" },
+  { label: "L/S Accounts", long: "< 1", short: "> 1.2" },
+  { label: "OI/Market Cap", long: "0.4-0.8", short: "0.4-0.8" },
+  { label: "Volume 24h", long: "Tăng mạnh, tốt nhất > +30%", short: "Tăng mạnh, volume nóng" },
+  { label: "Price 24h", long: "Âm nhẹ hoặc pullback sau khi tăng", short: "Pump mạnh hoặc bắt đầu yếu" },
+  { label: "Price 4h", long: "Bắt đầu hồi lại hoặc reclaim", short: "Chuyển đỏ hoặc mất support" },
+  { label: "Funding", long: "Âm là điểm cộng", short: "Dương cao là điểm cộng" },
+  { label: "Entry", long: "Sweep đáy + bật lên + reclaim support/range/EMA/VWAP", short: "Sweep đỉnh + không giữ được vùng cao + fail reclaim/breakdown" },
+  { label: "TP/SL", long: "TP1 tại 1R/kháng cự gần, chốt 30-50%, dời SL entry", short: "TP1 tại 1R/hỗ trợ gần, chốt 30-50%, dời SL entry" }
+];
+
+const squeezeRiskRules = [
+  "Risk 0.5-1% tài khoản mỗi lệnh",
+  "Tối đa 3 lệnh mỗi ngày",
+  "Thua 2 lệnh liên tiếp thì nghỉ",
+  "Không dùng Cross cho vị thế quá lớn",
+  "Không gồng lỗ khi setup đã sai",
+  "Luôn chờ chart xác nhận"
+];
+
+const squeezeAvoidSignals = [
+  "Retail short nhưng giá vẫn dump mạnh",
+  "Retail long nhưng giá vẫn pump mạnh",
+  "OI cao nhưng volume yếu",
+  "Market cap dưới 20M",
+  "OI/Market Cap lớn hơn 1",
+  "BTC biến động mạnh ngược hướng setup",
+  "Vào giữa nến khi chưa đóng nến xác nhận"
 ];
 
 function percent(value: number | null | undefined) {
@@ -283,6 +314,93 @@ function IdeaBoard({ ideas }: { ideas: TradingIdeaRow[] }) {
   );
 }
 
+function SqueezeWatchlistStrategy() {
+  return (
+    <PremiumCard
+      hover={false}
+      className="border-cyan-300/30 bg-[linear-gradient(135deg,rgba(14,165,233,0.16),rgba(255,255,255,0.78)_34%,rgba(251,191,36,0.18)_68%,rgba(244,63,94,0.12))] shadow-[0_30px_100px_rgba(14,165,233,0.16)]"
+    >
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-12 place-items-center rounded-2xl bg-[linear-gradient(135deg,#06b6d4,#6366f1,#f59e0b)] text-white shadow-[0_18px_46px_rgba(14,165,233,0.3)]">
+            <Zap className="size-5" />
+          </span>
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-3xl font-bold text-text-primary">Squeeze Watchlist Strategy</h2>
+              <Badge variant="gold">Thử nghiệm</Badge>
+            </div>
+            <p className="mt-1 max-w-3xl text-sm leading-6 text-text-secondary">
+              Tìm coin có khả năng biến động mạnh do mất cân bằng giữa retail, top trader, OI, volume và giá. Chỉ số chỉ đưa coin vào watchlist; entry phải chờ sweep + reclaim hoặc fail reclaim.
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-2 text-xs font-bold sm:grid-cols-2 lg:min-w-80">
+          <div className="rounded-2xl border border-cyan-300/40 bg-cyan-50/80 px-4 py-3 text-cyan-800">LONG = Retail short + Top long + OI cao + Volume tăng + Sweep đáy + Reclaim</div>
+          <div className="rounded-2xl border border-rose-300/40 bg-rose-50/80 px-4 py-3 text-rose-800">SHORT = Retail long + OI cao + Volume nóng + Giá yếu + Sweep đỉnh + Fail reclaim</div>
+        </div>
+      </div>
+
+      <div className="mt-6 overflow-x-auto rounded-[22px] border border-white/70 bg-white/72 shadow-[0_18px_48px_rgba(15,23,42,0.08)]">
+        <table className="min-w-[860px] w-full border-collapse text-left text-sm">
+          <thead>
+            <tr className="border-b border-border-soft bg-white/80">
+              <th className="w-44 px-4 py-3 font-bold text-text-primary">Bộ lọc</th>
+              <th className="px-4 py-3 font-bold text-cyan-800">Setup Long đẹp</th>
+              <th className="px-4 py-3 font-bold text-rose-800">Setup Short đẹp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {squeezeCriteria.map((row) => (
+              <tr key={row.label} className="border-b border-border-soft/70 last:border-0">
+                <td className="px-4 py-3 font-semibold text-text-primary">{row.label}</td>
+                <td className="px-4 py-3 leading-6 text-text-secondary">{row.long}</td>
+                <td className="px-4 py-3 leading-6 text-text-secondary">{row.short}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-5 grid gap-4 xl:grid-cols-[1fr_1fr_1.2fr]">
+        <div className="rounded-[22px] border border-cyan-300/30 bg-cyan-50/70 p-4">
+          <h3 className="font-bold text-cyan-900">Ví dụ Long: SAHARA</h3>
+          <p className="mt-2 text-sm leading-6 text-cyan-900/80">Top L/S 1.055, accounts 0.92, OI/MC 0.689, volume +296%, 4h -7%, 24h +10%.</p>
+          <p className="mt-2 text-sm font-semibold leading-6 text-cyan-950">Watchlist long đẹp, không long ngay. Chờ quét xuống thêm rồi reclaim mạnh.</p>
+        </div>
+        <div className="rounded-[22px] border border-rose-300/30 bg-rose-50/70 p-4">
+          <h3 className="font-bold text-rose-900">Ví dụ Short: RAVE</h3>
+          <p className="mt-2 text-sm leading-6 text-rose-900/80">Top L/S 3.342, accounts 3.032, OI/MC 0.593, volume +91%, price 4h đã đỏ.</p>
+          <p className="mt-2 text-sm font-semibold leading-6 text-rose-950">Crowded long mạnh, không short giữa nến đỏ. Chờ hồi lên rồi fail reclaim.</p>
+        </div>
+        <div className="rounded-[22px] border border-amber-300/35 bg-amber-50/75 p-4">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="size-5 text-amber-700" />
+            <h3 className="font-bold text-amber-950">Quy tắc ra quyết định</h3>
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {squeezeRiskRules.map((rule) => (
+              <span key={rule} className="rounded-xl bg-white/70 px-3 py-2 text-xs font-semibold leading-5 text-amber-950">{rule}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 rounded-[22px] border border-rose-300/25 bg-white/72 p-4">
+        <div className="flex items-center gap-2">
+          <AlertTriangle className="size-5 text-rose-600" />
+          <h3 className="font-bold text-text-primary">Tín hiệu cần tránh</h3>
+        </div>
+        <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+          {squeezeAvoidSignals.map((signal) => (
+            <span key={signal} className="rounded-xl border border-rose-100 bg-rose-50/70 px-3 py-2 text-xs font-semibold leading-5 text-rose-800">{signal}</span>
+          ))}
+        </div>
+      </div>
+    </PremiumCard>
+  );
+}
+
 export function TradingWorkspace({ data }: TradingWorkspaceProps) {
   const promisingCount = data.backtests.filter((item) => item.verdict === "promising").length;
   const activeSymbols = data.watchlist.filter((item) => item.is_active).length;
@@ -296,6 +414,8 @@ export function TradingWorkspace({ data }: TradingWorkspaceProps) {
       </section>
 
       <IdeaBoard ideas={data.ideas} />
+
+      <SqueezeWatchlistStrategy />
 
       <section className="grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
         <PremiumCard hover={false}>
