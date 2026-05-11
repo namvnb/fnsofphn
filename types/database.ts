@@ -14,6 +14,7 @@ export type TradingMarket = "crypto" | "us_stock" | "vn_stock" | "forex" | "futu
 export type TradingBias = "bullish" | "bearish" | "neutral";
 export type TradingIdeaStatus = "researching" | "ready" | "testing" | "archived";
 export type TradingBacktestVerdict = "promising" | "observe" | "reject";
+export type ProjectAccountStatus = "active" | "paused" | "archived";
 
 type BaseRow = {
   id: string;
@@ -191,6 +192,27 @@ export type TradingBacktestRow = BaseRow & {
   notes: string | null;
 };
 
+export type ProjectAccountRow = BaseRow & {
+  project_name: string;
+  project_status: ProjectAccountStatus;
+  project_type: string | null;
+  supabase_project_name: string | null;
+  supabase_project_ref: string | null;
+  supabase_url: string | null;
+  vercel_project_name: string | null;
+  vercel_url: string | null;
+  github_repo_url: string | null;
+  domain_names: string[];
+  phone_number: string | null;
+  owner_email: string | null;
+  login_email: string | null;
+  billing_plan: string | null;
+  last_checked_on: string | null;
+  environment_notes: string | null;
+  access_notes: string | null;
+  notes: string | null;
+};
+
 type TableDefinition<Row, Insert = Partial<Row>, Update = Partial<Row>> = {
   Row: Row;
   Insert: Insert;
@@ -219,6 +241,7 @@ export interface Database {
       trading_watchlist: TableDefinition<TradingWatchlistRow>;
       trading_ideas: TableDefinition<TradingIdeaRow>;
       trading_backtests: TableDefinition<TradingBacktestRow>;
+      project_accounts: TableDefinition<ProjectAccountRow>;
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

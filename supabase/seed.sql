@@ -198,6 +198,54 @@ begin
     (demo_user_id, 'saving', 'Quỹ tự do', 9000000, current_date, 'Tự động chuyển đầu tháng.')
   on conflict do nothing;
 
+  insert into public.project_accounts (
+    user_id,
+    project_name,
+    project_status,
+    project_type,
+    supabase_project_name,
+    supabase_project_ref,
+    supabase_url,
+    vercel_project_name,
+    vercel_url,
+    github_repo_url,
+    domain_names,
+    phone_number,
+    owner_email,
+    login_email,
+    billing_plan,
+    last_checked_on,
+    environment_notes,
+    access_notes,
+    notes
+  )
+  select
+    demo_user_id,
+    'Life & Work OS',
+    'active',
+    'Personal app',
+    'life-work-os-prod',
+    'demo-ref',
+    'https://demo-ref.supabase.co',
+    'life-work-os',
+    'https://life-work-os.vercel.app',
+    'https://github.com/demo/life-work-os',
+    array['life-work-os.vercel.app'],
+    '+84 000 000 000',
+    demo_email,
+    demo_email,
+    'Free / kiểm tra khi lên Pro',
+    current_date,
+    'Prod dùng Supabase riêng. Local dùng Supabase CLI.',
+    'Không lưu password/API key trong app; chỉ ghi nơi quản lý quyền truy cập.',
+    'Bản ghi mẫu cho module tài khoản và hạ tầng project.'
+  where not exists (
+    select 1
+    from public.project_accounts existing
+    where existing.user_id = demo_user_id
+      and existing.project_name = 'Life & Work OS'
+  );
+
   insert into public.health_logs (user_id, logged_on, sleep_hours, water_liters, steps, workouts_count, energy_score, notes)
   values
     (demo_user_id, current_date - interval '3 day', 6.5, 1.8, 5200, 0, 62, 'Hơi thiếu ngủ.'),

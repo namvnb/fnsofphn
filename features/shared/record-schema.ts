@@ -59,6 +59,12 @@ export const energyCategoryOptions = [
   { label: "Học thực dụng", value: "practical_learning" }
 ];
 
+export const projectAccountStatusOptions = [
+  { label: "Đang dùng", value: "active" },
+  { label: "Tạm dừng", value: "paused" },
+  { label: "Lưu trữ", value: "archived" }
+];
+
 export const tableSchemas = {
   tasks: {
     table: "tasks",
@@ -219,6 +225,35 @@ export const tableSchemas = {
       { name: "description", label: "Mô tả", type: "textarea", wide: true },
       { name: "sort_order", label: "Thứ tự", type: "number", required: true, min: 1, step: 1 },
       { name: "is_active", label: "Đang dùng", type: "checkbox", list: true }
+    ]
+  },
+  project_accounts: {
+    table: "project_accounts",
+    titleField: "project_name",
+    subtitleField: "supabase_project_name",
+    defaultValues: {
+      project_status: "active",
+      last_checked_on: new Date().toISOString().slice(0, 10)
+    },
+    fields: [
+      { name: "project_name", label: "Tên project", type: "text", required: true, placeholder: "Life OS, Vibe Trading, landing khách hàng...", list: true, wide: true },
+      { name: "project_status", label: "Trạng thái", type: "select", required: true, options: projectAccountStatusOptions, list: true },
+      { name: "project_type", label: "Loại project", type: "text", placeholder: "App, website, tool nội bộ, client...", list: true },
+      { name: "supabase_project_name", label: "Supabase project", type: "text", placeholder: "Tên project trên Supabase", list: true },
+      { name: "supabase_project_ref", label: "Supabase ref", type: "text", placeholder: "Mã ref trong URL Supabase", list: true },
+      { name: "supabase_url", label: "Supabase URL", type: "text", placeholder: "https://xxxx.supabase.co", wide: true },
+      { name: "vercel_project_name", label: "Vercel project", type: "text", placeholder: "Tên project trên Vercel", list: true },
+      { name: "vercel_url", label: "Vercel URL", type: "text", placeholder: "https://project.vercel.app", wide: true },
+      { name: "github_repo_url", label: "GitHub repo", type: "text", placeholder: "https://github.com/owner/repo", wide: true },
+      { name: "domain_names", label: "Domain", type: "lines", helper: "Mỗi dòng là một domain hoặc subdomain.", list: true, wide: true },
+      { name: "phone_number", label: "Số điện thoại liên hệ", type: "text", placeholder: "Số đăng ký, số GF, số khách hàng...", list: true },
+      { name: "owner_email", label: "Email chủ sở hữu", type: "text", placeholder: "Email quản lý billing/quyền sở hữu" },
+      { name: "login_email", label: "Email đăng nhập", type: "text", placeholder: "Email dùng để vào Supabase/Vercel/GitHub", list: true },
+      { name: "billing_plan", label: "Gói / billing", type: "text", placeholder: "Free, Pro, Team, khách trả..." },
+      { name: "last_checked_on", label: "Ngày kiểm tra gần nhất", type: "date", list: true },
+      { name: "environment_notes", label: "Ghi chú môi trường", type: "textarea", placeholder: "Prod/staging/dev, env nào đang trỏ về đâu...", wide: true },
+      { name: "access_notes", label: "Ghi chú quyền truy cập", type: "textarea", helper: "Không nên lưu password, API key, token hoặc secret trực tiếp ở đây.", wide: true },
+      { name: "notes", label: "Ghi chú khác", type: "textarea", placeholder: "Bối cảnh project, người liên quan, việc cần kiểm tra...", wide: true }
     ]
   }
 } satisfies Record<string, TableSchema>;
