@@ -5,6 +5,7 @@ import { PremiumCard } from "@/components/shared/premium-card";
 import { ModulePage } from "@/features/shared/module-page";
 import { getRows } from "@/features/shared/data";
 import { tableSchemas } from "@/features/shared/record-schema";
+import { QuickFinanceInlineInput } from "@/features/finance/quick-finance-import";
 import { requireUser } from "@/lib/auth/guards";
 import { formatCurrency } from "@/lib/utils/format";
 
@@ -41,6 +42,8 @@ export default async function FinancePage() {
         <FloatingStatCard icon={PiggyBank} label="Tiết kiệm" value={formatCurrency(saving)} helper={`${Math.round((saving / savingGoal) * 100) || 0}% mục tiêu tháng.`} tone="gold" />
         <FloatingStatCard icon={WalletCards} label="Số dư tháng" value={formatCurrency(balance)} helper="Sau chi tiêu và tiết kiệm." />
       </section>
+
+      <QuickFinanceInlineInput />
 
       <PremiumCard hover={false}>
         <h2 className="text-2xl font-bold text-text-primary">Phân rã tháng</h2>
