@@ -40,37 +40,65 @@ function normalizeNumber(rawValue: string) {
   return sign * value * multiplier;
 }
 
+function cleanCategory(value: string) {
+  return value
+    .replace(/[:;,|]+$/g, "")
+    .replace(/^[:;,|]+/g, "")
+    .trim();
+}
+
+function parseEntry(raw: string, categoryValue: string, amountValue: string, occurredOn: string): ParsedLine {
+  const category = cleanCategory(categoryValue);
+  const signedAmount = normalizeNumber(amountValue);
+
+  if (!category) return { ok: false, raw, error: "Thieu danh muc." };
+  if (!signedAmount) return { ok: false, raw, error: "So tien chua hop le." };
+
+  const type = signedAmount < 0 ? "expense" : "income";
+  return {
+    ok: true,
+    raw,
+    entry: {
+      type,
+      category,
+      amount: Math.abs(Math.round(signedAmount)),
+      occurred_on: occurredOn,
+      notes: raw
+    }
+  };
+}
+
+function parseQuickFinanceLine(raw: string, occurredOn: string): ParsedLine[] {
+  const signedAmountPattern = /[+-]\s*[\d.,]+(?:\s*[kKmM])?/g;
+  const matches = Array.from(raw.matchAll(signedAmountPattern));
+
+  if (matches.length) {
+    return matches.map((match, index) => {
+      const nextMatch = matches[index + 1];
+      const categoryStart = index === 0 ? 0 : matches[index - 1].index! + matches[index - 1][0].length;
+      const category = raw.slice(categoryStart, match.index).trim();
+      const segmentEnd = nextMatch?.index ?? raw.length;
+      const segment = raw.slice(categoryStart, segmentEnd).trim();
+
+      return parseEntry(segment, category, match[0], occurredOn);
+    });
+  }
+
+  const fallbackMatch = raw.match(/^(.+?)(?::|\s+-\s+|\s+)\s*([\d.,]+(?:\s*[kKmM])?)$/);
+
+  if (!fallbackMatch) {
+    return [{ ok: false, raw, error: "Khong doc duoc danh muc va so tien." }];
+  }
+
+  return [parseEntry(raw, fallbackMatch[1], fallbackMatch[2], occurredOn)];
+}
+
 function parseQuickFinanceText(text: string, occurredOn: string): ParsedLine[] {
   return text
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean)
-    .map((raw) => {
-      const match = raw.match(/^(.+?)(?::|\s+-\s+|\s+)\s*([+-]?\s*[\d.,]+(?:\s*[kKmM])?)$/);
-
-      if (!match) {
-        return { ok: false, raw, error: "Khong doc duoc danh muc va so tien." };
-      }
-
-      const category = match[1].trim();
-      const signedAmount = normalizeNumber(match[2]);
-
-      if (!category) return { ok: false, raw, error: "Thieu danh muc." };
-      if (!signedAmount) return { ok: false, raw, error: "So tien chua hop le." };
-
-      const type = signedAmount < 0 ? "expense" : "income";
-      return {
-        ok: true,
-        raw,
-        entry: {
-          type,
-          category,
-          amount: Math.abs(Math.round(signedAmount)),
-          occurred_on: occurredOn,
-          notes: raw
-        }
-      };
-    });
+    .flatMap((raw) => parseQuickFinanceLine(raw, occurredOn));
 }
 
 export function QuickFinanceInlineInput() {
@@ -78,21 +106,25 @@ export function QuickFinanceInlineInput() {
   const [value, setValue] = useState("");
   const [isPending, startTransition] = useTransition();
   const today = new Date().toISOString().slice(0, 10);
-  const preview = useMemo(() => parseQuickFinanceText(value, today)[0] ?? null, [value, today]);
+  const previewLines = useMemo(() => parseQuickFinanceText(value, today), [value, today]);
+  const validEntries = previewLines.flatMap((line) => (line.ok ? [line.entry] : []));
+  const errors = previewLines.filter((line) => !line.ok);
 
   function submit() {
-    const line = parseQuickFinanceText(value, today)[0];
+    const lines = parseQuickFinanceText(value, today);
+    const lineErrors = lines.filter((line) => !line.ok);
+    const entries = lines.flatMap((line) => (line.ok ? [line.entry] : []));
 
-    if (!line) return;
+    if (!entries.length) return;
 
-    if (!line.ok) {
-      toast.error(line.error);
+    if (lineErrors.length) {
+      toast.error(lineErrors[0].error);
       return;
     }
 
     startTransition(async () => {
       const result = await importFinanceEntries({
-        entries: [line.entry],
+        entries,
         path: "/app/finance"
       });
 
@@ -128,23 +160,25 @@ export function QuickFinanceInlineInput() {
             className="h-12 rounded-2xl text-base"
           />
         </div>
-        <Button type="button" onClick={submit} disabled={isPending || !value.trim()}>
+        <Button type="button" onClick={submit} disabled={isPending || !value.trim() || errors.length > 0}>
           <SendHorizonal className="size-4" />
-          {isPending ? "Dang luu..." : "Enter de luu"}
+          {isPending ? "Dang luu..." : `Luu ${validEntries.length || 0}`}
         </Button>
       </div>
 
-      {preview ? (
-        <div className="mt-3 text-sm text-text-secondary">
-          {preview.ok ? (
-            <span>
-              Se luu {preview.entry.type === "expense" ? "chi tieu" : "thu nhap"}:{" "}
-              <strong className="text-text-primary">{preview.entry.category}</strong>{" "}
-              {preview.entry.type === "expense" ? "-" : "+"}
-              {formatCurrency(preview.entry.amount)}
-            </span>
-          ) : (
-            <span className="text-rose-600">{preview.error}</span>
+      {previewLines.length ? (
+        <div className="mt-3 flex flex-wrap gap-2 text-sm text-text-secondary">
+          {previewLines.map((line, index) =>
+            line.ok ? (
+              <span key={`${line.raw}-${index}`} className="rounded-full border border-border-soft bg-white/75 px-3 py-1">
+                {line.entry.category}: {line.entry.type === "expense" ? "-" : "+"}
+                {formatCurrency(line.entry.amount)}
+              </span>
+            ) : (
+              <span key={`${line.raw}-${index}`} className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-rose-600">
+                {line.error}
+              </span>
+            )
           )}
         </div>
       ) : null}
