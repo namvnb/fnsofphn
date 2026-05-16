@@ -12,7 +12,7 @@ export async function ensureUserBootstrap(user: AuthUser) {
       const slug = `${sampleExam.slugSuffix}-${user.id.slice(0, 8)}`;
       const { data: existingExam } = await supabase
         .from("giup_cy_exams")
-        .select("id")
+        .select("id, description")
         .eq("user_id", user.id)
         .eq("slug", slug)
         .maybeSingle();
@@ -28,7 +28,7 @@ export async function ensureUserBootstrap(user: AuthUser) {
             options: question.options,
             correct_answer: question.correct_answer,
             points: question.points,
-            explanation: question.explanation ?? null,
+            explanation: null,
             needs_review: question.needs_review ?? false,
             sort_order: question.sort_order
           }))
@@ -53,7 +53,7 @@ export async function ensureUserBootstrap(user: AuthUser) {
           .eq("id", existingExam.id)
           .eq("user_id", user.id);
 
-        if (questionCount !== sampleExam.questions.length) {
+        if (questionCount !== sampleExam.questions.length || existingExam.description !== sampleExam.description) {
           await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
           await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
           await insertQuestions(existingExam.id);

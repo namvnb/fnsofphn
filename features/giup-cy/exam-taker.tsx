@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
 import { submitExamAttempt } from "@/features/giup-cy/actions";
-import { estimateQuestionPage, getExamDocumentAsset, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
+import { getQuestionSourceAsset, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
 import { cn } from "@/lib/utils/cn";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
@@ -69,7 +69,6 @@ function readDraft(storageKey: string) {
 }
 
 export function ExamTaker({ exam, questions }: Props) {
-  const documentAsset = getExamDocumentAsset(exam);
   const storageKey = `giup-cy:${exam.id}:draft`;
   const [studentName, setStudentName] = useState(() => readDraft(storageKey).studentName ?? "");
   const [answers, setAnswers] = useState<Record<string, Json>>(() => readDraft(storageKey).answers ?? {});
@@ -104,13 +103,8 @@ export function ExamTaker({ exam, questions }: Props) {
     setAnswers((current) => ({ ...current, [questionId]: value }));
   }
 
-  function pageFor(question: GiupCyExamQuestionRow) {
-    return estimateQuestionPage(question.question_number, documentAsset?.pages.length ?? 1);
-  }
-
   function sourcePageFor(question: GiupCyExamQuestionRow) {
-    if (!documentAsset) return null;
-    return documentAsset.pages[pageFor(question) - 1] ?? null;
+    return getQuestionSourceAsset(exam, question.question_number);
   }
 
   function focusQuestion(question: GiupCyExamQuestionRow) {
@@ -356,7 +350,7 @@ function QuestionCard({
         </button>
       </div>
 
-      <p className="whitespace-pre-line text-base leading-7 text-text-primary">{question.prompt}</p>
+      <PromptContent text={question.prompt} />
 
       {needsSource ? (
         <div className="mt-4 overflow-hidden rounded-2xl border border-border-soft bg-white">
@@ -378,6 +372,70 @@ function QuestionCard({
         <AnswerControl question={question} answers={answers} setAnswer={setAnswer} compact={false} fallbackOptions={optionsFor(question)} />
       </div>
       </PremiumCard>
+    </div>
+  );
+}
+
+function isTableLine(line: string) {
+  return line.includes("|") && line.split("|").length >= 3;
+}
+
+function PromptContent({ text }: { text: string }) {
+  const lines = text.split("\n");
+  const blocks: Array<{ type: "text"; lines: string[] } | { type: "table"; rows: string[][] }> = [];
+  let index = 0;
+
+  while (index < lines.length) {
+    if (isTableLine(lines[index])) {
+      const tableLines: string[] = [];
+      while (index < lines.length && isTableLine(lines[index])) {
+        tableLines.push(lines[index]);
+        index += 1;
+      }
+      blocks.push({
+        type: "table",
+        rows: tableLines.map((line) => line.split("|").map((cell) => cell.trim()).filter(Boolean))
+      });
+      continue;
+    }
+
+    const textLines: string[] = [];
+    while (index < lines.length && !isTableLine(lines[index])) {
+      textLines.push(lines[index]);
+      index += 1;
+    }
+    blocks.push({ type: "text", lines: textLines });
+  }
+
+  return (
+    <div className="space-y-3 text-base leading-7 text-text-primary">
+      {blocks.map((block, blockIndex) => {
+        if (block.type === "table") {
+          return (
+            <div key={blockIndex} className="overflow-x-auto rounded-xl border border-border-soft bg-white">
+              <table className="w-full min-w-max border-collapse text-left text-sm">
+                <tbody>
+                  {block.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex} className={rowIndex === 0 ? "bg-slate-50 font-semibold" : undefined}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex} className="border border-border-soft px-3 py-2 align-top">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        return (
+          <p key={blockIndex} className="whitespace-pre-line">
+            {block.lines.join("\n")}
+          </p>
+        );
+      })}
     </div>
   );
 }

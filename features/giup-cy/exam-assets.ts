@@ -13,6 +13,7 @@ export type ExamDocumentAsset = {
 };
 
 const ASSET_VERSION = "student-clean-20260516";
+const CROP_ASSET_VERSION = "question-crops-20260516";
 
 function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {
   return Array.from({ length: count }, (_, index) => {
@@ -50,18 +51,41 @@ export function getExamPdfUrl(exam: Pick<GiupCyExamRow, "slug" | "source_file_na
   return getExamDocumentAsset(exam)?.pdfUrl ?? null;
 }
 
+export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">, questionNumber: number): ExamPageAsset | null {
+  const documentAsset = getExamDocumentAsset(exam);
+  if (!documentAsset) return null;
+
+  const source = `${exam.slug} ${exam.source_file_name ?? ""}`.toLowerCase();
+
+  if (source.includes("cam-pha")) {
+    const cropSizes: Record<number, Pick<ExamPageAsset, "url" | "width" | "height">> = {
+      17: { url: `/exam-assets/cam-pha-lan-1/crops/q17.png?v=${CROP_ASSET_VERSION}`, width: 1285, height: 360 },
+      19: { url: `/exam-assets/cam-pha-lan-1/crops/q19.png?v=${CROP_ASSET_VERSION}`, width: 1285, height: 720 },
+      25: { url: `/exam-assets/cam-pha-lan-1/crops/q25.png?v=${CROP_ASSET_VERSION}`, width: 1225, height: 285 },
+      26: { url: `/exam-assets/cam-pha-lan-1/crops/q26.png?v=${CROP_ASSET_VERSION}`, width: 1195, height: 710 },
+      27: { url: `/exam-assets/cam-pha-lan-1/crops/q27.png?v=${CROP_ASSET_VERSION}`, width: 1265, height: 690 }
+    };
+
+    const crop = cropSizes[questionNumber];
+    if (crop) return { pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop };
+  }
+
+  return documentAsset.pages[estimateQuestionPage(questionNumber, documentAsset.pages.length) - 1] ?? null;
+}
+
 export function estimateQuestionPage(questionNumber: number, pageCount: number) {
   if (pageCount >= 15) {
     if (questionNumber <= 6) return 1;
-    if (questionNumber <= 13) return 2;
-    if (questionNumber <= 18) return 3;
-    if (questionNumber <= 19) return 4;
-    if (questionNumber <= 21) return 5;
-    if (questionNumber <= 22) return 6;
-    if (questionNumber <= 24) return 7;
-    if (questionNumber <= 26) return 8;
-    return 9;
+    if (questionNumber <= 14) return 2;
+    if (questionNumber <= 19) return 3;
+    if (questionNumber <= 21) return 4;
+    if (questionNumber <= 24) return 5;
+    if (questionNumber <= 27) return 6;
+    return 7;
   }
 
-  return Math.min(pageCount, Math.max(1, Math.ceil(questionNumber / 7)));
+  if (questionNumber <= 14) return 1;
+  if (questionNumber <= 20) return 2;
+  if (questionNumber <= 24) return 3;
+  return Math.min(pageCount, 4);
 }
