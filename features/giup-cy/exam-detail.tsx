@@ -24,6 +24,37 @@ function answerText(value: Json) {
   return String(value);
 }
 
+type AttemptAnswerDetail = {
+  questionId: string;
+  questionNumber: number;
+  answer: Json;
+  correctAnswer: Json;
+  isCorrect: boolean | null;
+  points: number;
+  earnedPoints: number;
+};
+
+function parseAttemptDetails(attempt: GiupCyExamAttemptRow) {
+  return Array.isArray(attempt.graded_details) ? (attempt.graded_details as unknown as AttemptAnswerDetail[]) : [];
+}
+
+function formatAnswer(value: Json) {
+  if (value === null || value === undefined || value === "") return "Chưa trả lời";
+
+  if (typeof value === "object" && !Array.isArray(value)) {
+    return Object.entries(value)
+      .map(([key, entry]) => `${key}) ${entry ? "Đúng" : "Sai"}`)
+      .join("; ");
+  }
+
+  return String(value);
+}
+
+function resultLabel(detail: AttemptAnswerDetail) {
+  if (detail.isCorrect === null) return "Chưa chấm";
+  return detail.isCorrect ? "Đúng" : "Sai";
+}
+
 function formatScore(attempt: GiupCyExamAttemptRow) {
   if (!attempt.max_score) return "Chưa có câu chấm tự động";
   return `${attempt.score}/${attempt.max_score}`;
@@ -136,6 +167,83 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
             </tbody>
           </table>
           {!attempts.length ? <p className="py-6 text-sm text-text-secondary">Chưa có học sinh nộp bài.</p> : null}
+        </div>
+      </PremiumCard>
+
+      <PremiumCard hover={false} className="print:shadow-none">
+        <div className="mb-5">
+          <h2 className="text-2xl font-bold text-text-primary">Chi tiết từng bài làm</h2>
+          <p className="mt-1 text-sm text-text-secondary">Dùng phần này để xuất PDF, chấm lại và giải thích từng câu cho học sinh.</p>
+        </div>
+
+        <div className="space-y-8">
+          {attempts.map((attempt) => {
+            const details = parseAttemptDetails(attempt);
+            return (
+              <section key={attempt.id} className="break-inside-avoid rounded-2xl border border-border-soft bg-white/64 p-4 print:border-slate-300 print:bg-white">
+                <div className="mb-4 grid gap-3 md:grid-cols-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase text-text-secondary">Học sinh</p>
+                    <p className="mt-1 font-bold text-text-primary">{attempt.student_name}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase text-text-secondary">Điểm</p>
+                    <p className="mt-1 font-bold text-text-primary">{formatScore(attempt)}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase text-text-secondary">Đúng / đã chấm</p>
+                    <p className="mt-1 font-bold text-text-primary">
+                      {attempt.correct_count}/{attempt.graded_count}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase text-text-secondary">Thời gian nộp</p>
+                    <p className="mt-1 font-bold text-text-primary">{new Date(attempt.submitted_at).toLocaleString("vi-VN")}</p>
+                  </div>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[860px] border-collapse text-left text-xs print:min-w-0">
+                    <thead>
+                      <tr className="border-y border-border-soft bg-slate-50 text-text-secondary">
+                        <th className="px-2 py-2">Câu</th>
+                        <th className="px-2 py-2">Đáp án học sinh</th>
+                        <th className="px-2 py-2">Đáp án đúng</th>
+                        <th className="px-2 py-2">Kết quả</th>
+                        <th className="px-2 py-2">Điểm</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {details.map((detail) => (
+                        <tr key={detail.questionId} className="border-b border-border-soft align-top">
+                          <td className="px-2 py-2 font-bold text-text-primary">{detail.questionNumber}</td>
+                          <td className="px-2 py-2 text-text-primary">{formatAnswer(detail.answer)}</td>
+                          <td className="px-2 py-2 text-text-primary">{formatAnswer(detail.correctAnswer)}</td>
+                          <td className="px-2 py-2">
+                            <span
+                              className={
+                                detail.isCorrect === null
+                                  ? "font-semibold text-amber-700"
+                                  : detail.isCorrect
+                                    ? "font-semibold text-cyan-700"
+                                    : "font-semibold text-rose-700"
+                              }
+                            >
+                              {resultLabel(detail)}
+                            </span>
+                          </td>
+                          <td className="px-2 py-2 text-text-primary">
+                            {detail.earnedPoints}/{detail.points}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            );
+          })}
+          {!attempts.length ? <p className="text-sm text-text-secondary">Chưa có bài làm để hiển thị chi tiết.</p> : null}
         </div>
       </PremiumCard>
 

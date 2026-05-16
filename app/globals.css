@@ -124,3 +124,39 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+
+  .print\:bg-white {
+    background: #fff !important;
+  }
+
+  .print\:border-slate-300 {
+    border-color: #cbd5e1 !important;
+  }
+
+  .print\:min-w-0 {
+    min-width: 0 !important;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}
