@@ -10,7 +10,6 @@ import type { GiupCyExamQuestionRow, Json } from "@/types/database";
 type ActionResult = {
   ok: boolean;
   message: string;
-  attemptId?: string;
 };
 
 const toggleExamSchema = z.object({
@@ -164,7 +163,7 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
   if (questionError) return { ok: false, message: questionError.message };
 
   const grading = gradeAttempt((questions ?? []) as GiupCyExamQuestionRow[], parsed.data.answers as Record<string, Json>);
-  const { data: attempt, error } = await supabase
+  const { error } = await supabase
     .from("giup_cy_exam_attempts")
     .insert({
       exam_id: parsed.data.examId,
@@ -176,12 +175,10 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
       correct_count: grading.correctCount,
       graded_count: grading.gradedCount,
       total_count: grading.totalCount
-    })
-    .select("id")
-    .single();
+    });
 
   if (error) return { ok: false, message: error.message };
-  return { ok: true, message: "Đã nộp bài.", attemptId: attempt.id };
+  return { ok: true, message: "Đã nộp bài." };
 }
 
 export async function importExam(input: unknown): Promise<ActionResult> {
