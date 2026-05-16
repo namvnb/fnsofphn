@@ -411,7 +411,7 @@ Sắp xếp các kim loại theo chiều giảm dần tính khử từ trái san
 
 export const sampleGiupCyExams: SampleExam[] = [
   {
-    title: "Cuối HKI lớp 12 - Sở Hưng Yên 2025-2026",
+    title: "17.05.01",
     description:
       "Đề được dựng trước từ file Word gốc. File hiện chưa có đáp án, các câu có công thức/hình cần rà lại trước khi active rộng.",
     subject: "Hóa học",
@@ -485,7 +485,7 @@ export const sampleGiupCyExams: SampleExam[] = [
     ]
   },
   {
-    title: "Thi thử THPT 2026 - THPT Cẩm Phả lần 1",
+    title: "17.05.02",
     description:
       "Đề Cẩm Phả được dựng đủ 28 câu theo file gốc: Phần I có 18 câu, Phần II có 4 câu đúng/sai, Phần III có 6 câu trả lời ngắn. Các câu phụ thuộc hình/sơ đồ được đánh dấu cần rà.",
     subject: "Hóa học",

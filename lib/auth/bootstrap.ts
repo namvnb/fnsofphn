@@ -41,21 +41,21 @@ export async function ensureUserBootstrap(user: AuthUser) {
           .select("id", { count: "exact", head: true })
           .eq("exam_id", existingExam.id);
 
+        await supabase
+          .from("giup_cy_exams")
+          .update({
+            title: sampleExam.title,
+            description: sampleExam.description,
+            subject: sampleExam.subject,
+            duration_minutes: sampleExam.duration_minutes,
+            source_file_name: sampleExam.source_file_name
+          })
+          .eq("id", existingExam.id)
+          .eq("user_id", user.id);
+
         if (questionCount !== sampleExam.questions.length) {
           await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
           await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
-          await supabase
-            .from("giup_cy_exams")
-            .update({
-              title: sampleExam.title,
-              description: sampleExam.description,
-              subject: sampleExam.subject,
-              duration_minutes: sampleExam.duration_minutes,
-              source_file_name: sampleExam.source_file_name,
-              is_active: sampleExam.is_active
-            })
-            .eq("id", existingExam.id)
-            .eq("user_id", user.id);
           await insertQuestions(existingExam.id);
         }
         continue;
