@@ -353,16 +353,15 @@ function QuestionCard({
       <PromptContent text={question.prompt} />
 
       {needsSource ? (
-        <div className="mt-4 overflow-hidden rounded-2xl border border-border-soft bg-white">
-          <div className="border-b border-border-soft px-4 py-2 text-sm font-semibold text-text-secondary">Hình/bảng/sơ đồ từ đề gốc</div>
-          <div className="max-h-[680px] overflow-auto bg-slate-100 p-3">
+        <div className="mt-4 overflow-hidden rounded-xl border border-border-soft bg-white">
+          <div className="max-h-[680px] overflow-auto bg-white p-3">
             <Image
               src={sourcePage.url}
-              alt={`Trang gốc liên quan đến câu ${question.question_number}`}
+              alt={`Minh họa cho câu ${question.question_number}`}
               width={sourcePage.width}
               height={sourcePage.height}
               unoptimized
-              className="mx-auto h-auto w-full max-w-[980px] rounded-lg bg-white shadow-sm"
+              className="mx-auto h-auto w-full max-w-[980px] bg-white"
             />
           </div>
         </div>

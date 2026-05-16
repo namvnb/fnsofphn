@@ -13,7 +13,7 @@ export type ExamDocumentAsset = {
 };
 
 const ASSET_VERSION = "student-clean-20260516";
-const CROP_ASSET_VERSION = "question-crops-20260516";
+const CROP_ASSET_VERSION = "question-crops-20260516b";
 
 function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {
   return Array.from({ length: count }, (_, index) => {
@@ -59,8 +59,11 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
 
   if (source.includes("cam-pha")) {
     const cropSizes: Record<number, Pick<ExamPageAsset, "url" | "width" | "height">> = {
-      17: { url: `/exam-assets/cam-pha-lan-1/crops/q17.png?v=${CROP_ASSET_VERSION}`, width: 1285, height: 360 },
+      17: { url: `/exam-assets/cam-pha-lan-1/crops/q17.png?v=${CROP_ASSET_VERSION}`, width: 1245, height: 290 },
       19: { url: `/exam-assets/cam-pha-lan-1/crops/q19.png?v=${CROP_ASSET_VERSION}`, width: 1285, height: 720 },
+      20: { url: `/exam-assets/cam-pha-lan-1/crops/q20.png?v=${CROP_ASSET_VERSION}`, width: 1210, height: 75 },
+      21: { url: `/exam-assets/cam-pha-lan-1/crops/q21.png?v=${CROP_ASSET_VERSION}`, width: 1210, height: 390 },
+      22: { url: `/exam-assets/cam-pha-lan-1/crops/q22.png?v=${CROP_ASSET_VERSION}`, width: 970, height: 165 },
       25: { url: `/exam-assets/cam-pha-lan-1/crops/q25.png?v=${CROP_ASSET_VERSION}`, width: 1225, height: 285 },
       26: { url: `/exam-assets/cam-pha-lan-1/crops/q26.png?v=${CROP_ASSET_VERSION}`, width: 1195, height: 710 },
       27: { url: `/exam-assets/cam-pha-lan-1/crops/q27.png?v=${CROP_ASSET_VERSION}`, width: 1265, height: 690 }
@@ -68,9 +71,22 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
 
     const crop = cropSizes[questionNumber];
     if (crop) return { pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop };
+
+    return null;
   }
 
-  return documentAsset.pages[estimateQuestionPage(questionNumber, documentAsset.pages.length) - 1] ?? null;
+  if (source.includes("hung-yen")) {
+    const cropSizes: Record<number, Pick<ExamPageAsset, "url" | "width" | "height">> = {
+      20: { url: `/exam-assets/hung-yen-hki/crops/q20.png?v=${CROP_ASSET_VERSION}`, width: 1240, height: 475 }
+    };
+
+    const crop = cropSizes[questionNumber];
+    if (crop) return { pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop };
+
+    return null;
+  }
+
+  return null;
 }
 
 export function estimateQuestionPage(questionNumber: number, pageCount: number) {
