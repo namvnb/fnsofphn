@@ -430,6 +430,57 @@ export const sampleGiupCyExams: SampleExam[] = [
         points: 0.25,
         needs_review: true,
         sort_order: 1
+      },
+      {
+        section: "Phần I",
+        question_number: 2,
+        question_type: "single_choice",
+        prompt: "Có bao nhiêu dipeptide mạch hở khi thủy phân hoàn toàn thu được hỗn hợp chỉ gồm glycine và alanine?",
+        options: choice("4", "2", "3", "1"),
+        correct_answer: null,
+        points: 0.25,
+        needs_review: true,
+        sort_order: 2
+      },
+      {
+        section: "Phần I",
+        question_number: 5,
+        question_type: "single_choice",
+        prompt:
+          "Cho một số tính chất: có dạng sợi (1); tan trong nước (2); tan trong nước Schweizer (3); phản ứng với nitric acid đặc, xúc tác sulfuric acid đặc (4); tham gia phản ứng với thuốc thử Tollens (5); bị thủy phân trong dung dịch acid đun nóng (6). Các tính chất của cellulose là",
+        options: choice("(1), (3), (4) và (6)", "(3), (4), (5) và (6)", "(1), (2), (3) và (4)", "(2), (3), (4) và (5)"),
+        correct_answer: null,
+        points: 0.25,
+        needs_review: true,
+        sort_order: 3
+      },
+      {
+        section: "Phần II",
+        question_number: 19,
+        question_type: "true_false",
+        prompt: "Pin cúc áo sử dụng kẽm: đánh dấu đúng/sai cho bốn nhận định a, b, c, d trong file gốc.",
+        options: tfOptions(
+          "Thế điện cực chuẩn của pin là 1,558 V.",
+          "Zn là điện cực âm.",
+          "Khi pin hoạt động, tại cathode xảy ra quá trình trong file gốc.",
+          "Thời gian pin có thể chạy được tối đa là 446,76 ngày."
+        ),
+        correct_answer: null,
+        points: 1,
+        needs_review: true,
+        sort_order: 4
+      },
+      {
+        section: "Phần III",
+        question_number: 23,
+        question_type: "short_answer",
+        prompt:
+          "Indigo dye là một thuốc nhuộm màu xanh lam đậm. Phần trăm khối lượng của nguyên tố nitrogen trong phân tử Indigo dye là bao nhiêu phần trăm? Làm tròn đến hàng phần mười.",
+        options: [],
+        correct_answer: null,
+        points: 0.5,
+        needs_review: true,
+        sort_order: 5
       }
     ]
   },

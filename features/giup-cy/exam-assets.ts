@@ -35,10 +35,7 @@ export function getExamDocumentAsset(exam: Pick<GiupCyExamRow, "slug" | "source_
   }
 
   if (source.includes("hung-yen")) {
-    return {
-      pdfUrl: "/exam-assets/hung-yen-hki/original.pdf",
-      pages: buildPages("/exam-assets/hung-yen-hki", 4, 1406, 1988, false)
-    };
+    return null;
   }
 
   return null;
