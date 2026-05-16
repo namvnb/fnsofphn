@@ -111,7 +111,7 @@ export function ExamTaker({ exam, questions }: Props) {
             <Badge variant="neutral">{question.section}</Badge>
             <Badge>Câu {question.question_number}</Badge>
           </div>
-          <p className="text-base leading-7 text-text-primary">{question.prompt}</p>
+          <p className="whitespace-pre-line text-base leading-7 text-text-primary">{question.prompt}</p>
 
           {question.question_type === "single_choice" ? (
             <div className="mt-4 grid gap-3 md:grid-cols-2">

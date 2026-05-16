@@ -137,7 +137,7 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
                 <Badge variant={question.needs_review ? "rose" : "cyan"}>{question.needs_review ? "Cần rà" : "Ổn"}</Badge>
                 <Badge variant="neutral">{question.question_type}</Badge>
               </div>
-              <p className="text-sm leading-6 text-text-primary">{question.prompt}</p>
+              <p className="whitespace-pre-line text-sm leading-6 text-text-primary">{question.prompt}</p>
               <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto]">
                 {question.question_type === "true_false" ? (
                   <Textarea
