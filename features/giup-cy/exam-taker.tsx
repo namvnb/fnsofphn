@@ -21,6 +21,14 @@ type OptionItem = {
   text: string;
 };
 
+type SubmitResult = {
+  score?: number;
+  maxScore?: number;
+  correctCount?: number;
+  gradedCount?: number;
+  totalCount?: number;
+};
+
 function optionsFor(question: GiupCyExamQuestionRow) {
   return Array.isArray(question.options) ? (question.options as OptionItem[]) : [];
 }
@@ -28,7 +36,7 @@ function optionsFor(question: GiupCyExamQuestionRow) {
 export function ExamTaker({ exam, questions }: Props) {
   const [studentName, setStudentName] = useState("");
   const [answers, setAnswers] = useState<Record<string, Json>>({});
-  const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<SubmitResult | null>(null);
   const [isPending, startTransition] = useTransition();
 
   function setAnswer(questionId: string, value: Json) {
@@ -45,7 +53,13 @@ export function ExamTaker({ exam, questions }: Props) {
       });
 
       if (response.ok) {
-        setResult(response.message);
+        setResult({
+          score: response.score,
+          maxScore: response.maxScore,
+          correctCount: response.correctCount,
+          gradedCount: response.gradedCount,
+          totalCount: response.totalCount
+        });
         toast.success(response.message);
       } else {
         toast.error(response.message);
@@ -60,6 +74,15 @@ export function ExamTaker({ exam, questions }: Props) {
         <p className="mt-3 text-sm leading-6 text-text-secondary">
           Bài làm của {studentName} đã được lưu. Giáo viên có thể xem điểm các câu đã có đáp án trong màn quản lý.
         </p>
+        <div className="mt-6 rounded-2xl border border-border-soft bg-white/70 p-5">
+          <p className="text-sm font-semibold text-text-secondary">Điểm tự động</p>
+          <p className="mt-2 text-4xl font-bold text-text-primary">
+            {result.maxScore ? `${result.score}/${result.maxScore}` : "Chưa có"}
+          </p>
+          <p className="mt-2 text-sm text-text-secondary">
+            Đúng {result.correctCount ?? 0}/{result.gradedCount ?? 0} câu đã có đáp án. Tổng số câu trong đề: {result.totalCount ?? 0}.
+          </p>
+        </div>
       </PremiumCard>
     );
   }

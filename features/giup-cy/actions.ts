@@ -10,6 +10,11 @@ import type { GiupCyExamQuestionRow, Json } from "@/types/database";
 type ActionResult = {
   ok: boolean;
   message: string;
+  score?: number;
+  maxScore?: number;
+  correctCount?: number;
+  gradedCount?: number;
+  totalCount?: number;
 };
 
 const toggleExamSchema = z.object({
@@ -178,7 +183,15 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
     });
 
   if (error) return { ok: false, message: error.message };
-  return { ok: true, message: "Đã nộp bài." };
+  return {
+    ok: true,
+    message: "Đã nộp bài.",
+    score: grading.score,
+    maxScore: grading.maxScore,
+    correctCount: grading.correctCount,
+    gradedCount: grading.gradedCount,
+    totalCount: grading.totalCount
+  };
 }
 
 export async function importExam(input: unknown): Promise<ActionResult> {
