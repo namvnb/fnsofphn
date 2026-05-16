@@ -12,12 +12,12 @@ export type ExamDocumentAsset = {
   pages: ExamPageAsset[];
 };
 
-function buildPages(basePath: string, count: number, width: number, height: number) {
+function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {
   return Array.from({ length: count }, (_, index) => {
     const pageNumber = index + 1;
     return {
       pageNumber,
-      url: `${basePath}/pages/page-${String(pageNumber).padStart(2, "0")}.png`,
+      url: `${basePath}/pages/page-${padded ? String(pageNumber).padStart(2, "0") : String(pageNumber)}.png`,
       width,
       height
     };
@@ -37,7 +37,7 @@ export function getExamDocumentAsset(exam: Pick<GiupCyExamRow, "slug" | "source_
   if (source.includes("hung-yen")) {
     return {
       pdfUrl: "/exam-assets/hung-yen-hki/original.pdf",
-      pages: buildPages("/exam-assets/hung-yen-hki", 4, 1406, 1988)
+      pages: buildPages("/exam-assets/hung-yen-hki", 4, 1406, 1988, false)
     };
   }
 
