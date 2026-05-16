@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { Download, Save } from "lucide-react";
+import { ChevronDown, Download, Save } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -68,6 +68,7 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
     Object.fromEntries(questions.map((question) => [question.id, question.needs_review]))
   );
   const [pendingId, setPendingId] = useState<string | null>(null);
+  const [openAttemptId, setOpenAttemptId] = useState<string | null>(attempts[0]?.id ?? null);
   const [isPending, startTransition] = useTransition();
   const pdfUrl = getExamPdfUrl(exam);
 
@@ -172,74 +173,69 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
 
       <PremiumCard hover={false} className="print:shadow-none">
         <div className="mb-5">
-          <h2 className="text-2xl font-bold text-text-primary">Chi tiết từng bài làm</h2>
-          <p className="mt-1 text-sm text-text-secondary">Dùng phần này để xuất PDF, chấm lại và giải thích từng câu cho học sinh.</p>
+          <h2 className="text-2xl font-bold text-text-primary">Đáp án học sinh</h2>
+          <p className="mt-1 text-sm text-text-secondary">Bấm vào từng học sinh để xem đáp án đúng và đáp án đã chọn theo từng câu.</p>
         </div>
 
         <div className="space-y-8">
           {attempts.map((attempt) => {
             const details = parseAttemptDetails(attempt);
+            const open = openAttemptId === attempt.id;
             return (
-              <section key={attempt.id} className="break-inside-avoid rounded-2xl border border-border-soft bg-white/64 p-4 print:border-slate-300 print:bg-white">
-                <div className="mb-4 grid gap-3 md:grid-cols-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-text-secondary">Học sinh</p>
-                    <p className="mt-1 font-bold text-text-primary">{attempt.student_name}</p>
+              <section key={attempt.id} className="break-inside-avoid rounded-2xl border border-border-soft bg-white/64 print:border-slate-300 print:bg-white">
+                <button
+                  type="button"
+                  className="grid w-full gap-3 p-4 text-left md:grid-cols-[minmax(0,1fr)_120px_120px_160px_auto] md:items-center"
+                  onClick={() => setOpenAttemptId(open ? null : attempt.id)}
+                >
+                  <div className="min-w-0">
+                    <p className="truncate font-bold text-text-primary">{attempt.student_name}</p>
+                    <p className="mt-1 text-xs text-text-secondary">{new Date(attempt.submitted_at).toLocaleString("vi-VN")}</p>
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-text-secondary">Điểm</p>
-                    <p className="mt-1 font-bold text-text-primary">{formatScore(attempt)}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-text-secondary">Đúng / đã chấm</p>
-                    <p className="mt-1 font-bold text-text-primary">
-                      {attempt.correct_count}/{attempt.graded_count}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-text-secondary">Thời gian nộp</p>
-                    <p className="mt-1 font-bold text-text-primary">{new Date(attempt.submitted_at).toLocaleString("vi-VN")}</p>
-                  </div>
-                </div>
+                  <Badge variant="neutral">{formatScore(attempt)}</Badge>
+                  <Badge variant={attempt.correct_count === attempt.graded_count ? "cyan" : "gold"}>
+                    Đúng {attempt.correct_count}/{attempt.graded_count}
+                  </Badge>
+                  <Badge variant="neutral">
+                    Đã chấm {attempt.graded_count}/{attempt.total_count}
+                  </Badge>
+                  <ChevronDown className={open ? "size-5 rotate-180 text-text-secondary transition" : "size-5 text-text-secondary transition"} />
+                </button>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-[860px] border-collapse text-left text-xs print:min-w-0">
-                    <thead>
-                      <tr className="border-y border-border-soft bg-slate-50 text-text-secondary">
-                        <th className="px-2 py-2">Câu</th>
-                        <th className="px-2 py-2">Đáp án học sinh</th>
-                        <th className="px-2 py-2">Đáp án đúng</th>
-                        <th className="px-2 py-2">Kết quả</th>
-                        <th className="px-2 py-2">Điểm</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {details.map((detail) => (
-                        <tr key={detail.questionId} className="border-b border-border-soft align-top">
-                          <td className="px-2 py-2 font-bold text-text-primary">{detail.questionNumber}</td>
-                          <td className="px-2 py-2 text-text-primary">{formatAnswer(detail.answer)}</td>
-                          <td className="px-2 py-2 text-text-primary">{formatAnswer(detail.correctAnswer)}</td>
-                          <td className="px-2 py-2">
-                            <span
-                              className={
-                                detail.isCorrect === null
-                                  ? "font-semibold text-amber-700"
-                                  : detail.isCorrect
-                                    ? "font-semibold text-cyan-700"
-                                    : "font-semibold text-rose-700"
-                              }
-                            >
-                              {resultLabel(detail)}
-                            </span>
-                          </td>
-                          <td className="px-2 py-2 text-text-primary">
-                            {detail.earnedPoints}/{detail.points}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                {open ? (
+                  <div className="space-y-4 border-t border-border-soft p-4">
+                    {details.map((detail) => (
+                      <article key={detail.questionId} className="rounded-2xl border border-border-soft bg-white/72 p-4">
+                        <div className="mb-3 flex flex-wrap items-center gap-2">
+                          <Badge>Câu {detail.questionNumber}</Badge>
+                          <Badge
+                            variant={detail.isCorrect === null ? "gold" : detail.isCorrect ? "cyan" : "rose"}
+                          >
+                            {resultLabel(detail)}
+                          </Badge>
+                          <Badge variant="neutral">
+                            {detail.earnedPoints}/{detail.points} điểm
+                          </Badge>
+                        </div>
+
+                        <div className="grid gap-3">
+                          <div>
+                            <p className="mb-1 text-xs font-semibold uppercase text-text-secondary">Đáp án đúng</p>
+                            <div className="rounded-2xl border border-cyan-200 bg-cyan-50/70 px-4 py-3 text-sm font-semibold text-cyan-900">
+                              {formatAnswer(detail.correctAnswer)}
+                            </div>
+                          </div>
+                          <div>
+                            <p className="mb-1 text-xs font-semibold uppercase text-text-secondary">Đáp án học sinh chọn</p>
+                            <div className="rounded-2xl border border-border-soft bg-white px-4 py-3 text-sm font-semibold text-text-primary">
+                              {formatAnswer(detail.answer)}
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
               </section>
             );
           })}
