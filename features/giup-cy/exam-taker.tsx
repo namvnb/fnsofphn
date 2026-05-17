@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import Image from "next/image";
 import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Flag, RotateCcw, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
 import { submitExamAttempt } from "@/features/giup-cy/actions";
 import { getQuestionSourceAsset, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
+import { FormattedText } from "@/features/giup-cy/formatted-text";
 import { cn } from "@/lib/utils/cn";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
@@ -377,46 +378,6 @@ function QuestionCard({
 
 function isTableLine(line: string) {
   return line.includes("|") && line.split("|").length >= 3;
-}
-
-const chargedSpeciesPattern = /([A-Z][A-Za-z0-9()[\]]*?|\))\s*(\d+)([+-])(?![A-Za-z0-9([])|([A-Z][A-Za-z0-9()[\]]*?|\))([+-])(?![A-Za-z0-9([])/g;
-
-function renderFormulaBody(value: string, keyPrefix: string) {
-  const nodes: ReactNode[] = [];
-  let lastIndex = 0;
-
-  value.replace(/\d+/g, (match, offset) => {
-    if (offset > lastIndex) nodes.push(value.slice(lastIndex, offset));
-    nodes.push(<sub key={`${keyPrefix}-sub-${offset}`}>{match}</sub>);
-    lastIndex = offset + match.length;
-    return match;
-  });
-
-  if (lastIndex < value.length) nodes.push(value.slice(lastIndex));
-  return nodes;
-}
-
-function FormattedText({ text }: { text: string }) {
-  const nodes: ReactNode[] = [];
-  let lastIndex = 0;
-
-  text.replace(chargedSpeciesPattern, (match, bodyWithMagnitude, magnitude, sign, bodyOnly, signOnly, offset) => {
-    if (offset > lastIndex) nodes.push(text.slice(lastIndex, offset));
-
-    const body = bodyWithMagnitude || bodyOnly;
-    const charge = magnitude ? `${magnitude}${sign}` : signOnly;
-    nodes.push(
-      <span key={`charge-${offset}`} className="whitespace-nowrap">
-        {renderFormulaBody(body, `body-${offset}`)}
-        <sup>{charge}</sup>
-      </span>
-    );
-    lastIndex = offset + match.length;
-    return match;
-  });
-
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
-  return <>{nodes}</>;
 }
 
 function PromptContent({ text }: { text: string }) {

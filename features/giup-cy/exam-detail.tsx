@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
 import { updateQuestionAnswer } from "@/features/giup-cy/actions";
 import { getExamPdfUrl } from "@/features/giup-cy/exam-assets";
+import { FormattedText } from "@/features/giup-cy/formatted-text";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 type Props = {
@@ -83,7 +84,7 @@ function AnswerReviewBlock({
         <div className="mb-4">
           <p className="mb-1 text-xs font-semibold uppercase text-text-secondary">Nội dung câu hỏi</p>
           <p className="whitespace-pre-line rounded-2xl border border-border-soft bg-slate-50/70 px-4 py-3 text-sm leading-6 text-text-primary print:bg-white">
-            {question.prompt}
+            <FormattedText text={question.prompt} />
           </p>
         </div>
       ) : (
@@ -96,13 +97,13 @@ function AnswerReviewBlock({
         <div>
           <p className="mb-1 text-xs font-semibold uppercase text-text-secondary">Đáp án đúng</p>
           <div className="rounded-2xl border border-cyan-200 bg-cyan-50/70 px-4 py-3 text-sm font-semibold text-cyan-900 print:bg-white">
-            {formatAnswer(detail.correctAnswer)}
+            <FormattedText text={formatAnswer(detail.correctAnswer)} />
           </div>
         </div>
         <div>
           <p className="mb-1 text-xs font-semibold uppercase text-text-secondary">Đáp án học sinh chọn</p>
           <div className="rounded-2xl border border-border-soft bg-white px-4 py-3 text-sm font-semibold text-text-primary">
-            {formatAnswer(detail.answer)}
+            <FormattedText text={formatAnswer(detail.answer)} />
           </div>
         </div>
       </div>
@@ -339,7 +340,9 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
                 <Badge variant={question.needs_review ? "rose" : "cyan"}>{question.needs_review ? "Cần rà" : "Ổn"}</Badge>
                 <Badge variant="neutral">{question.question_type}</Badge>
               </div>
-              <p className="whitespace-pre-line text-sm leading-6 text-text-primary">{question.prompt}</p>
+              <p className="whitespace-pre-line text-sm leading-6 text-text-primary">
+                <FormattedText text={question.prompt} />
+              </p>
               <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto]">
                 {question.question_type === "true_false" ? (
                   <Textarea
