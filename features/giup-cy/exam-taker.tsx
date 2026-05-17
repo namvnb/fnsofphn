@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { type ReactNode, useEffect, useMemo, useRef, useState, useTransition } from "react";
 import Image from "next/image";
 import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Flag, RotateCcw, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -323,7 +323,7 @@ function QuestionCard({
   setMarked: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
   refNode: (node: HTMLDivElement | null) => void;
 }) {
-  const needsSource = question.needs_review && sourcePage;
+  const needsSource = sourcePage;
 
   return (
     <div ref={refNode} className="scroll-mt-32" onFocusCapture={() => setCurrentQuestionId(question.id)} onClick={() => setCurrentQuestionId(question.id)}>
@@ -379,6 +379,46 @@ function isTableLine(line: string) {
   return line.includes("|") && line.split("|").length >= 3;
 }
 
+const chargedSpeciesPattern = /([A-Z][A-Za-z0-9()[\]]*?|\))\s*(\d+)([+-])(?![A-Za-z0-9([])|([A-Z][A-Za-z0-9()[\]]*?|\))([+-])(?![A-Za-z0-9([])/g;
+
+function renderFormulaBody(value: string, keyPrefix: string) {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+
+  value.replace(/\d+/g, (match, offset) => {
+    if (offset > lastIndex) nodes.push(value.slice(lastIndex, offset));
+    nodes.push(<sub key={`${keyPrefix}-sub-${offset}`}>{match}</sub>);
+    lastIndex = offset + match.length;
+    return match;
+  });
+
+  if (lastIndex < value.length) nodes.push(value.slice(lastIndex));
+  return nodes;
+}
+
+function FormattedText({ text }: { text: string }) {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+
+  text.replace(chargedSpeciesPattern, (match, bodyWithMagnitude, magnitude, sign, bodyOnly, signOnly, offset) => {
+    if (offset > lastIndex) nodes.push(text.slice(lastIndex, offset));
+
+    const body = bodyWithMagnitude || bodyOnly;
+    const charge = magnitude ? `${magnitude}${sign}` : signOnly;
+    nodes.push(
+      <span key={`charge-${offset}`} className="whitespace-nowrap">
+        {renderFormulaBody(body, `body-${offset}`)}
+        <sup>{charge}</sup>
+      </span>
+    );
+    lastIndex = offset + match.length;
+    return match;
+  });
+
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return <>{nodes}</>;
+}
+
 function PromptContent({ text }: { text: string }) {
   const lines = text.split("\n");
   const blocks: Array<{ type: "text"; lines: string[] } | { type: "table"; rows: string[][] }> = [];
@@ -418,7 +458,7 @@ function PromptContent({ text }: { text: string }) {
                     <tr key={rowIndex} className={rowIndex === 0 ? "bg-slate-50 font-semibold" : undefined}>
                       {row.map((cell, cellIndex) => (
                         <td key={cellIndex} className="border border-border-soft px-3 py-2 align-top">
-                          {cell}
+                          <FormattedText text={cell} />
                         </td>
                       ))}
                     </tr>
@@ -431,7 +471,7 @@ function PromptContent({ text }: { text: string }) {
 
         return (
           <p key={blockIndex} className="whitespace-pre-line">
-            {block.lines.join("\n")}
+            <FormattedText text={block.lines.join("\n")} />
           </p>
         );
       })}
@@ -467,7 +507,11 @@ function AnswerControl({
             <input className="mt-1" type="radio" name={question.id} value={option.key} checked={answers[question.id] === option.key} onChange={() => setAnswer(question.id, option.key)} />
             <span className="grid gap-1">
               <span>{option.key}</span>
-              {option.text !== option.key ? <span className="font-normal leading-6 text-text-secondary">{option.text}</span> : null}
+              {option.text !== option.key ? (
+                <span className="font-normal leading-6 text-text-secondary">
+                  <FormattedText text={option.text} />
+                </span>
+              ) : null}
             </span>
           </label>
         ))}
@@ -485,7 +529,7 @@ function AnswerControl({
           return (
             <div key={key} className="grid gap-3 rounded-2xl border border-border-soft bg-white/75 px-3 py-3 text-sm md:grid-cols-[minmax(0,1fr)_96px_96px] md:items-center">
               <p className="leading-6 text-text-primary">
-                <span className="font-bold">{key})</span> {statement}
+                <span className="font-bold">{key})</span> {statement ? <FormattedText text={statement} /> : null}
               </p>
               <label className="flex items-center gap-2 font-semibold text-text-secondary">
                 <input type="radio" name={`${question.id}-${key}`} checked={current[key] === true} onChange={() => setAnswer(question.id, { ...current, [key]: true })} />
