@@ -18,6 +18,15 @@ async function getEffectiveUserId(): Promise<string> {
   return user.id;
 }
 
+// Co-admin writes must bypass RLS (their auth.uid() ≠ owner's user_id)
+async function getWriteClient() {
+  const user = await requireUser();
+  if (isGiupCyCoAdmin(user.email)) {
+    return createAdminClient();
+  }
+  return createClient();
+}
+
 type ActionResult = {
   ok: boolean;
   message: string;
@@ -97,7 +106,7 @@ export async function updateExamTitle(input: unknown): Promise<ActionResult> {
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
   const effectiveUserId = await getEffectiveUserId();
-  const supabase = await createClient();
+  const supabase = await getWriteClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .update({ title: parsed.data.title })
@@ -114,7 +123,7 @@ export async function toggleExamActive(input: unknown): Promise<ActionResult> {
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
   const effectiveUserId = await getEffectiveUserId();
-  const supabase = await createClient();
+  const supabase = await getWriteClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .update({ is_active: parsed.data.isActive })
@@ -148,7 +157,7 @@ export async function deleteExam(input: unknown): Promise<ActionResult> {
   if (!parsed.success) return { ok: false, message: "Không xác định được đề cần xóa." };
 
   const effectiveUserId = await getEffectiveUserId();
-  const supabase = await createClient();
+  const supabase = await getWriteClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .delete()
@@ -166,7 +175,7 @@ export async function updateQuestionAnswer(input: unknown): Promise<ActionResult
 
   try {
     const effectiveUserId = await getEffectiveUserId();
-    const supabase = await createClient();
+    const supabase = await getWriteClient();
     const { data: exam } = await supabase
       .from("giup_cy_exams")
       .select("id")
@@ -282,7 +291,7 @@ const HUNG_YEN_ANSWER_KEY: Array<{ question_number: number; correct_answer: Json
 export async function applyHungYenAnswerKey(examId: string): Promise<ActionResult> {
   try {
     const effectiveUserId = await getEffectiveUserId();
-    const supabase = await createClient();
+    const supabase = await getWriteClient();
 
     const { data: exam } = await supabase
       .from("giup_cy_exams")
@@ -342,7 +351,7 @@ export async function importExam(input: unknown): Promise<ActionResult> {
     );
     const questions = questionSchema.parse(rawQuestions);
     const effectiveUserId = await getEffectiveUserId();
-    const supabase = await createClient();
+    const supabase = await getWriteClient();
     const slug = `${slugify(parsed.data.title)}-${Date.now().toString(36)}`;
 
     const { data: exam, error: examError } = await supabase
