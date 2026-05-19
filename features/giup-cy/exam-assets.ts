@@ -20,7 +20,7 @@ type Week2Asset = {
 };
 
 const ASSET_VERSION = "student-clean-20260516";
-const CROP_ASSET_VERSION = "question-crops-20260519a";
+const CROP_ASSET_VERSION = "question-crops-20260519b";
 const week2Assets = week2AssetsData as Record<string, Week2Asset>;
 
 function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {
@@ -95,7 +95,7 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
 
   if (source.includes("hung-yen")) {
     const cropSizes: Record<number, Pick<ExamPageAsset, "url" | "width" | "height">> = {
-      20: { url: `/exam-assets/hung-yen-hki/crops/q20.png?v=${CROP_ASSET_VERSION}`, width: 1350, height: 612 },
+      20: { url: `/exam-assets/hung-yen-hki/crops/q20.png?v=${CROP_ASSET_VERSION}`, width: 1400, height: 637 },
       21: { url: `/exam-assets/hung-yen-hki/crops/q21.png?v=${CROP_ASSET_VERSION}`, width: 1210, height: 150 },
       23: { url: `/exam-assets/hung-yen-hki/crops/q23.png?v=${CROP_ASSET_VERSION}`, width: 751, height: 413 },
       24: { url: `/exam-assets/hung-yen-hki/crops/q24.png?v=${CROP_ASSET_VERSION}`, width: 1200, height: 84 },
