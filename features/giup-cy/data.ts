@@ -62,6 +62,33 @@ export async function getAdminExamDetail(userId: string, examId: string) {
   };
 }
 
+export async function getPublicActiveExams() {
+  const supabase = await createClient();
+  const { data: exams, error } = await supabase
+    .from("giup_cy_exams")
+    .select("*")
+    .eq("is_active", true)
+    .order("created_at", { ascending: false });
+
+  if (error) throw new Error(error.message);
+
+  const rows = (exams ?? []) as GiupCyExamRow[];
+  return Promise.all(
+    rows.map(async (exam) => {
+      const { count: questionCount } = await supabase
+        .from("giup_cy_exam_questions")
+        .select("id", { count: "exact", head: true })
+        .eq("exam_id", exam.id);
+
+      return {
+        ...exam,
+        questionCount: questionCount ?? 0,
+        attemptCount: 0
+      };
+    })
+  );
+}
+
 export async function getPublicExam(slug: string) {
   const supabase = await createClient();
   const { data: exam, error: examError } = await supabase
