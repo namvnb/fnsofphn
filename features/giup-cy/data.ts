@@ -2,6 +2,21 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow } from "@/types/database";
 
+let cachedOwnerUserId: string | null = null;
+
+export async function getGiupCyOwnerUserId(): Promise<string | null> {
+  if (cachedOwnerUserId) return cachedOwnerUserId;
+  const supabase = createAdminClient();
+  const { data } = await supabase
+    .from("giup_cy_exams")
+    .select("user_id")
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  cachedOwnerUserId = data?.user_id ?? null;
+  return cachedOwnerUserId;
+}
+
 export type ExamWithStats = GiupCyExamRow & {
   questionCount: number;
   attemptCount: number;

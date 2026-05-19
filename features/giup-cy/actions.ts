@@ -3,10 +3,20 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { gradeAttempt } from "@/features/giup-cy/grading";
+import { getGiupCyOwnerUserId } from "@/features/giup-cy/data";
+import { isGiupCyCoAdmin } from "@/lib/auth/access";
 import { requireUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import type { GiupCyExamQuestionRow, Json } from "@/types/database";
+
+async function getEffectiveUserId(): Promise<string> {
+  const user = await requireUser();
+  if (isGiupCyCoAdmin(user.email)) {
+    return (await getGiupCyOwnerUserId()) ?? user.id;
+  }
+  return user.id;
+}
 
 type ActionResult = {
   ok: boolean;
@@ -86,13 +96,13 @@ export async function updateExamTitle(input: unknown): Promise<ActionResult> {
   const parsed = updateExamTitleSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
-  const user = await requireUser();
+  const effectiveUserId = await getEffectiveUserId();
   const supabase = await createClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .update({ title: parsed.data.title })
     .eq("id", parsed.data.examId)
-    .eq("user_id", user.id);
+    .eq("user_id", effectiveUserId);
 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
@@ -103,13 +113,13 @@ export async function toggleExamActive(input: unknown): Promise<ActionResult> {
   const parsed = toggleExamSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
-  const user = await requireUser();
+  const effectiveUserId = await getEffectiveUserId();
   const supabase = await createClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .update({ is_active: parsed.data.isActive })
     .eq("id", parsed.data.examId)
-    .eq("user_id", user.id);
+    .eq("user_id", effectiveUserId);
 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
@@ -137,13 +147,13 @@ export async function deleteExam(input: unknown): Promise<ActionResult> {
   const parsed = deleteExamSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Không xác định được đề cần xóa." };
 
-  const user = await requireUser();
+  const effectiveUserId = await getEffectiveUserId();
   const supabase = await createClient();
   const { error } = await supabase
     .from("giup_cy_exams")
     .delete()
     .eq("id", parsed.data.examId)
-    .eq("user_id", user.id);
+    .eq("user_id", effectiveUserId);
 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
@@ -155,13 +165,13 @@ export async function updateQuestionAnswer(input: unknown): Promise<ActionResult
   if (!parsed.success) return { ok: false, message: "Dữ liệu đáp án chưa hợp lệ." };
 
   try {
-    const user = await requireUser();
+    const effectiveUserId = await getEffectiveUserId();
     const supabase = await createClient();
     const { data: exam } = await supabase
       .from("giup_cy_exams")
       .select("id")
       .eq("id", parsed.data.examId)
-      .eq("user_id", user.id)
+      .eq("user_id", effectiveUserId)
       .maybeSingle();
 
     if (!exam) return { ok: false, message: "Không tìm thấy đề." };
@@ -271,14 +281,14 @@ const HUNG_YEN_ANSWER_KEY: Array<{ question_number: number; correct_answer: Json
 
 export async function applyHungYenAnswerKey(examId: string): Promise<ActionResult> {
   try {
-    const user = await requireUser();
+    const effectiveUserId = await getEffectiveUserId();
     const supabase = await createClient();
 
     const { data: exam } = await supabase
       .from("giup_cy_exams")
       .select("id,slug")
       .eq("id", examId)
-      .eq("user_id", user.id)
+      .eq("user_id", effectiveUserId)
       .maybeSingle();
 
     if (!exam) return { ok: false, message: "Không tìm thấy đề." };
@@ -331,14 +341,14 @@ export async function importExam(input: unknown): Promise<ActionResult> {
       })
     );
     const questions = questionSchema.parse(rawQuestions);
-    const user = await requireUser();
+    const effectiveUserId = await getEffectiveUserId();
     const supabase = await createClient();
     const slug = `${slugify(parsed.data.title)}-${Date.now().toString(36)}`;
 
     const { data: exam, error: examError } = await supabase
       .from("giup_cy_exams")
       .insert({
-        user_id: user.id,
+        user_id: effectiveUserId,
         title: parsed.data.title,
         description: parsed.data.description || "Đề được import từ JSON chuẩn.",
         subject: "Hóa học",

@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/shared/page-header";
 import { PageTransition } from "@/components/shared/page-transition";
 import { GiupCyExamDetail } from "@/features/giup-cy/exam-detail";
-import { getAdminExamDetail } from "@/features/giup-cy/data";
+import { getAdminExamDetail, getGiupCyOwnerUserId } from "@/features/giup-cy/data";
+import { isGiupCyCoAdmin } from "@/lib/auth/access";
 import { requireUser } from "@/lib/auth/guards";
 
 type PageProps = {
@@ -12,7 +13,10 @@ type PageProps = {
 export default async function GiupCyExamDetailPage({ params }: PageProps) {
   const { examId } = await params;
   const user = await requireUser();
-  const detail = await getAdminExamDetail(user.id, examId);
+  const effectiveUserId = isGiupCyCoAdmin(user.email)
+    ? (await getGiupCyOwnerUserId()) ?? user.id
+    : user.id;
+  const detail = await getAdminExamDetail(effectiveUserId, examId);
 
   if (!detail) notFound();
 

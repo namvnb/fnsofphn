@@ -3,20 +3,24 @@ import { PageHeader } from "@/components/shared/page-header";
 import { PageTransition } from "@/components/shared/page-transition";
 import { FloatingStatCard } from "@/components/shared/floating-stat-card";
 import { GiupCyAdminDashboard } from "@/features/giup-cy/admin-dashboard";
-import { getAdminExams } from "@/features/giup-cy/data";
+import { getAdminExams, getGiupCyOwnerUserId } from "@/features/giup-cy/data";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { seedGiupCyExamsForUser } from "@/lib/auth/bootstrap";
+import { isGiupCyCoAdmin } from "@/lib/auth/access";
 import { requireUser } from "@/lib/auth/guards";
 
 export default async function GiupCyPage() {
   const user = await requireUser();
-  let exams = await getAdminExams(user.id);
+  const effectiveUserId = isGiupCyCoAdmin(user.email)
+    ? (await getGiupCyOwnerUserId()) ?? user.id
+    : user.id;
+  let exams = await getAdminExams(effectiveUserId);
   const sampleSources = new Set(sampleGiupCyExams.map((exam) => exam.source_file_name));
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
 
-  if (existingSampleCount < sampleGiupCyExams.length) {
+  if (existingSampleCount < sampleGiupCyExams.length && !isGiupCyCoAdmin(user.email)) {
     await seedGiupCyExamsForUser(user);
-    exams = await getAdminExams(user.id);
+    exams = await getAdminExams(effectiveUserId);
   }
   const activeCount = exams.filter((exam) => exam.is_active).length;
   const attemptCount = exams.reduce((total, exam) => total + exam.attemptCount, 0);

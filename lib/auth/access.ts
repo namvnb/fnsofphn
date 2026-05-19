@@ -14,6 +14,13 @@ export function getHiddenNavItems(email: string | null | undefined): string[] {
   return HIDDEN_NAV_ITEMS[email.toLowerCase()] ?? [];
 }
 
+// Co-admins share full read+write access to the owner's giup-cy data
+export const GIUP_CY_CO_ADMIN_EMAILS = new Set(["namcy@gmail.com"]);
+
+export function isGiupCyCoAdmin(email: string | null | undefined) {
+  return Boolean(email && GIUP_CY_CO_ADMIN_EMAILS.has(email.toLowerCase()));
+}
+
 export function isGiupCyPath(pathname: string) {
   return pathname === "/app/giup-cy" || pathname.startsWith("/app/giup-cy/");
 }
