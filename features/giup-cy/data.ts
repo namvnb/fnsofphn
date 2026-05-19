@@ -23,7 +23,7 @@ export type ExamWithStats = GiupCyExamRow & {
 };
 
 export async function getAdminExams(userId: string) {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data: exams, error } = await supabase
     .from("giup_cy_exams")
     .select("*")
@@ -52,7 +52,7 @@ export async function getAdminExams(userId: string) {
 }
 
 export async function getAdminExamDetail(userId: string, examId: string) {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")
     .select("*")
