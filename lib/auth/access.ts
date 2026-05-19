@@ -14,6 +14,8 @@ export function getHiddenNavItems(email: string | null | undefined): string[] {
   return HIDDEN_NAV_ITEMS[email.toLowerCase()] ?? [];
 }
 
+export const GIUP_CY_OWNER_EMAIL = "fnsofphn@gmail.com";
+
 // Co-admins share full read+write access to the owner's giup-cy data
 export const GIUP_CY_CO_ADMIN_EMAILS = new Set(["namcy@gmail.com"]);
 

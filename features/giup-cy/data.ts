@@ -1,19 +1,44 @@
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { GIUP_CY_OWNER_EMAIL } from "@/lib/auth/access";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow } from "@/types/database";
 
 let cachedOwnerUserId: string | null = null;
 
 export async function getGiupCyOwnerUserId(): Promise<string | null> {
   if (cachedOwnerUserId) return cachedOwnerUserId;
-  const supabase = createAdminClient();
-  const { data } = await supabase
-    .from("giup_cy_exams")
-    .select("user_id")
-    .order("created_at", { ascending: true })
-    .limit(1)
-    .maybeSingle();
-  cachedOwnerUserId = data?.user_id ?? null;
+
+  const supabase = await createClient();
+  const { data: ownerUserId } = await supabase.rpc("giup_cy_owner_user_id");
+  if (ownerUserId) {
+    cachedOwnerUserId = ownerUserId;
+    return cachedOwnerUserId;
+  }
+
+  try {
+    const admin = createAdminClient();
+    const { data: ownerProfile } = await admin
+      .from("profiles")
+      .select("user_id")
+      .ilike("email", GIUP_CY_OWNER_EMAIL)
+      .maybeSingle();
+
+    if (ownerProfile?.user_id) {
+      cachedOwnerUserId = ownerProfile.user_id;
+      return cachedOwnerUserId;
+    }
+
+    const { data } = await admin
+      .from("giup_cy_exams")
+      .select("user_id")
+      .order("created_at", { ascending: true })
+      .limit(1)
+      .maybeSingle();
+    cachedOwnerUserId = data?.user_id ?? null;
+  } catch {
+    cachedOwnerUserId = null;
+  }
+
   return cachedOwnerUserId;
 }
 
@@ -23,7 +48,7 @@ export type ExamWithStats = GiupCyExamRow & {
 };
 
 export async function getAdminExams(userId: string) {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
   const { data: exams, error } = await supabase
     .from("giup_cy_exams")
     .select("*")
@@ -52,7 +77,7 @@ export async function getAdminExams(userId: string) {
 }
 
 export async function getAdminExamDetail(userId: string, examId: string) {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")
     .select("*")

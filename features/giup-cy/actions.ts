@@ -22,7 +22,11 @@ async function getEffectiveUserId(): Promise<string> {
 async function getWriteClient() {
   const user = await requireUser();
   if (isGiupCyCoAdmin(user.email)) {
-    return createAdminClient();
+    try {
+      return createAdminClient();
+    } catch {
+      return createClient();
+    }
   }
   return createClient();
 }

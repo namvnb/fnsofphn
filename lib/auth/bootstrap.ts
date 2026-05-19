@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { defaultEnergyActivities, defaultProfile } from "@/lib/constants/profile";
 import type { AuthUser } from "@/lib/auth/guards";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
+import { isGiupCyCoAdmin } from "@/lib/auth/access";
 
 export async function seedGiupCyExamsForUser(user: AuthUser) {
   const supabase = await createClient();
@@ -83,7 +84,9 @@ export async function ensureUserBootstrap(user: AuthUser) {
   const supabase = await createClient();
   const today = format(new Date(), "yyyy-MM-dd");
 
-  await seedGiupCyExamsForUser(user);
+  if (!isGiupCyCoAdmin(user.email)) {
+    await seedGiupCyExamsForUser(user);
+  }
 
   const { data: profile } = await supabase
     .from("profiles")

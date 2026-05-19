@@ -291,7 +291,12 @@ export interface Database {
       giup_cy_exam_attempts: TableDefinition<GiupCyExamAttemptRow>;
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      giup_cy_owner_user_id: {
+        Args: Record<PropertyKey, never>;
+        Returns: string | null;
+      };
+    };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };
