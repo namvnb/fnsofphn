@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
-import { updateQuestionAnswer } from "@/features/giup-cy/actions";
+import { applyHungYenAnswerKey, updateQuestionAnswer } from "@/features/giup-cy/actions";
 import { getExamPdfUrl } from "@/features/giup-cy/exam-assets";
 import { FormattedText } from "@/features/giup-cy/formatted-text";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
@@ -330,8 +330,28 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
       </section>
 
       <PremiumCard hover={false} className="print:hidden">
-        <h2 className="text-2xl font-bold text-text-primary">Đáp án và câu hỏi</h2>
-        <div className="mt-5 space-y-4">
+        <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <h2 className="text-2xl font-bold text-text-primary">Đáp án và câu hỏi</h2>
+          {exam.slug === "hung-yen-hki-hoa-12-2026-3d1d5844" ? (
+            <Button
+              type="button"
+              variant="default"
+              size="sm"
+              disabled={isPending}
+              onClick={() => {
+                startTransition(async () => {
+                  const result = await applyHungYenAnswerKey(exam.id);
+                  if (result.ok) toast.success(result.message);
+                  else toast.error(result.message);
+                });
+              }}
+            >
+              <Save className="size-4" />
+              {isPending ? "Đang cập nhật..." : "Cập nhật đáp án Hưng Yên"}
+            </Button>
+          ) : null}
+        </div>
+        <div className="space-y-4">
           {questions.map((question) => (
             <article key={question.id} className="rounded-2xl border border-border-soft bg-white/62 p-4">
               <div className="mb-3 flex flex-wrap items-center gap-2">
