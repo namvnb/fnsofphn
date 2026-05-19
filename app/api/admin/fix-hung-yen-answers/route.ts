@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { Json } from "@/types/database";
 
 const EXAM_SLUG = "hung-yen-hki-hoa-12-2026-3d1d5844";
 
-const ANSWER_KEY: Record<number, { correct_answer: unknown; points: number }> = {
+const ANSWER_KEY: Record<number, { correct_answer: Json; points: number }> = {
   1:  { correct_answer: "C", points: 0.25 },
   2:  { correct_answer: "B", points: 0.25 },
   3:  { correct_answer: "A", points: 0.25 },
