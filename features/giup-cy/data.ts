@@ -64,34 +64,44 @@ export async function getAdminExamDetail(userId: string, examId: string) {
 }
 
 export async function getPublicActiveExams() {
-  let supabase: Awaited<ReturnType<typeof createClient>> | ReturnType<typeof createAdminClient>;
-  let showOnlyActive = false;
+  const fetchExams = async (useAdmin: boolean) => {
+    const supabase = useAdmin ? createAdminClient() : await createClient();
+    let query = supabase.from("giup_cy_exams").select("*").order("created_at", { ascending: false });
+    if (!useAdmin) query = query.eq("is_active", true);
+    return query;
+  };
+
+  let exams: GiupCyExamRow[] = [];
 
   try {
-    supabase = createAdminClient();
+    const { data, error } = await fetchExams(true);
+    if (error) throw new Error(error.message);
+    exams = (data ?? []) as GiupCyExamRow[];
   } catch {
-    supabase = await createClient();
-    showOnlyActive = true;
+    try {
+      const { data, error } = await fetchExams(false);
+      if (error) throw new Error(error.message);
+      exams = (data ?? []) as GiupCyExamRow[];
+    } catch {
+      exams = [];
+    }
   }
 
-  let query = supabase.from("giup_cy_exams").select("*").order("created_at", { ascending: false });
-  if (showOnlyActive) query = query.eq("is_active", true);
-
-  const { data: exams, error } = await query;
-
-  if (error) throw new Error(error.message);
-
-  const rows = (exams ?? []) as GiupCyExamRow[];
   return Promise.all(
-    rows.map(async (exam) => {
-      const { count: questionCount } = await supabase
-        .from("giup_cy_exam_questions")
-        .select("id", { count: "exact", head: true })
-        .eq("exam_id", exam.id);
+    exams.map(async (exam) => {
+      let questionCount = 0;
+
+      try {
+        const supabase = await createClient();
+        const { count } = await supabase.from("giup_cy_exam_questions").select("id", { count: "exact", head: true }).eq("exam_id", exam.id);
+        questionCount = count ?? 0;
+      } catch {
+        questionCount = 0;
+      }
 
       return {
         ...exam,
-        questionCount: questionCount ?? 0,
+        questionCount,
         attemptCount: 0
       };
     })
