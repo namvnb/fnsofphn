@@ -70,32 +70,36 @@ function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuesti
 }
 
 export async function getAdminExams(user: AuthUser) {
-  const { ownerUser, supabase } = await getGiupCyWorkspace(user);
-  const { data: exams, error } = await supabase
-    .from("giup_cy_exams")
-    .select("*")
-    .eq("user_id", ownerUser.id)
-    .order("created_at", { ascending: false });
+  try {
+    const { ownerUser, supabase } = await getGiupCyWorkspace(user);
+    const { data: exams, error } = await supabase
+      .from("giup_cy_exams")
+      .select("*")
+      .eq("user_id", ownerUser.id)
+      .order("created_at", { ascending: false });
 
-  if (error) throw new Error(error.message);
+    if (error) return [];
 
-  const rows = (exams ?? []) as GiupCyExamRow[];
-  const stats = await Promise.all(
-    rows.map(async (exam) => {
-      const [{ count: questionCount }, { count: attemptCount }] = await Promise.all([
-        supabase.from("giup_cy_exam_questions").select("id", { count: "exact", head: true }).eq("exam_id", exam.id),
-        supabase.from("giup_cy_exam_attempts").select("id", { count: "exact", head: true }).eq("exam_id", exam.id)
-      ]);
+    const rows = (exams ?? []) as GiupCyExamRow[];
+    const stats = await Promise.all(
+      rows.map(async (exam) => {
+        const [{ count: questionCount }, { count: attemptCount }] = await Promise.all([
+          supabase.from("giup_cy_exam_questions").select("id", { count: "exact", head: true }).eq("exam_id", exam.id),
+          supabase.from("giup_cy_exam_attempts").select("id", { count: "exact", head: true }).eq("exam_id", exam.id)
+        ]);
 
-      return {
-        ...exam,
-        questionCount: questionCount ?? 0,
-        attemptCount: attemptCount ?? 0
-      };
-    })
-  );
+        return {
+          ...exam,
+          questionCount: questionCount ?? 0,
+          attemptCount: attemptCount ?? 0
+        };
+      })
+    );
 
-  return stats;
+    return stats;
+  } catch {
+    return [];
+  }
 }
 
 export async function getAdminExamDetail(user: AuthUser, examId: string) {
