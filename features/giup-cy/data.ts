@@ -1,18 +1,29 @@
-import { createClient } from "@/lib/supabase/server";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { GIUP_CY_OWNER_EMAIL } from "@/lib/auth/access";
+import type { AuthUser } from "@/lib/auth/guards";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { createClient } from "@/lib/supabase/server";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow } from "@/types/database";
+
+export type ExamWithStats = GiupCyExamRow & {
+  questionCount: number;
+  attemptCount: number;
+};
 
 let cachedOwnerUserId: string | null = null;
 
 export async function getGiupCyOwnerUserId(): Promise<string | null> {
   if (cachedOwnerUserId) return cachedOwnerUserId;
 
-  const supabase = await createClient();
-  const { data: ownerUserId } = await supabase.rpc("giup_cy_owner_user_id");
-  if (ownerUserId) {
-    cachedOwnerUserId = ownerUserId;
-    return cachedOwnerUserId;
+  try {
+    const supabase = await createClient();
+    const { data: ownerUserId } = await supabase.rpc("giup_cy_owner_user_id");
+    if (ownerUserId) {
+      cachedOwnerUserId = ownerUserId as string;
+      return cachedOwnerUserId;
+    }
+  } catch {
+    // Fall through to admin lookup.
   }
 
   try {
@@ -42,17 +53,28 @@ export async function getGiupCyOwnerUserId(): Promise<string | null> {
   return cachedOwnerUserId;
 }
 
-export type ExamWithStats = GiupCyExamRow & {
-  questionCount: number;
-  attemptCount: number;
-};
+const hungYenQ21Prompt =
+  "Tơ nylon-6,6 là loại tơ có tính dai, bền, mềm mại, óng mượt, ít thấm nước, giặt mau khô và được sử dụng để dệt vải may mặc, làm dây dù, đan lưới. Tơ nylon-6,6 được tổng hợp theo phương trình hóa học:\nn H2N-[CH2]6-NH2 + n HOOC-[CH2]4-COOH -> (-HN-[CH2]6-NH-CO-[CH2]4-CO-)n + 2n H2O.";
 
-export async function getAdminExams(userId: string) {
-  const supabase = await createClient();
+function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuestionRow[]) {
+  if (exam.slug !== "hung-yen-hki-hoa-12-2026-3d1d5844") return questions;
+
+  return questions.map((question) =>
+    question.question_number === 21
+      ? {
+          ...question,
+          prompt: hungYenQ21Prompt
+        }
+      : question
+  );
+}
+
+export async function getAdminExams(user: AuthUser) {
+  const { ownerUser, supabase } = await getGiupCyWorkspace(user);
   const { data: exams, error } = await supabase
     .from("giup_cy_exams")
     .select("*")
-    .eq("user_id", userId)
+    .eq("user_id", ownerUser.id)
     .order("created_at", { ascending: false });
 
   if (error) throw new Error(error.message);
@@ -76,12 +98,12 @@ export async function getAdminExams(userId: string) {
   return stats;
 }
 
-export async function getAdminExamDetail(userId: string, examId: string) {
-  const supabase = await createClient();
+export async function getAdminExamDetail(user: AuthUser, examId: string) {
+  const { ownerUser, supabase } = await getGiupCyWorkspace(user);
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")
     .select("*")
-    .eq("user_id", userId)
+    .eq("user_id", ownerUser.id)
     .eq("id", examId)
     .maybeSingle();
 
@@ -98,7 +120,7 @@ export async function getAdminExamDetail(userId: string, examId: string) {
 
   return {
     exam: exam as GiupCyExamRow,
-    questions: (questions ?? []) as GiupCyExamQuestionRow[],
+    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
     attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
   };
 }
@@ -163,7 +185,7 @@ export async function getPublicExamResults(examId: string) {
 
   return {
     exam: exam as GiupCyExamRow,
-    questions: (questions ?? []) as GiupCyExamQuestionRow[],
+    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
     attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
   };
 }
@@ -190,6 +212,6 @@ export async function getPublicExam(slug: string) {
 
   return {
     exam: exam as GiupCyExamRow,
-    questions: (questions ?? []) as GiupCyExamQuestionRow[]
+    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[])
   };
 }

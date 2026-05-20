@@ -116,6 +116,10 @@ function formatScore(attempt: GiupCyExamAttemptRow) {
   return `${attempt.score}/${attempt.max_score}`;
 }
 
+function csvCell(value: string | number) {
+  return `"${String(value).replaceAll('"', '""')}"`;
+}
+
 export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
   const router = useRouter();
   const [answers, setAnswers] = useState(() =>
@@ -163,6 +167,29 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
     window.print();
   }
 
+  function exportCsv() {
+    const rows = [
+      ["Học sinh", "Điểm", "Điểm tối đa", "Đúng", "Đã chấm", "Tổng câu", "Thời gian nộp"],
+      ...attempts.map((attempt) => [
+        attempt.student_name,
+        attempt.score,
+        attempt.max_score,
+        attempt.correct_count,
+        attempt.graded_count,
+        attempt.total_count,
+        new Date(attempt.submitted_at).toLocaleString("vi-VN")
+      ])
+    ];
+    const csv = rows.map((row) => row.map(csvCell).join(",")).join("\n");
+    const blob = new Blob([`\uFEFF${csv}`], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${exam.slug}-ket-qua.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="space-y-6">
       <section className="grid gap-4 md:grid-cols-4 print:hidden">
@@ -204,6 +231,10 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
           <Button type="button" variant="ghost" onClick={() => router.refresh()} className="print:hidden">
             <RefreshCw className="size-4" />
             Làm mới
+          </Button>
+          <Button type="button" variant="secondary" onClick={exportCsv} className="print:hidden">
+            <Download className="size-4" />
+            Tải CSV
           </Button>
           <Button type="button" variant="secondary" onClick={exportPdf} className="print:hidden">
             <Download className="size-4" />

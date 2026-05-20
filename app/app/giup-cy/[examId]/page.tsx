@@ -2,8 +2,7 @@ import { redirect } from "next/navigation";
 import { PageHeader } from "@/components/shared/page-header";
 import { PageTransition } from "@/components/shared/page-transition";
 import { GiupCyExamDetail } from "@/features/giup-cy/exam-detail";
-import { getAdminExamDetail, getGiupCyOwnerUserId } from "@/features/giup-cy/data";
-import { isGiupCyCoAdmin } from "@/lib/auth/access";
+import { getAdminExamDetail } from "@/features/giup-cy/data";
 import { requireUser } from "@/lib/auth/guards";
 
 type PageProps = {
@@ -13,10 +12,7 @@ type PageProps = {
 export default async function GiupCyExamDetailPage({ params }: PageProps) {
   const { examId } = await params;
   const user = await requireUser();
-  const effectiveUserId = isGiupCyCoAdmin(user.email)
-    ? (await getGiupCyOwnerUserId()) ?? user.id
-    : user.id;
-  const detail = await getAdminExamDetail(effectiveUserId, examId);
+  const detail = await getAdminExamDetail(user, examId);
 
   if (!detail) redirect("/app/giup-cy");
 

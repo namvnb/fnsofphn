@@ -3,33 +3,11 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { gradeAttempt } from "@/features/giup-cy/grading";
-import { getGiupCyOwnerUserId } from "@/features/giup-cy/data";
-import { isGiupCyCoAdmin } from "@/lib/auth/access";
+import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import type { GiupCyExamQuestionRow, Json } from "@/types/database";
-
-async function getEffectiveUserId(): Promise<string> {
-  const user = await requireUser();
-  if (isGiupCyCoAdmin(user.email)) {
-    return (await getGiupCyOwnerUserId()) ?? user.id;
-  }
-  return user.id;
-}
-
-// Co-admin writes must bypass RLS (their auth.uid() ≠ owner's user_id)
-async function getWriteClient() {
-  const user = await requireUser();
-  if (isGiupCyCoAdmin(user.email)) {
-    try {
-      return createAdminClient();
-    } catch {
-      return createClient();
-    }
-  }
-  return createClient();
-}
 
 type ActionResult = {
   ok: boolean;
@@ -48,6 +26,12 @@ const toggleExamSchema = z.object({
 
 const deleteExamSchema = z.object({
   examId: z.string().uuid()
+});
+
+const updateExamSettingsSchema = z.object({
+  examId: z.string().uuid(),
+  title: z.string().trim().min(1).max(180),
+  durationMinutes: z.coerce.number().int().min(1).max(300)
 });
 
 const updateAnswerSchema = z.object({
@@ -100,44 +84,41 @@ function slugify(value: string) {
     .slice(0, 64);
 }
 
-const updateExamTitleSchema = z.object({
-  examId: z.string().uuid(),
-  title: z.string().min(1).max(180)
-});
-
-export async function updateExamTitle(input: unknown): Promise<ActionResult> {
-  const parsed = updateExamTitleSchema.safeParse(input);
-  if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
-
-  const effectiveUserId = await getEffectiveUserId();
-  const supabase = await getWriteClient();
-  const { error } = await supabase
-    .from("giup_cy_exams")
-    .update({ title: parsed.data.title })
-    .eq("id", parsed.data.examId)
-    .eq("user_id", effectiveUserId);
-
-  if (error) return { ok: false, message: error.message };
-  revalidatePath("/app/giup-cy");
-  return { ok: true, message: "Đã đổi tên đề." };
-}
-
 export async function toggleExamActive(input: unknown): Promise<ActionResult> {
   const parsed = toggleExamSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
-  const effectiveUserId = await getEffectiveUserId();
-  const supabase = await getWriteClient();
-  const { error } = await supabase
+  const workspace = await getGiupCyWorkspace(await requireUser());
+  const { error } = await workspace.supabase
     .from("giup_cy_exams")
     .update({ is_active: parsed.data.isActive })
     .eq("id", parsed.data.examId)
-    .eq("user_id", effectiveUserId);
+    .eq("user_id", workspace.ownerUser.id);
 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
   revalidatePath(`/app/giup-cy/${parsed.data.examId}`);
   return { ok: true, message: parsed.data.isActive ? "Đã mở đề." : "Đã tắt đề." };
+}
+
+export async function updateExamSettings(input: unknown): Promise<ActionResult> {
+  const parsed = updateExamSettingsSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, message: "Tiêu đề hoặc thời gian chưa hợp lệ." };
+
+  const workspace = await getGiupCyWorkspace(await requireUser());
+  const { error } = await workspace.supabase
+    .from("giup_cy_exams")
+    .update({
+      title: parsed.data.title,
+      duration_minutes: parsed.data.durationMinutes
+    })
+    .eq("id", parsed.data.examId)
+    .eq("user_id", workspace.ownerUser.id);
+
+  if (error) return { ok: false, message: error.message };
+  revalidatePath("/app/giup-cy");
+  revalidatePath(`/app/giup-cy/${parsed.data.examId}`);
+  return { ok: true, message: "Đã cập nhật tiêu đề và thời gian làm bài." };
 }
 
 export async function togglePublicExamActive(input: unknown): Promise<ActionResult> {
@@ -160,13 +141,12 @@ export async function deleteExam(input: unknown): Promise<ActionResult> {
   const parsed = deleteExamSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Không xác định được đề cần xóa." };
 
-  const effectiveUserId = await getEffectiveUserId();
-  const supabase = await getWriteClient();
-  const { error } = await supabase
+  const workspace = await getGiupCyWorkspace(await requireUser());
+  const { error } = await workspace.supabase
     .from("giup_cy_exams")
     .delete()
     .eq("id", parsed.data.examId)
-    .eq("user_id", effectiveUserId);
+    .eq("user_id", workspace.ownerUser.id);
 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
@@ -178,18 +158,17 @@ export async function updateQuestionAnswer(input: unknown): Promise<ActionResult
   if (!parsed.success) return { ok: false, message: "Dữ liệu đáp án chưa hợp lệ." };
 
   try {
-    const effectiveUserId = await getEffectiveUserId();
-    const supabase = await getWriteClient();
-    const { data: exam } = await supabase
+    const workspace = await getGiupCyWorkspace(await requireUser());
+    const { data: exam } = await workspace.supabase
       .from("giup_cy_exams")
       .select("id")
       .eq("id", parsed.data.examId)
-      .eq("user_id", effectiveUserId)
+      .eq("user_id", workspace.ownerUser.id)
       .maybeSingle();
 
     if (!exam) return { ok: false, message: "Không tìm thấy đề." };
 
-    const { error } = await supabase
+    const { error } = await workspace.supabase
       .from("giup_cy_exam_questions")
       .update({
         correct_answer: parseCorrectAnswer(parsed.data.questionType, parsed.data.correctAnswer),
@@ -262,15 +241,15 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
 const HUNG_YEN_SLUG = "hung-yen-hki-hoa-12-2026-3d1d5844";
 
 const HUNG_YEN_ANSWER_KEY: Array<{ question_number: number; correct_answer: Json; points: number }> = [
-  { question_number: 1,  correct_answer: "C", points: 0.25 },
-  { question_number: 2,  correct_answer: "B", points: 0.25 },
-  { question_number: 3,  correct_answer: "A", points: 0.25 },
-  { question_number: 4,  correct_answer: "C", points: 0.25 },
-  { question_number: 5,  correct_answer: "A", points: 0.25 },
-  { question_number: 6,  correct_answer: "A", points: 0.25 },
-  { question_number: 7,  correct_answer: "C", points: 0.25 },
-  { question_number: 8,  correct_answer: "C", points: 0.25 },
-  { question_number: 9,  correct_answer: "B", points: 0.25 },
+  { question_number: 1, correct_answer: "C", points: 0.25 },
+  { question_number: 2, correct_answer: "B", points: 0.25 },
+  { question_number: 3, correct_answer: "A", points: 0.25 },
+  { question_number: 4, correct_answer: "C", points: 0.25 },
+  { question_number: 5, correct_answer: "A", points: 0.25 },
+  { question_number: 6, correct_answer: "A", points: 0.25 },
+  { question_number: 7, correct_answer: "C", points: 0.25 },
+  { question_number: 8, correct_answer: "C", points: 0.25 },
+  { question_number: 9, correct_answer: "B", points: 0.25 },
   { question_number: 10, correct_answer: "B", points: 0.25 },
   { question_number: 11, correct_answer: "A", points: 0.25 },
   { question_number: 12, correct_answer: "A", points: 0.25 },
@@ -280,34 +259,33 @@ const HUNG_YEN_ANSWER_KEY: Array<{ question_number: number; correct_answer: Json
   { question_number: 16, correct_answer: "C", points: 0.25 },
   { question_number: 17, correct_answer: "C", points: 0.25 },
   { question_number: 18, correct_answer: "B", points: 0.25 },
-  { question_number: 19, correct_answer: { a: true,  b: true,  c: false, d: false } as Json, points: 1.00 },
-  { question_number: 20, correct_answer: { a: false, b: true,  c: false, d: true  } as Json, points: 1.00 },
-  { question_number: 21, correct_answer: { a: true,  b: false, c: true,  d: true  } as Json, points: 1.00 },
-  { question_number: 22, correct_answer: { a: false, b: true,  c: true,  d: false } as Json, points: 1.00 },
+  { question_number: 19, correct_answer: { a: true, b: true, c: false, d: false } as Json, points: 1 },
+  { question_number: 20, correct_answer: { a: false, b: true, c: false, d: true } as Json, points: 1 },
+  { question_number: 21, correct_answer: { a: true, b: false, c: true, d: true } as Json, points: 1 },
+  { question_number: 22, correct_answer: { a: false, b: true, c: true, d: false } as Json, points: 1 },
   { question_number: 23, correct_answer: "10,7", points: 0.25 },
   { question_number: 24, correct_answer: "3003", points: 0.25 },
-  { question_number: 25, correct_answer: "34",   points: 0.25 },
-  { question_number: 26, correct_answer: "3",    points: 0.25 },
-  { question_number: 27, correct_answer: "126",  points: 0.25 },
-  { question_number: 28, correct_answer: "2",    points: 0.25 },
+  { question_number: 25, correct_answer: "34", points: 0.25 },
+  { question_number: 26, correct_answer: "3", points: 0.25 },
+  { question_number: 27, correct_answer: "126", points: 0.25 },
+  { question_number: 28, correct_answer: "2", points: 0.25 }
 ];
 
 export async function applyHungYenAnswerKey(examId: string): Promise<ActionResult> {
   try {
-    const effectiveUserId = await getEffectiveUserId();
-    const supabase = await getWriteClient();
+    const workspace = await getGiupCyWorkspace(await requireUser());
 
-    const { data: exam } = await supabase
+    const { data: exam } = await workspace.supabase
       .from("giup_cy_exams")
       .select("id,slug")
       .eq("id", examId)
-      .eq("user_id", effectiveUserId)
+      .eq("user_id", workspace.ownerUser.id)
       .maybeSingle();
 
     if (!exam) return { ok: false, message: "Không tìm thấy đề." };
     if (exam.slug !== HUNG_YEN_SLUG) return { ok: false, message: "Đề này không có đáp án tích hợp." };
 
-    const { data: questions } = await supabase
+    const { data: questions } = await workspace.supabase
       .from("giup_cy_exam_questions")
       .select("id,question_number")
       .eq("exam_id", examId);
@@ -320,7 +298,7 @@ export async function applyHungYenAnswerKey(examId: string): Promise<ActionResul
     for (const entry of HUNG_YEN_ANSWER_KEY) {
       const qId = qMap.get(entry.question_number);
       if (!qId) continue;
-      const { error } = await supabase
+      const { error } = await workspace.supabase
         .from("giup_cy_exam_questions")
         .update({ correct_answer: entry.correct_answer, points: entry.points, needs_review: false })
         .eq("id", qId);
@@ -354,14 +332,13 @@ export async function importExam(input: unknown): Promise<ActionResult> {
       })
     );
     const questions = questionSchema.parse(rawQuestions);
-    const effectiveUserId = await getEffectiveUserId();
-    const supabase = await getWriteClient();
+    const workspace = await getGiupCyWorkspace(await requireUser());
     const slug = `${slugify(parsed.data.title)}-${Date.now().toString(36)}`;
 
-    const { data: exam, error: examError } = await supabase
+    const { data: exam, error: examError } = await workspace.supabase
       .from("giup_cy_exams")
       .insert({
-        user_id: effectiveUserId,
+        user_id: workspace.ownerUser.id,
         title: parsed.data.title,
         description: parsed.data.description || "Đề được import từ JSON chuẩn.",
         subject: "Hóa học",
@@ -374,7 +351,7 @@ export async function importExam(input: unknown): Promise<ActionResult> {
 
     if (examError) return { ok: false, message: examError.message };
 
-    const { error: questionError } = await supabase.from("giup_cy_exam_questions").insert(
+    const { error: questionError } = await workspace.supabase.from("giup_cy_exam_questions").insert(
       questions.map((question, index) => ({
         exam_id: exam.id,
         section: question.section,

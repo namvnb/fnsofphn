@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
 import Image from "next/image";
-import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Flag, RotateCcw, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, RotateCcw, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -33,6 +33,13 @@ type SubmitResult = {
   totalCount?: number;
 };
 
+type DraftState = {
+  studentName?: string;
+  answers?: Record<string, Json>;
+  marked?: Record<string, boolean>;
+  startedAt?: number;
+};
+
 function optionsFor(question: GiupCyExamQuestionRow) {
   return Array.isArray(question.options) ? (question.options as OptionItem[]) : [];
 }
@@ -52,17 +59,26 @@ function questionTypeLabel(type: GiupCyExamQuestionRow["question_type"]) {
   return type;
 }
 
-function readDraft(storageKey: string) {
+function formatDuration(seconds: number) {
+  const safeSeconds = Math.max(0, seconds);
+  const hours = Math.floor(safeSeconds / 3600);
+  const minutes = Math.floor((safeSeconds % 3600) / 60);
+  const restSeconds = safeSeconds % 60;
+
+  if (hours > 0) {
+    return `${hours}:${String(minutes).padStart(2, "0")}:${String(restSeconds).padStart(2, "0")}`;
+  }
+
+  return `${minutes}:${String(restSeconds).padStart(2, "0")}`;
+}
+
+function readDraft(storageKey: string): DraftState {
   if (typeof window === "undefined") return {};
 
   try {
     const raw = window.localStorage.getItem(storageKey);
     if (!raw) return {};
-    return JSON.parse(raw) as {
-      studentName?: string;
-      answers?: Record<string, Json>;
-      marked?: Record<string, boolean>;
-    };
+    return JSON.parse(raw) as DraftState;
   } catch {
     window.localStorage.removeItem(storageKey);
     return {};
@@ -72,9 +88,13 @@ function readDraft(storageKey: string) {
 export function ExamTaker({ exam, questions }: Props) {
   const storageKey = `giup-cy:${exam.id}:draft`;
   const resultKey = `giup-cy:${exam.id}:result`;
-  const [studentName, setStudentName] = useState(() => readDraft(storageKey).studentName ?? "");
-  const [answers, setAnswers] = useState<Record<string, Json>>(() => readDraft(storageKey).answers ?? {});
-  const [marked, setMarked] = useState<Record<string, boolean>>(() => readDraft(storageKey).marked ?? {});
+  const [initialDraft] = useState(() => readDraft(storageKey));
+  const durationSeconds = Math.max(0, exam.duration_minutes * 60);
+  const [studentName, setStudentName] = useState(() => initialDraft.studentName ?? "");
+  const [answers, setAnswers] = useState<Record<string, Json>>(() => initialDraft.answers ?? {});
+  const [marked, setMarked] = useState<Record<string, boolean>>(() => initialDraft.marked ?? {});
+  const [startedAt, setStartedAt] = useState(() => initialDraft.startedAt ?? Date.now());
+  const [now, setNow] = useState(() => Date.now());
   const [currentQuestionId, setCurrentQuestionId] = useState(questions[0]?.id ?? "");
   const [result, setResult] = useState<(SubmitResult & { studentName: string }) | null>(() => {
     if (typeof window === "undefined") return null;
@@ -87,10 +107,14 @@ export function ExamTaker({ exam, questions }: Props) {
   });
   const [isPending, startTransition] = useTransition();
   const questionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const autoSubmittedRef = useRef(false);
 
   const currentIndex = Math.max(0, questions.findIndex((question) => question.id === currentQuestionId));
   const doneCount = questions.filter((question) => answerDone(question, answers)).length;
   const unansweredCount = questions.length - doneCount;
+  const elapsedSeconds = Math.floor((now - startedAt) / 1000);
+  const remainingSeconds = Math.max(0, durationSeconds - elapsedSeconds);
+  const isTimeLow = remainingSeconds <= 5 * 60;
   const groupedQuestions = useMemo(
     () =>
       questions.reduce<Record<string, GiupCyExamQuestionRow[]>>((groups, question) => {
@@ -103,11 +127,16 @@ export function ExamTaker({ exam, questions }: Props) {
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
-      window.localStorage.setItem(storageKey, JSON.stringify({ studentName, answers, marked }));
+      window.localStorage.setItem(storageKey, JSON.stringify({ studentName, answers, marked, startedAt }));
     }, 350);
 
     return () => window.clearTimeout(timeout);
-  }, [answers, marked, storageKey, studentName]);
+  }, [answers, marked, startedAt, storageKey, studentName]);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(interval);
+  }, []);
 
   function setAnswer(questionId: string, value: Json) {
     setAnswers((current) => ({ ...current, [questionId]: value }));
@@ -133,19 +162,19 @@ export function ExamTaker({ exam, questions }: Props) {
     window.localStorage.removeItem(storageKey);
     setAnswers({});
     setMarked({});
+    setStartedAt(Date.now());
+    setNow(Date.now());
   }
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (unansweredCount > 0 && !window.confirm(`Còn ${unansweredCount} câu chưa trả lời. Bạn vẫn muốn nộp bài?`)) {
+  const submitAttempt = useCallback(({ skipConfirm = false }: { skipConfirm?: boolean } = {}) => {
+    if (!skipConfirm && unansweredCount > 0 && !window.confirm(`Còn ${unansweredCount} câu chưa trả lời. Bạn vẫn muốn nộp bài?`)) {
       return;
     }
 
     startTransition(async () => {
       const response = await submitExamAttempt({
         examId: exam.id,
-        studentName,
+        studentName: studentName.trim() || "Thí sinh chưa nhập tên",
         answers
       });
 
@@ -166,7 +195,20 @@ export function ExamTaker({ exam, questions }: Props) {
         toast.error(response.message);
       }
     });
+  }, [answers, exam.id, resultKey, startTransition, storageKey, studentName, unansweredCount]);
+
+  function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    submitAttempt();
   }
+
+  useEffect(() => {
+    if (durationSeconds <= 0 || remainingSeconds > 0 || result || isPending || autoSubmittedRef.current) return;
+
+    autoSubmittedRef.current = true;
+    toast.warning("Đã hết thời gian làm bài. Hệ thống đang nộp bài.");
+    submitAttempt({ skipConfirm: true });
+  }, [durationSeconds, isPending, remainingSeconds, result, submitAttempt]);
 
   if (result) {
     return (
@@ -207,6 +249,10 @@ export function ExamTaker({ exam, questions }: Props) {
             <div className="mb-2 flex flex-wrap items-center gap-2">
               <Badge variant="cyan">{exam.subject}</Badge>
               <Badge variant="neutral">{exam.duration_minutes} phút</Badge>
+              <Badge variant={isTimeLow ? "gold" : "neutral"}>
+                <Clock className="size-3" />
+                {formatDuration(remainingSeconds)}
+              </Badge>
               <Badge variant={unansweredCount ? "gold" : "cyan"}>
                 Đã làm {doneCount}/{questions.length}
               </Badge>

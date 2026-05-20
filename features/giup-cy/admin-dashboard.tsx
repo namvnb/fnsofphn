@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { CheckCircle2, Clipboard, Eye, FileJson, Pencil, Power, Trash2 } from "lucide-react";
+import { CheckCircle2, Clipboard, Eye, FileJson, Power, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { PremiumCard } from "@/components/shared/premium-card";
-import { deleteExam, importExam, toggleExamActive, updateExamTitle } from "@/features/giup-cy/actions";
+import { deleteExam, importExam, toggleExamActive, updateExamSettings } from "@/features/giup-cy/actions";
 import type { ExamWithStats } from "@/features/giup-cy/data";
 
 type Props = {
@@ -21,12 +21,13 @@ export function GiupCyAdminDashboard({ exams }: Props) {
   const router = useRouter();
   const [visibleExams, setVisibleExams] = useState(exams);
   const [pendingId, setPendingId] = useState<string | null>(null);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [editingTitle, setEditingTitle] = useState("");
   const [isImporting, startImport] = useTransition();
   const [importTitle, setImportTitle] = useState("");
   const [importDuration, setImportDuration] = useState("50");
   const [importJson, setImportJson] = useState("");
+  const [settings, setSettings] = useState(() =>
+    Object.fromEntries(exams.map((exam) => [exam.id, { title: exam.title, durationMinutes: String(exam.duration_minutes) }]))
+  );
 
   async function copyLink(slug: string) {
     const url = `${window.location.origin}/exam/${slug}`;
@@ -50,28 +51,6 @@ export function GiupCyAdminDashboard({ exams }: Props) {
     });
   }
 
-  function startRename(exam: ExamWithStats) {
-    setEditingId(exam.id);
-    setEditingTitle(exam.title);
-  }
-
-  function saveRename(exam: ExamWithStats) {
-    if (!editingTitle.trim() || editingTitle === exam.title) { setEditingId(null); return; }
-    setPendingId(exam.id);
-    startImport(async () => {
-      const result = await updateExamTitle({ examId: exam.id, title: editingTitle.trim() });
-      setPendingId(null);
-      setEditingId(null);
-      if (result.ok) {
-        setVisibleExams((current) => current.map((item) => (item.id === exam.id ? { ...item, title: editingTitle.trim() } : item)));
-        toast.success(result.message);
-        router.refresh();
-      } else {
-        toast.error(result.message);
-      }
-    });
-  }
-
   function remove(exam: ExamWithStats) {
     if (!window.confirm(`Xóa đề "${exam.title}" và toàn bộ bài làm?`)) return;
     setPendingId(exam.id);
@@ -81,6 +60,37 @@ export function GiupCyAdminDashboard({ exams }: Props) {
       if (result.ok) {
         setVisibleExams((current) => current.filter((item) => item.id !== exam.id));
         toast.success(result.message);
+      } else {
+        toast.error(result.message);
+      }
+    });
+  }
+
+  function saveSettings(exam: ExamWithStats) {
+    const next = settings[exam.id] ?? { title: exam.title, durationMinutes: String(exam.duration_minutes) };
+    setPendingId(exam.id);
+    startImport(async () => {
+      const result = await updateExamSettings({
+        examId: exam.id,
+        title: next.title,
+        durationMinutes: next.durationMinutes
+      });
+
+      setPendingId(null);
+      if (result.ok) {
+        setVisibleExams((current) =>
+          current.map((item) =>
+            item.id === exam.id
+              ? {
+                  ...item,
+                  title: next.title,
+                  duration_minutes: Number(next.durationMinutes)
+                }
+              : item
+          )
+        );
+        toast.success(result.message);
+        router.refresh();
       } else {
         toast.error(result.message);
       }
@@ -118,28 +128,46 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                   <Badge variant="neutral">{exam.questionCount} câu</Badge>
                   <Badge variant="neutral">{exam.attemptCount} bài nộp</Badge>
                 </div>
-                {editingId === exam.id ? (
-                  <div className="flex items-center gap-2">
-                    <Input
-                      autoFocus
-                      value={editingTitle}
-                      onChange={(e) => setEditingTitle(e.target.value)}
-                      onKeyDown={(e) => { if (e.key === "Enter") saveRename(exam); if (e.key === "Escape") setEditingId(null); }}
-                      className="text-xl font-bold"
-                    />
-                    <Button size="sm" onClick={() => saveRename(exam)} disabled={pendingId === exam.id}>Lưu</Button>
-                    <Button size="sm" variant="ghost" onClick={() => setEditingId(null)}>Hủy</Button>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <h2 className="text-xl font-bold text-text-primary">{exam.title}</h2>
-                    <button type="button" onClick={() => startRename(exam)} className="text-text-secondary hover:text-text-primary" aria-label="Đổi tên">
-                      <Pencil className="size-4" />
-                    </button>
-                  </div>
-                )}
+                <h2 className="text-xl font-bold text-text-primary">{exam.title}</h2>
                 <p className="mt-2 text-sm leading-6 text-text-secondary">{exam.description}</p>
-                <p className="mt-2 text-xs text-text-secondary">Nguồn: {exam.source_file_name ?? "Import thủ công"}</p>
+                <p className="mt-2 text-xs text-text-secondary">
+                  {exam.duration_minutes} phút · Nguồn: {exam.source_file_name ?? "Import thủ công"}
+                </p>
+                <div className="mt-4 grid gap-2 md:grid-cols-[minmax(0,1fr)_120px_auto]">
+                  <Input
+                    value={settings[exam.id]?.title ?? exam.title}
+                    onChange={(event) =>
+                      setSettings((current) => ({
+                        ...current,
+                        [exam.id]: {
+                          title: event.target.value,
+                          durationMinutes: current[exam.id]?.durationMinutes ?? String(exam.duration_minutes)
+                        }
+                      }))
+                    }
+                    aria-label={`Sửa tiêu đề ${exam.title}`}
+                  />
+                  <Input
+                    type="number"
+                    min={1}
+                    max={300}
+                    value={settings[exam.id]?.durationMinutes ?? String(exam.duration_minutes)}
+                    onChange={(event) =>
+                      setSettings((current) => ({
+                        ...current,
+                        [exam.id]: {
+                          title: current[exam.id]?.title ?? exam.title,
+                          durationMinutes: event.target.value
+                        }
+                      }))
+                    }
+                    aria-label={`Sửa thời gian ${exam.title}`}
+                  />
+                  <Button type="button" variant="secondary" size="sm" disabled={pendingId === exam.id} onClick={() => saveSettings(exam)}>
+                    <Save className="size-4" />
+                    Lưu
+                  </Button>
+                </div>
               </div>
               <div className="flex flex-wrap gap-2">
                 <Button type="button" variant="secondary" size="sm" onClick={() => copyLink(exam.slug)}>
