@@ -6,6 +6,7 @@ const HIDDEN_NAV_ITEMS: Record<string, string[]> = {
 };
 
 export const GIUP_CY_OWNER_EMAIL = "fnsofphn@gmail.com";
+export const GIUP_CY_OWNER_USER_ID = "3d1d5844-9d7c-4749-9add-2197dc34faa6";
 export const GIUP_CY_SHARED_OWNER_EMAIL = GIUP_CY_OWNER_EMAIL;
 export const GIUP_CY_SHARED_OWNER_ALIAS = "fnsofphn";
 

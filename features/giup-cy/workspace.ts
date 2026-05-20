@@ -1,4 +1,4 @@
-import { GIUP_CY_SHARED_OWNER_ALIAS, GIUP_CY_SHARED_OWNER_EMAIL, isGiupCySharedManagerEmail } from "@/lib/auth/access";
+import { GIUP_CY_OWNER_USER_ID, GIUP_CY_SHARED_OWNER_ALIAS, GIUP_CY_SHARED_OWNER_EMAIL, isGiupCySharedManagerEmail } from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -20,7 +20,7 @@ function tryCreateAdminClient() {
 }
 
 async function findSharedOwnerUser(): Promise<AuthUser | null> {
-  const ownerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID;
+  const ownerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID || GIUP_CY_OWNER_USER_ID;
   const ownerEmail = (process.env.GIUP_CY_SHARED_OWNER_EMAIL ?? GIUP_CY_SHARED_OWNER_EMAIL).toLowerCase();
   const ownerAlias = (process.env.GIUP_CY_SHARED_OWNER_ALIAS ?? GIUP_CY_SHARED_OWNER_ALIAS).toLowerCase();
 

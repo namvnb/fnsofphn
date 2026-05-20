@@ -1,5 +1,5 @@
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
-import { GIUP_CY_OWNER_EMAIL } from "@/lib/auth/access";
+import { GIUP_CY_OWNER_EMAIL, GIUP_CY_OWNER_USER_ID } from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -13,6 +13,9 @@ export type ExamWithStats = GiupCyExamRow & {
 let cachedOwnerUserId: string | null = null;
 
 export async function getGiupCyOwnerUserId(): Promise<string | null> {
+  if (cachedOwnerUserId) return cachedOwnerUserId;
+
+  cachedOwnerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID || GIUP_CY_OWNER_USER_ID;
   if (cachedOwnerUserId) return cachedOwnerUserId;
 
   try {
