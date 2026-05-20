@@ -130,10 +130,15 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
   );
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [openAttemptId, setOpenAttemptId] = useState<string | null>(attempts[0]?.id ?? null);
+  const [printAttemptId, setPrintAttemptId] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const pdfUrl = getExamPdfUrl(exam);
 
   const autoGradeCount = useMemo(() => questions.filter((question) => question.correct_answer !== null && question.correct_answer !== "").length, [questions]);
+  const printAttempts = useMemo(
+    () => (printAttemptId ? attempts.filter((attempt) => attempt.id === printAttemptId) : attempts),
+    [attempts, printAttemptId]
+  );
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -142,6 +147,12 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
 
     return () => window.clearInterval(interval);
   }, [router]);
+
+  useEffect(() => {
+    const resetPrintTarget = () => setPrintAttemptId(null);
+    window.addEventListener("afterprint", resetPrintTarget);
+    return () => window.removeEventListener("afterprint", resetPrintTarget);
+  }, []);
 
   function saveAnswer(question: GiupCyExamQuestionRow) {
     setPendingId(question.id);
@@ -164,7 +175,13 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
   }
 
   function exportPdf() {
-    window.print();
+    setPrintAttemptId(null);
+    window.setTimeout(() => window.print(), 0);
+  }
+
+  function exportAttemptPdf(attemptId: string) {
+    setPrintAttemptId(attemptId);
+    window.setTimeout(() => window.print(), 0);
   }
 
   function exportCsv() {
@@ -251,6 +268,7 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
                 <th className="px-3 py-2">Đúng</th>
                 <th className="px-3 py-2">Đã chấm</th>
                 <th className="px-3 py-2">Thời gian nộp</th>
+                <th className="px-3 py-2 text-right">PDF</th>
               </tr>
             </thead>
             <tbody>
@@ -262,7 +280,13 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
                   <td className="px-3 py-3">
                     {attempt.graded_count}/{attempt.total_count}
                   </td>
-                  <td className="rounded-r-2xl px-3 py-3">{new Date(attempt.submitted_at).toLocaleString("vi-VN")}</td>
+                  <td className="px-3 py-3">{new Date(attempt.submitted_at).toLocaleString("vi-VN")}</td>
+                  <td className="rounded-r-2xl px-3 py-3 text-right">
+                    <Button type="button" variant="ghost" size="sm" onClick={() => exportAttemptPdf(attempt.id)} className="print:hidden">
+                      <Download className="size-4" />
+                      PDF
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -320,11 +344,13 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
         <div className="mb-6">
           <p className="text-sm font-semibold text-text-secondary">Life & Work OS / Giúp Cy</p>
           <h1 className="mt-2 text-2xl font-bold text-text-primary">{exam.title}</h1>
-          <p className="mt-2 text-sm text-text-secondary">Báo cáo kết quả chi tiết từng câu</p>
+          <p className="mt-2 text-sm text-text-secondary">
+            {printAttemptId ? "Báo cáo kết quả riêng từng học sinh" : "Báo cáo kết quả chi tiết từng câu"}
+          </p>
         </div>
 
         <div className="space-y-8">
-          {attempts.map((attempt) => {
+          {printAttempts.map((attempt) => {
             const details = parseAttemptDetails(attempt);
             return (
               <section key={attempt.id} className="break-inside-avoid rounded-2xl border border-slate-300 bg-white p-4">
