@@ -98,9 +98,7 @@ function getWeek2ExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name"
 function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
   const week2Exam = getWeek2ExamPatch(exam);
   if (!week2Exam) return exam;
-  const currentTitle = exam.title.trim();
   const currentDescription = (exam.description ?? "").trim();
-  const shouldPatchTitle = !currentTitle || /^22\.05\.\d+$/.test(currentTitle);
   const shouldPatchDescription =
     !currentDescription ||
     currentDescription === defaultWeek2Description ||
@@ -109,7 +107,6 @@ function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
 
   return {
     ...exam,
-    title: shouldPatchTitle ? week2Exam.title : exam.title,
     description: shouldPatchDescription ? week2Exam.description : exam.description,
     subject: week2Exam.subject,
     source_file_name: week2Exam.source_file_name
