@@ -1,9 +1,10 @@
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
+import week2ExamData from "@/features/giup-cy/week-2-exams.json";
 import { GIUP_CY_OWNER_EMAIL, GIUP_CY_OWNER_USER_ID, isGiupCySharedManagerEmail } from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
-import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow } from "@/types/database";
+import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 export type ExamWithStats = GiupCyExamRow & {
   questionCount: number;
@@ -59,7 +60,70 @@ export async function getGiupCyOwnerUserId(): Promise<string | null> {
 const hungYenQ21Prompt =
   "Tơ nylon-6,6 là loại tơ có tính dai, bền, mềm mại, óng mượt, ít thấm nước, giặt mau khô và được sử dụng để dệt vải may mặc, làm dây dù, đan lưới. Tơ nylon-6,6 được tổng hợp theo phương trình hóa học:\nn H2N-[CH2]6-NH2 + n HOOC-[CH2]4-COOH -> (-HN-[CH2]6-NH-CO-[CH2]4-CO-)n + 2n H2O.";
 
+
+type Week2Question = {
+  section: string;
+  question_number: number;
+  question_type: GiupCyExamQuestionRow["question_type"];
+  prompt: string;
+  options: Json;
+  points: number;
+  sort_order: number;
+};
+
+type Week2Exam = {
+  title: string;
+  description: string;
+  subject: string;
+  duration_minutes: number;
+  slugSuffix: string;
+  source_file_name: string;
+  questions: Week2Question[];
+};
+
+const week2Exams = week2ExamData as Week2Exam[];
+
+function getWeek2ExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
+  const slug = exam.slug.toLowerCase();
+  const source = (exam.source_file_name ?? "").toLowerCase();
+  return (
+    week2Exams.find((sample) => slug.startsWith(sample.slugSuffix.toLowerCase())) ??
+    week2Exams.find((sample) => source === sample.source_file_name.toLowerCase()) ??
+    null
+  );
+}
+
+function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
+  const week2Exam = getWeek2ExamPatch(exam);
+  if (!week2Exam) return exam;
+
+  return {
+    ...exam,
+    title: week2Exam.title,
+    description: week2Exam.description,
+    subject: week2Exam.subject,
+    duration_minutes: week2Exam.duration_minutes,
+    source_file_name: week2Exam.source_file_name
+  };
+}
 function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuestionRow[]) {
+  const week2Exam = getWeek2ExamPatch(exam);
+  if (week2Exam) {
+    const sampleByNumber = new Map(week2Exam.questions.map((question) => [question.question_number, question]));
+    return questions.map((question) => {
+      const sample = sampleByNumber.get(question.question_number);
+      if (!sample) return question;
+      return {
+        ...question,
+        section: sample.section,
+        question_type: sample.question_type,
+        prompt: sample.prompt,
+        options: sample.options,
+        points: sample.points,
+        sort_order: sample.sort_order
+      };
+    });
+  }
   if (exam.slug !== "hung-yen-hki-hoa-12-2026-3d1d5844") return questions;
 
   return questions.map((question) =>
@@ -102,7 +166,7 @@ export async function getAdminExams(user: AuthUser) {
         ]);
 
         return {
-          ...exam,
+          ...normalizeExam(exam),
           questionCount: questionCount ?? 0,
           attemptCount: attemptCount ?? 0
         };
@@ -136,7 +200,7 @@ export async function getAdminExamDetail(user: AuthUser, examId: string) {
   if (attemptError) throw new Error(attemptError.message);
 
   return {
-    exam: exam as GiupCyExamRow,
+    exam: normalizeExam(exam as GiupCyExamRow),
     questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
     attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
   };
@@ -179,7 +243,7 @@ export async function getPublicActiveExams() {
       }
 
       return {
-        ...exam,
+        ...normalizeExam(exam),
         questionCount,
         attemptCount: 0
       };
@@ -201,7 +265,7 @@ export async function getPublicExamResults(examId: string) {
   if (!exam) return null;
 
   return {
-    exam: exam as GiupCyExamRow,
+    exam: normalizeExam(exam as GiupCyExamRow),
     questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
     attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
   };
@@ -228,7 +292,7 @@ export async function getPublicExam(slug: string) {
   if (questionError) throw new Error(questionError.message);
 
   return {
-    exam: exam as GiupCyExamRow,
+    exam: normalizeExam(exam as GiupCyExamRow),
     questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[])
   };
 }
