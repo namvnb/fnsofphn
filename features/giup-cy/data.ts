@@ -149,6 +149,15 @@ function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuesti
   return includeAnswerKeys ? applyWeek2AnswerKeys(exam, hungYenQuestions) : hungYenQuestions;
 }
 
+function stripAnswerKeys(questions: GiupCyExamQuestionRow[]) {
+  return questions.map((question) => ({
+    ...question,
+    correct_answer: null,
+    explanation: null,
+    needs_review: true
+  }));
+}
+
 function normalizeExamAttempts(questions: GiupCyExamQuestionRow[], attempts: GiupCyExamAttemptRow[]) {
   if (!questions.some((question) => question.correct_answer !== null && question.correct_answer !== "")) return attempts;
 
@@ -331,6 +340,6 @@ export async function getPublicExam(slug: string) {
 
   return {
     exam: normalizeExam(exam as GiupCyExamRow),
-    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[], { includeAnswerKeys: false })
+    questions: stripAnswerKeys(normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[], { includeAnswerKeys: false }))
   };
 }
