@@ -130,12 +130,37 @@ function stripFormulaCharge(value: string) {
     return { body: parenthesizedCharge[1], charge: parenthesizedCharge[2], hasCharge: true };
   }
 
+  const compactPolyatomicCharge = value.match(/^(.*[A-Z][A-Za-z]*)(\d)([+-])$/);
+  if (compactPolyatomicCharge && countElementSymbols(compactPolyatomicCharge[1]) > 1) {
+    return { body: `${compactPolyatomicCharge[1]}${compactPolyatomicCharge[2]}`, charge: compactPolyatomicCharge[3], hasCharge: true };
+  }
+
   const inlineCharge = value.match(/^(.*?)(\d*[+-])$/);
   if (inlineCharge && inlineCharge[1]) {
     return { body: inlineCharge[1].trimEnd(), charge: inlineCharge[2], hasCharge: true };
   }
 
   return { body: value, charge: "", hasCharge: false };
+}
+
+function countElementSymbols(value: string) {
+  let count = 0;
+
+  for (let index = 0; index < value.length; index += 1) {
+    const char = value[index];
+    const next = value[index + 1];
+    if (!/[A-Z]/.test(char)) continue;
+
+    const symbol = next && /[a-z]/.test(next) ? `${char}${next}` : char;
+    if (elementSymbols.has(symbol)) {
+      count += 1;
+      index += symbol.length - 1;
+    } else if (elementSymbols.has(char)) {
+      count += 1;
+    }
+  }
+
+  return count;
 }
 
 function splitStateSuffix(value: string) {
