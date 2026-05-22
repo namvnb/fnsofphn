@@ -1,12 +1,18 @@
 import { format } from "date-fns";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { defaultEnergyActivities, defaultProfile } from "@/lib/constants/profile";
 import type { AuthUser } from "@/lib/auth/guards";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { isGiupCyCoAdmin } from "@/lib/auth/access";
 
 export async function seedGiupCyExamsForUser(user: AuthUser) {
-  const supabase = await createClient();
+  let supabase: Awaited<ReturnType<typeof createClient>>;
+  try {
+    supabase = createAdminClient() as Awaited<ReturnType<typeof createClient>>;
+  } catch {
+    supabase = await createClient();
+  }
 
   for (const sampleExam of sampleGiupCyExams) {
     const slug = `${sampleExam.slugSuffix}-${user.id.slice(0, 8)}`;
