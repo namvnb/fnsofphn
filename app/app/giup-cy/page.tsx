@@ -6,18 +6,17 @@ import { GiupCyAdminDashboard } from "@/features/giup-cy/admin-dashboard";
 import { getAdminExams } from "@/features/giup-cy/data";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { seedGiupCyExamsForUser } from "@/lib/auth/bootstrap";
-import { isGiupCySharedManagerEmail } from "@/lib/auth/access";
 import { requireUser } from "@/lib/auth/guards";
+import { resolveGiupCyWorkspaceUser } from "@/features/giup-cy/workspace";
 
 export default async function GiupCyPage() {
   const user = await requireUser();
-  const isSharedManager = isGiupCySharedManagerEmail(user.email);
   let exams = await getAdminExams(user);
   const sampleSources = new Set(sampleGiupCyExams.map((exam) => exam.source_file_name));
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
 
-  if (!isSharedManager && existingSampleCount < sampleGiupCyExams.length) {
-    await seedGiupCyExamsForUser(user);
+  if (existingSampleCount < sampleGiupCyExams.length) {
+    await seedGiupCyExamsForUser(await resolveGiupCyWorkspaceUser(user));
     exams = await getAdminExams(user);
   }
 
