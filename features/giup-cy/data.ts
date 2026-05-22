@@ -1,5 +1,7 @@
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import week2ExamData from "@/features/giup-cy/week-2-exams.json";
+import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
+import { gradeAttempt } from "@/features/giup-cy/grading";
 import { GIUP_CY_OWNER_EMAIL, GIUP_CY_OWNER_USER_ID, isGiupCySharedManagerEmail } from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -112,11 +114,12 @@ function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
     source_file_name: week2Exam.source_file_name
   };
 }
-function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuestionRow[]) {
+function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuestionRow[], { includeAnswerKeys = true } = {}) {
+  let normalizedQuestions = questions;
   const week2Exam = getWeek2ExamPatch(exam);
   if (week2Exam) {
     const sampleByNumber = new Map(week2Exam.questions.map((question) => [question.question_number, question]));
-    return questions.map((question) => {
+    normalizedQuestions = questions.map((question) => {
       const sample = sampleByNumber.get(question.question_number);
       if (!sample) return question;
       return {
@@ -130,9 +133,11 @@ function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuesti
       };
     });
   }
-  if (exam.slug !== "hung-yen-hki-hoa-12-2026-3d1d5844") return questions;
+  if (exam.slug !== "hung-yen-hki-hoa-12-2026-3d1d5844") {
+    return includeAnswerKeys ? applyWeek2AnswerKeys(exam, normalizedQuestions) : normalizedQuestions;
+  }
 
-  return questions.map((question) =>
+  const hungYenQuestions = normalizedQuestions.map((question) =>
     question.question_number === 21
       ? {
           ...question,
@@ -140,6 +145,29 @@ function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuesti
         }
       : question
   );
+
+  return includeAnswerKeys ? applyWeek2AnswerKeys(exam, hungYenQuestions) : hungYenQuestions;
+}
+
+function normalizeExamAttempts(questions: GiupCyExamQuestionRow[], attempts: GiupCyExamAttemptRow[]) {
+  if (!questions.some((question) => question.correct_answer !== null && question.correct_answer !== "")) return attempts;
+
+  return attempts.map((attempt) => {
+    const answers =
+      attempt.answers && typeof attempt.answers === "object" && !Array.isArray(attempt.answers)
+        ? (attempt.answers as Record<string, Json>)
+        : {};
+    const grading = gradeAttempt(questions, answers);
+    return {
+      ...attempt,
+      graded_details: grading.details as unknown as Json,
+      score: grading.score,
+      max_score: grading.maxScore,
+      correct_count: grading.correctCount,
+      graded_count: grading.gradedCount,
+      total_count: grading.totalCount
+    };
+  });
 }
 
 export async function getAdminExams(user: AuthUser) {
@@ -205,10 +233,12 @@ export async function getAdminExamDetail(user: AuthUser, examId: string) {
   if (questionError) throw new Error(questionError.message);
   if (attemptError) throw new Error(attemptError.message);
 
+  const normalizedQuestions = normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]);
+
   return {
     exam: normalizeExam(exam as GiupCyExamRow),
-    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
-    attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
+    questions: normalizedQuestions,
+    attempts: normalizeExamAttempts(normalizedQuestions, (attempts ?? []) as GiupCyExamAttemptRow[])
   };
 }
 
@@ -270,10 +300,12 @@ export async function getPublicExamResults(examId: string) {
   if (attemptError) throw new Error(attemptError.message);
   if (!exam) return null;
 
+  const normalizedQuestions = normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]);
+
   return {
     exam: normalizeExam(exam as GiupCyExamRow),
-    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[]),
-    attempts: (attempts ?? []) as GiupCyExamAttemptRow[]
+    questions: normalizedQuestions,
+    attempts: normalizeExamAttempts(normalizedQuestions, (attempts ?? []) as GiupCyExamAttemptRow[])
   };
 }
 
@@ -299,6 +331,6 @@ export async function getPublicExam(slug: string) {
 
   return {
     exam: normalizeExam(exam as GiupCyExamRow),
-    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[])
+    questions: normalizeExamQuestions(exam as GiupCyExamRow, (questions ?? []) as GiupCyExamQuestionRow[], { includeAnswerKeys: false })
   };
 }

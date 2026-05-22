@@ -422,19 +422,19 @@
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C6H12O6 enzyme 2 C2H5OH + 2 CO2."
+                    "text":  "C6H12O6 --enzyme--> 2C2H5OH + 2CO2."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "2C6H12O6 + Cu(OH)2 (C6H11O6)2Cu + 2H2O."
+                    "text":  "2C6H12O6 + Cu(OH)2 -> (C6H11O6)2Cu + 2H2O."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "C6H12O6 enzyme 2 CH3CH(OH)COOH."
+                    "text":  "C6H12O6 --enzyme--> 2CH3CH(OH)COOH."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "CH OH-[CHOH] -CHO + Br +H O to  CH OH-[CHOH] -COOH + 2HBr."
+                    "text":  "CH2OH-[CHOH]4-CHO + Br2 + H2O -> CH2OH-[CHOH]4-COOH + 2HBr."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -567,7 +567,7 @@
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "CH2OH-[CHOH]4-CHO+2AgNO3 +3NH3+H2O t CH OH-[CHOH] -COONH +2Ag + 3NH NO"
+                    "text":  "CH2OH-[CHOH]4-CHO + 2AgNO3 + 3NH3 + H2O -> CH2OH-[CHOH]4-COONH4 + 2Ag + 2NH4NO3."
                                               },
                                               {
                                                   "key":  "b",
@@ -720,7 +720,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Phản ứng quang hợp tạo ra glucose cần được cung cấp năng lượng: 6 CO + 6 H O + 673 kcal asmt  C H O + 6 O 2 2 chlorophyll 6 12 6 2 Nếu có một cây xanh với tổng diện tích lá 100 dm2, mỗi dm2 nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao x gam glucose được tạo thành. Xác định giá trị của x? (kết quả làm tròn đến hàng phần mười). HẾT",
+            "prompt":  "Phản ứng quang hợp tạo ra glucose cần được cung cấp năng lượng: 6CO2 + 6H2O + 673 kcal --ánh sáng/chlorophyll--> C6H12O6 + 6O2. Nếu có một cây xanh với tổng diện tích lá 100 dm2, mỗi dm2 nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao nhiêu gam glucose được tạo thành? Xác định giá trị của x (kết quả làm tròn đến hàng phần mười).",
                               "options":  [
 
                                           ],
@@ -2298,7 +2298,7 @@
                               "section":  "Phần I",
                               "question_number":  4,
                               "question_type":  "single_choice",
-                              "prompt":  "Trong các phản ứng hữu cơ thường có sự tạo thành các tiểu phân trung gian hoạt động như gốc tự do, carbanion, carbocation. Carbocation là ion mang điện tích dương trên nguyên tử carbon. Có bao nhiêu carbocation trong số các tiểu phân CH 3   CH3  C  C ?  C , CH 3  C H , 2  C H3  và CH3 C H2 ,",
+            "prompt":  "Trong các phản ứng hữu cơ thường có sự tạo thành các tiểu phân trung gian hoạt động như gốc tự do, carbanion, carbocation. Carbocation là ion mang điện tích dương trên nguyên tử carbon. Có bao nhiêu carbocation trong số các tiểu phân (CH3)3C+, CH3-C≡C-, CH3-CH2•, •CH3 và CH3CH2-?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2919,7 +2919,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Một bình gas (khí hoá lỏng) chứa hỗn hợp propane và butane với tỉ lệ số mol 1 : 2. Khi bị đốt cháy, khí gas tạo sản phẩm theo sơ đồ sau: C3H8(g) + O2(g) → CO2(g) + H2O(g) C4H10(g) + O2(g) → CO2(g) + H2O(g) Cho biết giá trị trung bình của các năng lượng liên kết ở điều kiện chuẩn: Liên kết C-C C-H O=O C=O O-H Eb (kJ/mol) 346 418 494 732 459 Trung bình mỗi ngày, một hộ gia đình cần 10000 kJ nhiệt để phục vụ sinh hoạt. Với 12 kg khí gas thì một hộ gia đình sẽ sử dụng được trong bao nhiêu ngày? (Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên). ------ HẾT ------",
+            "prompt":  "Một bình gas (khí hoá lỏng) chứa hỗn hợp propane và butane với tỉ lệ số mol 1 : 2. Khi bị đốt cháy, khí gas tạo sản phẩm theo sơ đồ sau: C3H8(g) + O2(g) → CO2(g) + H2O(g); C4H10(g) + O2(g) → CO2(g) + H2O(g). Cho biết giá trị trung bình của các năng lượng liên kết ở điều kiện chuẩn: Liên kết C-C C-H O=O C=O O-H; Eb (kJ/mol) 346 418 494 732 459. Trung bình mỗi ngày, một hộ gia đình cần 10000 kJ nhiệt để phục vụ sinh hoạt. Với 12 kg khí gas thì một hộ gia đình sẽ sử dụng được trong bao nhiêu ngày? (Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên).",
                               "options":  [
 
                                           ],

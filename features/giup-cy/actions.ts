@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { gradeAttempt } from "@/features/giup-cy/grading";
+import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -221,7 +222,7 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
   const supabase = await createClient();
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")
-    .select("id,is_active")
+    .select("id,is_active,slug,source_file_name")
     .eq("id", parsed.data.examId)
     .eq("is_active", true)
     .maybeSingle();
@@ -237,7 +238,8 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
 
   if (questionError) return { ok: false, message: questionError.message };
 
-  const grading = gradeAttempt((questions ?? []) as GiupCyExamQuestionRow[], parsed.data.answers as Record<string, Json>);
+  const normalizedQuestions = applyWeek2AnswerKeys(exam, (questions ?? []) as GiupCyExamQuestionRow[]);
+  const grading = gradeAttempt(normalizedQuestions, parsed.data.answers as Record<string, Json>);
   const { error } = await supabase
     .from("giup_cy_exam_attempts")
     .insert({
