@@ -5,9 +5,9 @@ import { FloatingStatCard } from "@/components/shared/floating-stat-card";
 import { GiupCyAdminDashboard } from "@/features/giup-cy/admin-dashboard";
 import { getAdminExams } from "@/features/giup-cy/data";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
+import { resolveGiupCyWorkspaceUser } from "@/features/giup-cy/workspace";
 import { seedGiupCyExamsForUser } from "@/lib/auth/bootstrap";
 import { requireUser } from "@/lib/auth/guards";
-import { resolveGiupCyWorkspaceUser } from "@/features/giup-cy/workspace";
 
 async function seedGiupCyExamsWithTimeout(user: Awaited<ReturnType<typeof resolveGiupCyWorkspaceUser>>) {
   const timeout = new Promise<"timeout">((resolve) => {
@@ -23,7 +23,7 @@ export default async function GiupCyPage() {
   const sampleSources = new Set(sampleGiupCyExams.map((exam) => exam.source_file_name));
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
   const hasOldThaiNguyenImport = exams.some(
-    (exam) => exam.source_file_name?.toLowerCase().includes("thái nguyên") && exam.title.startsWith("22.05.")
+    (exam) => exam.source_file_name?.toLowerCase().includes("thÃ¡i nguyÃªn") && exam.title.startsWith("22.05.")
   );
 
   if (existingSampleCount < sampleGiupCyExams.length || hasOldThaiNguyenImport) {
