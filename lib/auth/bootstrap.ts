@@ -35,6 +35,26 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
       );
     };
 
+    const updateQuestions = async (examId: string) => {
+      for (const question of sampleExam.questions) {
+        await supabase
+          .from("giup_cy_exam_questions")
+          .update({
+            section: question.section,
+            question_number: question.question_number,
+            question_type: question.question_type,
+            prompt: question.prompt,
+            options: question.options,
+            points: question.points,
+            explanation: null,
+            needs_review: question.needs_review ?? false,
+            sort_order: question.sort_order
+          })
+          .eq("exam_id", examId)
+          .eq("sort_order", question.sort_order);
+      }
+    };
+
     if (existingExam) {
       const { count: questionCount } = await supabase
         .from("giup_cy_exam_questions")
@@ -53,10 +73,12 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
         .eq("id", existingExam.id)
         .eq("user_id", user.id);
 
-      if (questionCount !== sampleExam.questions.length || existingExam.description !== sampleExam.description) {
+      if (questionCount !== sampleExam.questions.length) {
         await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
         await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
         await insertQuestions(existingExam.id);
+      } else if (existingExam.description !== sampleExam.description) {
+        await updateQuestions(existingExam.id);
       }
       continue;
     }

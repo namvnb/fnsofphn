@@ -141,6 +141,31 @@ export async function togglePublicExamActive(input: unknown): Promise<ActionResu
   }
 }
 
+export async function updatePublicExamSettings(input: unknown): Promise<ActionResult> {
+  const parsed = updateExamSettingsSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, message: "Tiêu đề hoặc thời gian chưa hợp lệ." };
+
+  try {
+    const supabase = createAdminClient();
+    const { error } = await supabase
+      .from("giup_cy_exams")
+      .update({
+        title: parsed.data.title,
+        description: parsed.data.description ?? "",
+        duration_minutes: parsed.data.durationMinutes
+      })
+      .eq("id", parsed.data.examId);
+
+    if (error) return { ok: false, message: error.message };
+    revalidatePath("/giup-cy");
+    revalidatePath(`/exam/${parsed.data.slug}`);
+    revalidatePath(`/giup-cy/results/${parsed.data.examId}`);
+    return { ok: true, message: "Đã cập nhật thông tin đề." };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "Không thể cập nhật đề." };
+  }
+}
+
 export async function deleteExam(input: unknown): Promise<ActionResult> {
   const parsed = deleteExamSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Không xác định được đề cần xóa." };

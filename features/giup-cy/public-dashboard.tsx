@@ -2,33 +2,57 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Clipboard, Eye, Power } from "lucide-react";
+import { Clipboard, Eye, Power, Save } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
-import { togglePublicExamActive } from "@/features/giup-cy/actions";
+import { togglePublicExamActive, updatePublicExamSettings } from "@/features/giup-cy/actions";
 import type { ExamWithStats } from "@/features/giup-cy/data";
 
-const text = {
-  copied: "\u0110\u00e3 copy link \u0111\u1ec1.",
-  open: "\u0110ang m\u1edf",
-  closed: "\u0110ang \u0111\u00f3ng",
-  questions: "c\u00e2u",
-  minutes: "ph\u00fat",
-  source: "Ngu\u1ed3n",
-  imported: "\u0110\u1ec1 import",
-  close: "\u0110\u00f3ng",
-  openAction: "M\u1edf",
-  results: "Xem k\u1ebft qu\u1ea3",
-  copy: "Copy link",
-  empty: "Ch\u01b0a c\u00f3 \u0111\u1ec1 n\u00e0o \u0111ang m\u1edf."
+type ExamSettings = {
+  title: string;
+  description: string;
+  durationMinutes: string;
 };
+
+const text = {
+  copied: "Đã copy link đề.",
+  open: "Đang mở",
+  closed: "Đang đóng",
+  questions: "câu",
+  minutes: "phút",
+  source: "Nguồn",
+  imported: "Đề import",
+  close: "Đóng",
+  openAction: "Mở",
+  results: "Xem kết quả đầy đủ",
+  copy: "Copy link",
+  save: "Lưu",
+  empty: "Chưa có đề nào."
+};
+
+function settingsFromExams(exams: ExamWithStats[]) {
+  return Object.fromEntries(
+    exams.map((exam) => [
+      exam.id,
+      {
+        title: exam.title,
+        description: exam.description ?? "",
+        durationMinutes: String(exam.duration_minutes)
+      }
+    ])
+  ) as Record<string, ExamSettings>;
+}
 
 export function PublicGiupCyDashboard() {
   const [exams, setExams] = useState<ExamWithStats[]>([]);
+  const [settings, setSettings] = useState<Record<string, ExamSettings>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
+  const [pendingId, setPendingId] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -38,11 +62,13 @@ export function PublicGiupCyDashboard() {
         const response = await fetch("/api/giup-cy/exams", { cache: "no-store" });
         const payload = (await response.json()) as { exams?: ExamWithStats[]; error?: string };
         if (!active) return;
-        setExams(payload.exams ?? []);
+        const nextExams = payload.exams ?? [];
+        setExams(nextExams);
+        setSettings(settingsFromExams(nextExams));
         setLoadError(payload.error ?? "");
       } catch (error) {
         if (!active) return;
-        setLoadError(error instanceof Error ? error.message : "Kh\u00f4ng th\u1ec3 t\u1ea3i danh s\u00e1ch \u0111\u1ec1.");
+        setLoadError(error instanceof Error ? error.message : "Không thể tải danh sách đề.");
       } finally {
         if (active) setIsLoading(false);
       }
@@ -60,8 +86,22 @@ export function PublicGiupCyDashboard() {
     toast.success(text.copied);
   }
 
+  function updateSetting(exam: ExamWithStats, patch: Partial<ExamSettings>) {
+    setSettings((current) => ({
+      ...current,
+      [exam.id]: {
+        title: current[exam.id]?.title ?? exam.title,
+        description: current[exam.id]?.description ?? exam.description ?? "",
+        durationMinutes: current[exam.id]?.durationMinutes ?? String(exam.duration_minutes),
+        ...patch
+      }
+    }));
+  }
+
   async function toggle(exam: ExamWithStats) {
+    setPendingId(exam.id);
     const result = await togglePublicExamActive({ examId: exam.id, isActive: !exam.is_active });
+    setPendingId(null);
     if (result.ok) {
       toast.success(result.message);
       setExams((current) => current.map((item) => (item.id === exam.id ? { ...item, is_active: !exam.is_active } : item)));
@@ -70,19 +110,47 @@ export function PublicGiupCyDashboard() {
     toast.error(result.message);
   }
 
+  async function saveSettings(exam: ExamWithStats) {
+    const next = settings[exam.id] ?? { title: exam.title, description: exam.description ?? "", durationMinutes: String(exam.duration_minutes) };
+    setPendingId(exam.id);
+    const result = await updatePublicExamSettings({
+      examId: exam.id,
+      slug: exam.slug,
+      title: next.title,
+      description: next.description,
+      durationMinutes: next.durationMinutes
+    });
+    setPendingId(null);
+
+    if (result.ok) {
+      toast.success(result.message);
+      setExams((current) =>
+        current.map((item) =>
+          item.id === exam.id
+            ? {
+                ...item,
+                title: next.title,
+                description: next.description,
+                duration_minutes: Number(next.durationMinutes)
+              }
+            : item
+        )
+      );
+      return;
+    }
+
+    toast.error(result.message);
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary-indigo">{"Gi\u00fap Cy"}</p>
-          <h1 className="mt-2 text-3xl font-bold text-text-primary">{"\u0110\u1ec1 \u0111ang m\u1edf"}</h1>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">
-            {"Qu\u1ea3n l\u00fd nhanh c\u00e1c \u0111\u1ec1 \u0111ang m\u1edf. Trang n\u00e0y kh\u00f4ng c\u1ea7n \u0111\u0103ng nh\u1eadp."}
-          </p>
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary-indigo">Giúp Cy</p>
+          <h1 className="mt-2 text-3xl font-bold text-text-primary">Quản lý đề</h1>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">Sửa tên, mô tả, thời gian, đóng/mở đề và xem kết quả đầy đủ.</p>
         </div>
-        <Badge variant="cyan">
-          {exams.length} {"\u0111\u1ec1"}
-        </Badge>
+        <Badge variant="cyan">{exams.length} đề</Badge>
       </div>
 
       {loadError ? (
@@ -93,14 +161,14 @@ export function PublicGiupCyDashboard() {
 
       {isLoading ? (
         <PremiumCard hover={false} className="rounded-2xl">
-          <p className="text-sm leading-6 text-text-secondary">{"\u0110ang t\u1ea3i danh s\u00e1ch \u0111\u1ec1..."}</p>
+          <p className="text-sm leading-6 text-text-secondary">Đang tải danh sách đề...</p>
         </PremiumCard>
       ) : null}
 
       {exams.map((exam) => (
         <PremiumCard key={exam.id} hover={false} className="rounded-2xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="mb-3 flex flex-wrap items-center gap-2">
                 <Badge variant={exam.is_active ? "cyan" : "neutral"}>{exam.is_active ? text.open : text.closed}</Badge>
                 <Badge variant="neutral">
@@ -115,9 +183,32 @@ export function PublicGiupCyDashboard() {
               <p className="mt-2 break-all text-xs text-text-secondary">
                 {text.source}: {exam.source_file_name ?? text.imported}
               </p>
+
+              <div className="mt-4 grid gap-2 md:grid-cols-[minmax(0,1fr)_120px_auto]">
+                <Input value={settings[exam.id]?.title ?? exam.title} onChange={(event) => updateSetting(exam, { title: event.target.value })} aria-label={`Sửa tên ${exam.title}`} />
+                <Input
+                  type="number"
+                  min={1}
+                  max={300}
+                  value={settings[exam.id]?.durationMinutes ?? String(exam.duration_minutes)}
+                  onChange={(event) => updateSetting(exam, { durationMinutes: event.target.value })}
+                  aria-label={`Sửa thời gian ${exam.title}`}
+                />
+                <Button type="button" variant="secondary" onClick={() => saveSettings(exam)} disabled={pendingId === exam.id}>
+                  <Save className="size-4" />
+                  {text.save}
+                </Button>
+                <Textarea
+                  className="md:col-span-3"
+                  rows={3}
+                  value={settings[exam.id]?.description ?? exam.description ?? ""}
+                  onChange={(event) => updateSetting(exam, { description: event.target.value })}
+                  aria-label={`Sửa mô tả ${exam.title}`}
+                />
+              </div>
             </div>
             <div className="flex shrink-0 flex-wrap gap-2">
-              <Button type="button" variant={exam.is_active ? "outline" : "default"} onClick={() => toggle(exam)}>
+              <Button type="button" variant={exam.is_active ? "outline" : "default"} onClick={() => toggle(exam)} disabled={pendingId === exam.id}>
                 <Power className="size-4" />
                 {exam.is_active ? text.close : text.openAction}
               </Button>
@@ -136,7 +227,7 @@ export function PublicGiupCyDashboard() {
         </PremiumCard>
       ))}
 
-      {!exams.length ? (
+      {!isLoading && !exams.length ? (
         <PremiumCard hover={false} className="rounded-2xl">
           <p className="text-sm leading-6 text-text-secondary">{text.empty}</p>
         </PremiumCard>

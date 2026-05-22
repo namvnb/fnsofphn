@@ -16,7 +16,7 @@ export type ExamDocumentAsset = {
 type Week2Asset = {
   slug: string;
   sourceFileName: string;
-  questionAssets: Record<string, ExamPageAsset>;
+  questionAssets: Record<string, ExamPageAsset | ExamPageAsset[]>;
 };
 
 const ASSET_VERSION = "student-clean-20260516";
@@ -65,12 +65,17 @@ export function getExamPdfUrl(exam: Pick<GiupCyExamRow, "slug" | "source_file_na
 }
 
 export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">, questionNumber: number): ExamPageAsset | null {
+  return getQuestionSourceAssets(exam, questionNumber)[0] ?? null;
+}
+
+export function getQuestionSourceAssets(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">, questionNumber: number): ExamPageAsset[] {
   const week2Asset = getWeek2Asset(exam);
   const week2QuestionAsset = week2Asset?.questionAssets[String(questionNumber)];
-  if (week2QuestionAsset) return week2QuestionAsset;
+  if (Array.isArray(week2QuestionAsset)) return week2QuestionAsset;
+  if (week2QuestionAsset) return [week2QuestionAsset];
 
   const documentAsset = getExamDocumentAsset(exam);
-  if (!documentAsset) return null;
+  if (!documentAsset) return [];
 
   const source = `${exam.slug} ${exam.source_file_name ?? ""}`.toLowerCase();
 
@@ -88,9 +93,9 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
     };
 
     const crop = cropSizes[questionNumber];
-    if (crop) return { pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop };
+    if (crop) return [{ pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop }];
 
-    return null;
+    return [];
   }
 
   if (source.includes("hung-yen")) {
@@ -101,12 +106,12 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
     };
 
     const crop = cropSizes[questionNumber];
-    if (crop) return { pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop };
+    if (crop) return [{ pageNumber: estimateQuestionPage(questionNumber, documentAsset.pages.length), ...crop }];
 
-    return null;
+    return [];
   }
 
-  return null;
+  return [];
 }
 
 export function estimateQuestionPage(questionNumber: number, pageCount: number) {

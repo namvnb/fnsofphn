@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PremiumCard } from "@/components/shared/premium-card";
 import { submitExamAttempt } from "@/features/giup-cy/actions";
-import { getQuestionSourceAsset, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
+import { getQuestionSourceAssets, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
 import { FormattedText } from "@/features/giup-cy/formatted-text";
 import { cn } from "@/lib/utils/cn";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
@@ -145,8 +145,8 @@ export function ExamTaker({ exam, questions }: Props) {
     setAnswers((current) => ({ ...current, [questionId]: value }));
   }
 
-  function sourcePageFor(question: GiupCyExamQuestionRow) {
-    return getQuestionSourceAsset(exam, question.question_number);
+  function sourceAssetsFor(question: GiupCyExamQuestionRow) {
+    return getQuestionSourceAssets(exam, question.question_number);
   }
 
   function focusQuestion(question: GiupCyExamQuestionRow) {
@@ -342,7 +342,7 @@ export function ExamTaker({ exam, questions }: Props) {
               question={question}
               questionIndex={index}
               totalQuestions={questions.length}
-              sourcePage={sourcePageFor(question)}
+              sourceAssets={sourceAssetsFor(question)}
               answers={answers}
               marked={marked}
               isCurrent={question.id === currentQuestionId}
@@ -481,7 +481,7 @@ function QuestionCard({
   question,
   questionIndex,
   totalQuestions,
-  sourcePage,
+  sourceAssets,
   answers,
   marked,
   isCurrent,
@@ -493,7 +493,7 @@ function QuestionCard({
   question: GiupCyExamQuestionRow;
   questionIndex: number;
   totalQuestions: number;
-  sourcePage: ExamPageAsset | null;
+  sourceAssets: ExamPageAsset[];
   answers: Record<string, Json>;
   marked: Record<string, boolean>;
   isCurrent: boolean;
@@ -502,7 +502,7 @@ function QuestionCard({
   setMarked: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
   refNode: (node: HTMLDivElement | null) => void;
 }) {
-  const needsSource = sourcePage;
+  const hasSourceAssets = sourceAssets.length > 0;
 
   return (
     <div ref={refNode} className="scroll-mt-32" onFocusCapture={() => setCurrentQuestionId(question.id)} onClick={() => setCurrentQuestionId(question.id)}>
@@ -531,17 +531,20 @@ function QuestionCard({
 
       <PromptContent text={question.prompt} />
 
-      {needsSource ? (
+      {hasSourceAssets ? (
         <div className="mt-4 overflow-hidden rounded-xl border border-border-soft bg-white">
-          <div className="max-h-[680px] overflow-auto bg-white p-3">
-            <Image
-              src={sourcePage.url}
-              alt={`Minh họa cho câu ${question.question_number}`}
-              width={sourcePage.width}
-              height={sourcePage.height}
-              unoptimized
-              className="mx-auto h-auto w-full max-w-[980px] bg-white"
-            />
+          <div className="grid max-h-[680px] gap-3 overflow-auto bg-white p-3">
+            {sourceAssets.map((asset, assetIndex) => (
+              <Image
+                key={`${asset.url}-${assetIndex}`}
+                src={asset.url}
+                alt={`Minh họa cho câu ${question.question_number}`}
+                width={asset.width}
+                height={asset.height}
+                unoptimized
+                className="mx-auto h-auto w-full max-w-[980px] bg-white"
+              />
+            ))}
           </div>
         </div>
       ) : null}
