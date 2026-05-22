@@ -82,6 +82,8 @@ type Week2Exam = {
 };
 
 const week2Exams = week2ExamData as Week2Exam[];
+const defaultWeek2Description =
+  "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.";
 
 function getWeek2ExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
   const slug = exam.slug.toLowerCase();
@@ -96,13 +98,20 @@ function getWeek2ExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name"
 function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
   const week2Exam = getWeek2ExamPatch(exam);
   if (!week2Exam) return exam;
+  const currentTitle = exam.title.trim();
+  const currentDescription = (exam.description ?? "").trim();
+  const shouldPatchTitle = !currentTitle || /^22\.05\.\d+$/.test(currentTitle);
+  const shouldPatchDescription =
+    !currentDescription ||
+    currentDescription === defaultWeek2Description ||
+    currentDescription.includes("Bản dữ liệu 2026-05-17") ||
+    currentDescription.includes("ảnh trích từ nguồn Word");
 
   return {
     ...exam,
-    title: week2Exam.title,
-    description: week2Exam.description,
+    title: shouldPatchTitle ? week2Exam.title : exam.title,
+    description: shouldPatchDescription ? week2Exam.description : exam.description,
     subject: week2Exam.subject,
-    duration_minutes: week2Exam.duration_minutes,
     source_file_name: week2Exam.source_file_name
   };
 }
