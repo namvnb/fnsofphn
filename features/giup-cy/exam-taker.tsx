@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
 import Image from "next/image";
-import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, RotateCcw, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, PlayCircle, RotateCcw, Send, UserRound } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -94,6 +94,7 @@ export function ExamTaker({ exam, questions }: Props) {
   const [answers, setAnswers] = useState<Record<string, Json>>(() => initialDraft.answers ?? {});
   const [marked, setMarked] = useState<Record<string, boolean>>(() => initialDraft.marked ?? {});
   const [startedAt, setStartedAt] = useState(() => initialDraft.startedAt ?? Date.now());
+  const [hasStarted, setHasStarted] = useState(() => Boolean(initialDraft.startedAt));
   const [now, setNow] = useState(() => Date.now());
   const [currentQuestionId, setCurrentQuestionId] = useState(questions[0]?.id ?? "");
   const [result, setResult] = useState<(SubmitResult & { studentName: string }) | null>(() => {
@@ -112,7 +113,8 @@ export function ExamTaker({ exam, questions }: Props) {
   const currentIndex = Math.max(0, questions.findIndex((question) => question.id === currentQuestionId));
   const doneCount = questions.filter((question) => answerDone(question, answers)).length;
   const unansweredCount = questions.length - doneCount;
-  const elapsedSeconds = Math.floor((now - startedAt) / 1000);
+  const completionPercent = questions.length ? Math.round((doneCount / questions.length) * 100) : 0;
+  const elapsedSeconds = hasStarted ? Math.floor((now - startedAt) / 1000) : 0;
   const remainingSeconds = Math.max(0, durationSeconds - elapsedSeconds);
   const isTimeLow = remainingSeconds <= 5 * 60;
   const groupedQuestions = useMemo(
@@ -127,16 +129,17 @@ export function ExamTaker({ exam, questions }: Props) {
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
-      window.localStorage.setItem(storageKey, JSON.stringify({ studentName, answers, marked, startedAt }));
+      window.localStorage.setItem(storageKey, JSON.stringify({ studentName, answers, marked, startedAt: hasStarted ? startedAt : undefined }));
     }, 350);
 
     return () => window.clearTimeout(timeout);
-  }, [answers, marked, startedAt, storageKey, studentName]);
+  }, [answers, hasStarted, marked, startedAt, storageKey, studentName]);
 
   useEffect(() => {
+    if (!hasStarted || result) return;
     const interval = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(interval);
-  }, []);
+  }, [hasStarted, result]);
 
   function setAnswer(questionId: string, value: Json) {
     setAnswers((current) => ({ ...current, [questionId]: value }));
@@ -164,6 +167,19 @@ export function ExamTaker({ exam, questions }: Props) {
     setMarked({});
     setStartedAt(Date.now());
     setNow(Date.now());
+  }
+
+  function startExam(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!studentName.trim()) {
+      toast.error("Vui lòng nhập họ tên trước khi bắt đầu.");
+      return;
+    }
+
+    const startTime = Date.now();
+    setStartedAt(startTime);
+    setNow(startTime);
+    setHasStarted(true);
   }
 
   const submitAttempt = useCallback(({ skipConfirm = false }: { skipConfirm?: boolean } = {}) => {
@@ -203,12 +219,12 @@ export function ExamTaker({ exam, questions }: Props) {
   }
 
   useEffect(() => {
-    if (durationSeconds <= 0 || remainingSeconds > 0 || result || isPending || autoSubmittedRef.current) return;
+    if (!hasStarted || durationSeconds <= 0 || remainingSeconds > 0 || result || isPending || autoSubmittedRef.current) return;
 
     autoSubmittedRef.current = true;
     toast.warning("Đã hết thời gian làm bài. Hệ thống đang nộp bài.");
     submitAttempt({ skipConfirm: true });
-  }, [durationSeconds, isPending, remainingSeconds, result, submitAttempt]);
+  }, [durationSeconds, hasStarted, isPending, remainingSeconds, result, submitAttempt]);
 
   if (result) {
     return (
@@ -233,6 +249,10 @@ export function ExamTaker({ exam, questions }: Props) {
           onClick={() => {
             window.localStorage.removeItem(resultKey);
             setResult(null);
+            setAnswers({});
+            setMarked({});
+            setHasStarted(false);
+            autoSubmittedRef.current = false;
           }}
         >
           Làm bài mới
@@ -241,10 +261,57 @@ export function ExamTaker({ exam, questions }: Props) {
     );
   }
 
+  if (!hasStarted) {
+    return (
+      <form className="mx-auto flex min-h-[calc(100vh-96px)] max-w-5xl items-center px-4 py-8" onSubmit={startExam}>
+        <PremiumCard hover={false} className="w-full rounded-[28px] p-6 md:p-8">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
+            <div className="min-w-0">
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <Badge variant="cyan">{exam.subject}</Badge>
+                <Badge variant="neutral">{questions.length} câu</Badge>
+                <Badge variant="gold">{exam.duration_minutes} phút</Badge>
+              </div>
+              <h1 className="text-3xl font-bold leading-tight text-text-primary md:text-4xl">{exam.title}</h1>
+              {exam.description ? <p className="mt-4 max-w-2xl text-sm leading-6 text-text-secondary">{exam.description}</p> : null}
+            </div>
+
+            <div className="rounded-3xl border border-border-soft bg-white/78 p-5 shadow-[0_18px_56px_rgba(15,23,42,0.08)]">
+              <div className="rounded-2xl border border-border-soft bg-white p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">Thời gian làm bài</p>
+                <p className="mt-2 text-4xl font-bold text-text-primary">{formatDuration(durationSeconds)}</p>
+                <p className="mt-1 text-sm text-text-secondary">Bấm bắt đầu để tính giờ</p>
+              </div>
+
+              <label className="mt-5 block text-sm font-semibold text-text-primary" htmlFor="student-name">
+                Họ tên thí sinh
+              </label>
+              <div className="mt-2 flex items-center gap-2 rounded-2xl border border-border-soft bg-white/80 px-3 focus-within:ring-4 focus-within:ring-primary-indigo/15">
+                <UserRound className="size-4 text-text-secondary" />
+                <Input
+                  id="student-name"
+                  value={studentName}
+                  onChange={(event) => setStudentName(event.target.value)}
+                  placeholder="Nhập họ tên"
+                  required
+                  className="border-0 bg-transparent px-0 shadow-none focus-visible:ring-0"
+                />
+              </div>
+              <Button type="submit" className="mt-5 w-full" disabled={!studentName.trim()}>
+                <PlayCircle className="size-4" />
+                Bắt đầu
+              </Button>
+            </div>
+          </div>
+        </PremiumCard>
+      </form>
+    );
+  }
+
   return (
     <form className="mx-auto max-w-[1600px] space-y-4" onSubmit={submit}>
       <PremiumCard hover={false} className="sticky top-3 z-30 rounded-2xl p-4">
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px_auto] lg:items-center">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
           <div className="min-w-0">
             <div className="mb-2 flex flex-wrap items-center gap-2">
               <Badge variant="cyan">{exam.subject}</Badge>
@@ -256,10 +323,10 @@ export function ExamTaker({ exam, questions }: Props) {
               <Badge variant={unansweredCount ? "gold" : "cyan"}>
                 Đã làm {doneCount}/{questions.length}
               </Badge>
+              <Badge variant="neutral">{studentName.trim()}</Badge>
             </div>
             <h1 className="truncate text-2xl font-bold text-text-primary">{exam.title}</h1>
           </div>
-          <Input value={studentName} onChange={(event) => setStudentName(event.target.value)} placeholder="Nhập họ tên" required />
           <Button type="submit" disabled={isPending}>
             <Send className="size-4" />
             {isPending ? "Đang nộp..." : "Nộp bài"}
@@ -291,12 +358,19 @@ export function ExamTaker({ exam, questions }: Props) {
 
         <aside className="xl:sticky xl:top-[112px] xl:h-[calc(100vh-128px)] xl:overflow-hidden">
           <PremiumCard hover={false} className="flex h-full flex-col rounded-2xl p-4">
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <div>
-                <h2 className="text-lg font-bold text-text-primary">Phiếu trả lời</h2>
-                <p className="text-sm font-semibold text-text-secondary">
-                  Còn {unansweredCount} câu trắng
+            <div className="mb-4 rounded-2xl border border-border-soft bg-white/80 p-4">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">Thời gian làm bài</p>
+              <p className={cn("mt-2 text-4xl font-bold text-text-primary", isTimeLow && "text-amber-600")}>{formatDuration(remainingSeconds)}</p>
+              <p className="mt-1 text-sm text-text-secondary">Đang tính giờ</p>
+            </div>
+
+            <div className="mb-5 flex items-center gap-5">
+              <ProgressRing value={completionPercent} />
+              <div className="min-w-0 flex-1">
+                <p className="text-3xl font-bold text-text-primary">
+                  {doneCount}/{questions.length}
                 </p>
+                <p className="text-sm font-semibold text-text-secondary">câu đã hoàn thành</p>
               </div>
               <Button type="button" variant="ghost" size="icon" onClick={clearDraft} aria-label="Xóa nháp">
                 <RotateCcw className="size-4" />
@@ -367,6 +441,39 @@ export function ExamTaker({ exam, questions }: Props) {
         </aside>
       </section>
     </form>
+  );
+}
+
+function ProgressRing({ value }: { value: number }) {
+  const safeValue = Math.min(100, Math.max(0, value));
+  const radius = 42;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (safeValue / 100) * circumference;
+
+  return (
+    <div className="relative size-28 shrink-0">
+      <svg className="-rotate-90" viewBox="0 0 104 104" aria-hidden="true">
+        <circle cx="52" cy="52" r={radius} fill="none" stroke="rgba(226,232,240,0.95)" strokeWidth="10" />
+        <circle
+          cx="52"
+          cy="52"
+          r={radius}
+          fill="none"
+          stroke="url(#exam-progress-gradient)"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          strokeWidth="10"
+        />
+        <defs>
+          <linearGradient id="exam-progress-gradient" x1="16" x2="88" y1="16" y2="88" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#67e8f9" />
+            <stop offset="1" stopColor="#5b6cff" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="absolute inset-0 grid place-items-center text-lg font-bold text-text-secondary">{safeValue}%</div>
+    </div>
   );
 }
 
