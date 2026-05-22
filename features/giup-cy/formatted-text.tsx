@@ -122,7 +122,7 @@ const elementSymbols = new Set([
 ]);
 
 const variableSubscripts = new Set(["m", "n", "x", "y"]);
-const formulaCandidatePattern = /\b\d*[A-Z][A-Za-z0-9()[\]\-+=.]*/g;
+const formattedTokenPattern = /Δ[fr]H°\d+|mol\^-?\d+|mol-\d+|\b\d*[A-Z][A-Za-z0-9()[\]\-+=.]*/g;
 
 function stripFormulaCharge(value: string) {
   const parenthesizedCharge = value.match(/^(.*)\((\d*[+-])\)$/);
@@ -267,9 +267,31 @@ function renderFormulaToken(value: string, keyPrefix: string) {
   );
 }
 
+function renderThermodynamicSymbol(value: string, keyPrefix: string) {
+  const match = value.match(/^Δ([fr])H°(\d+)$/);
+  if (!match) return value;
+
+  return (
+    <span key={keyPrefix} className="whitespace-nowrap">
+      Δ<sub>{match[1]}</sub>H°<sub>{match[2]}</sub>
+    </span>
+  );
+}
+
+function renderMoleUnit(value: string, keyPrefix: string) {
+  const exponent = value.match(/^mol(?:\^)?(-?\d+)$/)?.[1] ?? value.match(/^mol(-\d+)$/)?.[1];
+  if (!exponent) return value;
+
+  return (
+    <span key={keyPrefix} className="whitespace-nowrap">
+      mol<sup>{exponent}</sup>
+    </span>
+  );
+}
+
 export function FormattedText({ text }: { text: string }) {
   const nodes: ReactNode[] = [];
-  const matcher = new RegExp(formulaCandidatePattern);
+  const matcher = new RegExp(formattedTokenPattern);
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -279,7 +301,17 @@ export function FormattedText({ text }: { text: string }) {
     const spacedCharge = text.slice(offset + rawToken.length).match(/^(\s+)(\d+[+-])/);
     const token = spacedCharge ? `${rawToken}${spacedCharge[1]}${spacedCharge[2]}` : rawToken;
 
-    if (analyzeFormulaToken(token).isFormula) {
+    if (/^Δ[fr]H°\d+$/.test(token)) {
+      if (offset > lastIndex) nodes.push(text.slice(lastIndex, offset));
+      nodes.push(renderThermodynamicSymbol(token, `thermo-${offset}`));
+      lastIndex = offset + token.length;
+      matcher.lastIndex = lastIndex;
+    } else if (/^mol(?:\^)?-?\d+$/.test(token) || /^mol-\d+$/.test(token)) {
+      if (offset > lastIndex) nodes.push(text.slice(lastIndex, offset));
+      nodes.push(renderMoleUnit(token, `unit-${offset}`));
+      lastIndex = offset + token.length;
+      matcher.lastIndex = lastIndex;
+    } else if (analyzeFormulaToken(token).isFormula) {
       if (offset > lastIndex) nodes.push(text.slice(lastIndex, offset));
       nodes.push(renderFormulaToken(token, `formula-${offset}`));
       lastIndex = offset + token.length;
