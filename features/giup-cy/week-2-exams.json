@@ -12,23 +12,23 @@
                               "section":  "Phần I",
                               "question_number":  1,
                               "question_type":  "single_choice",
-                              "prompt":  "Điều chếxà phòng bằngthínghiệm nàosauđây?",
+                              "prompt":  "Điều chế xà phòng bằng thí nghiệm nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Chochất béo tác dụng với ammonia."
+                                                  "text":  "Cho chất béo tác dụng với ammonia."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Chochất béo tác dụng vớimuối."
+                                                  "text":  "Cho chất béo tác dụng với muối."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Chochất béo tác dụng với acid."
+                                                  "text":  "Cho chất béo tác dụng với acid."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Chochất béo tác dụngvới dung dịch base."
+                                                  "text":  "Cho chất béo tác dụng với dung dịch base."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -41,7 +41,7 @@
                               "section":  "Phần I",
                               "question_number":  2,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho vài giọtdung dịch BaCl2 vào dungdịchnào sau đâysẽ tạo kếttủa trắng?",
+                              "prompt":  "Cho vài giọt dung dịch BaCl 2 vào dung dịch nào sau đây sẽ tạo kết tủa trắng?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -53,11 +53,11 @@
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "NaNO3."
+                                                  "text":  "NaNO 3 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Na2SO4."
+                                                  "text":  "Na 2 SO 4 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -70,7 +70,7 @@
                               "section":  "Phần I",
                               "question_number":  3,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho một số đặcđiểmvà tính chấtcủa saccharose: là polysaccharide. làchất kếttinh, không màu. khi thủy phântạo thành sản phẩmtrong đó có glucose. thamgia phản ứng tráng bạc. phản ứng đượcvới Cu(OH)2. Số nhận định đúng là:",
+                              "prompt":  "Cho một số đặc điểm và tính chất của saccharose: là polysaccharide. là chất kết tinh, không màu. khi thủy phân tạo thành sản phẩm trong đó có glucose. tham gia phản ứng tráng bạc. phản ứng được với Cu(OH) 2 . Số nhận định đúng là:",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -99,7 +99,7 @@
                               "section":  "Phần I",
                               "question_number":  4,
                               "question_type":  "single_choice",
-                              "prompt":  "Trongcâythuốclátựnhiênvàkhóithuốcláchứamộtaminerấtđộc,đólànicotinvớicôngthức cấu tạo như sau: Nicotinlàm tăng huyếtáp và nhịp tim,có khả năng gây sơ vữa độngmạnh vành và suy giảmtrí nhớ. Số nguyêntử carbon trong mộtphân tử nicotin là",
+                              "prompt":  "Trong cây thuốc lá tự nhiên và khói thuốc lá chứa một amine rất độc, đó là nicotin với công thức cấu tạo như sau: Nicotin làm tăng huyết áp và nhịp tim, có khả năng gây sơ vữa động mạnh vành và suy giảm trí nhớ. Số nguyên tử carbon trong một phân tử nicotin là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -128,23 +128,23 @@
                               "section":  "Phần I",
                               "question_number":  5,
                               "question_type":  "single_choice",
-                              "prompt":  "Ester ethylpropionate có mùithơm củaquả dứachín. Công thứccủa ethyl propionate là?",
+                              "prompt":  "Ester ethyl propionate có mùi thơm của quả dứa chín. Công thức của ethyl propionate là?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "CH3COOC2H5."
+                                                  "text":  "CH 3 COOC 2 H 5 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "C2H5COOC2H5."
+                                                  "text":  "C 2 H 5 COOC 2 H 5 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "C2H3COOC2H5."
+                                                  "text":  "C 2 H 3 COOC 2 H 5 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "C2H5COOCH3."
+                                                  "text":  "C 2 H 5 COOCH 3 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -157,11 +157,11 @@
                               "section":  "Phần I",
                               "question_number":  6,
                               "question_type":  "single_choice",
-                              "prompt":  "Chất béolàtrieste củaacid béo với",
+                              "prompt":  "Chất béo là trieste của acid béo với",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "ethyleneglycol."
+                                                  "text":  "ethylene glycol."
                                               },
                                               {
                                                   "key":  "B",
@@ -186,23 +186,23 @@
                               "section":  "Phần I",
                               "question_number":  7,
                               "question_type":  "single_choice",
-                              "prompt":  "Phát biểunào sau đâysai?",
+                              "prompt":  "Phát biểu nào sau đây sai?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Fructose là sản phẩmcủa phản ứng thủy phântinh bột."
+                                                  "text":  "Fructose là sản phẩm của phản ứng thủy phân tinh bột."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Amylopectin có cấutrúcmạch phân nhánh."
+                                                  "text":  "Amylopectin có cấu trúc mạch phân nhánh."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Thủy phân hoàn toàn cellulosethu được glucose."
+                                                  "text":  "Thủy phân hoàn toàn cellulose thu được glucose."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Fructose và glucoselà đồng phân của nhau."
+                                                  "text":  "Fructose và glucose là đồng phân của nhau."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -215,19 +215,19 @@
                               "section":  "Phần I",
                               "question_number":  8,
                               "question_type":  "single_choice",
-                              "prompt":  "Chất nàosau đây làchất điệnli mạnh?",
+                              "prompt":  "Chất nào sau đây là chất điện li mạnh?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "CH3COOH."
+                                                  "text":  "CH 3 COOH."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "CH3OH."
+                                                  "text":  "CH 3 OH."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Cl2."
+                                                  "text":  "Cl 2 ."
                                               },
                                               {
                                                   "key":  "D",
@@ -244,7 +244,7 @@
                               "section":  "Phần I",
                               "question_number":  9,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho6carbohydratesau:glucose,fructose,maltose,saccharose,tinhbộtvàcellulose.Cóbao nhiêu carbohydrate đã cho thuộc nhóm disaccharide?",
+                              "prompt":  "Cho 6 carbohydrate sau: glucose, fructose, maltose, saccharose, tinh bột và cellulose. Có bao nhiêu carbohydrate đã cho thuộc nhóm disaccharide?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -273,23 +273,23 @@
                               "section":  "Phần I",
                               "question_number":  10,
                               "question_type":  "single_choice",
-                              "prompt":  "Nhận xét nào dướiđây là không đúng khinói về glucose vàfructose?",
+                              "prompt":  "Nhận xét nào dưới đây là không đúng khi nói về glucose và fructose?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Đều tạodược dungdịch màu xanhlam khitácdụng vớiCu(OH)2 trongmôitrường kiềm."
+                                                  "text":  "Đều tạo dược dung dịch màu xanh lam khi tác dụng với Cu(OH) 2 trong môi trường kiềm."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Đều làm mấtmàu nước bromine."
+                                                  "text":  "Đều làm mất màu nước bromine."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Đều xảy ra phảnứng tráng bạc khi tácdụng với thuốc thử Tollens."
+                                                  "text":  "Đều xảy ra phản ứng tráng bạc khi tác dụng với thuốc thử Tollens."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Đều tạođược kết tủađỏ gạch Cu2Okhi tácdụngvới Cu(OH)2,đun nóng trongmôitrường kiềm."
+                                                  "text":  "Đều tạo được kết tủa đỏ gạch Cu 2 O khi tác dụng với Cu(OH) 2 , đun nóng trong môi trường kiềm."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -302,7 +302,7 @@
                               "section":  "Phần I",
                               "question_number":  11,
                               "question_type":  "single_choice",
-                              "prompt":  "Trongphân tử HNO3,nguyêntử Ncósố oxi hóalà",
+                              "prompt":  "Trong phân tử HNO 3 , nguyên tử N có số oxi hóa là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -310,7 +310,7 @@
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "-3."
+                                                  "text":  "- 3."
                                               },
                                               {
                                                   "key":  "C",
@@ -331,7 +331,7 @@
                               "section":  "Phần I",
                               "question_number":  12,
                               "question_type":  "single_choice",
-                              "prompt":  "Một hợp chất hữu cơ X đơn chức có công thức phân tử là C3H6O2. X không tác dụng với kimloại Na nhưng tác dụng được với dung dịch NaOH khi đun nóng. Chất X thuộc dãy đồng đẳng của loại hợp chất nào sau đây?",
+                              "prompt":  "Một hợp chất hữu cơ X đơn chức có công thức phân tử là C 3 H 6 O 2 . X không tác dụng với kim loại Na nhưng tác dụng được với dung dịch NaOH khi đun nóng. Chất X thuộc dãy đồng đẳng của loại hợp chất nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -360,11 +360,11 @@
                               "section":  "Phần I",
                               "question_number":  13,
                               "question_type":  "single_choice",
-                              "prompt":  "Aminoacid là hợpchất hữu cơtrong phân tử",
+                              "prompt":  "Amino acid là hợp chất hữu cơ trong phân tử",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "chỉ chứa nhómcarboxyl."
+                                                  "text":  "chỉ chứa nhóm carboxyl."
                                               },
                                               {
                                                   "key":  "B",
@@ -376,7 +376,7 @@
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "chỉ chứa nhómamino."
+                                                  "text":  "chỉ chứa nhóm amino."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -389,7 +389,7 @@
                               "section":  "Phần I",
                               "question_number":  14,
                               "question_type":  "single_choice",
-                              "prompt":  "HợpchấtCH3-NH-CH3cótênlàthaythếlà",
+                              "prompt":  "Hợp chất CH 3 -NH-CH 3 có tên là thay thế là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -397,11 +397,11 @@
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "N-methylmethanamine."
+                                                  "text":  "N- methylmethanamine."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "N-ethylmethanamine."
+                                                  "text":  "N- ethylmethanamine."
                                               },
                                               {
                                                   "key":  "D",
@@ -418,23 +418,23 @@
                               "section":  "Phần I",
                               "question_number":  15,
                               "question_type":  "single_choice",
-                              "prompt":  "(hiểu) Glucosecó thể lên tạolactic acidcó trongsữa chua qua phảnứng nào sao đây? C6H12O6enzyme2C2H5OH+2CO2. 2C6H12O6+Cu(OH)2(C6H11O6)2Cu+2H2O.",
+                              "prompt":  "(hiểu) Glucose có thể lên tạo lactic acid có trong sữa chua qua phản ứng nào sao đây? C 6 H 12 O 6  e  nzym  e  2 C 2 H 5 OH + 2 CO 2 . 2C 6 H 12 O 6 + Cu(OH) 2    (C 6 H 11 O 6 ) 2 Cu + 2H 2 O.",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C6H12O6enzyme2CH3CH(OH)COOH."
+                                                  "text":  "C 6 H 12 O 6  e  nzym  e  2 CH 3 CH(OH)COOH."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "242224242224CHOH-[CHOH]-CHO+Br+HOtoCHOH-[CHOH]-COOH+2HBr."
+                                                  "text":  "2 4 2 2 2 4 2 4 2 2 2 4 CH OH-[CHOH] -CHO + Br +H O  t  o  CH OH-[CHOH] -COOH + 2HBr."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "242224"
+                                                  "text":  "2 4 2 2 2 4"
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "242224"
+                                                  "text":  "2 4 2 2 2 4"
                                               }
                                           ],
                               "correct_answer":  null,
@@ -447,23 +447,23 @@
                               "section":  "Phần I",
                               "question_number":  16,
                               "question_type":  "single_choice",
-                              "prompt":  "Cấu hìnhelectron nguyên tử11Na (sodium) là",
+                              "prompt":  "Cấu hình electron nguyên tử 11 Na (sodium) là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "1s22s22p53s2."
+                                                  "text":  "1s 2 2s 2 2p 5 3s 2 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "1s22s22p63s1."
+                                                  "text":  "1s 2 2s 2 2p 6 3s 1 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "1s22s22p5."
+                                                  "text":  "1s 2 2s 2 2p 5 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "1s22s22p6."
+                                                  "text":  "1s 2 2s 2 2p 6 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -476,7 +476,7 @@
                               "section":  "Phần I",
                               "question_number":  17,
                               "question_type":  "single_choice",
-                              "prompt":  "Isopropyl formate có trong cà phê Arabica. Khi đun nóng hỗn hợp 9,2 g formic acid và 18 g isopropyl alcohol với xúc tác H2SO4 đặc, thu được 11 g ethyl propionate. Hiệu suất của phản ứng điềuchế isopropyl formate trên là",
+                              "prompt":  "Isopropyl formate có trong cà phê Arabica. Khi đun nóng hỗn hợp 9,2 g formic acid và 18 g isopropyl alcohol với xúc tác H 2 SO 4 đặc, thu được 11 g ethyl propionate. Hiệu suất của phản ứng điều chế isopropyl formate trên là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -505,7 +505,7 @@
                               "section":  "Phần I",
                               "question_number":  18,
                               "question_type":  "single_choice",
-                              "prompt":  "Một số vùng đất canh tácthường bị chua.Đểkhử chua ngườitathường dùng chất nàosauđây?",
+                              "prompt":  "Một số vùng đất canh tác thường bị chua. Để khử chua người ta thường dùng chất nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -534,23 +534,23 @@
                               "section":  "Phần II",
                               "question_number":  19,
                               "question_type":  "true_false",
-                              "prompt":  "Glutamic acidthuộc loại hợp chấthữu cơ tạpchứccó công thứccấutạo như sau:",
+                              "prompt":  "Glutamic acid thuộc loại hợp chất hữu cơ tạp chức có công thức cấu tạo như sau:",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Glutamicacid cótínhchất lưỡng tính."
+                                                  "text":  "Glutamic acid có tính chất lưỡng tính."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "ỞpH=6,0, khi đặtglutamic acidtrongđiện trường thì glutamicacid sẽ dichuyển về cực âm."
+                                                  "text":  "Ở pH=6,0, khi đặt glutamic acid trong điện trường thì glutamic acid sẽ di chuyển về cực âm."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "1mol glutamicacid tácdưng đượctối đavới 2mol NaOHtrong dung dịch."
+                                                  "text":  "1 mol glutamic acid tác dưng được tối đa với 2 mol NaOH trong dung dịch."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Glutamicacidlàmộtα-amino acid."
+                                                  "text":  "Glutamic acid là một α -amino acid."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -563,23 +563,23 @@
                               "section":  "Phần II",
                               "question_number":  20,
                               "question_type":  "true_false",
-                              "prompt":  "Một học sinhtiến hành làm thínghiệm tráng bạccủaglucose theohai bước sau: Bước1:Chovàomộtốngnghiệmsạch1mldungdịchAgNO31%,sauđónhỏtiếptừnggiọtdungdịch NH3vào cho đếnkhi kết tủavừa xuất hiện lạitan hết. Bước2: Thêm tiếp 1 ml dung dịch glucose1% vàoống nghiệm trên rồiđun nóng nhẹ. Phản ứng hóa học xảy raở bước 2 là o 2444324443CH2OH-[CHOH]4-CHO+2AgNO3+3NH3+H2OtCHOH-[CHOH]-COONH+2Ag+3NHNO 24443",
+                              "prompt":  "Một học sinh tiến hành làm thí nghiệm tráng bạc của glucose theo hai bước sau: Bước 1: Cho vào một ống nghiệm sạch 1 ml dung dịch AgNO 3 1%, sau đó nhỏ tiếp từng giọt dung dịch NH 3 vào cho đến khi kết tủa vừa xuất hiện lại tan hết. Bước 2: Thêm tiếp 1 ml dung dịch glucose 1% vào ống nghiệm trên rồi đun nóng nhẹ. Phản ứng hóa học xảy ra ở bước 2 là o 2 4 4 4 3 2 4 4 4 3 CH 2 OH-[CHOH] 4 -CHO+2AgNO 3 +3NH 3 +H 2 O  t   CH OH-[CHOH] -COONH +2Ag + 3NH NO 2 4 4 4 3",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "24443"
+                                                  "text":  "2 4 4 4 3"
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Ởbước 2, chấtoxi hóa là glucose,chất khử là AgNO3"
+                                                  "text":  "Ở bước 2, chất oxi hóa là glucose, chất khử là AgNO 3"
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Trongcôngnghiệp,ngườitadùngsucroselàmnguyênliệuđểtrángruộtphíchmàkhôngdùng glucose là vì sucrose có lượng nhiều trong tự nhiên, giá thành thấp đồng thời khi thủy phân sinh ra glucose và fructose đều có phản ứng tráng bạc."
+                                                  "text":  "Trong công nghiệp, người ta dùng sucrose làm nguyên liệu để tráng ruột phích mà không dùng glucose là vì sucrose có lượng nhiều trong tự nhiên, giá thành thấp đồng thời khi thủy phân sinh ra glucose và fructose đều có phản ứng tráng bạc."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Hiệntượng hóahọc quan sát được ởbước 2 là có xuấthiện kết tủa trắng bạc."
+                                                  "text":  "Hiện tượng hóa học quan sát được ở bước 2 là có xuất hiện kết tủa trắng bạc."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -592,23 +592,23 @@
                               "section":  "Phần II",
                               "question_number":  21,
                               "question_type":  "true_false",
-                              "prompt":  "Cho công thứccấutạo các hợpchất hữu cơ sau: (1)CH4;(2)CH3OH;(3)CH2=CH2;(4)HOCH2-CHOH-CH2OH;(5)CH≡CH;(6)CH3-CHO;(7) CH3COOH;(8)HOOC(CH2)4COOH;(9)C6H6(benzene);(10)H2NCH2COOH;(11) HOCH2(CHOH)4CHO.",
+                              "prompt":  "Cho công thức cấu tạo các hợp chất hữu cơ sau: (1) CH 4 ; (2) CH 3 OH; (3) CH 2 =CH 2 ; (4) HOCH 2 -CHOH-CH 2 OH; (5) CH≡CH; (6) CH 3 -CHO; (7) CH 3 COOH; (8) HOOC(CH 2 ) 4 COOH; (9) C 6 H 6 (benzene); (10) H 2 NCH 2 COOH; (11) HOCH 2 (CHOH) 4 CHO.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Cóhai hợp chất đa chứcvà hai hợp chấttạp chức."
+                                                  "text":  "Có hai hợp chất đa chức và hai hợp chất tạp chức."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Cóbảy hợp chấtthuộc loại dẫn xuấthydrocarbon, trong đó có ba chất đơn chức."
+                                                  "text":  "Có bảy hợp chất thuộc loại dẫn xuất hydrocarbon, trong đó có ba chất đơn chức."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Cóbốn hợp chất thuộc loạihydrocarbon, trong đó có haihydrocarbon không no."
+                                                  "text":  "Có bốn hợp chất thuộc loại hydrocarbon, trong đó có hai hydrocarbon không no."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Cóhai hợp chất thuộcloạialcohol vàba hợpchất thuộc loại carboxylic acid."
+                                                  "text":  "Có hai hợp chất thuộc loại alcohol và ba hợp chất thuộc loại carboxylic acid."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -621,23 +621,23 @@
                               "section":  "Phần II",
                               "question_number":  22,
                               "question_type":  "true_false",
-                              "prompt":  "Cho salicylic acid (hay 2 – hydroxylbenzoic acid) phản ứng với methyl alcohol có mặt sulfuric acidlàmxúctác,thuđượcmethylsalicylate(C8H8O3)dùnglàmchấtgiảmđau(cótrongmiếngdángiảm đau khi vận động hoặc chơi thể thao). Phầntrăm khốilượng của nguyên tốoxygen trong methylsalicylate là 31,58%.",
+                              "prompt":  "Cho salicylic acid (hay 2 – hydroxylbenzoic acid) phản ứng với methyl alcohol có mặt sulfuric acid làm xúc tác, thu được methyl salicylate (C 8 H 8 O 3 ) dùng làm chất giảm đau (có trong miếng dán giảm đau khi vận động hoặc chơi thể thao). Phần trăm khối lượng của nguyên tố oxygen trong methyl salicylate là 31,58%.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "1mol salicylate phản ứng tốiđa với 2 molNaOH."
+                                                  "text":  "1 mol salicylate phản ứng tối đa với 2 mol NaOH."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Côngthức phântử của salicylicacid là C8H6O3."
+                                                  "text":  "Công thức phân tử của salicylic acid là C 8 H 6 O 3 ."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Methylsalicylate thuộchợp chất hữu cơđa chức."
+                                                  "text":  "Methyl salicylate thuộc hợp chất hữu cơ đa chức."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "PHẦNIII.Câutrắcnghiệmyêucầutrảlời ngắn.Thí sinhtrảlời từcâu1 đếncâu 4."
+                                                  "text":  "PHẦN III. Câu trắc nghiệm yêu cầu trả lời ngắn. Thí sinh trả lời từ câu 1 đến câu 4."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -650,7 +650,7 @@
                               "section":  "Phần III",
                               "question_number":  23,
                               "question_type":  "short_answer",
-                              "prompt":  "Chodungdịchamonia(NH3)lầnlượtvào:dungdịchFeCl3;dungdịchHCl;Cu(OH)2;dungdịch NaCl;dung dịch NaOH. Sốtrường hợp xảy raphản ứng hóa họclà?",
+                              "prompt":  "Cho dung dịch amonia (NH 3 ) lần lượt vào: dung dịch FeCl 3 ; dung dịch HCl; Cu(OH) 2 ; dung dịch NaCl; dung dịch NaOH. Số trường hợp xảy ra phản ứng hóa học là?",
                               "options":  [
 
                                           ],
@@ -664,7 +664,7 @@
                               "section":  "Phần III",
                               "question_number":  24,
                               "question_type":  "short_answer",
-                              "prompt":  "Trongcôngthứccấutạodạngmạchvòngα-glucosenhưsau: OH 6 5O 4OH OH3 1 2OH OH α-glucose Nhóm–OHhemiacetal là–OHgắn ởcarbonsố mấy?",
+                              "prompt":  "Trong công thức cấu tạo dạng mạch vòng α - glucose như sau: OH 6 5 O 4 OH OH 3 1 2 OH OH α - glucose Nhóm –OH hemiacetal là –OH gắn ở carbon số mấy?",
                               "options":  [
 
                                           ],
@@ -678,7 +678,7 @@
                               "section":  "Phần III",
                               "question_number":  25,
                               "question_type":  "short_answer",
-                              "prompt":  "Một loại gương soi có diện tích bề mặt là 0,6 m2. Để tráng được 400 chiếc gương trên với độ dày lớpbạcđượctránglà0,2μmthìcầndùngmgamglucosetácdụngvớilượngdưdungdịchAgNO3trong NH3. Biếthiệu suất phản ứng tráng bạc là70% và khốilượng riêng củabạclà 10,49 g/cm3. Tìm giá trị củam? (kếtquảlàmtròn đếnhàng đơn vị).",
+                              "prompt":  "Một loại gương soi có diện tích bề mặt là 0,6 m 2 . Để tráng được 400 chiếc gương trên với độ dày lớp bạc được tráng là 0,2 μm thì cần dùng m gam glucose tác dụng với lượng dư dung dịch AgNO3 trong NH3. Biết hiệu suất phản ứng tráng bạc là 70% và khối lượng riêng của bạc là 10,49 g/cm 3 . Tìm giá trị của m? (kết quả làm tròn đến hàng đơn vị) .",
                               "options":  [
 
                                           ],
@@ -692,7 +692,7 @@
                               "section":  "Phần III",
                               "question_number":  26,
                               "question_type":  "short_answer",
-                              "prompt":  "Now Ultra Omega-3 Fish Oil 90 là sản phẩm dầu cá được ưa chuộng nhất trên thị trường thực phẩmbổsunghiệnnay.NowOmega-3phùhợpvớiđốitượngngườicaotuổi,ngườicónhucầugiảmcân, người thiếu hụt dinh dưỡng, những gymer, vận động viên, người tập luyện thể thao. Mỗi viên dầu cá chứa 180 mg EPA và 120 mg DHA. Hãy tính tổng số mol EPA và DHA có trong 100 lọ Now Ultra Omega-3 Fish Oil 90, biết trong một lọ có chứa 90 viên dầu cá trên? (kết quả làm tròn đến hàng phần trăm) 2 13 Eicosapentaenoicacid(EPA) 2 33COOH1 3 3 Docosahexaenoicacid(DHA) COOH",
+                              "prompt":  "Now Ultra Omega-3 Fish Oil 90 là sản phẩm dầu cá được ưa chuộng nhất trên thị trường thực phẩm bổ sung hiện nay. Now Omega-3 phù hợp với đối tượng người cao tuổi, người có nhu cầu giảm cân, người thiếu hụt dinh dưỡng, những gymer, vận động viên, người tập luyện thể thao. Mỗi viên dầu cá chứa 180 mg EPA và 120 mg DHA. Hãy tính tổng số mol EPA và DHA có trong 100 lọ Now Ultra Omega-3 Fish Oil 90, biết trong một lọ có chứa 90 viên dầu cá trên? (kết quả làm tròn đến hàng phần trăm) 2 1 3 Eicosapentaenoic acid (EPA) 2 3 3 COOH 1 3 3 Docosa hexaenoic acid (DHA) COOH",
                               "options":  [
 
                                           ],
@@ -706,7 +706,7 @@
                               "section":  "Phần III",
                               "question_number":  27,
                               "question_type":  "short_answer",
-                              "prompt":  "Số đồngphân cấu tạo estercó công thứcphântử C4H8O2là?",
+                              "prompt":  "Số đồng phân cấu tạo ester có công thức phân tử C 4 H 8 O 2 là?",
                               "options":  [
 
                                           ],
@@ -720,7 +720,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Phản ứng quang hợp tạo raglucose cần đượccung cấp năng lượng: 6CO+ 6HO+ 673kcalasmtCHO+6 O 22chlorophyll 61262 Nếu có một cây xanh với tổng diện tích lá 100 dm2, mỗi dm2nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao x gam glucose được tạo thành. Xác định giá trị của x? (kết quả làm tròn đến hàng phần mười). HẾT",
+                              "prompt":  "Phản ứng quang hợp tạo ra glucose cần được cung cấp năng lượng: 6 CO + 6 H O + 673 kcal   as  mt   C H O + 6 O 2 2 chlorophyll 6 12 6 2 Nếu có một cây xanh với tổng diện tích lá 100 dm 2 , mỗi dm 2 nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao x gam glucose được tạo thành. Xác định giá trị của x? (kết quả làm tròn đến hàng phần mười). HẾT",
                               "options":  [
 
                                           ],
@@ -745,23 +745,23 @@
                               "section":  "Phần I",
                               "question_number":  1,
                               "question_type":  "single_choice",
-                              "prompt":  "Tyrosine làmộtα-amino acidcó công thứccấu tạo như sau: Nhận định nào sau đây vềtyrosine là sai?",
+                              "prompt":  "Tyrosine là một α -amino acid có công thức cấu tạo như sau: Nhận định nào sau đây về tyrosine là sai ?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Có tính chấtlưỡng tính."
+                                                  "text":  "Có tính chất lưỡng tính."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Tác dụng được với nướcbromine."
+                                                  "text":  "Tác dụng được với nước bromine."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Có phân tử khối là181."
+                                                  "text":  "Có phân tử khối là 181."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Tác dụng vớiNaOH dư theotỉ lệ mol1 : 1."
+                                                  "text":  "Tác dụng với NaOH dư theo tỉ lệ mol 1 : 1."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -790,7 +790,7 @@
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Vinylchloride."
+                                                  "text":  "Vinyl chloride."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -803,23 +803,23 @@
                               "section":  "Phần I",
                               "question_number":  3,
                               "question_type":  "single_choice",
-                              "prompt":  "Hợp chấthữu cơ Xcó công thứccấu tạo như sau: Phátbiểu nàosau đâykhông đúng?",
+                              "prompt":  "Hợp chất hữu cơ X có công thức cấu tạo như sau: Phát biểu nào sau đây không đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Xthuộc loại muối sodium alkylbenzenesulfonate."
+                                                  "text":  "X thuộc loại muối sodium alkylbenzenesulfonate."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Xcó công thức phân tử là C18H29SO3Na."
+                                                  "text":  "X có công thức phân tử là C 18 H 29 SO 3 Na."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Xcó đầu ưa nướcvà đuôi kị nước."
+                                                  "text":  "X có đầu ưa nước và đuôi kị nước."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Xđược sử dụng để sản xuất xàphòng."
+                                                  "text":  "X được sử dụng để sản xuất xà phòng."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -832,7 +832,7 @@
                               "section":  "Phần I",
                               "question_number":  4,
                               "question_type":  "single_choice",
-                              "prompt":  "Aniline cóthểđược tổng hợptừ benzene theo sơđồ chuyển hoá sau: Theo sơ đồ trên, từ 1 tấn benzene sẽ điều chế được bao nhiêu kg aniline? Biết hiệu suất toàn bộ quá trình là 60%. (Làm tròn kết quả đến hàng đơn vị)",
+                              "prompt":  "Aniline có thể được tổng hợp từ benzene theo sơ đồ chuyển hoá sau: Theo sơ đồ trên, từ 1 tấn benzene sẽ điều chế được bao nhiêu kg aniline? Biết hiệu suất toàn bộ quá trình là 60%. ( Làm tròn kết quả đến hàng đơn vị )",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -861,23 +861,23 @@
                               "section":  "Phần I",
                               "question_number":  5,
                               "question_type":  "single_choice",
-                              "prompt":  "XétpinGalvanihoạtđộngvớiphươngtrìnhtươngứngnhưsau:Zn+HgO→ZnO+Hg.Quá trình nào sau đây xuất hiện ở anode?",
+                              "prompt":  "Xét pin Galvani hoạt động với phương trình tương ứng như sau: Zn + HgO → ZnO + Hg. Quá trình nào sau đây xuất hiện ở anode?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Zn2++ 2e → Zn"
+                                                  "text":  "Zn 2+ + 2e → Zn"
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Hg + O2-→ HgO+ 2e"
+                                                  "text":  "Hg + O 2- → HgO + 2e"
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Zn → Zn2++ 2e"
+                                                  "text":  "Zn → Zn 2+ + 2e"
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "HgO+ 2e→ Hg + O2-"
+                                                  "text":  "HgO + 2e → Hg + O 2-"
                                               }
                                           ],
                               "correct_answer":  null,
@@ -890,23 +890,23 @@
                               "section":  "Phần I",
                               "question_number":  6,
                               "question_type":  "single_choice",
-                              "prompt":  "Cồn 70°đượcsử dụng phổbiến trongytế,dùng đểsát trùng, diệtkhuẩn,... Cáchpha chế cồn 70° là",
+                              "prompt":  "Cồn 70° được sử dụng phổ biến trong y tế, dùng để sát trùng, diệt khuẩn,... Cách pha chế cồn 70° là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Lấy 70 ml ethanolrồi thêm 100 ml nước."
+                                                  "text":  "Lấy 70 ml ethanol rồi thêm 100 ml nước."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Pha 70 ml ethanol với 30 mlnước"
+                                                  "text":  "Pha 70 ml ethanol với 30 ml nước"
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Pha 70 ml nướcvới 30 ml ethanol"
+                                                  "text":  "Pha 70 ml nước với 30 ml ethanol"
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Lấy 70 ml ethanolrồi thêm nước đểthu được 100 mL cồn."
+                                                  "text":  "Lấy 70 ml ethanol rồi thêm nước để thu được 100 mL cồn."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -919,23 +919,23 @@
                               "section":  "Phần I",
                               "question_number":  7,
                               "question_type":  "single_choice",
-                              "prompt":  "Maltose làmộtloại disaccharide cónhiều trong mạchnha. Công thứcphântử của maltose là",
+                              "prompt":  "Maltose là một loại disaccharide có nhiều trong mạch nha. Công thức phân tử của maltose là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C3H6O2."
+                                                  "text":  "C 3 H 6 O 2 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "C12H22O11."
+                                                  "text":  "C 12 H 22 O 11 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "C6H12O6."
+                                                  "text":  "C 6 H 12 O 6 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "(C6H10O5)n"
+                                                  "text":  "(C 6 H 10 O 5 ) n"
                                               }
                                           ],
                               "correct_answer":  null,
@@ -948,23 +948,23 @@
                               "section":  "Phần I",
                               "question_number":  8,
                               "question_type":  "single_choice",
-                              "prompt":  "Chodãysắpxếpcáckimloạitheochiềugiảmdầntínhkhử:Na,Mg,Al,Fe.Trongsốcáccặp oxihoá - khử sau, cặp nào cógiá trịthế điện cực chuẩn nhỏ nhất?",
+                              "prompt":  "Cho dãy sắp xếp các kim loại theo chiều giảm dần tính khử: Na, Mg, Al, Fe. Trong số các cặp oxi hoá - khử sau, cặp nào có giá trị thế điện cực chuẩn nhỏ nhất?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Fe2+/Fe."
+                                                  "text":  "Fe 2+ /Fe."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Na+/Na."
+                                                  "text":  "Na + /Na."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Al3+/Al."
+                                                  "text":  "Al 3+ /Al."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Mg2+/Mg."
+                                                  "text":  "Mg 2+ /Mg."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -977,23 +977,23 @@
                               "section":  "Phần I",
                               "question_number":  9,
                               "question_type":  "single_choice",
-                              "prompt":  "Biogaslàmộtloạikhísinhhọc,đượcsảnxuấtbằngcáchủkíncácchấtthảihữucơtrongchăn nuôi, sinh hoạt. Biogas được dùng để đun nấu, chạy máy phát điện sinh hoạt gia đình. Thành phần chính của biogas là",
+                              "prompt":  "Biogas là một loại khí sinh học, được sản xuất bằng cách ủ kín các chất thải hữu cơ trong chăn nuôi, sinh hoạt. Biogas được dùng để đun nấu, chạy máy phát điện sinh hoạt gia đình. Thành phần chính của biogas là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "CO2."
+                                                  "text":  "CO 2 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "NH3."
+                                                  "text":  "NH 3 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "N2."
+                                                  "text":  "N 2 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "CH4."
+                                                  "text":  "CH 4 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1035,19 +1035,19 @@
                               "section":  "Phần I",
                               "question_number":  11,
                               "question_type":  "single_choice",
-                              "prompt":  "Thuỷphântripalmitincócôngthức(C15H31COO)3C3H5trongdungdịchNaOHthuđược glycerolvà muối X. Công thức củaX là",
+                              "prompt":  "Thuỷ phân tripalmitin có công thức (C 15 H 31 COO) 3 C 3 H 5 trong dung dịch NaOH thu được glycerol và muối X. Công thức của X là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C17H33COONa."
+                                                  "text":  "C 17 H 33 COONa."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "CH3COONa."
+                                                  "text":  "CH 3 COONa."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "C15H31COONa."
+                                                  "text":  "C 15 H 31 COONa."
                                               },
                                               {
                                                   "key":  "D",
@@ -1072,7 +1072,7 @@
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "saccharosevàtinh bột."
+                                                  "text":  "saccharose và tinh bột."
                                               },
                                               {
                                                   "key":  "C",
@@ -1093,7 +1093,7 @@
                               "section":  "Phần I",
                               "question_number":  13,
                               "question_type":  "single_choice",
-                              "prompt":  "Chất hữu cơ X được dùng trong sản xuất thuốc chữa bệnh, các chất phòng trừ dịch hại, chất dẫndụcôntrùng,chấttăngtốclưuhoácaosuvàchấtứcchếănmònkimloại.DungdịchXlàmquỳ tím hoá xanh. Kết quả phân tích phổ khối lượng cho thấy phân tử khối của X là 45. Chất X có thể là",
+                              "prompt":  "Chất hữu cơ X được dùng trong sản xuất thuốc chữa bệnh, các chất phòng trừ dịch hại, chất dẫn dụ côn trùng, chất tăng tốc lưu hoá cao su và chất ức chế ăn mòn kim loại. Dung dịch X làm quỳ tím hoá xanh. Kết quả phân tích phổ khối lượng cho thấy phân tử khối của X là 45. Chất X có thể là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1105,7 +1105,7 @@
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "methylformate."
+                                                  "text":  "methyl formate."
                                               },
                                               {
                                                   "key":  "D",
@@ -1122,7 +1122,7 @@
                               "section":  "Phần I",
                               "question_number":  14,
                               "question_type":  "single_choice",
-                              "prompt":  "Chỉsốxàphònghóa(SAP)củamộtchấtbéolàsốmgKOHcầndùngđểxàphònghóahoàn toàn1gamchấtbéo(baogồmchấtbéovàacidbéotựdo).Mộtloạidầumècóchỉsốxàphònghóalà 188.Khối lượng KOHcần dùng để xà phònghóahoàn toàn 500g dầu mètrên là",
+                              "prompt":  "Chỉ số xà phòng hóa (SAP) của một chất béo là số mg KOH cần dùng để xà phòng hóa hoàn toàn 1 gam chất béo (bao gồm chất béo và acid béo tự do). Một loại dầu mè có chỉ số xà phòng hóa là 188. Khối lượng KOH cần dùng để xà phòng hóa hoàn toàn 500g dầu mè trên là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1151,23 +1151,23 @@
                               "section":  "Phần I",
                               "question_number":  15,
                               "question_type":  "single_choice",
-                              "prompt":  "Mộtsinhviêntiếnhànhthínghiệmthủyphânsaccharosevàkiểmtraxemdịchthủyphâncó chứaglucosehay không thôngqua cácbước sau: Bước 1: Cho một lượng nhỏ saccharose nguyên chất vào nước để tạo thành dung dịch, đun sôi hỗn hợp trong vài phút và để nguội. Bước2:ThêmvàovàigiọtthuốcthửTollensvàodungdịchđãđểnguội,đunnóngnhẹ.Tuynhiên hiệntượng quan sát được khôngthấy xuất hiện kếttủa silver. Nhậnđịnh nào dưới đây là đúng.",
+                              "prompt":  "Một sinh viên tiến hành thí nghiệm thủy phân saccharose và kiểm tra xem dịch thủy phân có chứa glucose hay không thông qua các bước sau: Bước 1: Cho một lượng nhỏ saccharose nguyên chất vào nước để tạo thành dung dịch, đun sôi hỗn hợp trong vài phút và để nguội. Bước 2: Thêm vào vài giọt thuốc thử Tollens vào dung dịch đã để nguội, đun nóng nhẹ. Tuy nhiên hiện tượng quan sát được không thấy xuất hiện kết tủa silver. Nhận định nào dưới đây là đúng.",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Sảnphẩm thủy phân saccharose khôngcó chứa glucose nên khôngxảy ra phản ứng tráng bạc."
+                                                  "text":  "Sản phẩm thủy phân saccharose không có chứa glucose nên không xảy ra phản ứng tráng bạc."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Thờigian đun nóng thí nghiệmchưa đủ nên không xảy ra phản ứng tráng bạc."
+                                                  "text":  "Thời gian đun nóng thí nghiệm chưa đủ nên không xảy ra phản ứng tráng bạc."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Phảnứng không xảyra do saccharosechưa bị thủy phân."
+                                                  "text":  "Phản ứng không xảy ra do saccharose chưa bị thủy phân."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Cầnthêm dung dịch sodiumhydroxide để làm xúc táccho phản ứng thủy phân."
+                                                  "text":  "Cần thêm dung dịch sodium hydroxide để làm xúc tác cho phản ứng thủy phân."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1180,7 +1180,7 @@
                               "section":  "Phần I",
                               "question_number":  16,
                               "question_type":  "single_choice",
-                              "prompt":  "Trong công nghiệp, phenolđược điềuchếchủ yếu từ chấtnào sau đây?",
+                              "prompt":  "Trong công nghiệp, phenol được điều chế chủ yếu từ chất nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1209,23 +1209,23 @@
                               "section":  "Phần I",
                               "question_number":  17,
                               "question_type":  "single_choice",
-                              "prompt":  "PhươngtrìnhhoáhọccủaphảnứngkhichoethylenetácdụngvớidungdịchBr2làCH2=CH2 +Br2→CH2Br-CH2Br Cơ chếcủa phản ứng trên xảy ranhư sau: Nhận định nào sau đây không đúng?",
+                              "prompt":  "Phương trình hoá học của phản ứng khi cho ethylene tác dụng với dung dịch Br 2 là CH 2 =CH 2 + Br 2 → CH 2 Br- CH 2 Br Cơ chế của phản ứng trên xảy ra như sau: Nhận định nào sau đây không đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Tronggiai đoạn đầu của phản ứngcó sự hình thành liên kết σ."
+                                                  "text":  "Trong giai đoạn đầu của phản ứng có sự hình thành liên kết σ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Phản ứng trên thuộcloại phản ứng cộng."
+                                                  "text":  "Phản ứng trên thuộc loại phản ứng cộng."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Trongphân tử ethylene có2 liên kết π."
+                                                  "text":  "Trong phân tử ethylene có 2 liên kết π."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Tronggiai đoạn đầu của phản ứngcó sự phân cắt liên kếtπ."
+                                                  "text":  "Trong giai đoạn đầu của phản ứng có sự phân cắt liên kết π."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1242,7 +1242,7 @@
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C6H5COOH"
+                                                  "text":  "C 6 H 5 COOH"
                                               },
                                               {
                                                   "key":  "B",
@@ -1250,11 +1250,11 @@
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "(COOH)2"
+                                                  "text":  "(COOH) 2"
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "CH3COOH"
+                                                  "text":  "CH 3 COOH"
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1267,23 +1267,23 @@
                               "section":  "Phần II",
                               "question_number":  19,
                               "question_type":  "true_false",
-                              "prompt":  "Tơcapronlàpolymercótínhdai,bền,mềmóngmượt,ítthấmnước,maukhô.Bêncạnhứng dụng trong ngành may mặc, tơ capron còn được sử dụng làm dây cáp, dù, đan lưới, chế tạo các chi tiết máy. Một quy trình sản xuất tơ capron từ cyclohexanol được thực hiện theo sơ đồ sau: Thànhphần trăm theokhốilượng củanitrogen trong phântử caprolactam là 12,39%.",
+                              "prompt":  "Tơ capron là polymer có tính dai, bền, mềm óng mượt, ít thấm nước, mau khô. Bên cạnh ứng dụng trong ngành may mặc, tơ capron còn được sử dụng làm dây cáp, dù, đan lưới, chế tạo các chi tiết máy. Một quy trình sản xuất tơ capron từ cyclohexanol được thực hiện theo sơ đồ sau: Thành phần trăm theo khối lượng của nitrogen trong phân tử caprolactam là 12,39%.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Phảnứng (3) là phản ứng trùng ngưng."
+                                                  "text":  "Phản ứng (3) là phản ứng trùng ngưng."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Tơcapron thuộc loạitơ nhân tạo."
+                                                  "text":  "Tơ capron thuộc loại tơ nhân tạo."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Nếuhiệusuấtchuyểnhoátừcyclohexanolđếncapronlà60%,thicứ2,0tấncyclohexanolthu"
+                                                  "text":  "Nếu hiệu suất chuyển hoá từ cyclohexanol đến capron là 60%, thi cứ 2,0 tấn cyclohexanol thu"
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "được1,356 tấn tơ capron."
+                                                  "text":  "được 1,356 tấn tơ capron."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1296,19 +1296,19 @@
                               "section":  "Phần II",
                               "question_number":  20,
                               "question_type":  "true_false",
-                              "prompt":  "Một nhóm học sinh tìm hiểu về quá trình tạo acid lactic từ đường glucose thông qua lên men lactic, với giả thuyết: “Nhiệt độ càng cao thì lượng lactic acid thu được càng nhiều”. Nhóm đã thực hiện thí nghiệm như sau: Chuẩnbị:dungdịchglucose5%,chếphẩmvisinhvậtlênmenlactic(lactobacillus),5ốngnghiệm cónắp, bếp điều nhiệt. Cáchlàm:Lấy200mLdungdịchglucosechovàomỗiốngnghiệm.Thêmmộtítchếphẩmvisinh vàomỗiốngnghiệm.Đậynắpvàủởcácnhiệtđộ:20°C(mẫu1),30°C(mẫu2),37°C(mẫu3),45°C (mẫu4),mẫutrắngkhôngthêmvisinhvật(mẫutrắng).Sau3ngày,lấycácmẫuđemlọcsạch,đểổn định ở nhiệt độ môi trường thì thấy thể tích dung dịch trong các mẫu hầu như không thay đổi là 200 mL. Lần lượt lấy 5 mL các mẫu: mẫu trắng và các mẫu 1; 2; 3; 4 rồi pha loãng thành 100 mL và tiến hành chuẩn độ bằng dung dịch NaOH 0,1 M với chỉ thị phenolphthalein. Kếtquả thu được như bảng sau: Mẫu Mẫu trắng Mẫu 1 Mẫu 2 Mẫu 3 Mẫu 4 VddNaOH(mL) 0,0 5,6 8,2 10,5 7,0 BiếtrằngtrongcácmẫuchỉcóchứaC6H12O6,CH3CH(OH)COOH(lacticacid)vàH2O.",
+                              "prompt":  "Một nhóm học sinh tìm hiểu về quá trình tạo acid lactic từ đường glucose thông qua lên men lactic, với giả thuyết: “Nhiệt độ càng cao thì lượng lactic acid thu được càng nhiều”. Nhóm đã thực hiện thí nghiệm như sau: Chuẩn bị: dung dịch glucose 5%, chế phẩm vi sinh vật lên men lactic (lactobacillus), 5 ống nghiệm có nắp, bếp điều nhiệt. Cách làm: Lấy 200 mL dung dịch glucose cho vào mỗi ống nghiệm. Thêm một ít chế phẩm vi sinh vào mỗi ống nghiệm. Đậy nắp và ủ ở các nhiệt độ: 20°C (mẫu 1), 30°C (mẫu 2), 37°C (mẫu 3), 45°C (mẫu 4), mẫu trắng không thêm vi sinh vật (mẫu trắng). Sau 3 ngày, lấy các mẫu đem lọc sạch, để ổn định ở nhiệt độ môi trường thì thấy thể tích dung dịch trong các mẫu hầu như không thay đổi là 200 mL. Lần lượt lấy 5 mL các mẫu: mẫu trắng và các mẫu 1; 2; 3; 4 rồi pha loãng thành 100 mL và tiến hành chuẩn độ bằng dung dịch NaOH 0,1 M với chỉ thị phenolphthalein. Kết quả thu được như bảng sau: Mẫu Mẫu trắng Mẫu 1 Mẫu 2 Mẫu 3 Mẫu 4 Vdd NaOH (mL) 0,0 5,6 8,2 10,5 7,0 Biết rằng trong các mẫu chỉ có chứa C 6 H 12 O 6 , CH 3 CH(OH)COOH (lactic acid) và H 2 O.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Nhiệtđộ tối ưucho quá trìnhlên men tạoacid lactic là 37°C."
+                                                  "text":  "Nhiệt độ tối ưu cho quá trình lên men tạo acid lactic là 37°C."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Từkết quảthí nghiệm, kếtluận giả thuyết của nhómhọc sinh trên là đúng."
+                                                  "text":  "Từ kết quả thí nghiệm, kết luận giả thuyết của nhóm học sinh trên là đúng."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Trongmẫu trắng đã có sẵnmộtlượng lactic acid đáng kể."
+                                                  "text":  "Trong mẫu trắng đã có sẵn một lượng lactic acid đáng kể."
                                               },
                                               {
                                                   "key":  "d",
@@ -1325,23 +1325,23 @@
                               "section":  "Phần II",
                               "question_number":  21,
                               "question_type":  "true_false",
-                              "prompt":  "Triglycerideđóngvaitròlànguồncungcấpnănglượngvàchuyênchởcácchấtbéotrongquá trình trao đổi chất. Cho triglyceride X có công thức cấu tạo như hình sau: Cáckí hiệu (1), (2), (3)lần lượtlà các gốchydrocarbontrong cấu tạo của triglyceride X Côngthức phân tử của Xlà C55H98O6.",
+                              "prompt":  "Triglyceride đóng vai trò là nguồn cung cấp năng lượng và chuyên chở các chất béo trong quá trình trao đổi chất. Cho triglyceride X có công thức cấu tạo như hình sau: Các kí hiệu (1), (2), (3) lần lượt là các gốc hydrocarbon trong cấu tạo của triglyceride X Công thức phân tử của X là C 55 H 98 O 6 .",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Acidbéo có gốckí hiệu(2) thuộc loại acid béo omega-9."
+                                                  "text":  "Acid béo có gốc kí hiệu (2) thuộc loại acid béo omega- 9."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Cácgốccủa acid béo không no trongphân tử Xđều có cấu hình cis-."
+                                                  "text":  "Các gốc của acid béo không no trong phân tử X đều có cấu hình cis- ."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Hydrogenhoáhoàntoàn427kgXbằnghydrogen(dư)ởnhiệtđộcaovàápsuấtcao,Nixúctác"
+                                                  "text":  "Hydrogen hoá hoàn toàn 427 kg X bằng hydrogen (dư) ở nhiệt độ cao và áp suất cao, Ni xúc tác"
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "được432 kg chất béo rắn."
+                                                  "text":  "được 432 kg chất béo rắn."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1354,23 +1354,23 @@
                               "section":  "Phần II",
                               "question_number":  22,
                               "question_type":  "true_false",
-                              "prompt":  "Sự kết hợp giữa aspartic acid và phenylalanine tạo thành peptide, peptide này có thể được chuyểnđổithànhmethylestergọilàaspartame.Côngthứccủaaspaticacid,phenylalanine,aspartame được cho sau đây: Aspartamecóvịngọtnênđượcsửdụngtrongthựcphẩmkhôngđườngdànhchongườibịtiểuđường. Ở nhiệt độ cao aspartame bị phân hủy tạo các amino acid tự do không có vị ngọt. Tênthaythế củaasparticacid là2-aminobutane-1,4-dioic acid.",
+                              "prompt":  "Sự kết hợp giữa aspartic acid và phenylalanine tạo thành peptide, peptide này có thể được chuyển đổi thành methyl ester gọi là aspartame. Công thức của aspatic acid, phenylalanine, aspartame được cho sau đây: Aspartame có vị ngọt nên được sử dụng trong thực phẩm không đường dành cho người bị tiểu đường. Ở nhiệt độ cao aspartame bị phân hủy tạo các amino acid tự do không có vị ngọt. Tên thay thế của aspartic acid là 2-aminobutane-1,4-dioic acid.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Sốnguyên tử hydrogen trong phân tử aspartamelà 18."
+                                                  "text":  "Số nguyên tử hydrogen trong phân tử aspartame là 18."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Cóthể sử dụngaspartame để thaythế đường saccharosetrong làm cácloại bánh nướng."
+                                                  "text":  "Có thể sử dụng aspartame để thay thế đường saccharose trong làm các loại bánh nướng."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "TạipH= 7,0, khi đặtvào một điện trường, aspaticaciddi chuyển vềphía cực dương."
+                                                  "text":  "Tại pH = 7,0, khi đặt vào một điện trường, aspatic acid di chuyển về phía cực dương."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "PHẦNIII. Câutrắcnghiệm trảlời ngắn. Thísinh trảlờitừ câu 23đến câu 28."
+                                                  "text":  "PHẦN III. Câu trắc nghiệm trả lời ngắn. Thí sinh trả lời từ câu 23 đến câu 28."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1383,7 +1383,7 @@
                               "section":  "Phần III",
                               "question_number":  23,
                               "question_type":  "short_answer",
-                              "prompt":  "Cần bao nhiêu kg chất béo chứa 89% khối lượng tristearin (còn 11% tạp chất trơ bị loại bỏ trongquátrìnhnấuxàphòng)đểsảnxuấtđược1tấnxàphòngchứa72%khốilượngsodiumstearate (kết quả lấy phần nguyên)",
+                              "prompt":  "Cần bao nhiêu kg chất béo chứa 89% khối lượng tristearin (còn 11% tạp chất trơ bị loại bỏ trong quá trình nấu xà phòng) để sản xuất được 1 tấn xà phòng chứa 72% khối lượng sodium stearate ( kết quả lấy phần nguyên )",
                               "options":  [
 
                                           ],
@@ -1397,7 +1397,7 @@
                               "section":  "Phần III",
                               "question_number":  24,
                               "question_type":  "short_answer",
-                              "prompt":  "CôngtyVedanViệtNamsảnxuấtbộtngọt(monosodiumglutamate–MSG)từnguyênliệu chính làtinh bột sắn. Quy trình sản xuấtgồm các bướcchính sau: Bước1:Thủyphântinhbộtsắnthànhglucose:Tinhbộtsắnđượcthủyphânthànhglucosenhờxúc tác axit hoặc enzyme. Bước2:Lênmenglucosethànhglutamicacid:Glucoseđượclênmenbởivisinhvậtđểchuyểnhóa thành glutamic acid. C6H12O6→HOOC-CH(NH2)-(CH2)2-COOH+sảnphẩmphụ Bước3:Choglutamicacidthuđượcphảnứngvớidungdịchsodiumhydroxide(NaOH)đểtạothành monosodium glutamate. Biết rằng hiệu suất của quá trình thủy phân là 95%, hiệu suất của quá trình lên men là 80%, và hiệu suất của quá trình phản ứng với dung dịch NaOH là 90%. Tính khối lượng monosodium glutamate (kg, làm tròn đến hàng đơn vị) thu được từ 1 tấn tinh bột sắn.",
+                              "prompt":  "Công ty Vedan Việt Nam sản xuất bột ngọt (monosodium glutamate – MSG) từ nguyên liệu chính là tinh bột sắn. Quy trình sản xuất gồm các bước chính sau: Bước 1: Thủy phân tinh bột sắn thành glucose: Tinh bột sắn được thủy phân thành glucose nhờ xúc tác axit hoặc enzyme. Bước 2: Lên men glucose thành glutamic acid: Glucose được lên men bởi vi sinh vật để chuyển hóa thành glutamic acid. C 6 H 12 O 6 → HOOC-CH(NH 2 )-(CH 2 ) 2 -COOH + sản phẩm phụ Bước 3: Cho glutamic acid thu được phản ứng với dung dịch sodium hydroxide (NaOH) để tạo thành monosodium glutamate. Biết rằng hiệu suất của quá trình thủy phân là 95%, hiệu suất của quá trình lên men là 80%, và hiệu suất của quá trình phản ứng với dung dịch NaOH là 90%. Tính khối lượng monosodium glutamate (kg, làm tròn đến hàng đơn vị) thu được từ 1 tấn tinh bột sắn.",
                               "options":  [
 
                                           ],
@@ -1411,7 +1411,7 @@
                               "section":  "Phần III",
                               "question_number":  25,
                               "question_type":  "short_answer",
-                              "prompt":  "Dopamine (3,4-dihydroxyphenethylamine) là một chất có chức năng vừa là hormone vừa là chấtdẫntruyềnthầnkinh,đồngthờiđóngvaitròquantrọngtrongviệcđiềukhiểnhệthầnkinhtrung ương, đặc biệt ảnh hưởng đến việc tạo cảm giác hứng thú, động lực trong học tập, kiểm soát hành vi tư duy, trí nhớ và ngôn ngữ,... Trong y học, dopamine là một loại thuốc để tiêm tĩnh mạch, tác dụng ngoạibiêncủanógiúpíchtrongđiềutrịsuytimhoặcsốc,đặcbiệtlàởtrẻsơsinh.Dopaminecócông thức cấu tạo như hình dưới đây: Chocác phát biểu sau: Dopaminethuộc loại arylamine. Trongphân tử dopamine có chứacác nhóm chức phenol và amine. Khitác dụng với dungdịch HCl, dopamine tạora hợp chất cócông thức phân tử C8H11O2NCl. Mỗiphântửdopaminetácdụngtốiđavới2phântửKOH. Có bao nhiêu phát biểu sai trong số các phát biểu trên?",
+                              "prompt":  "Dopamine (3,4-dihydroxyphenethylamine) là một chất có chức năng vừa là hormone vừa là chất dẫn truyền thần kinh, đồng thời đóng vai trò quan trọng trong việc điều khiển hệ thần kinh trung ương, đặc biệt ảnh hưởng đến việc tạo cảm giác hứng thú, động lực trong học tập, kiểm soát hành vi tư duy, trí nhớ và ngôn ngữ,... Trong y học, dopamine là một loại thuốc để tiêm tĩnh mạch, tác dụng ngoại biên của nó giúp ích trong điều trị suy tim hoặc sốc, đặc biệt là ở trẻ sơ sinh. Dopamine có công thức cấu tạo như hình dưới đây: Cho các phát biểu sau: Dopamine thuộc loại arylamine. Trong phân tử dopamine có chứa các nhóm chức phenol và amine. Khi tác dụng với dung dịch HCl, dopamine tạo ra hợp chất có công thức phân tử C 8 H 11 O 2 NCl. Mỗi phân tử dopamine tác dụng tối đa với 2 phân tử KOH. Có bao nhiêu phát biểu sai trong số các phát biểu trên?",
                               "options":  [
 
                                           ],
@@ -1425,7 +1425,7 @@
                               "section":  "Phần III",
                               "question_number":  26,
                               "question_type":  "short_answer",
-                              "prompt":  "Aspirin(acetylsalicylicacid)đượcsửdụngtrongyhọcđểsảnxuấtthuốcchốngviêm,hạsốt. Trongphòngthínghiệm,khiđunnónghỗnhợpgồm13,8gamsalicylicacidvới15,3gamanhydride acetic (có xúc tác thích hợp) với hiệu suất 55%, thu được acetic acid và m gam aspirin theo phương trình hoá học: Giátrịcủa mbằng baonhiêu? (Làmtròn kếtquả đếnphần mười)",
+                              "prompt":  "Aspirin (acetylsalicylic acid) được sử dụng trong y học để sản xuất thuốc chống viêm, hạ sốt. Trong phòng thí nghiệm, khi đun nóng hỗn hợp gồm 13,8 gam salicylic acid với 15,3 gam anhydride acetic (có xúc tác thích hợp) với hiệu suất 55%, thu được acetic acid và m gam aspirin theo phương trình hoá học: Giá trị của m bằng bao nhiêu? (Làm tròn kết quả đến phần mười )",
                               "options":  [
 
                                           ],
@@ -1453,7 +1453,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Tổng công ty dệt may Hòa Thọ (Cẩm Lệ – Đà Nẵng) nhận một đơn đặt hàng cung cấp sợi nguyênliệunitronchoCôngtydệtmayHàNộiđểhoànthànhđơnhàngáolennam(3sizetheokích cỡtăngdầnlàS,M,L),mỗisize20000chiếc.BiếtmỗichiếcáolensizeScầnphảidùngkhoảng500 gam sợi nitron và khối lượng len tăng thêm mỗi 10% theo mỗi size. Biết hiệu suất cả quá trình điều chếlà50%.Khốilượngnguyênliệuvinylcyanidecầndùngđểnhàmáysảnxuấtđượcđơnhàngtrên là bao nhiêu tấn? (kết quả làm tròn đến hàng phần mười sau dấu phẩy) ------------ HẾT ------------",
+                              "prompt":  "Tổng công ty dệt may Hòa Thọ (Cẩm Lệ – Đà Nẵng) nhận một đơn đặt hàng cung cấp sợi nguyên liệu nitron cho Công ty dệt may Hà Nội để hoàn thành đơn hàng áo len nam (3 size theo kích cỡ tăng dần là S, M, L), mỗi size 20000 chiếc. Biết mỗi chiếc áo len size S cần phải dùng khoảng 500 gam sợi nitron và khối lượng len tăng thêm mỗi 10% theo mỗi size. Biết hiệu suất cả quá trình điều chế là 50%. Khối lượng nguyên liệu vinyl cyanide cần dùng để nhà máy sản xuất được đơn hàng trên là bao nhiêu tấn? ( kết quả làm tròn đến hàng phần mười sau dấu phẩy ) ------------ HẾT ----------- -",
                               "options":  [
 
                                           ],
@@ -1478,23 +1478,23 @@
                               "section":  "Phần I",
                               "question_number":  1,
                               "question_type":  "single_choice",
-                              "prompt":  "Trypsinlàmộtloạienzymecótrongphầnđầutiêncủaruộtnon,bắtđầuquátrìnhtiêuhóa các phân tử protein bằng cách cắt các chuỗi dài amino acid thành các mảnh nhỏ hơn. Một điểmđặcbiệtlàtrypsincắtcácaminoacidmộtcáchchọnlọc,cắtđứtliênkếtCO-NH(vớiphầncarbonyl thuộc về amino acid Arg hoặc Lys). Cho chuỗi amino acid sau: Thr-Pro-Lys-Glu-His-Gly-Phe-Cys-Trp-Val-Val-Phe. Tiến hành cắtđứt chuỗi amino acid bằng enzyme trypsin thì sản phẩm thu được có thể là",
+                              "prompt":  "Trypsin là một loại enzyme có trong phần đầu tiên của ruột non, bắt đầu quá trình tiêu hóa các phân tử protein bằng cách cắt các chuỗi dài amino acid thành các mảnh nhỏ hơn. Một điểm đặc biệt là trypsin cắt các amino acid một cách chọn lọc, cắt đứt liên kết CO-NH (với phần carbonyl thuộc về amino acid Arg hoặc Lys). Cho chuỗi amino acid sau: Thr-Pro-Lys-Glu-His-Gly-Phe-Cys-Trp-Val-Val-Phe. Tiến hành cắt đứt chuỗi amino acid bằng enzyme trypsin thì sản phẩm thu được có thể là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Thr-Pro-Lys-Glu-HisvàGly-Phe-Cys-Trp-Val-Val-Phe."
+                                                  "text":  "Thr-Pro-Lys-Glu-His và Gly-Phe-Cys-Trp-Val-Val- Phe."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Thr-Pro và Lys-Glu-His-Gly-Phe-Cys-Trp-Val-Val-Phe."
+                                                  "text":  "Thr-Pro và Lys-Glu-His-Gly-Phe-Cys-Trp-Val-Val- Phe."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Thr-Pro-LysvàGlu-His-Gly-Phe-Cys-Trp-Val-Val-Phe."
+                                                  "text":  "Thr-Pro-Lys và Glu-His-Gly-Phe-Cys-Trp-Val-Val- Phe."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Thr-Pro-Lys-Glu-His-Gly-Phe-Cys-TrpvàVal-Val-Phe."
+                                                  "text":  "Thr-Pro-Lys-Glu-His-Gly-Phe-Cys-Trp và Val-Val- Phe."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1507,23 +1507,23 @@
                               "section":  "Phần I",
                               "question_number":  2,
                               "question_type":  "single_choice",
-                              "prompt":  "Tùy vào bậc alcohol mà cơ chế phản ứng ester sẽ khác nhau ở giai đoạn tạo carbocation (giai đoạn quyết định tốc độ phản ứng). Cho 2 quá trình hình thành carbocation trong phản ứng ester hóa như sau: Khi phản ứng vớialcohol bậc 1: Khi phản ứng vớialcohol bậc III: Xétphảnứngesterhóacủaaceticacidvớibutan-1-olvà2-methylpropan-2-oltheophươngtrình dướiđây: CH3COOH+CH3CH2CH2CH2OH→CH3COOCH2CH2CH2CH3+H2O(1) CH3COOH + (CH3)3COH → CH3COOC(CH3)3 + H2O (2) Cácphản ứng thực hiện trongcùng điều kiện thí nghiệm. Phátbiểu nào sauđây là đúng?",
+                              "prompt":  "Tùy vào bậc alcohol mà cơ chế phản ứng ester sẽ khác nhau ở giai đoạn tạo carbocation (giai đoạn quyết định tốc độ phản ứng). Cho 2 quá trình hình thành carbocation trong phản ứng ester hóa như sau: Khi phản ứng với alcohol bậc 1: Khi phản ứng với alcohol bậc III: Xét phản ứng ester hóa của acetic acid với butan-1-ol và 2-me thylpropan-2-ol theo phương trình dưới đây: CH 3 COOH + CH 3 CH 2 CH 2 CH 2 OH → CH 3 COOCH 2 CH 2 CH 2 CH 3 + H 2 O (1) CH 3 COOH + (CH 3 ) 3 COH → CH 3 COOC(CH 3 ) 3 + H 2 O (2) Các phản ứng thực hiện trong cùng điều kiện thí nghiệm. Phát biểu nào sau đây là đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Carbocation có bậc càngcao thì càng kémbền."
+                                                  "text":  "Carbocation có bậc càng cao thì càng kém bền."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Phương trình (1) hìnhthành carbocation bậc III."
+                                                  "text":  "Phương trình (1) hình thành carbocation bậc III."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Phương trình (2) hìnhthành carbocation kém bềnvà có bậc thấphơn phương trình (1)."
+                                                  "text":  "Phương trình (2) hình thành carbocation kém bền và có bậc thấp hơn phương trình (1)."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Tốc độ phản ứng (2) nhanh hơn phảnứng (1) (xét trong cùng điều kiện thí nghiệm)."
+                                                  "text":  "Tốc độ phản ứng (2) nhanh hơn phản ứng (1) (xét trong cùng điều kiện thí nghiệm)."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1536,11 +1536,11 @@
                               "section":  "Phần I",
                               "question_number":  3,
                               "question_type":  "single_choice",
-                              "prompt":  "Mộtnhómhọcsinhnghiêncứuxácđịnhbiếnthiênenthalpychuẩncủaphảnứnggiữa magnesiumoxidevàdungdịchhydrochloricacid(HCl,M=36,5g.mol-1)bằngphảnứngsau: MgO(s) + 2HCl(aq) → MgCl2(aq) + H2O(l) Nhiệtđộbanđầughinhậntrongthiếtbịđo(bomnhiệtlượngkế)là29,8°C.Saukhiphảnứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °C. Phát biểu nào sau đây là sai?",
+                              "prompt":  "Một nhóm học sinh nghiên cứu xác định biến thiên enthalpy chuẩn của phản ứng giữa magnesium oxide và dung dịch hydrochloric acid (HCl, M = 36,5 g.mol -1 ) bằng phản ứng sau: MgO(s) + 2HCl(aq) → MgCl 2 (aq) + H 2 O(l) Nhiệt độ ban đầu ghi nhận trong thiết bị đo (bom nhiệt lượng kế) là 29,8 °C. Sau khi phản ứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °C. Phát biểu nào sau đây là sai?",
                               "options":  [
                                               {
                                                   "key":  "C",
-                                                  "text":  "Saukhiphảnứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °"
+                                                  "text":  "Sau khi phản ứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °"
                                               },
                                               {
                                                   "key":  "C",
@@ -1552,7 +1552,7 @@
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Phản ứng trên cóthể xảy ra thuậnlợi ở điều kiện thường."
+                                                  "text":  "Phản ứng trên có thể xảy ra thuận lợi ở điều kiện thường."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1565,7 +1565,7 @@
                               "section":  "Phần I",
                               "question_number":  4,
                               "question_type":  "single_choice",
-                              "prompt":  "Dùngkhôngkhínénthổivàolòcaođểđốtcháythancốc(trongsảnxuấtgang),yếutốnào đã đượcsử dụng đểlàm tăng tốcđộ phản ứng?",
+                              "prompt":  "Dùng không khí nén thổi vào lò cao để đốt cháy than cốc (trong sản xuất gang), yếu tố nào đã được sử dụng để làm tăng tốc độ phản ứng?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1594,15 +1594,15 @@
                               "section":  "Phần I",
                               "question_number":  5,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho sơđồ phản ứng: CH≡CH+HCN→ X X→ Polymer Y X+CH2=CH-CH=CH2→PolymerZ Cácchất Yvà Zlần lượt dùng đểchế tạo vật liệupolymer nào sau đây?",
+                              "prompt":  "Cho sơ đồ phản ứng: CH ≡ CH + HCN → X X → Polymer Y X + CH 2 =CH-CH=CH 2 → Polymer Z Các chất Y và Z lần lượt dùng để chế tạo vật liệu polymer nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Tơ olon vàcao su buna-N."
+                                                  "text":  "Tơ olon và cao su buna- N."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Tơ nitron và cao su buna-S."
+                                                  "text":  "Tơ nitron và cao su buna- S."
                                               },
                                               {
                                                   "key":  "C",
@@ -1610,7 +1610,7 @@
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Tơ nylon-6,6 vàcao su chloroprene."
+                                                  "text":  "Tơ nylon-6,6 và cao su chloroprene."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1623,23 +1623,23 @@
                               "section":  "Phần I",
                               "question_number":  6,
                               "question_type":  "single_choice",
-                              "prompt":  "PolysaccharideXlàchấtrắn,màutrắng,dạngsợi,trongbôngnõncógần98%chấtX. Thủyphân X, thu được monosaccharideY. Phátbiểu nào sau đây làđúng?",
+                              "prompt":  "Polysaccharide X là chất rắn, màu trắng, dạng sợi, trong bông nõn có gần 98% chất X. Thủy phân X, thu được monosaccharide Y. Phát biểu nào sau đây là đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Xdễ tan trong nước và có vị ngọt."
+                                                  "text":  "X dễ tan trong nước và có vị ngọt."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Xđược sử dụng để sản xuấtgiấy và sợi nhân tạo."
+                                                  "text":  "X được sử dụng để sản xuất giấy và sợi nhân tạo."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Ylà nguồn lương thực chính củacon người và một số động vật."
+                                                  "text":  "Y là nguồn lương thực chính của con người và một số động vật."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Xcó tính chấtcủa polyalcohol."
+                                                  "text":  "X có tính chất của polyalcohol."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1652,23 +1652,23 @@
                               "section":  "Phần I",
                               "question_number":  7,
                               "question_type":  "single_choice",
-                              "prompt":  "Saccharoselàmộtloạidisaccharidecónhiềutrongcâymía,hoathốtnốt,củcảiđường. Côngthức phân tử của saccharose là",
+                              "prompt":  "Saccharose là một loại disaccharide có nhiều trong cây mía, hoa thốt nốt, củ cải đường. Công thức phân tử của saccharose là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C2H4O2."
+                                                  "text":  "C 2 H 4 O 2 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "(C6H10O5)n."
+                                                  "text":  "(C 6 H 10 O 5 ) n ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "C6H12O6."
+                                                  "text":  "C 6 H 12 O 6 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "C12H22O11."
+                                                  "text":  "C 12 H 22 O 11 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1681,11 +1681,11 @@
                               "section":  "Phần I",
                               "question_number":  8,
                               "question_type":  "single_choice",
-                              "prompt":  "Trong thànhphần hóa họccủapolymer nào sau khôngcó nguyên tố oxygen?",
+                              "prompt":  "Trong thành phần hóa học của polymer nào sau không có nguyên tố oxygen?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Tơ nylon-6,6."
+                                                  "text":  "Tơ nylon- 6,6."
                                               },
                                               {
                                                   "key":  "B",
@@ -1693,7 +1693,7 @@
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Tơ nylon-6."
+                                                  "text":  "Tơ nylon- 6."
                                               },
                                               {
                                                   "key":  "D",
@@ -1710,7 +1710,7 @@
                               "section":  "Phần I",
                               "question_number":  9,
                               "question_type":  "single_choice",
-                              "prompt":  "Nguyên nhânchính gây ra hiệntượng phú dưỡng là",
+                              "prompt":  "Nguyên nhân chính gây ra hiện tượng phú dưỡng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1718,15 +1718,15 @@
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "sự gia tăng các chất dinh dưỡngnhư nitratevà phosphate từ phân bón."
+                                                  "text":  "sự gia tăng các chất dinh dưỡng như nitrate và phosphate từ phân bón."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "sự gia tăng củavi khuẩn trong nước."
+                                                  "text":  "sự gia tăng của vi khuẩn trong nước."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "sự tích tụ củachất hữu cơ từ lá cây rơivào nước."
+                                                  "text":  "sự tích tụ của chất hữu cơ từ lá cây rơi vào nước."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1739,23 +1739,23 @@
                               "section":  "Phần I",
                               "question_number":  10,
                               "question_type":  "single_choice",
-                              "prompt":  "Hình dưới đâylàký hiệu của 6polymer nhiệt dẻo phổbiến có thể tái chế: Cáckýhiệunàythườngđượcintrênbaobì,vỏhộp,đồdùng,...đểgiúpnhậnbiếtvậtliệupolymer cũng như thuận lợi cho việc thu gom, tái chế. Polymer có ký hiệu số 6 được điều chế bằng phản ứng trùng hợp monomer nào dưới đây?",
+                              "prompt":  "Hình dưới đây là ký hiệu của 6 polymer nhiệt dẻo phổ biến có thể tái chế: Các ký hiệu này thường được in trên bao bì, vỏ hộp, đồ dùng,... để giúp nhận biết vật liệu polymer cũng như thuận lợi cho việc thu gom, tái chế. Polymer có ký hiệu số 6 được điều chế bằng phản ứng trùng hợp monomer nào dưới đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "CH2=CH-C6H5."
+                                                  "text":  "CH 2 =CH- C 6 H 5 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "CH2=CH2."
+                                                  "text":  "CH 2 =CH 2 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "CH2=CH-CH3."
+                                                  "text":  "CH 2 =CH- CH 3 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "CH2=CH-Cl."
+                                                  "text":  "CH 2 =CH- Cl."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1768,23 +1768,23 @@
                               "section":  "Phần I",
                               "question_number":  11,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho các chất sau: CH3CH2CH2CH3; CH3CH2CH2OH; CH3CH2CHO. Dãy nào sau đâysắp xếp đúng theo chiều tăng dần nhiệt độ sôi của các chất?",
+                              "prompt":  "Cho các chất sau: CH 3 CH 2 CH 2 CH 3 ; CH 3 CH 2 CH 2 OH; CH 3 CH 2 CHO. Dãy nào sau đây sắp xếp đúng theo chiều tăng dần nhiệt độ sôi của các chất?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "CH3CH2CH2OH\u003cCH3CH2CHO\u003cCH3CH2CH2CH3."
+                                                  "text":  "CH 3 CH 2 CH 2 OH \u003c CH 3 CH 2 CHO \u003c CH 3 CH 2 CH 2 CH 3 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "CH3CH2CH2CH3\u003cCH3CH2CHO\u003cCH3CH2CH2OH."
+                                                  "text":  "CH 3 CH 2 CH 2 CH 3 \u003c CH 3 CH 2 CHO \u003c CH 3 CH 2 CH 2 OH."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "CH3CH2CH2OH\u003cCH3CH2CH2CH3\u003cCH3CH2CHO."
+                                                  "text":  "CH 3 CH 2 CH 2 OH \u003c CH 3 CH 2 CH 2 CH 3 \u003c CH 3 CH 2 CHO."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "CH3CH2CHO\u003cCH3CH2CH2OH\u003cCH3CH2CH2CH3."
+                                                  "text":  "CH 3 CH 2 CHO \u003c CH 3 CH 2 CH 2 OH \u003c CH 3 CH 2 CH 2 CH 3 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1797,23 +1797,23 @@
                               "section":  "Phần I",
                               "question_number":  12,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho hình minh họa mộthệ thống điện phân như sau: Trong quá suốt quá trình điện phân, khí màu vàng lục sinh ra tại cực (1) và kim loại màu đỏ sinh ra tại cực (2). Phát biểu nào sau đây là đúng?",
+                              "prompt":  "Cho hình minh họa một hệ thống điện phân như sau: Trong quá suốt quá trình điện phân, khí màu vàng lục sinh ra tại cực (1) và kim loại màu đỏ sinh ra tại cực (2). Phát biểu nào sau đây là đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Cực (1) là cathode, cực (2) làanode và Xlà dung dịch CuCl2."
+                                                  "text":  "Cực (1) là cathode, cực (2) là anode và X là dung dịch CuCl 2 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Cực (1) là cathode,cực (2) là anode vàXlà CuCl2 nóng chảy."
+                                                  "text":  "Cực (1) là cathode, cực (2) là anode và X là CuCl 2 nóng chảy."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Cực (1) là anode, cực (2) làcathode và Xlà dung dịch CuCl2."
+                                                  "text":  "Cực (1) là anode, cực (2) là cathode và X là dung dịch CuCl 2 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Cực (1) là anode, cực (2) làcathode và Xlà NaCl nóng chảy."
+                                                  "text":  "Cực (1) là anode, cực (2) là cathode và X là NaCl nóng chả y."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1826,7 +1826,7 @@
                               "section":  "Phần I",
                               "question_number":  13,
                               "question_type":  "single_choice",
-                              "prompt":  "“Cácaminoacidcókhảnăngdichuyểnkhácnhautrong...(1)...tuỳthuộcvào...(2)... của môitrường và cấu tạo củaamino acid”. Nội dung phù hợptrong ô trống (1), (2) là",
+                              "prompt":  "“Các amino acid có khả năng di chuyển khác nhau trong ...(1)... tuỳ thuộc vào ...(2)... của môi trường và cấu tạo của amino acid”. Nội dung phù hợp trong ô trống (1), (2) là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1855,23 +1855,23 @@
                               "section":  "Phần I",
                               "question_number":  14,
                               "question_type":  "single_choice",
-                              "prompt":  "Công thứchóa học nàosau đây cóthể là chất béo?",
+                              "prompt":  "Công thức hóa học nào sau đây có thể là chất béo?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "C15H31COOCH3."
+                                                  "text":  "C 15 H 31 COOCH 3 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "(C17H35COO)3C3H5."
+                                                  "text":  "(C 17 H 35 COO) 3 C 3 H 5 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "CH3COOC2H5."
+                                                  "text":  "CH 3 COOC 2 H 5 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "(C17H33COO)2C2H4."
+                                                  "text":  "(C 17 H 33 COO) 2 C 2 H 4 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1884,7 +1884,7 @@
                               "section":  "Phần I",
                               "question_number":  15,
                               "question_type":  "single_choice",
-                              "prompt":  "Tiếnhành cácthí nghiệmsau: Ngâm láđồng trong dung dịch silver nitrate; Ngâmlá kẽm trong dung dịch HCl loãng; Ngâm lánhôm trong dung dịch NaOH; Ngâmlá sắtđược cuốn dây copper trong dung dịch HCl; Sốthí nghiệmxảy ra ăn mòn điện hóa là",
+                              "prompt":  "Tiến hành các thí nghiệm sau: Ngâm lá đồng trong dung dịch silver nitrate; Ngâm lá kẽm trong dung dịch HCl loãng; Ngâm lá nhôm trong dung dịch NaOH; Ngâm lá sắt được cuốn dây copper trong dung dịch HCl; Số thí nghiệm xảy ra ăn mòn điện hóa là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1913,7 +1913,7 @@
                               "section":  "Phần I",
                               "question_number":  16,
                               "question_type":  "single_choice",
-                              "prompt":  "Chodãycácchất:KAl(SO4)2.12H2O,C2H5OH,C12H22O11(saccharose),CH3COOH, Ca(OH)2, CH3COONH4. Số chất điện li là",
+                              "prompt":  "Cho dãy các chất: KAl(SO 4 ) 2 .12H 2 O, C 2 H 5 OH, C 12 H 22 O 11 (saccharose), CH 3 COOH, Ca(OH) 2 , CH 3 COONH 4 . Số chất điện li là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1946,19 +1946,19 @@
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Có2 đồng phân cấu tạothỏa mãn tính chất của X."
+                                                  "text":  "Có 2 đồng phân cấu tạo thỏa mãn tính chất của X."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Côngthức phân tử chất Xlà C52H96O6."
+                                                  "text":  "Công thức phân tử chất X là C 52 H 96 O 6 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Phântử Xcó 5 liên kết π."
+                                                  "text":  "Phân tử X có 5 liên kết π."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "1mol Xphản ứng tối đa2mol khí H2 ở điều kiện thích hợp."
+                                                  "text":  "1 mol X phản ứng tối đa 2 mol khí H 2 ở điều kiện thích hợp."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -1971,7 +1971,7 @@
                               "section":  "Phần I",
                               "question_number":  18,
                               "question_type":  "single_choice",
-                              "prompt":  "Chocác phátbiểu sau: Ngâm hoa quảlàm xiro thuộcphương pháp chiết. Làmđường từ mía thuộcphương pháp kết tinh. Nấu rượu uống thuộcphương pháp kết tinh. Phântích thổ nhưỡng thuộc phươngpháp chiết lỏng – rắn. Đểphântíchdưlượngthuốcbảovệthựcvậttrongnôngsảndùngphươngphápchưngcất. Số phát biểu đúng là",
+                              "prompt":  "Cho các phát biểu sau: Ngâm hoa quả làm xiro thuộc phương pháp chiết. Làm đường từ mía thuộc phương pháp kết tinh. Nấu rượu uống thuộc phương pháp kết tinh. Phân tích thổ nhưỡng thuộc phương pháp chiết lỏng – rắn. Để phân tích dư lượng thuốc bảo vệ thực vật trong nông sản dùng phương pháp chưng cất. Số phát biểu đúng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2000,23 +2000,23 @@
                               "section":  "Phần II",
                               "question_number":  19,
                               "question_type":  "true_false",
-                              "prompt":  "HợpchấtEđượcđiềuchếtừalcoholXvàcarboxylicacidY(biếtYlàhợpchấttạpchức chứavòngbenzene).Ecótrongthànhphầncủamộtsốthuốcgiảmđau,xoabóp,caodán,dùngđể điều trị đau lưng, căng cơ, bong gân. Thành phần về khối lượng các nguyên tố trong E như sau: 63,16%C, 5,26%H và 31,58%O. Phân tích E bằng IR và MS cho kết quả như sau: Peakđặc trưngcủa liênkết C=O,C-O vàO-H. Phân tử khối củaE là 152 amu.",
+                              "prompt":  "Hợp chất E được điều chế từ alcohol X và carboxylic acid Y (biết Y là hợp chất tạp chức chứa vòng benzene). E có trong thành phần của một số thuốc giảm đau, xoa bóp, cao dán, dùng để điều trị đau lưng, căng cơ, bong gân. Thành phần về khối lượng các nguyên tố trong E như sau: 63,16%C, 5,26%H và 31,58%O. Phân tích E bằng IR và MS cho kết quả như sau: Peak đặc trưng của liên kết C=O, C-O và O- H. Phân tử khối của E là 152 amu.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Xlà methyl alcohol."
+                                                  "text":  "X là methyl alcohol."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Tổngsố nguyên tử trong phân tử E là 20."
+                                                  "text":  "Tổng số nguyên tử trong phân tử E là 20."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Ycó nhóm-OHvà -COOH."
+                                                  "text":  "Y có nhóm -OH và - COOH."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Nếulấy 1molY tácdụng NaOHthì số molNaOHcầnđể phản ứngvừa đủlà 2 mol."
+                                                  "text":  "Nếu lấy 1 mol Y tác dụng NaOH thì số mol NaOH cần để phản ứng vừa đủ là 2 mol."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2029,15 +2029,15 @@
                               "section":  "Phần II",
                               "question_number":  20,
                               "question_type":  "true_false",
-                              "prompt":  "Mộtnhómhọcsinhnghiêncứukhoahọc,khảosátsựảnhhưởngcủapHmôitrườngđến khả năng hoạt động của enzyme trong quá trình tiêu hóa ở người. Một trong số thí nghiệm, nhóm họcsinhđãkhảosátsựthủyphânalbumin(proteincótronglòngtrắngtrứng)bằngenzymepepsin được trình bày dưới bảng sau: Ống nghiệm Thành phần Thờiđiểm t = 0 (phút) Thờiđiểm t = 20 (phút) 1 Albumin + Pepsin + HCl 0,01 M Đục Trong 2 Albumin + Pepsin + H2O Đục Đục 3 Albumin+Pepsin +NaHCO30,01 M Đục Đục Tiếnhành thí nghiệmtương tự đốivới chymotrypsin (mộtloại enzyme), thuđược đồ thị sau: Albuminlà protein dạng cầu, tan trong nướctạo dung dịch keo nên bịđục.",
+                              "prompt":  "Một nhóm học sinh nghiên cứu khoa học, khảo sát sự ảnh hưởng của pH môi trường đến khả năng hoạt động của enzyme trong quá trình tiêu hóa ở người. Một trong số thí nghiệm, nhóm học sinh đã khảo sát sự thủy phân albumin (protein có trong lòng trắng trứng) bằng enzyme pepsin được trình bày dưới bảng sau: Ống nghiệm Thành phần Thời điểm t = 0 (phút) Thời điểm t = 20 (phút) 1 Albumin + Pepsin + HCl 0,01 M Đục Trong 2 Albumin + Pepsin + H 2 O Đục Đục 3 Albumin + Pepsin + NaHCO 3 0,01 M Đục Đục Tiến hành thí nghiệm tương tự đối với chymotrypsin (một loại enzyme), thu được đồ thị sau: Albumin là protein dạng cầu, tan trong nước tạo dung dịch keo nên bị đục.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Pepsinhoạt động tốtnhất ở pH= 2."
+                                                  "text":  "Pepsin hoạt động tốt nhất ở pH = 2."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "TừkếtquảthínghiệmthìenzymePepsinvàChymotrypsinđềuhoạtđộngtốttrongmôitrường"
+                                                  "text":  "Từ kết quả thí nghiệm thì enzyme Pepsin và Chymotrypsin đều hoạt động tốt trong môi trường"
                                               },
                                               {
                                                   "key":  "c",
@@ -2045,7 +2045,7 @@
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Ở ống nghiệm 3, nếu thay Pepsin thành Chymotrypsin thì hiện tượng quan sát được là “từđục thành trong” sau thí nghiệm."
+                                                  "text":  "Ở ống nghiệm 3, nếu thay Pepsin thành Chymotrypsin thì hiện tượng quan sát được là “từ đục thành trong” sau thí nghiệm."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2058,23 +2058,23 @@
                               "section":  "Phần II",
                               "question_number":  21,
                               "question_type":  "true_false",
-                              "prompt":  "Quátrìnhđiệnphânđểmạđồnglênmộtchiếcchìakhoáđượclàmtừthépkhônggỉ,được mô tả ởhình sau:",
+                              "prompt":  "Quá trình điện phân để mạ đồng lên một chiếc chìa khoá được làm từ thép không gỉ, được mô tả ở hình sau:",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Anodeđượcgắn với copper, dung dịchđiện phân là dung dịch muối CuSO4."
+                                                  "text":  "Anode được gắn với copper, dung dịch điện phân là dung dịch muối CuSO 4 ."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Nếu chiếc chìa khóa có diện tích mỗi mặt là 25 cm2 thì bề dày lớp đồng bám trên chiếc chìa khóa là 0,07 mm. Biết: cường độ dòng điện là 10A, thời gian điện phân là 16 phút 5 giây, Cu có khốilượngriênglà8,9gam/cm3vànguyêntửkhốilà64,F=96500C/mol.(Làmtrònkếtquảđến hàng phần trăm)"
+                                                  "text":  "Nếu chiếc chìa khóa có diện tích mỗi mặt là 25 cm 2 thì bề dày lớp đồng bám trên chiếc chìa khóa là 0,07 mm. Biết: cường độ dòng điện là 10A, thời gian điện phân là 16 phút 5 giây, Cu có khối lượng riêng là 8,9 gam/cm 3 và nguyên tử khối là 64, F = 96500 C/mol. ( Làm tròn kết quả đến hàng phần trăm )"
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Trongquá trình điện phân,điện cực anode tan dần."
+                                                  "text":  "Trong quá trình điện phân, điện cực anode tan dần."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Khi có dòng điện đi qua, ion Cu2+di chuyển về cathode và bị oxi hóa thành Cu bám lên bề mặt chiếc chìa khóa."
+                                                  "text":  "Khi có dòng điện đi qua, ion Cu 2+ di chuyển về cathode và bị oxi hóa thành Cu bám lên bề mặt chiếc chìa khóa."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2087,7 +2087,7 @@
                               "section":  "Phần II",
                               "question_number":  22,
                               "question_type":  "true_false",
-                              "prompt":  "Cho X, Y, Z, M là các chất khác nhau trong số 4 chất sau: phenol, glycine, aniline, glutamic acid và thông tin về các chất được ghi trong bảng sau: Chất Nhiệtđộ nóng chảy (°C) Cho quỳ tímvào dung dịch các chất X -6,0 không làm đổimàu quỳ tím Y 233 không làm đổimàu quỳ tím Z 247 làmquỳ tím chuyểnthành màu hồng M 43 không làm đổimàu quỳ tím Thuỷ phân hoàn toàn 1,0 mol peptide A trong dung dịch NaOH thu được 3,0 mol muối của chất Y và 1,0 mol muối của chất Z thì số mol NaOH phản ứng tối đa là 7,0 mol. Từ phảnứngtrùngngưng củaMvớiformaldehydecó acidlàmxúctác cóthểđiềuchế nhựa",
+                              "prompt":  "Cho X, Y, Z, M là các chất khác nhau trong số 4 chất sau: phenol, glycine, aniline, glutamic acid và thông tin về các chất được ghi trong bảng sau: Chất Nhiệt độ nóng chảy (°C) Cho quỳ tím vào dung dịch các chất X - 6,0 không làm đổi màu quỳ tím Y 233 không làm đổi màu quỳ tím Z 247 làm quỳ tím chuyển thành màu hồng M 43 không làm đổi màu quỳ tím Thuỷ phân hoàn toàn 1,0 mol peptide A trong dung dịch NaOH thu được 3,0 mol muối của chất Y và 1,0 mol muối của chất Z thì số mol NaOH phản ứng tối đa là 7,0 mol. Từ phản ứng trùng ngưng của M với formaldehyde có acid làm xúc tác có thể điều chế nhựa",
                               "options":  [
                                               {
                                                   "key":  "a",
@@ -2099,11 +2099,11 @@
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Cácchất X, Y, Z,M là chất rắnởđiều kiện thường."
+                                                  "text":  "Các chất X, Y, Z, M là chất rắn ở điều kiện thường."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "PHẦNIII. Câutrắcnghiệm trảlời ngắn. Thísinh trảlờitừ câu 23đến câu 28."
+                                                  "text":  "PHẦN III. Câu trắc nghiệm trả lời ngắn. Thí sinh trả lời từ câu 23 đến câu 28."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2116,7 +2116,7 @@
                               "section":  "Phần III",
                               "question_number":  23,
                               "question_type":  "short_answer",
-                              "prompt":  "Ethylpropionatecómùidứachínđượcđiềuchếtừalcoholethylicvàpropionicacidtương ứng. Cho các biện pháp để nâng cao hiệu suất của phản ứng điều chế ester như sau: Tăngnồng độ alcohol ethylic. Táchbớt esterra khỏi hỗnhợp sản phẩm. Hạ nhiệt độ xuống thấp. Sửdụng xúc tácH2SO4 đặc, đun nóng. Dùng dung dịch propionicacid loãng Liệtkê các phátbiểu đúng theo dãy số thứ tự tăng dần.",
+                              "prompt":  "Ethyl propionate có mùi dứa chín được điều chế từ alcohol ethylic và propionic acid tương ứng. Cho các biện pháp để nâng cao hiệu suất của phản ứng điều chế ester như sau: Tăng nồng độ alcohol ethylic. Tách bớt ester ra khỏi hỗn hợp sản phẩm. Hạ nhiệt độ xuống thấp. Sử dụng xúc tác H 2 SO 4 đặc, đun nóng. Dùng dung dịch propionic acid loãng Liệt kê các phát biểu đúng theo dãy số thứ tự tăng dần.",
                               "options":  [
 
                                           ],
@@ -2130,7 +2130,7 @@
                               "section":  "Phần III",
                               "question_number":  24,
                               "question_type":  "short_answer",
-                              "prompt":  "CóbaonhiêuaminebậcIlàđồngphâncấutạocủanhaucócùngcôngthứcphântử C4H11N?",
+                              "prompt":  "Có bao nhiêu amine bậc I là đồng phân cấu tạo của nhau có cùng công thức phân tử C 4 H 11 N?",
                               "options":  [
 
                                           ],
@@ -2144,7 +2144,7 @@
                               "section":  "Phần III",
                               "question_number":  25,
                               "question_type":  "short_answer",
-                              "prompt":  "Chất béo là nguồn cung cấp năng lượng đáng kể cho cơ thể. Trung bình 1 gam chất béo cung cấp 37,7 kJ. Mỗi ngày, một học sinh trung học phổ thông cần cung cấp 10000 kJ (trong đó năng lượng từ chất béo đóng góp 20%) thì học sinh đó phải ăn bao nhiêu gam chất béo cho phù hợp? (Làm tròn kết quả đến hàng đơn vị)",
+                              "prompt":  "Chất béo là nguồn cung cấp năng lượng đáng kể cho cơ thể. Trung bình 1 gam chất béo cung cấp 37,7 kJ. Mỗi ngày, một học sinh trung học phổ thông cần cung cấp 10000 kJ (trong đó năng lượng từ chất béo đóng góp 20%) thì học sinh đó phải ăn bao nhiêu gam chất béo cho phù hợp? ( Làm tròn kết quả đến hàng đơn vị )",
                               "options":  [
 
                                           ],
@@ -2158,7 +2158,7 @@
                               "section":  "Phần III",
                               "question_number":  26,
                               "question_type":  "short_answer",
-                              "prompt":  "Caprolactam được tổng hợp từ cuối thế kỉ XIX. Hiện nay, nhu cầu sản xuất caprolactam trên thế giới khoảng 10 triệu tấn/năm; 90% trong đó dùng để tổng hợp tơ capron. Trong công nghiệp, caprolactam được điều chế theo sơ đồ sau: Để sản xuất 10 triệu tấn caprolactam, cần sử dụng bao nhiêu triệu tấn cyclohexanone? Biết rằng, hiệu suất trung bình của cả quá trình trên là 60%. (Làm tròn kết quả đến hàng phần mười)",
+                              "prompt":  "Caprolactam được tổng hợp từ cuối thế kỉ XIX. Hiện nay, nhu cầu sản xuất caprolactam trên thế giới khoảng 10 triệu tấn/năm; 90% trong đó dùng để tổng hợp tơ capron. Trong công nghiệp, caprolactam được điều chế theo sơ đồ sau: Để sản xuất 10 triệu tấn caprolactam, cần sử dụng bao nhiêu triệu tấn cyclohexanone? Biết rằng, hiệu suất trung bình của cả quá trình trên là 60%. ( Làm tròn kết quả đến hàng phần mười )",
                               "options":  [
 
                                           ],
@@ -2172,7 +2172,7 @@
                               "section":  "Phần III",
                               "question_number":  27,
                               "question_type":  "short_answer",
-                              "prompt":  "Tiếnhànhsảnxuất2triệuchairượuvang13,8°dungtích750mLbằngphươngpháplên men rượu với nguyên liệu là m tấn quả nho tươi (chứa 15% glucose về khối lượng). Biết khối lượng riêng của ethyl alcohol là 0,8 g/mL. Giả thiết trong thành phần quả nho tươi chỉ có glucose bị lên men rượu; hiệu suất toàn bộ quá trình sản xuất là 60%. Giá trị của m là bao nhiêu? (Làm tròn kết quả đến hàng đơn vị)",
+                              "prompt":  "Tiến hành sản xuất 2 triệu chai rượu vang 13,8° dung tích 750 mL bằng phương pháp lên men rượu với nguyên liệu là m tấn quả nho tươi (chứa 15% glucose về khối lượng). Biết khối lượng riêng của ethyl alcohol là 0,8 g/mL. Giả thiết trong thành phần quả nho tươi chỉ có glucose bị lên men rượu; hiệu suất toàn bộ quá trình sản xuất là 60%. Giá trị của m là bao nhiêu? ( Làm tròn kết quả đến hàng đơn vị )",
                               "options":  [
 
                                           ],
@@ -2186,7 +2186,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Quặng sắt là các khoáng vật chứa các hợp chất của sắt mà chủ yếu ở dạng các oxide. Hematitelàmộtloạiquặngchứahàmlượngsắtcaovàđượcdùngđểtrựctiếpsảnxuấtgangbằng cách nạp thẳng vào lò cao. Giả thiết 90% sắt trong quặng được chuyển vào gang. Từ 1000 tấn quặng hematite (có hàm lượng 69,9% Fe) có thể sản xuất được bao nhiêu tấn gang loại 96% Fe? (Làm tròn kết quả đến hàng đơn vị) ----------- HẾT -----------",
+                              "prompt":  "Quặng sắt là các khoáng vật chứa các hợp chất của sắt mà chủ yếu ở dạng các oxide. Hematite là một loại quặng chứa hàm lượng sắt cao và được dùng để trực tiếp sản xuất gang bằng cách nạp thẳng vào lò cao. Giả thiết 90% sắt trong quặng được chuyển vào gang. Từ 1000 tấn quặng hematite (có hàm lượng 69,9% Fe) có thể sản xuất được bao nhiêu tấn gang loại 96% Fe? ( Làm tròn kết quả đến hàng đơn vị ) ----------- HẾT ---------- -",
                               "options":  [
 
                                           ],
@@ -2211,7 +2211,7 @@
                               "section":  "Phần I",
                               "question_number":  1,
                               "question_type":  "single_choice",
-                              "prompt":  "Nhiệttạothànhchuẩn(∆fHo) củaFe2O3(s),Al2O3(s)vàFe(s)lầnlượtlà–824,2kJ.mol- 298 298 2982981;–1675,7kJ.mol-1và0kJ.mol-1.Biếnthiênenthalpychuẩn(∆rHo)củaphảnứngFe2O3(s)+ 298 298 2Al(s)→ Al2O3(s) + 2Fe(s) là bao nhiêu?",
+                              "prompt":  "Nhiệt tạo thành chuẩn ( ∆ f H o ) của Fe 2 O 3 (s), Al 2 O 3 (s) và Fe(s) lần lượt là –824,2 kJ.mol - 298 298 298 298 1 ; –1675,7 kJ.mol -1 và 0 kJ.mol -1 . Biến thiên enthalpy chuẩn ( ∆ r H o ) của phản ứng Fe 2 O 3 (s) + 298 298 2Al(s) → Al 2 O 3 (s) + 2Fe(s) là bao nhiêu?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2240,23 +2240,23 @@
                               "section":  "Phần I",
                               "question_number":  2,
                               "question_type":  "single_choice",
-                              "prompt":  "HainhómhọcsinhtiếnhànhthínghiệmđiệnphândungdịchCuSO4vớimộtđiệncựcthan chì và một điện cực bằng đồng (bỏ qua sự thay đổi thể tích của dung dịch khi điện phân). Nhóm1: Nốiđiện cực thanchì với cựcdương vàđiện cực đồngvới cực âmcủa nguồn điện. Nhóm2: Nối điệncực than chìvới cực âmvà điện cựcđồng với cựcdương của nguồn điện. Phátbiểu nàosau đây đúng?",
+                              "prompt":  "Hai nhóm học sinh tiến hành thí nghiệm điện phân dung dịch CuSO 4 với một điện cực than chì và một điện cực bằng đồng (bỏ qua sự thay đổi thể tích của dung dịch khi điện phân). Nhóm 1: Nối điện cực than chì với cực dương và điện cực đồng với cực âm của nguồn điện. Nhóm 2: Nối điện cực than chì với cực âm và điện cực đồng với cực dương của nguồn điện. Phát biểu nào sau đây đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Ởnhóm 1, pHcủa dungdịch điện phân tăng dần."
+                                                  "text":  "Ở nhóm 1, pH của dung dịch điện phân tăng dần."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Ởnhóm 1, nồng độ Cu2+trong dung dịch không thay đổi."
+                                                  "text":  "Ở nhóm 1, nồng độ Cu 2+ trong dung dịch không thay đổi."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Đốivới cảhai nhóm đều có kimloại đồng bám vào anode."
+                                                  "text":  "Đối với cả hai nhóm đều có kim loại đồng bám vào anode."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Ởnhóm 2, tại anodexảy ra quá trình oxihoá đồng."
+                                                  "text":  "Ở nhóm 2, tại anode xảy ra quá trình oxi hoá đồng."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2269,19 +2269,19 @@
                               "section":  "Phần I",
                               "question_number":  3,
                               "question_type":  "single_choice",
-                              "prompt":  "Chocácdungdịchcócùngnồngđộmol:Na2CO3,H2SO4,HCl,KNO3.Dungdịchcógiá trịpHlớnnhất là",
+                              "prompt":  "Cho các dung dịch có cùng nồng độ mol: Na 2 CO 3 , H 2 SO 4 , HCl, KNO 3 . Dung dịch có giá trị pH lớn nhất là",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "KNO3."
+                                                  "text":  "KNO 3 ."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "H2SO4."
+                                                  "text":  "H 2 SO 4 ."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Na2CO3."
+                                                  "text":  "Na 2 CO 3 ."
                                               },
                                               {
                                                   "key":  "D",
@@ -2298,7 +2298,7 @@
                               "section":  "Phần I",
                               "question_number":  4,
                               "question_type":  "single_choice",
-                              "prompt":  "Trongcácphảnứnghữucơthườngcósựtạothànhcáctiểuphântrunggianhoạtđộngnhư gốctựdo,carbanion,carbocation.Carbocationlàionmangđiệntíchdươngtrênnguyêntửcarbon. 33CóbaonhiêucarbocationtrongsốcáctiểuphânCH3 3 3  CH3CC ?  C,CH   3  CH, 2  CH3  vàCH3C H2,",
+                              "prompt":  "Trong các phản ứng hữu cơ thường có sự tạo thành các tiểu phân trung gian hoạt động như gốc tự do, carbanion, carbocation. Carbocation là ion mang điện tích dương trên nguyên tử carbon. 3 3 Có bao nhiêu carbocation trong số các tiểu phân  CH 3  3 3  CH 3  C  C ?      C , CH     3  C H , 2  C H 3  và CH 3 C H 2 ,",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2327,7 +2327,7 @@
                               "section":  "Phần I",
                               "question_number":  5,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho bảnggiá trị thế điệncực chuẩn củacác cặp oxi hóa– khử như sau: Cặpoxi hoá– khử Al3+/Al Fe2+/Fe Cu2+/Cu Ag+/Ag E0(V) –1,676 –0,440 +0,340 +0,799 Dựavào bảng thếđiện cựcchuẩn ở trên, kim loạicó tính khử mạnh nhất là",
+                              "prompt":  "Cho bảng giá trị thế điện cực chuẩn của các cặp oxi hóa – khử như sau: Cặp oxi hoá – khử Al 3+ /Al Fe 2+ /Fe Cu 2+ /Cu Ag + /Ag E 0 (V) –1,676 –0,440 +0,340 +0,799 Dựa vào bảng thế điện cực chuẩn ở trên, kim loại có tính khử mạnh nhất là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2356,7 +2356,7 @@
                               "section":  "Phần I",
                               "question_number":  6,
                               "question_type":  "single_choice",
-                              "prompt":  "Chất nào sauđây thuộcloại polysaccharide?",
+                              "prompt":  "Chất nào sau đây thuộc loại polysaccharide?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2385,23 +2385,23 @@
                               "section":  "Phần I",
                               "question_number":  7,
                               "question_type":  "single_choice",
-                              "prompt":  "Catechin là một chất kháng oxi hoá mạnh, ức chế hoạt động của các gốc tự do nên có khả năng phòng chống bệnh ung thư, nhồi máu cơ tim. Công thức cấu tạo của catechin cho như hình dưới: Phátbiểu nàosau đâykhông đúng?",
+                              "prompt":  "Catechin là một chất kháng oxi hoá mạnh, ức chế hoạt động của các gốc tự do nên có khả năng phòng chống bệnh ung thư, nhồi máu cơ tim. Công thức cấu tạo của catechin cho như hình dưới: Phát biểu nào sau đây không đúng?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Phântử catechincó 4nhóm -OHphenol."
+                                                  "text":  "Phân tử catechin có 4 nhóm -OH phenol."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Catechincó phân tửkhối là 290."
+                                                  "text":  "Catechin có phân tử khối là 290."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Côngthức phân tửcủa catechin là C15H16O6."
+                                                  "text":  "Công thức phân tử của catechin là C 15 H 16 O 6 ."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Catechinphản ứng được vớidung dịch NaOH."
+                                                  "text":  "Catechin phản ứng được với dung dịch NaOH."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2414,7 +2414,7 @@
                               "section":  "Phần I",
                               "question_number":  8,
                               "question_type":  "single_choice",
-                              "prompt":  "Ởtrạng thái cơbản,số electron ởlớp ngoài cùngtrong nguyên tử Al (Z=13) là",
+                              "prompt":  "Ở trạng thái cơ bản, số electron ở lớp ngoài cùng trong nguyên tử Al (Z=13) là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2443,7 +2443,7 @@
                               "section":  "Phần I",
                               "question_number":  9,
                               "question_type":  "single_choice",
-                              "prompt":  "Phương phápđiện phân nóngchảy được sửdụng để điềuchế kim loạinào sau đây?",
+                              "prompt":  "Phương pháp điện phân nóng chảy được sử dụng để điều chế kim loại nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2472,7 +2472,7 @@
                               "section":  "Phần I",
                               "question_number":  10,
                               "question_type":  "single_choice",
-                              "prompt":  "XăngE5chứa5%thểtíchethanolhiệnđangđượcsửdụngphổbiếnởnướctađểthaythế một phần xăng thông thường. Một người đi xe máy mua 3 lít xăng E5 để đổ vào bình chứa nhiên liệu. Thể tích ethanol có trong 3 lít xăng trên là",
+                              "prompt":  "Xăng E5 chứa 5% thể tích ethanol hiện đang được sử dụng phổ biến ở nước ta để thay thế một phần xăng thông thường. Một người đi xe máy mua 3 lít xăng E5 để đổ vào bình chứa nhiên liệu. Thể tích ethanol có trong 3 lít xăng trên là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2501,7 +2501,7 @@
                               "section":  "Phần I",
                               "question_number":  11,
                               "question_type":  "single_choice",
-                              "prompt":  "Bradykininlàmộtpeptidecótronghuyếttương,cótrậttựsắpxếpcácaminoacidnhư sau:Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg.Chocácnhậnđịnhsau: Bradykininthuộc loại octapeptide. Thuỷphân hoàn toàn bradykinintrong môi trường acid thuđược 5 loạiamino acid. Thuỷphân không hoàn toàn bradykininthu được tối đa 7 dipeptide. Bradykininphản ứng với Cu(OH)2trong môi trường kiềm tạodung dịch màu xanh lam. Số nhận định đúng là",
+                              "prompt":  "Bradykinin là một peptide có trong huyết tương, có trật tự sắp xếp các amino acid như sau: Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg. Cho các nhận định sau: Bradykinin thuộc loại octapeptide. Thuỷ phân hoàn toàn bradykinin trong môi trường acid thu được 5 loại amino acid. Thuỷ phân không hoàn toàn bradykinin thu được tối đa 7 di peptide. Bradykinin phản ứng với Cu(OH) 2 trong môi trường kiềm tạo dung dịch màu xanh lam. Số nhận định đúng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2530,7 +2530,7 @@
                               "section":  "Phần I",
                               "question_number":  12,
                               "question_type":  "single_choice",
-                              "prompt":  "TêngọicủaestercócôngthứccấutạothugọnCH3COOCH=CH2là",
+                              "prompt":  "Tên gọi của ester có công thức cấu tạo thu gọn CH 3 COOCH=CH 2 là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2559,7 +2559,7 @@
                               "section":  "Phần I",
                               "question_number":  13,
                               "question_type":  "single_choice",
-                              "prompt":  "X là nguyên tố phổ biến thứ 4 trong vỏ Trái Đất, X có trong hemoglobin của máu làmnhiệmvụvậnchuyểnoxygen,duytrìsựsống.NguyêntửXcó26protontronghạtnhân.Chocác phát biểu sau về X: Xcó 26 neutron trong hạt nhân. Xcó 26 electron ở vỏ nguyên tử. Xcó điện tíchhạt nhân là +26. Khối lượng nguyên tử X là 26 amu. Trongcácphátbiểutrên,phátbiểuđúnglà",
+                              "prompt":  "X là nguyên tố phổ biến thứ 4 trong vỏ Trái Đất, X có trong hemoglobin của máu làm nhiệm vụ vận chuyển oxygen, duy trì sự sống. Nguyên tử X có 26 proton trong hạt nhân. Cho các phát biểu sau về X: X có 26 neutron trong hạt nhân. X có 26 electron ở vỏ nguyên tử. X có điện tích hạt nhân là +26. Khối lượng nguyên tử X là 26 amu. Trong các phát biểu trên, phát biểu đúng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2588,7 +2588,7 @@
                               "section":  "Phần I",
                               "question_number":  14,
                               "question_type":  "single_choice",
-                              "prompt":  "KimloạiXđượcsửdụngtrongnhiệtkế,ápkếvàmộtsốthiếtbịkhác.Ởđiềukiệnthường, Xlà chấtlỏng. Kim loại Xlà",
+                              "prompt":  "Kim loại X được sử dụng trong nhiệt kế, áp kế và một số thiết bị khác. Ở điều kiện thường, X là chất lỏng. Kim loại X là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2617,7 +2617,7 @@
                               "section":  "Phần I",
                               "question_number":  15,
                               "question_type":  "single_choice",
-                              "prompt":  "Chất nào sauđây làchất khíở điều kiện thường? 44",
+                              "prompt":  "Chất nào sau đây là chất khí ở điều kiện thường? 4 4",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2646,7 +2646,7 @@
                               "section":  "Phần I",
                               "question_number":  16,
                               "question_type":  "single_choice",
-                              "prompt":  "MộtmẫunướcđượcxácđịnhchứađồngthờilượnglớncácionCa2+,Mg2+,HCO3-,SO2-. Mẫu nước đó thuộc loại nào sau đây? 4 4",
+                              "prompt":  "Một mẫu nước được xác định chứa đồng thời lượng lớn các ion Ca 2+ , Mg 2+ , HCO 3 -, SO 2- . Mẫu nước đó thuộc loại nào sau đây? 4 4",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2675,23 +2675,23 @@
                               "section":  "Phần I",
                               "question_number":  17,
                               "question_type":  "single_choice",
-                              "prompt":  "Để kiểm tra sự có mặt của một số cation có trong dung dịch ta tiến hành thí nghiệm sau: Chokhoảng4-6giọtdungdịchNaOHvàoốngnghiệmchứakhoảng1mLdungdịchcầnxácđịnh cationtrongmuối,thấycókếttủamàutrắngxuấthiệnngay.Trongdungdịchnàychứacationnào sau đây?",
+                              "prompt":  "Để kiểm tra sự có mặt của một số cation có trong dung dịch ta tiến hành thí nghiệm sau: Cho khoảng 4-6 giọt dung dịch NaOH vào ống nghiệm chứa khoảng 1 mL dung dịch cần xác định cation trong muối, thấy có kết tủa màu trắng xuất hiện ngay. Trong dung dịch này chứa cation nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "Mg2+(aq)."
+                                                  "text":  "Mg 2+ (aq)."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "Fe3+(aq)."
+                                                  "text":  "Fe 3+ (aq)."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "Fe2+(aq)."
+                                                  "text":  "Fe 2+ (aq)."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "Cu2+(aq)."
+                                                  "text":  "Cu 2+ (aq)."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2704,7 +2704,7 @@
                               "section":  "Phần I",
                               "question_number":  18,
                               "question_type":  "single_choice",
-                              "prompt":  "Phức chất cisplatin được dùng làm thuốc chữa bệnh ung thư có công thức phân tử là [PtCl2(NH3)2]. Số loại phối tử trong phức chất cisplatin là",
+                              "prompt":  "Phức chất cisplatin được dùng làm thuốc chữa bệnh ung thư có công thức phân tử là [PtCl 2 (NH 3 ) 2 ]. Số loại phối tử trong phức chất cisplatin là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2733,19 +2733,19 @@
                               "section":  "Phần II",
                               "question_number":  19,
                               "question_type":  "true_false",
-                              "prompt":  "Acquy chì được sử dụng phổ biến trong nhiều phương tiện giao thông như xe máy, ô tô. Acquy chì có cấu tạo như hình vẽ dưới đây: Phảnứng xảy ra khi acquy xả điện: Pb(s)+PbO2(s)+2H2SO4(aq)→2PbSO4(s)+ 2H2O(l) Biếtrằng PbSO4 sinhra từ điệncực nào đềubámhết vàođiện cựcđó. Tạianode, Pbbị oxihoá vàtạo thành PbSO4.Tại cathode,PbO2 bịkhử vàtạo thành PbSO4.",
+                              "prompt":  "Acquy chì được sử dụng phổ biến trong nhiều phương tiện giao thông như xe máy, ô tô. Acquy chì có cấu tạo như hình vẽ dưới đây: Phản ứng xảy ra khi acquy xả điện: Pb(s) + PbO 2 (s) + 2H 2 SO 4 (aq) → 2PbSO 4 (s) + 2H 2 O(l) Biết rằng PbSO 4 sinh ra từ điện cực nào đều bám hết vào điện cực đó. Tại anode, Pb bị oxi hoá và tạo thành PbSO 4 . Tại cathode, PbO 2 bị khử và tạo thành PbSO 4 .",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Acquychì gây ô nhiễmmôi trường và ngộ độcchì ở các làngnghề tái chế acquy cũ."
+                                                  "text":  "Acquy chì gây ô nhiễm môi trường và ngộ độc chì ở các làng nghề tái chế acquy cũ."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Khi acquy xả điện: khối lượng các điện cực tăng lên, nồng độ H2SO4 trong acquy chì giảm xuống."
+                                                  "text":  "Khi acquy xả điện: khối lượng các điện cực tăng lên, nồng độ H 2 SO 4 trong acquy chì giảm xuống."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Trongcặpoxihoá–khử,cácnguyêntửtrongdạngoxihoácósốoxihoákhácvớicácnguyên"
+                                                  "text":  "Trong cặp oxi hoá – khử, các nguyên tử trong dạng oxi hoá có số oxi hoá khác với các nguyên"
                                               },
                                               {
                                                   "key":  "d",
@@ -2762,23 +2762,23 @@
                               "section":  "Phần II",
                               "question_number":  20,
                               "question_type":  "true_false",
-                              "prompt":  "Trongcôngnghiệp,thuốcnổtrinitrotoluene(kíhiệulàTNT)đượcđiềuchếtừtoluene bằngphản ứngnitro hóa(với HNO3) quaba giaiđoạn như sau: Kíhiệu xtlà xúc tác. KhiTNT (s) nổ, giả thiếtchỉ xảy ra phản ứng: TNT(s)⇢CO(g) + H2O(g) + N2 (g) + C (s) Carbonsinhraởdạngmuộithan.Ởđkc,khi1,0molTNT(s)nổtheophảnứngtrênsẽtỏaralượng nhiệt là 1477,6 kJ. Cho giá trị nhiệt tạo thành của các chất: Chất TNT (s) CO(g) H2O(g) C (s) muội than ∆fHo(kJ.mol-1) 298 - 67 -283 -241,8 x",
+                              "prompt":  "Trong công nghiệp, thuốc nổ trinitrotoluene (kí hiệu là TNT) được điều chế từ toluene bằng phản ứng nitro hóa (với HNO 3 ) qua ba giai đoạn như sau: Kí hiệu xt là xúc tác. Khi TNT (s) nổ, giả thiết chỉ xảy ra phản ứng: TNT(s) ⇢ CO (g) + H 2 O (g) + N 2 (g) + C (s) Carbon sinh ra ở dạng muội than. Ở đkc, khi 1,0 mol TNT (s) nổ theo phản ứng trên sẽ tỏa ra lượng nhiệt là 1477,6 kJ. Cho giá trị nhiệt tạo thành của các chất: Chất TNT (s) CO (g) H 2 O (g) C (s) muội than ∆ f H o (kJ.mol - 1 ) 298 - 67 - 283 - 241,8 x",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Giá trịcủa x là 0."
+                                                  "text":  "Giá trị của x là 0."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Ởgiai đoạn 1, phảnứng sinh ra nămsản phẩm đồng phân mononitrotoluene."
+                                                  "text":  "Ở giai đoạn 1, phản ứng sinh ra năm sản phẩm đồng phân mononitrotoluene."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "KhiTNT nổ theo phản ứngtrên, 1 mol TNTsẽsinh ra 11 mol sản phẩm."
+                                                  "text":  "Khi TNT nổ theo phản ứng trên, 1 mol TNT sẽ sinh ra 11 mol sản phẩm."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "Côngthức phân tửcủa dinitrotoluene là C7H7N2O4."
+                                                  "text":  "Công thức phân tử của dinitrotoluene là C 7 H 7 N 2 O 4 ."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2791,23 +2791,23 @@
                               "section":  "Phần II",
                               "question_number":  21,
                               "question_type":  "true_false",
-                              "prompt":  "Đểxácđịnhnồngđộaceticacidcótrongmộtmẫugiấmăn,mộtnhómhọcsinhtiếnhành thí nghiệm sau: Bước1:Phaloãng10,00mLgiấmănbằngnướccấttrongbìnhđịnhmứcđược100,00mLdung dịch X. Dùng pipette lấy 10,00 mL dung dịch X cho vào bình tam giác rồi thêm vài giọt chất chỉ thị phenolphthalein. Bước2:Lắpdụngcụnhưhìnhbên.ChodungdịchNaOH0,02Mvàocốcthủytinhsauđórótvào burette (đã khóa) và chỉnh về vạch 0 (burette ghi thể tích tăng dần từ trên xuống dưới). Bước3:VặnkhóaburetteđểdungdịchNaOHtrongburettechảytừtừtừnggiọtvàobìnhtamgiác, dung dịch chuyển từ không màu sang màu hồng bền trong khoảng 20 giây thì dừng lại. Bước4: Ghilại thểtích dungdịch NaOHđãdùng. Lặplại thí nghiệm3 lần. Thểtích dungdịch NaOH0,02Mtrong 3lần thínghiệm ghi lạiđược như sau: Lần 1 2 3 VdungdịchNaOH(mL) 25,1 24,9 25 Nồngđộ mol củaaceticacid trongmẫu giấm ăn trên là 0,05 M.",
+                              "prompt":  "Để xác định nồng độ a cetic acid có trong một mẫu giấm ăn, một nhóm học sinh tiến hành thí nghiệm sau: Bước 1: Pha loãng 10,00 mL gi ấm ăn bằng nước cất trong bình định mức được 100,00 mL dung dịch X. Dùng pipette lấy 10,00 mL dung dịch X cho vào bình tam giác rồi thêm vài giọt chất chỉ thị phenolphthalein. Bước 2: Lắp dụng cụ như hình bên. Cho dung dịch NaOH 0,02 M vào cốc thủy tinh sau đó rót vào burette (đã khóa) và chỉnh về vạch 0 (burette ghi thể tích tăng dần từ trên xuống dưới). Bước 3: Vặn khóa burette để dung dịch NaOH trong burette chảy từ từ từng giọt vào bình tam giác, dung dịch chuyển từ không màu sang màu hồng bền trong khoảng 20 giây thì dừng lại. Bước 4: Ghi lại thể tích dung dịch NaOH đã dùng. Lặp lại thí nghiệm 3 lần. Thể tích dung dịch NaOH 0,02 M trong 3 lần thí nghiệm ghi lại được như sau: Lần 1 2 3 Vdung dịch NaOH (mL) 25,1 24,9 25 Nồng độ mol của acetic acid trong mẫu giấm ăn trên là 0,05 M.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Ởbước2trướckhirótdungdịchNaOH0,02Mvàoburettecầntrángsạchburettebằngnước cất, sau đó tráng lại bằng một ít dung dịch NaOH 0,02 M."
+                                                  "text":  "Ở bước 2 trước khi rót dung dịch NaOH 0,02 M vào burette cần tráng sạch burette bằng nước cất, sau đó tráng lại bằng một ít dung dịch NaOH 0,02 M."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Tronglầnthínghiệmthứ2,tạithờiđiểmdungdịchtrongbìnhtamgiácđổimàu,thểtíchđọc được trên burette là 24,9 mL và có 1 giọt dung dịch còn treo ở đầu dưới của burette. Nếu lấy giọt dung dịch này thì nồng độ của acetic acid tính được sẽ lớn hơn 0,05 M."
+                                                  "text":  "Trong lần thí nghiệm thứ 2, tại thời điểm dung dịch trong bình tam giác đổi màu, thể tích đọc được trên burette là 24,9 mL và có 1 giọt dung dịch còn treo ở đầu dưới của burette. Nếu lấy giọt dung dịch này thì nồng độ của acetic acid tính được sẽ lớn hơn 0,05 M."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "Ởbước1trướckhidùngpipettelấy10,00mLdungdịchXchovàobìnhtamgiáctamgiác,"
+                                                  "text":  "Ở bước 1 trước khi dùng pipette lấy 10,00 mL dung dịch X cho vào bình tam giác tam giác,"
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "cầntráng bình tamgiác bằng nướccất, sau đótráng lại bằngmột ít giấm ăn."
+                                                  "text":  "cần tráng bình tam giác bằng nước cất, sau đó tráng lại bằng một ít giấm ăn."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2820,23 +2820,23 @@
                               "section":  "Phần II",
                               "question_number":  22,
                               "question_type":  "true_false",
-                              "prompt":  "Qiana là tên thương mại của một loại tơ nylon được sử dụng để sản xuất vải lụa chống nhăn cao cấp. Qiana được tổng hợp theo phương trình hoá học sau: a)Do Qiana có nhóm–CO–NH– nên Qianalà polypeptide.a)Do Qiana có nhóm–CO–NH– nên Qianalà polypeptide. a)Do Qiana có nhóm–CO–NH– nên Qianalà polypeptide. a)Do Qiana có nhóm–CO–NH– nên Qianalà polypeptide.",
+                              "prompt":  "Qiana là tên thương mại của một loại tơ nylon được sử dụng để sản xuất vải lụa chống nhăn cao cấp. Qiana được tổng hợp theo phương trình hoá học sau: a) Do Qiana có nhóm –CO–NH– nên Qiana là polypeptide. a) Do Qiana có nhóm –CO–NH– nên Qiana là polypeptide. a) Do Qiana có nhóm –CO–NH– nên Qiana là polypeptide. a) Do Qiana có nhóm –CO–NH– nên Qiana là polypeptide.",
                               "options":  [
                                               {
                                                   "key":  "a",
-                                                  "text":  "Phảnứng tổng hợp Qianaở trên làphản ứng trùng ngưng các monomer tạp chức."
+                                                  "text":  "Phản ứng tổng hợp Qiana ở trên là phản ứng trùng ngưng các monomer tạp chức."
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Qianalà tơ tổng hợp."
+                                                  "text":  "Qiana là tơ tổng hợp."
                                               },
                                               {
                                                   "key":  "c",
-                                                  "text":  "DoQianacócác nhóm–CO–NH–nên Qianabềntrong dungdịchkiềm mạnh."
+                                                  "text":  "Do Qiana có các nhóm –CO–NH– nên Qiana bền trong dung dịch kiềm mạnh."
                                               },
                                               {
                                                   "key":  "d",
-                                                  "text":  "PhầnIII.Câutrắcnghiệm trảlờingắn. Thísinh trảlờitừ câu23 đếncâu 28."
+                                                  "text":  "Phần III. Câu trắc nghiệm trả lời ngắn. Thí sinh trả lời từ câu 23 đến câu 28."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2849,7 +2849,7 @@
                               "section":  "Phần III",
                               "question_number":  23,
                               "question_type":  "short_answer",
-                              "prompt":  "Hiện nay, mưa acid, hiệu ứng nhà kính và thủng tầng ozone là ba thảm họa môi trường toàncầu.Mưaacidtànphánhiềurừngcây,cáccôngtrìnhkiếntrúcbằngđávàkimloại.Tácnhân chủ yếu gây ra mưa acid là sulfur dioxide (SO2). Trong khí quyển, SO2 chuyển hóa thành H2SO4 trong nước mưa theo sơ đồ sau: SO2 → SO3 → H2SO4. Một cơn mưa acid xuất hiện tại một khu công nghiệp diện tích 10 km2với lượng mưa trung bình 80mm.BiếtnồngđộH2SO4trongnướcmưalà2×10-5M.Lượngacidtrongnướcmưacóthểăn mòn các công trình bằng đávôi (CaCO3), khốilượng CaCO3 tốiđa bịăn mòn bởi lượngacid trên làakg.Giátrịcủaalàbaonhiêu?(Kếtquảcácphéptínhtrunggiankhôngđượclàmtròn,chỉkết quả cuối cùng được làm tròn đến số nguyên).",
+                              "prompt":  "Hiện nay, mưa acid, hiệu ứng nhà kính và thủng tầng ozone là ba thảm họa môi trường toàn cầu. Mưa acid tàn phá nhiều rừng cây, các công trình kiến trúc bằng đá và kim loại. Tác nhân chủ yếu gây ra mưa acid là sulfur dioxide (SO 2 ). Trong khí quyển, SO 2 chuyển hóa thành H 2 SO 4 trong nước mưa theo sơ đồ sau: SO 2 → SO 3 → H 2 SO 4 . Một cơn mưa acid xuất hiện tại một khu công nghiệp diện tích 10 km 2 với lượng mưa trung bình 80 mm. Biết nồng độ H 2 SO 4 trong nước mưa là 2 × 10 -5 M. Lượng acid trong nước mưa có thể ăn mòn các công trình bằng đá vôi (CaCO 3 ), khối lượng CaCO 3 tối đa bị ăn mòn bởi lượng acid trên là a kg. Giá trị của a là bao nhiêu? ( Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên ).",
                               "options":  [
 
                                           ],
@@ -2863,7 +2863,7 @@
                               "section":  "Phần III",
                               "question_number":  24,
                               "question_type":  "short_answer",
-                              "prompt":  "Trộnneopentanevớichlorinevàchiếuánhsángtửngoạithìthuđượctốiđabaonhiêu sản phẩm monochlorine?",
+                              "prompt":  "Trộn neopentane với chlorine và chiếu ánh sáng tử ngoại thì thu được tối đa bao nhiêu sản phẩm monochlorine?",
                               "options":  [
 
                                           ],
@@ -2891,7 +2891,7 @@
                               "section":  "Phần III",
                               "question_number":  26,
                               "question_type":  "short_answer",
-                              "prompt":  "Chocáchợpchấtsau:methanal,ethanal,propanone,butanone.Sốchấtthamgiaphảnứng iodoform là?",
+                              "prompt":  "Cho các hợp chất sau: methanal, ethanal, propanone, butanone. Số chất tham gia phản ứng iodoform là?",
                               "options":  [
 
                                           ],
@@ -2905,7 +2905,7 @@
                               "section":  "Phần III",
                               "question_number":  27,
                               "question_type":  "short_answer",
-                              "prompt":  "Trongcôngnghiệp,aluminium(nhôm)đượcsảnxuấttừquặngbauxite(cóthànhphần chínhlàAl2O3.2H2O) theohai giaiđoạn chính: Giaiđoạn1:Tinh chếquặng bauxite. Giaiđoạn2: Điệnphân Al2O3nóng chảy. Trongquátrìnhsảnxuấtnhômbằngphươngphápđiệnphânnóngchảyaluminiumoxide,điện cựcdươngbằngthanchìbịănmònliêntụcdophảnứnggiữacarbonvàoxygentạothànhhỗnhợp khí O2, CO, CO2. Giả sử các khí trong hỗn hợp trên có tỉ lệ mol bằng nhau, các phản ứng xảy ra hoàntoàn.Đểsảnxuấtđược2,7kgnhômthìkhốilượngthanchìbịtiêuhaodophảnứngoxihoá là x gam. Giá trị của x là bao nhiêu? (Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên).",
+                              "prompt":  "Trong công nghiệp, aluminium (nhôm) được sản xuất từ quặng bauxite (có thành phần chính là Al 2 O 3 .2H 2 O) theo hai giai đoạn chính: Giai đoạn 1: Tinh chế quặng bauxite. Giai đoạn 2: Điện phân Al 2 O 3 nóng chảy. Trong quá trình sản xuất nhôm bằng phương pháp điện phân nóng chảy aluminium oxide, điện cực dương bằng than chì bị ăn mòn liên tục do phản ứng giữa carbon và oxygen tạo thành hỗn hợp khí O 2 , CO, CO 2 . Giả sử các khí trong hỗn hợp trên có tỉ lệ mol bằng nhau, các phản ứng xảy ra hoàn toàn. Để sản xuất được 2,7 kg nhôm thì khối lượng than chì bị tiêu hao do phản ứng oxi hoá là x gam. Giá trị của x là bao nhiêu? ( Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên ).",
                               "options":  [
 
                                           ],
@@ -2919,7 +2919,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Mộtbìnhgas(khíhoálỏng)chứahỗnhợppropanevàbutanevớitỉlệsốmol1:2.Khibị đốt cháy, khí gas tạo sản phẩm theo sơ đồ sau: C3H8(g) + O2(g) → CO2(g) + H2O(g) C4H10(g)+ O2(g) → CO2(g) + H2O(g) Chobiết giá trị trung bìnhcủa các năng lượng liênkết ởđiều kiện chuẩn: Liên kết C-C C-H O=O C=O O-H Eb(kJ/mol) 346 418 494 732 459 Trungbìnhmỗingày,mộthộgiađìnhcần10000kJnhiệtđểphụcvụsinhhoạt.Với12kgkhígas thì một hộ gia đình sẽ sử dụng được trong bao nhiêu ngày? (Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên). ------ HẾT ------",
+                              "prompt":  "Một bình gas (khí hoá l ỏng) chứa hỗn hợp propane và butane với tỉ lệ số mol 1 : 2. Khi bị đốt cháy, khí gas tạo sản phẩm theo sơ đồ sau: C 3 H 8 (g) + O 2 (g) → CO 2 (g) + H 2 O(g) C 4 H 10 (g) + O 2 (g) → CO 2 (g) + H 2 O(g) Cho biết giá trị trung bình của các năng lượng liên kết ở điều kiện chuẩn: Liên kết C- C C- H O=O C=O O- H E b (kJ/mol) 346 418 494 732 459 Trung bình mỗi ngày, một hộ gia đình cần 10000 kJ nhiệt để phục vụ sinh hoạt. Với 12 kg khí gas thì một hộ gia đình sẽ sử dụng được trong bao nhiêu ngày? ( Kết quả các phép tính trung gian không được làm tròn, chỉ kết quả cuối cùng được làm tròn đến số nguyên ). ------ HẾT ----- -",
                               "options":  [
 
                                           ],

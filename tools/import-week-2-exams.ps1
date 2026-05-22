@@ -178,7 +178,7 @@ function Add-QuestionImages($paragraph, $zip, $relMap, $nsm, [string]$mediaDir, 
     }
     $questionImages[$questionNumber].Add([ordered]@{
       pageNumber = 1
-      url = "/exam-assets/week-2/$slug/media/$outName?v=week-2-20260522"
+      url = "/exam-assets/week-2/$slug/media/${outName}?v=week-2-20260522"
       width = $size.width
       height = $size.height
     })
@@ -230,7 +230,7 @@ foreach ($file in $files) {
     $questionImages = @{}
 
     foreach ($p in $xml.SelectNodes("//w:p", $nsm)) {
-      $text = (($p.SelectNodes(".//w:t", $nsm) | ForEach-Object { $_."#text" }) -join "")
+      $text = (($p.SelectNodes(".//w:t", $nsm) | ForEach-Object { $_."#text" }) -join " ")
       $clean = Normalize-Text $text
 
       if (-not $clean) {

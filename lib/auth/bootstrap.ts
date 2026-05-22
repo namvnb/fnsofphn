@@ -83,7 +83,7 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
         await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
         await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
         await insertQuestions(existingExam.id);
-      } else if (existingExam.description !== sampleExam.description) {
+      } else {
         await updateQuestions(existingExam.id);
       }
       continue;
