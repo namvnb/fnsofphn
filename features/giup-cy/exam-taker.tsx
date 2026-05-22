@@ -12,6 +12,7 @@ import { PremiumCard } from "@/components/shared/premium-card";
 import { submitExamAttempt } from "@/features/giup-cy/actions";
 import { getQuestionSourceAssets, type ExamPageAsset } from "@/features/giup-cy/exam-assets";
 import { FormattedText } from "@/features/giup-cy/formatted-text";
+import { formatScorePair } from "@/features/giup-cy/score-format";
 import { cn } from "@/lib/utils/cn";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
@@ -236,7 +237,7 @@ export function ExamTaker({ exam, questions }: Props) {
         <div className="mt-6 rounded-2xl border border-border-soft bg-white/70 p-5">
           <p className="text-sm font-semibold text-text-secondary">Điểm tự động</p>
           <p className="mt-2 text-4xl font-bold text-text-primary">
-            {result.maxScore ? `${result.score}/${result.maxScore}` : "Chưa có"}
+            {result.maxScore ? formatScorePair(result.score, result.maxScore) : "Chưa có"}
           </p>
           <p className="mt-2 text-sm text-text-secondary">
             Đúng {result.correctCount ?? 0}/{result.gradedCount ?? 0} câu đã có đáp án. Tổng số câu trong đề: {result.totalCount ?? 0}.

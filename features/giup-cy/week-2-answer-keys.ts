@@ -37,6 +37,68 @@ const ninhBinhAnswerKey: AnswerKeyEntry[] = [
   { question_number: 28, correct_answer: "655", points: 0.25 }
 ];
 
+const phuThoAnswerKey: AnswerKeyEntry[] = [
+  { question_number: 1, correct_answer: "D", points: 0.25 },
+  { question_number: 2, correct_answer: "D", points: 0.25 },
+  { question_number: 3, correct_answer: "C", points: 0.25 },
+  { question_number: 4, correct_answer: "D", points: 0.25 },
+  { question_number: 5, correct_answer: "C", points: 0.25 },
+  { question_number: 6, correct_answer: "B", points: 0.25 },
+  { question_number: 7, correct_answer: "A", points: 0.25 },
+  { question_number: 8, correct_answer: "D", points: 0.25 },
+  { question_number: 9, correct_answer: "D", points: 0.25 },
+  { question_number: 10, correct_answer: "B", points: 0.25 },
+  { question_number: 11, correct_answer: "D", points: 0.25 },
+  { question_number: 12, correct_answer: "A", points: 0.25 },
+  { question_number: 13, correct_answer: "B", points: 0.25 },
+  { question_number: 14, correct_answer: "B", points: 0.25 },
+  { question_number: 15, correct_answer: "C", points: 0.25 },
+  { question_number: 16, correct_answer: "B", points: 0.25 },
+  { question_number: 17, correct_answer: "B", points: 0.25 },
+  { question_number: 18, correct_answer: "A", points: 0.25 },
+  { question_number: 19, correct_answer: { a: true, b: false, c: true, d: true }, points: 1 },
+  { question_number: 20, correct_answer: { a: true, b: false, c: true, d: true }, points: 1 },
+  { question_number: 21, correct_answer: { a: true, b: true, c: true, d: false }, points: 1 },
+  { question_number: 22, correct_answer: { a: true, b: true, c: false, d: false }, points: 1 },
+  { question_number: 23, correct_answer: "3", points: 0.25 },
+  { question_number: 24, correct_answer: "1", points: 0.25 },
+  { question_number: 25, correct_answer: "599", points: 0.25 },
+  { question_number: 26, correct_answer: "8,66", points: 0.25 },
+  { question_number: 27, correct_answer: "4", points: 0.25 },
+  { question_number: 28, correct_answer: "80,2", points: 0.25 }
+];
+
+const anDuongAnswerKey: AnswerKeyEntry[] = [
+  { question_number: 1, correct_answer: "D", points: 0.25 },
+  { question_number: 2, correct_answer: "C", points: 0.25 },
+  { question_number: 3, correct_answer: "D", points: 0.25 },
+  { question_number: 4, correct_answer: "D", points: 0.25 },
+  { question_number: 5, correct_answer: "C", points: 0.25 },
+  { question_number: 6, correct_answer: "D", points: 0.25 },
+  { question_number: 7, correct_answer: "B", points: 0.25 },
+  { question_number: 8, correct_answer: "B", points: 0.25 },
+  { question_number: 9, correct_answer: "D", points: 0.25 },
+  { question_number: 10, correct_answer: "B", points: 0.25 },
+  { question_number: 11, correct_answer: "C", points: 0.25 },
+  { question_number: 12, correct_answer: "C", points: 0.25 },
+  { question_number: 13, correct_answer: "D", points: 0.25 },
+  { question_number: 14, correct_answer: "D", points: 0.25 },
+  { question_number: 15, correct_answer: "C", points: 0.25 },
+  { question_number: 16, correct_answer: "B", points: 0.25 },
+  { question_number: 17, correct_answer: "C", points: 0.25 },
+  { question_number: 18, correct_answer: "A", points: 0.25 },
+  { question_number: 19, correct_answer: { a: true, b: false, c: false, d: true }, points: 1 },
+  { question_number: 20, correct_answer: { a: true, b: false, c: false, d: true }, points: 1 },
+  { question_number: 21, correct_answer: { a: true, b: true, c: true, d: false }, points: 1 },
+  { question_number: 22, correct_answer: { a: true, b: true, c: false, d: true }, points: 1 },
+  { question_number: 23, correct_answer: "784", points: 0.25 },
+  { question_number: 24, correct_answer: "714", points: 0.25 },
+  { question_number: 25, correct_answer: "2", points: 0.25 },
+  { question_number: 26, correct_answer: "9,9", points: 0.25 },
+  { question_number: 27, correct_answer: "4", points: 0.25 },
+  { question_number: 28, correct_answer: "66,0", points: 0.25 }
+];
+
 const thaiNguyenAnswerKey: AnswerKeyEntry[] = [
   { question_number: 1, correct_answer: "A", points: 0.25 },
   { question_number: 2, correct_answer: "D", points: 0.25 },
@@ -69,6 +131,14 @@ const thaiNguyenAnswerKey: AnswerKeyEntry[] = [
 ];
 
 const keysBySlug = [
+  {
+    marker: "21-thpt-vo-thi-sau-phu-tho-thi-thu-tot-nghiep-thpt-2026-mon-hoa-hoc-image-marked",
+    entries: phuThoAnswerKey
+  },
+  {
+    marker: "34-thpt-an-duong-lan-2-hai-phong-thi-thu-tot-nghiep",
+    entries: anDuongAnswerKey
+  },
   {
     marker: "49-so-gd-t-ninh-binh-online-2-ninh-binh-image-marked-removed-watermarked",
     entries: ninhBinhAnswerKey

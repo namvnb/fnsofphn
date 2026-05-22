@@ -12,6 +12,7 @@ import { PremiumCard } from "@/components/shared/premium-card";
 import { applyHungYenAnswerKey, updateQuestionAnswer } from "@/features/giup-cy/actions";
 import { getExamPdfUrl } from "@/features/giup-cy/exam-assets";
 import { FormattedText } from "@/features/giup-cy/formatted-text";
+import { formatScoreNumber, formatScorePair } from "@/features/giup-cy/score-format";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 type Props = {
@@ -76,7 +77,7 @@ function AnswerReviewBlock({
         <Badge variant={detail.isCorrect === null ? "gold" : detail.isCorrect ? "cyan" : "rose"}>{resultLabel(detail)}</Badge>
         <Badge variant="neutral">{question?.question_type ?? "unknown"}</Badge>
         <Badge variant="neutral">
-          {detail.earnedPoints}/{detail.points} điểm
+          {formatScorePair(detail.earnedPoints, detail.points)} điểm
         </Badge>
       </div>
 
@@ -113,7 +114,7 @@ function AnswerReviewBlock({
 
 function formatScore(attempt: GiupCyExamAttemptRow) {
   if (!attempt.max_score) return "Chưa có câu chấm tự động";
-  return `${attempt.score}/${attempt.max_score}`;
+  return formatScorePair(attempt.score, attempt.max_score);
 }
 
 function csvCell(value: string | number) {
@@ -305,8 +306,8 @@ export function GiupCyExamDetail({ exam, questions, attempts }: Props) {
       ["Học sinh", "Điểm", "Điểm tối đa", "Đúng", "Đã chấm", "Tổng câu", "Thời gian nộp"],
       ...attempts.map((attempt) => [
         attempt.student_name,
-        attempt.score,
-        attempt.max_score,
+        formatScoreNumber(attempt.score),
+        formatScoreNumber(attempt.max_score),
         attempt.correct_count,
         attempt.graded_count,
         attempt.total_count,

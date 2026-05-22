@@ -1453,7 +1453,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Tổng công ty dệt may Hòa Thọ (Cẩm Lệ – Đà Nẵng) nhận một đơn đặt hàng cung cấp sợi nguyên liệu nitron cho Công ty dệt may Hà Nội để hoàn thành đơn hàng áo len nam (3 size theo kích cỡ tăng dần là S, M, L), mỗi size 20000 chiếc. Biết mỗi chiếc áo len size S cần phải dùng khoảng 500 gam sợi nitron và khối lượng len tăng thêm mỗi 10% theo mỗi size. Biết hiệu suất cả quá trình điều chế là 50%. Khối lượng nguyên liệu vinyl cyanide cần dùng để nhà máy sản xuất được đơn hàng trên là bao nhiêu tấn? (kết quả làm tròn đến hàng phần mười sau dấu phẩy) ------------ HẾT ------------",
+                              "prompt":  "Tổng công ty dệt may Hòa Thọ (Cẩm Lệ – Đà Nẵng) nhận một đơn đặt hàng cung cấp sợi nguyên liệu nitron cho Công ty dệt may Hà Nội để hoàn thành đơn hàng áo len nam (3 size theo kích cỡ tăng dần là S, M, L), mỗi size 20000 chiếc. Biết mỗi chiếc áo len size S cần phải dùng khoảng 500 gam sợi nitron và khối lượng len tăng thêm mỗi 10% theo mỗi size. Biết hiệu suất cả quá trình điều chế là 50%. Khối lượng nguyên liệu vinyl cyanide cần dùng để nhà máy sản xuất được đơn hàng trên là bao nhiêu tấn? (kết quả làm tròn đến hàng phần mười sau dấu phẩy)",
                               "options":  [
 
                                           ],
@@ -2186,7 +2186,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-                              "prompt":  "Quặng sắt là các khoáng vật chứa các hợp chất của sắt mà chủ yếu ở dạng các oxide. Hematite là một loại quặng chứa hàm lượng sắt cao và được dùng để trực tiếp sản xuất gang bằng cách nạp thẳng vào lò cao. Giả thiết 90% sắt trong quặng được chuyển vào gang. Từ 1000 tấn quặng hematite (có hàm lượng 69,9% Fe) có thể sản xuất được bao nhiêu tấn gang loại 96% Fe? (Làm tròn kết quả đến hàng đơn vị) ----------- HẾT -----------",
+                              "prompt":  "Quặng sắt là các khoáng vật chứa các hợp chất của sắt mà chủ yếu ở dạng các oxide. Hematite là một loại quặng chứa hàm lượng sắt cao và được dùng để trực tiếp sản xuất gang bằng cách nạp thẳng vào lò cao. Giả thiết 90% sắt trong quặng được chuyển vào gang. Từ 1000 tấn quặng hematite (có hàm lượng 69,9% Fe) có thể sản xuất được bao nhiêu tấn gang loại 96% Fe? (Làm tròn kết quả đến hàng đơn vị)",
                               "options":  [
 
                                           ],

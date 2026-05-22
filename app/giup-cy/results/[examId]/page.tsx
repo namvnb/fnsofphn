@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { PremiumCard } from "@/components/shared/premium-card";
 import { FormattedText } from "@/features/giup-cy/formatted-text";
+import { formatScorePair } from "@/features/giup-cy/score-format";
 import { getPublicExamResults } from "@/features/giup-cy/data";
 import type { GiupCyExamQuestionRow, Json } from "@/types/database";
 
@@ -21,7 +22,7 @@ type AttemptAnswerDetail = {
 
 function formatScore(score: number, maxScore: number) {
   if (!maxScore) return "Chưa có";
-  return `${score}/${maxScore}`;
+  return formatScorePair(score, maxScore);
 }
 
 function parseAttemptDetails(value: Json) {
@@ -57,7 +58,7 @@ function ResultDetail({ detail, question }: { detail: AttemptAnswerDetail; quest
         <Badge>Câu {detail.questionNumber}</Badge>
         <Badge variant={detail.isCorrect === null ? "gold" : detail.isCorrect ? "cyan" : "rose"}>{resultLabel(detail)}</Badge>
         <Badge variant="neutral">
-          {detail.earnedPoints}/{detail.points} điểm
+          {formatScorePair(detail.earnedPoints, detail.points)} điểm
         </Badge>
       </div>
 
