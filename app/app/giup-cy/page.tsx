@@ -9,18 +9,28 @@ import { seedGiupCyExamsForUser } from "@/lib/auth/bootstrap";
 import { requireUser } from "@/lib/auth/guards";
 import { resolveGiupCyWorkspaceUser } from "@/features/giup-cy/workspace";
 
+async function seedGiupCyExamsWithTimeout(user: Awaited<ReturnType<typeof resolveGiupCyWorkspaceUser>>) {
+  const timeout = new Promise<"timeout">((resolve) => {
+    setTimeout(() => resolve("timeout"), 3500);
+  });
+
+  return Promise.race([seedGiupCyExamsForUser(user).then(() => "seeded" as const), timeout]);
+}
+
 export default async function GiupCyPage() {
   const user = await requireUser();
   let exams = await getAdminExams(user);
   const sampleSources = new Set(sampleGiupCyExams.map((exam) => exam.source_file_name));
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
   const hasOldThaiNguyenImport = exams.some(
-    (exam) => exam.source_file_name?.includes("THÃI NGUYÃŠN") && exam.title.startsWith("22.05.")
+    (exam) => exam.source_file_name?.toLowerCase().includes("thái nguyên") && exam.title.startsWith("22.05.")
   );
 
   if (existingSampleCount < sampleGiupCyExams.length || hasOldThaiNguyenImport) {
-    await seedGiupCyExamsForUser(await resolveGiupCyWorkspaceUser(user));
-    exams = await getAdminExams(user);
+    const seedResult = await seedGiupCyExamsWithTimeout(await resolveGiupCyWorkspaceUser(user));
+    if (seedResult === "seeded") {
+      exams = await getAdminExams(user);
+    }
   }
 
   const activeCount = exams.filter((exam) => exam.is_active).length;

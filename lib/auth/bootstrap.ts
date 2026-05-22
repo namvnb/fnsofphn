@@ -23,42 +23,29 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
       .eq("slug", slug)
       .maybeSingle();
 
+    const questionRows = (examId: string) =>
+      sampleExam.questions.map((question) => ({
+        exam_id: examId,
+        section: question.section,
+        question_number: question.question_number,
+        question_type: question.question_type,
+        prompt: question.prompt,
+        options: question.options,
+        correct_answer: question.correct_answer,
+        points: question.points,
+        explanation: null,
+        needs_review: question.needs_review ?? false,
+        sort_order: question.sort_order
+      }));
+
     const insertQuestions = async (examId: string) => {
-      await supabase.from("giup_cy_exam_questions").insert(
-        sampleExam.questions.map((question) => ({
-          exam_id: examId,
-          section: question.section,
-          question_number: question.question_number,
-          question_type: question.question_type,
-          prompt: question.prompt,
-          options: question.options,
-          correct_answer: question.correct_answer,
-          points: question.points,
-          explanation: null,
-          needs_review: question.needs_review ?? false,
-          sort_order: question.sort_order
-        }))
-      );
+      await supabase.from("giup_cy_exam_questions").insert(questionRows(examId));
     };
 
-    const updateQuestions = async (examId: string) => {
-      for (const question of sampleExam.questions) {
-        await supabase
-          .from("giup_cy_exam_questions")
-          .update({
-            section: question.section,
-            question_number: question.question_number,
-            question_type: question.question_type,
-            prompt: question.prompt,
-            options: question.options,
-            points: question.points,
-            explanation: null,
-            needs_review: question.needs_review ?? false,
-            sort_order: question.sort_order
-          })
-          .eq("exam_id", examId)
-          .eq("sort_order", question.sort_order);
-      }
+    const upsertQuestions = async (examId: string) => {
+      await supabase.from("giup_cy_exam_questions").upsert(questionRows(examId), {
+        onConflict: "exam_id,sort_order"
+      });
     };
 
     if (existingExam) {
@@ -83,8 +70,8 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
         await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
         await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
         await insertQuestions(existingExam.id);
-      } else {
-        await updateQuestions(existingExam.id);
+      } else if (existingExam.description !== sampleExam.description || sampleExam.source_file_name.includes("THÁI NGUYÊN")) {
+        await upsertQuestions(existingExam.id);
       }
       continue;
     }
