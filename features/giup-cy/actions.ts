@@ -30,7 +30,9 @@ const deleteExamSchema = z.object({
 
 const updateExamSettingsSchema = z.object({
   examId: z.string().uuid(),
+  slug: z.string().trim().min(1).max(180),
   title: z.string().trim().min(1).max(180),
+  description: z.string().trim().max(1200).optional(),
   durationMinutes: z.coerce.number().int().min(1).max(300)
 });
 
@@ -110,6 +112,7 @@ export async function updateExamSettings(input: unknown): Promise<ActionResult> 
     .from("giup_cy_exams")
     .update({
       title: parsed.data.title,
+      description: parsed.data.description ?? "",
       duration_minutes: parsed.data.durationMinutes
     })
     .eq("id", parsed.data.examId)
@@ -118,7 +121,8 @@ export async function updateExamSettings(input: unknown): Promise<ActionResult> 
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
   revalidatePath(`/app/giup-cy/${parsed.data.examId}`);
-  return { ok: true, message: "Đã cập nhật tiêu đề và thời gian làm bài." };
+  revalidatePath(`/exam/${parsed.data.slug}`);
+  return { ok: true, message: "Đã cập nhật thông tin đề." };
 }
 
 export async function togglePublicExamActive(input: unknown): Promise<ActionResult> {

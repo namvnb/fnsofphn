@@ -26,7 +26,16 @@ export function GiupCyAdminDashboard({ exams }: Props) {
   const [importDuration, setImportDuration] = useState("50");
   const [importJson, setImportJson] = useState("");
   const [settings, setSettings] = useState(() =>
-    Object.fromEntries(exams.map((exam) => [exam.id, { title: exam.title, durationMinutes: String(exam.duration_minutes) }]))
+    Object.fromEntries(
+      exams.map((exam) => [
+        exam.id,
+        {
+          title: exam.title,
+          description: exam.description ?? "",
+          durationMinutes: String(exam.duration_minutes)
+        }
+      ])
+    )
   );
 
   async function copyLink(slug: string) {
@@ -67,12 +76,14 @@ export function GiupCyAdminDashboard({ exams }: Props) {
   }
 
   function saveSettings(exam: ExamWithStats) {
-    const next = settings[exam.id] ?? { title: exam.title, durationMinutes: String(exam.duration_minutes) };
+    const next = settings[exam.id] ?? { title: exam.title, description: exam.description ?? "", durationMinutes: String(exam.duration_minutes) };
     setPendingId(exam.id);
     startImport(async () => {
       const result = await updateExamSettings({
         examId: exam.id,
+        slug: exam.slug,
         title: next.title,
+        description: next.description,
         durationMinutes: next.durationMinutes
       });
 
@@ -84,6 +95,7 @@ export function GiupCyAdminDashboard({ exams }: Props) {
               ? {
                   ...item,
                   title: next.title,
+                  description: next.description,
                   duration_minutes: Number(next.durationMinutes)
                 }
               : item
@@ -141,6 +153,7 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                         ...current,
                         [exam.id]: {
                           title: event.target.value,
+                          description: current[exam.id]?.description ?? exam.description ?? "",
                           durationMinutes: current[exam.id]?.durationMinutes ?? String(exam.duration_minutes)
                         }
                       }))
@@ -157,6 +170,7 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                         ...current,
                         [exam.id]: {
                           title: current[exam.id]?.title ?? exam.title,
+                          description: current[exam.id]?.description ?? exam.description ?? "",
                           durationMinutes: event.target.value
                         }
                       }))
@@ -167,6 +181,23 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                     <Save className="size-4" />
                     Lưu
                   </Button>
+                  <Textarea
+                    className="md:col-span-3"
+                    rows={3}
+                    value={settings[exam.id]?.description ?? exam.description ?? ""}
+                    onChange={(event) =>
+                      setSettings((current) => ({
+                        ...current,
+                        [exam.id]: {
+                          title: current[exam.id]?.title ?? exam.title,
+                          description: event.target.value,
+                          durationMinutes: current[exam.id]?.durationMinutes ?? String(exam.duration_minutes)
+                        }
+                      }))
+                    }
+                    aria-label={`Sửa mô tả ${exam.title}`}
+                    placeholder="Mô tả hiển thị ở màn chờ trước khi làm bài"
+                  />
                 </div>
               </div>
               <div className="flex flex-wrap gap-2">
