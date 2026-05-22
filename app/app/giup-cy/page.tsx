@@ -22,9 +22,7 @@ export default async function GiupCyPage() {
   let exams = await getAdminExams(user);
   const sampleSources = new Set(sampleGiupCyExams.map((exam) => exam.source_file_name));
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
-  const hasOldThaiNguyenImport = exams.some(
-    (exam) => exam.source_file_name?.toLowerCase().includes("thái nguyên") && exam.title.startsWith("22.05.")
-  );
+  const hasOldThaiNguyenImport = exams.some((exam) => exam.slug.includes("thai-nguyen") && exam.title.startsWith("22.05."));
 
   if (existingSampleCount < sampleGiupCyExams.length || hasOldThaiNguyenImport) {
     const seedResult = await seedGiupCyExamsWithTimeout(await resolveGiupCyWorkspaceUser(user));

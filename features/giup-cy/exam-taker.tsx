@@ -533,7 +533,7 @@ function QuestionCard({
 
       {hasSourceAssets ? (
         <div className="mt-4 overflow-hidden rounded-xl border border-border-soft bg-white">
-          <div className="grid max-h-[680px] gap-3 overflow-auto bg-white p-3">
+          <div className="grid gap-3 overflow-auto bg-white p-3">
             {sourceAssets.map((asset, assetIndex) => (
               <Image
                 key={`${asset.url}-${assetIndex}`}
@@ -542,7 +542,7 @@ function QuestionCard({
                 width={asset.width}
                 height={asset.height}
                 unoptimized
-                className="mx-auto h-auto w-full max-w-[980px] bg-white"
+                className="mx-auto h-auto max-w-full bg-white"
               />
             ))}
           </div>

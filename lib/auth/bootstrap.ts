@@ -18,7 +18,7 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
     const slug = `${sampleExam.slugSuffix}-${user.id.slice(0, 8)}`;
     const { data: existingExam } = await supabase
       .from("giup_cy_exams")
-      .select("id, description")
+      .select("id, title, description")
       .eq("user_id", user.id)
       .eq("slug", slug)
       .maybeSingle();
@@ -70,7 +70,7 @@ export async function seedGiupCyExamsForUser(user: AuthUser) {
         await supabase.from("giup_cy_exam_attempts").delete().eq("exam_id", existingExam.id);
         await supabase.from("giup_cy_exam_questions").delete().eq("exam_id", existingExam.id);
         await insertQuestions(existingExam.id);
-      } else if (existingExam.description !== sampleExam.description || sampleExam.source_file_name.includes("THÁI NGUYÊN")) {
+      } else if (existingExam.title !== sampleExam.title || existingExam.description !== sampleExam.description || sampleExam.source_file_name.includes("THÁI NGUYÊN")) {
         await upsertQuestions(existingExam.id);
       }
       continue;

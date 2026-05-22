@@ -38,6 +38,27 @@ function Normalize-Text([string]$value) {
   return ($value -replace "\s+", " ").Trim()
 }
 
+function Get-WordParagraphTexts([string]$path) {
+  $word = New-Object -ComObject Word.Application
+  $word.Visible = $false
+  $doc = $null
+  try {
+    $doc = $word.Documents.Open($path, $false, $true)
+    $items = New-Object System.Collections.Generic.List[string]
+    for ($i = 1; $i -le $doc.Paragraphs.Count; $i++) {
+      $text = $doc.Paragraphs.Item($i).Range.Text
+      $text = $text -replace "[\r\a]", " "
+      $text = $text -replace "[\x00-\x08\x0B\x0C\x0E-\x1F]", ""
+      $items.Add($text)
+    }
+    return $items.ToArray()
+  } finally {
+    if ($doc -ne $null) { $doc.Close($false) | Out-Null }
+    $word.Quit() | Out-Null
+    [Runtime.InteropServices.Marshal]::ReleaseComObject($word) | Out-Null
+  }
+}
+
 function Get-Slug([string]$name) {
   $normalized = $name.ToLowerInvariant().Normalize([Text.NormalizationForm]::FormD)
   $chars = New-Object System.Text.StringBuilder
@@ -200,6 +221,7 @@ foreach ($file in $files) {
   $slug = Get-Slug $base
   $mediaDir = Join-Path (Join-Path $publicRoot $slug) "media"
   New-Item -ItemType Directory -Force -Path $mediaDir | Out-Null
+  $wordParagraphTexts = @(Get-WordParagraphTexts $file.FullName)
 
   $zip = [IO.Compression.ZipFile]::OpenRead($file.FullName)
   try {
@@ -229,8 +251,14 @@ foreach ($file in $files) {
     $sortOrder = 1
     $questionImages = @{}
 
-    foreach ($p in $xml.SelectNodes("//w:p", $nsm)) {
-      $text = (($p.SelectNodes(".//w:t", $nsm) | ForEach-Object { $_."#text" }) -join " ")
+    $paragraphs = @($xml.SelectNodes("//w:p", $nsm))
+    for ($paragraphIndex = 0; $paragraphIndex -lt $paragraphs.Count; $paragraphIndex++) {
+      $p = $paragraphs[$paragraphIndex]
+      $text = if ($paragraphIndex -lt $wordParagraphTexts.Count) {
+        $wordParagraphTexts[$paragraphIndex]
+      } else {
+        (($p.SelectNodes(".//w:t", $nsm) | ForEach-Object { $_."#text" }) -join " ")
+      }
       $clean = Normalize-Text $text
 
       if (-not $clean) {
