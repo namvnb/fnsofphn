@@ -451,19 +451,19 @@
                               "options":  [
                                               {
                                                   "key":  "A",
-                                                  "text":  "1s22s22p53s2."
+                                                  "text":  "1s²2s²2p⁵3s²."
                                               },
                                               {
                                                   "key":  "B",
-                                                  "text":  "1s22s22p63s1."
+                                                  "text":  "1s²2s²2p⁶3s¹."
                                               },
                                               {
                                                   "key":  "C",
-                                                  "text":  "1s22s22p5."
+                                                  "text":  "1s²2s²2p⁵."
                                               },
                                               {
                                                   "key":  "D",
-                                                  "text":  "1s22s22p6."
+                                                  "text":  "1s²2s²2p⁶."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -567,7 +567,7 @@
                               "options":  [
                                               {
                                                   "key":  "a",
-                    "text":  "CH2OH-[CHOH]4-CHO + 2AgNO3 + 3NH3 + H2O -> CH2OH-[CHOH]4-COONH4 + 2Ag + 2NH4NO3."
+                                                  "text":  "CH₂OH-[CHOH]₄-CHO + 2AgNO₃ + 3NH₃ + H₂O --t°--> CH₂OH-[CHOH]₄-COONH₄ + 2Ag + 2NH₄NO₃."
                                               },
                                               {
                                                   "key":  "b",
@@ -664,7 +664,7 @@
                               "section":  "Phần III",
                               "question_number":  24,
                               "question_type":  "short_answer",
-                              "prompt":  "Trong công thức cấu tạo dạng mạch vòng α- glucose như sau: OH 6 5 O 4 OH OH 3 1 2 OH OH α- glucose Nhóm –OH hemiacetal là –OH gắn ở carbon số mấy?",
+                              "prompt":  "Trong công thức cấu tạo dạng mạch vòng α-glucose, nhóm –OH hemiacetal là –OH gắn ở carbon số mấy?",
                               "options":  [
 
                                           ],
@@ -678,7 +678,7 @@
                               "section":  "Phần III",
                               "question_number":  25,
                               "question_type":  "short_answer",
-                              "prompt":  "Một loại gương soi có diện tích bề mặt là 0,6 m2. Để tráng được 400 chiếc gương trên với độ dày lớp bạc được tráng là 0,2 μm thì cần dùng m gam glucose tác dụng với lượng dư dung dịch AgNO3 trong NH3. Biết hiệu suất phản ứng tráng bạc là 70% và khối lượng riêng của bạc là 10,49 g/cm3. Tìm giá trị của m? (kết quả làm tròn đến hàng đơn vị).",
+                              "prompt":  "Một loại gương soi có diện tích bề mặt là 0,6 m². Để tráng được 400 chiếc gương trên với độ dày lớp bạc được tráng là 0,2 μm thì cần dùng m gam glucose tác dụng với lượng dư dung dịch AgNO3 trong NH3. Biết hiệu suất phản ứng tráng bạc là 70% và khối lượng riêng của bạc là 10,49 g/cm³. Tìm giá trị của m? (kết quả làm tròn đến hàng đơn vị).",
                               "options":  [
 
                                           ],
@@ -692,7 +692,7 @@
                               "section":  "Phần III",
                               "question_number":  26,
                               "question_type":  "short_answer",
-                              "prompt":  "Now Ultra Omega-3 Fish Oil 90 là sản phẩm dầu cá được ưa chuộng nhất trên thị trường thực phẩm bổ sung hiện nay. Now Omega-3 phù hợp với đối tượng người cao tuổi, người có nhu cầu giảm cân, người thiếu hụt dinh dưỡng, những gymer, vận động viên, người tập luyện thể thao. Mỗi viên dầu cá chứa 180 mg EPA và 120 mg DHA. Hãy tính tổng số mol EPA và DHA có trong 100 lọ Now Ultra Omega-3 Fish Oil 90, biết trong một lọ có chứa 90 viên dầu cá trên? (kết quả làm tròn đến hàng phần trăm) 2 1 3 Eicosapentaenoic acid (EPA) 2 COOH 1 Docosa hexaenoic acid (DHA) COOH",
+                              "prompt":  "Now Ultra Omega-3 Fish Oil 90 là sản phẩm dầu cá được ưa chuộng nhất trên thị trường thực phẩm bổ sung hiện nay. Now Omega-3 phù hợp với đối tượng người cao tuổi, người có nhu cầu giảm cân, người thiếu hụt dinh dưỡng, những gymer, vận động viên, người tập luyện thể thao. Mỗi viên dầu cá chứa 180 mg EPA và 120 mg DHA. Hãy tính tổng số mol EPA và DHA có trong 100 lọ Now Ultra Omega-3 Fish Oil 90, biết trong một lọ có chứa 90 viên dầu cá trên? Biết công thức phân tử của EPA là C19H29COOH và DHA là C21H31COOH. (Kết quả làm tròn đến hàng phần trăm).",
                               "options":  [
 
                                           ],
@@ -720,7 +720,7 @@
                               "section":  "Phần III",
                               "question_number":  28,
                               "question_type":  "short_answer",
-            "prompt":  "Phản ứng quang hợp tạo ra glucose cần được cung cấp năng lượng: 6CO2 + 6H2O + 673 kcal --ánh sáng/chlorophyll--> C6H12O6 + 6O2. Nếu có một cây xanh với tổng diện tích lá 100 dm2, mỗi dm2 nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao nhiêu gam glucose được tạo thành? Xác định giá trị của x (kết quả làm tròn đến hàng phần mười).",
+            "prompt":  "Phản ứng quang hợp tạo ra glucose cần được cung cấp năng lượng:\n6CO₂ + 6H₂O + 673 kcal --ánh sáng/chlorophyll--> C₆H₁₂O₆ + 6O₂.\nNếu có một cây xanh với tổng diện tích lá 100 dm², mỗi dm² nhận được 3000 cal năng lượng mặt trời trong 1 giờ và chỉ có 10% năng lượng đó tham gia phản ứng tổng hợp glucose, thì trong 10 giờ có bao nhiêu gam glucose được tạo thành? Xác định giá trị của x (kết quả làm tròn đến hàng phần mười).",
                               "options":  [
 
                                           ],
@@ -1411,7 +1411,7 @@
                               "section":  "Phần III",
                               "question_number":  25,
                               "question_type":  "short_answer",
-                              "prompt":  "Dopamine (3,4-dihydroxyphenethylamine) là một chất có chức năng vừa là hormone vừa là chất dẫn truyền thần kinh, đồng thời đóng vai trò quan trọng trong việc điều khiển hệ thần kinh trung ương, đặc biệt ảnh hưởng đến việc tạo cảm giác hứng thú, động lực trong học tập, kiểm soát hành vi tư duy, trí nhớ và ngôn ngữ,... Trong y học, dopamine là một loại thuốc để tiêm tĩnh mạch, tác dụng ngoại biên của nó giúp ích trong điều trị suy tim hoặc sốc, đặc biệt là ở trẻ sơ sinh. Dopamine có công thức cấu tạo như hình dưới đây: / Cho các phát biểu sau: Dopamine thuộc loại arylamine. Trong phân tử dopamine có chứa các nhóm chức phenol và amine. Khi tác dụng với dung dịch HCl, dopamine tạo ra hợp chất có công thức phân tử C8H11O2NCl. Mỗi phân tử dopamine tác dụng tối đa với 2 phân tử KOH. Có bao nhiêu phát biểu sai trong số các phát biểu trên?",
+                              "prompt":  "Dopamine (3,4-dihydroxyphenethylamine) là một chất có chức năng vừa là hormone vừa là chất dẫn truyền thần kinh, đồng thời đóng vai trò quan trọng trong việc điều khiển hệ thần kinh trung ương, đặc biệt ảnh hưởng đến việc tạo cảm giác hứng thú, động lực trong học tập, kiểm soát hành vi tư duy, trí nhớ và ngôn ngữ,... Trong y học, dopamine là một loại thuốc để tiêm tĩnh mạch, tác dụng ngoại biên của nó giúp ích trong điều trị suy tim hoặc sốc, đặc biệt là ở trẻ sơ sinh. Dopamine có công thức cấu tạo như hình dưới đây. Cho các phát biểu sau:\n(1) Dopamine thuộc loại arylamine.\n(2) Trong phân tử dopamine có chứa các nhóm chức phenol và amine.\n(3) Khi tác dụng với dung dịch HCl, dopamine tạo ra hợp chất có công thức phân tử C8H11O2NCl.\n(4) Mỗi phân tử dopamine tác dụng tối đa với 2 phân tử KOH.\nCó bao nhiêu phát biểu sai trong số các phát biểu trên?",
                               "options":  [
 
                                           ],
@@ -1594,7 +1594,7 @@
                               "section":  "Phần I",
                               "question_number":  5,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho sơ đồ phản ứng: CH ≡ CH + HCN → X X → Polymer Y X + CH2=CH-CH=CH2 → Polymer Z Các chất Y và Z lần lượt dùng để chế tạo vật liệu polymer nào sau đây?",
+                              "prompt":  "Cho sơ đồ phản ứng:\nCH ≡ CH + HCN → X\nX → Polymer Y\nX + CH2=CH-CH=CH2 → Polymer Z\nCác chất Y và Z lần lượt dùng để chế tạo vật liệu polymer nào sau đây?",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -1971,7 +1971,7 @@
                               "section":  "Phần I",
                               "question_number":  18,
                               "question_type":  "single_choice",
-                              "prompt":  "Cho các phát biểu sau:\n(1) Ngâm hoa quả làm xiro thuộc phương pháp chiết.\n(2) Làm đường từ mía thuộc phương pháp kết tinh.\n(3) Nấu rượu uống thuộc phương pháp kết tinh.\n(4) Phân tích thổ nhưỡng thuộc phương pháp chiết lỏng – rắn.\n(5) Để phân tích dư lượng thuốc bảo vệ thực vật trong nông sản dùng phương pháp chưng cất.\nSố phát biểu đúng là",
+                              "prompt":  "Cho các phát biểu sau:\n(1) Ngâm hoa quả làm siro thuộc phương pháp chiết.\n(2) Làm đường từ mía thuộc phương pháp kết tinh.\n(3) Nấu rượu uống thuộc phương pháp kết tinh.\n(4) Phân tích thổ nhưỡng thuộc phương pháp chiết lỏng – rắn.\n(5) Để phân tích dư lượng thuốc bảo vệ thực vật trong nông sản dùng phương pháp chưng cất.\nSố phát biểu đúng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2066,7 +2066,7 @@
                                               },
                                               {
                                                   "key":  "b",
-                                                  "text":  "Nếu chiếc chìa khóa có diện tích mỗi mặt là 25 cm2 thì bề dày lớp đồng bám trên chiếc chìa khóa là 0,07 mm. Biết: cường độ dòng điện là 10A, thời gian điện phân là 16 phút 5 giây, Cu có khối lượng riêng là 8,9 gam/cm3 và nguyên tử khối là 64, F = 96500 C/mol. (Làm tròn kết quả đến hàng phần trăm)"
+                                                  "text":  "Nếu chiếc chìa khóa có diện tích mỗi mặt là 25 cm² thì bề dày lớp đồng bám trên chiếc chìa khóa là 0,07 mm. Biết: cường độ dòng điện là 10 A, thời gian điện phân là 16 phút 5 giây, Cu có khối lượng riêng là 8,9 g/cm³ và nguyên tử khối là 64, F = 96500 C/mol. (Làm tròn kết quả đến hàng phần trăm)"
                                               },
                                               {
                                                   "key":  "c",
