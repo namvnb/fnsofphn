@@ -17,8 +17,19 @@ function normalizeText(value: unknown) {
     .replace(/\s+/g, " ");
 }
 
+function normalizeNumberListAnswer(value: unknown) {
+  const raw = String(value ?? "").trim();
+  const digits = raw.replace(/\D/g, "");
+  if (!digits) return null;
+  return raw.replace(/[\s,.;:(){}\[\]-]/g, "") === digits ? digits : null;
+}
+
 function gradeSingleAnswer(answer: Json, correctAnswer: Json) {
   if (correctAnswer === null || correctAnswer === undefined || correctAnswer === "") return null;
+  const correctText = String(correctAnswer).trim();
+  if (/^\d{2,}$/.test(correctText)) {
+    return normalizeNumberListAnswer(answer) === correctText;
+  }
   return normalizeText(answer) === normalizeText(correctAnswer);
 }
 
