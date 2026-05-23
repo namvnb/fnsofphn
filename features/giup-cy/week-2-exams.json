@@ -655,7 +655,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  23
@@ -669,7 +669,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  24
@@ -683,7 +683,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  25
@@ -697,7 +697,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  26
@@ -711,7 +711,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  27
@@ -725,7 +725,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  28
@@ -1388,7 +1388,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  23
@@ -1402,7 +1402,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  24
@@ -1416,7 +1416,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  25
@@ -1430,7 +1430,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  26
@@ -1444,7 +1444,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  27
@@ -1458,7 +1458,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  28
@@ -1466,7 +1466,7 @@
                       ]
     },
     {
-        "title":  "19.05.03",
+        "title":  "22.05.02",
         "description":  "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.",
         "subject":  "Hóa học",
         "duration_minutes":  50,
@@ -1539,20 +1539,20 @@
                               "prompt":  "Một nhóm học sinh nghiên cứu xác định biến thiên enthalpy chuẩn của phản ứng giữa magnesium oxide và dung dịch hydrochloric acid (HCl, M = 36,5 g.mol-1) bằng phản ứng sau: MgO(s) + 2HCl(aq) → MgCl2(aq) + H2O(l) Nhiệt độ ban đầu ghi nhận trong thiết bị đo (bom nhiệt lượng kế) là 29,8 °C. Sau khi phản ứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °C. Phát biểu nào sau đây là sai?",
                               "options":  [
                                               {
-                                                  "key":  "C",
-                                                  "text":  "Sau khi phản ứng xảy ra hoàn toàn, nhiệt độ đo được là 38,1 °"
-                                              },
-                                              {
-                                                  "key":  "C",
-                                                  "text":  "Phát biểu nào sau đây là sai?"
-                                              },
-                                              {
                                                   "key":  "A",
                                                   "text":  "Phản ứng trên là phản ứng thu nhiệt."
                                               },
                                               {
                                                   "key":  "B",
                                                   "text":  "Phản ứng trên có thể xảy ra thuận lợi ở điều kiện thường."
+                                              },
+                                              {
+                                                  "key":  "C",
+                                                  "text":  "Giả sử nếu nước sinh ra ở thể hơi thì biến thiên enthalpy của phản ứng trên sẽ thay đổi."
+                                              },
+                                              {
+                                                  "key":  "D",
+                                                  "text":  "Phản ứng trên là phản ứng toả nhiệt."
                                               }
                                           ],
                               "correct_answer":  null,
@@ -2058,7 +2058,7 @@
                               "section":  "Phần II",
                               "question_number":  21,
                               "question_type":  "true_false",
-                              "prompt":  "Quá trình điện phân để mạ đồng lên một chiếc chìa khoá được làm từ thép không gỉ, được mô tả ở hình sau: /",
+                              "prompt":  "Quá trình điện phân để mạ đồng lên một chiếc chìa khoá được làm từ thép không gỉ, được mô tả ở hình sau:",
                               "options":  [
                                               {
                                                   "key":  "a",
@@ -2121,7 +2121,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  23
@@ -2135,7 +2135,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  24
@@ -2149,7 +2149,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  25
@@ -2163,7 +2163,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  26
@@ -2177,7 +2177,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  27
@@ -2191,7 +2191,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  28
@@ -2501,7 +2501,7 @@
                               "section":  "Phần I",
                               "question_number":  11,
                               "question_type":  "single_choice",
-                              "prompt":  "Bradykinin là một peptide có trong huyết tương, có trật tự sắp xếp các amino acid như sau: Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg. Cho các nhận định sau: Bradykinin thuộc loại octapeptide. Thuỷ phân hoàn toàn bradykinin trong môi trường acid thu được 5 loại amino acid. Thuỷ phân không hoàn toàn bradykinin thu được tối đa 7 dipeptide. Bradykinin phản ứng với Cu(OH)2 trong môi trường kiềm tạo dung dịch màu xanh lam. Số nhận định đúng là",
+                              "prompt":  "Bradykinin là một peptide có trong huyết tương, có trật tự sắp xếp các amino acid như sau: Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg. Cho các nhận định sau:\n(1) Bradykinin thuộc loại octapeptide.\n(2) Thuỷ phân hoàn toàn bradykinin trong môi trường acid thu được 5 loại amino acid.\n(3) Thuỷ phân không hoàn toàn bradykinin thu được tối đa 7 dipeptide.\n(4) Bradykinin phản ứng với Cu(OH)2 trong môi trường kiềm tạo dung dịch màu xanh lam.\nSố nhận định đúng là",
                               "options":  [
                                               {
                                                   "key":  "A",
@@ -2854,7 +2854,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  23
@@ -2868,7 +2868,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  24
@@ -2882,7 +2882,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  25
@@ -2896,7 +2896,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  26
@@ -2910,7 +2910,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  27
@@ -2924,7 +2924,7 @@
 
                                           ],
                               "correct_answer":  null,
-                              "points":  0.5,
+                              "points":  0.25,
                               "needs_review":  true,
                               "explanation":  "Đề được nhập từ Word tuần 2; đáp án cần rà soát thủ công để tránh lỗi công thức/hình.",
                               "sort_order":  28
