@@ -24,10 +24,8 @@ export default async function GiupCyPage() {
   const existingSampleCount = exams.filter((exam) => exam.source_file_name && sampleSources.has(exam.source_file_name)).length;
 
   if (existingSampleCount < sampleGiupCyExams.length) {
-    const seedResult = await seedGiupCyExamsWithTimeout(await resolveGiupCyWorkspaceUser(user));
-    if (seedResult === "seeded") {
-      exams = await getAdminExams(user);
-    }
+    await seedGiupCyExamsWithTimeout(await resolveGiupCyWorkspaceUser(user));
+    exams = await getAdminExams(user);
   }
 
   const activeCount = exams.filter((exam) => exam.is_active).length;
