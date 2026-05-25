@@ -42,6 +42,7 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
   - Chỉ số dưới: `H2O`, `Fe2O3`, `Al2O3`.
   - Điện tích ion: `SO4^2-`, `NH4+`, `Fe3+`.
   - Ký hiệu nhiệt động: `ΔfH°298`, `ΔrH°298`, `kJ.mol^-1`.
+  - Đơn vị năng lượng/nhiệt dung phải rõ dấu phân cách: ưu tiên `kJ/mol`, `J/(g.K)` hoặc `J/(g·K)`. Không để dạng dễ đọc nhầm như `kJ mol-1`, `J g-1 K-1` trên giao diện.
   - Ký hiệu thế điện cực: phải giữ dạng `E°(Zn2+/Zn)`, `E°(Cu2+/Cu)`, `E°(Mg2+/Mg)`; không được để thành `Eo 2+`, mất tên kim loại trước dấu `/`, hoặc tách cặp điện cực khỏi giá trị.
   - Ký hiệu sức điện động chuẩn của pin phải giữ đủ dạng `E°pin(T-X) = 2,46V`; không được để Word run làm mất pin đầu tiên, lặp `pin(T-X)`, hoặc biến thành `Eo o pin(...)`.
   - Mũ, phần trăm, dấu âm, dấu phẩy thập phân.
@@ -50,6 +51,7 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
 - Không để công thức bị dính chữ hoặc mất chỉ số. Nếu công thức khó render, cần kiểm tra qua `FormattedText`.
 - Bảng dữ liệu phải giữ hàng/cột rõ ràng. Nếu bảng từ Word bị vỡ, chuyển thành Markdown table hoặc text có dòng phân tách dễ đọc.
 - Các câu có cụm `Cho các phát biểu sau`, `Cho các nhận định sau`, danh sách đánh số `(1)`, `(2)`, `(3)`, `(4)`, hoặc quy trình `Bước 1`, `Bước 2`, `Bước 3` phải giữ mỗi nhận định/bước trên một dòng riêng. Không gộp toàn bộ thành một đoạn văn dài vì học sinh rất khó đọc và dễ chọn sai.
+- Với câu có phương trình phản ứng, đặt phương trình trên dòng riêng và thêm dấu `.` hoặc `:` ở chỗ cần thiết. Không để phương trình và câu tiếp theo dính cùng một dòng.
 - Với hình ảnh/sơ đồ, phải kiểm tra asset tồn tại, render được và nằm đúng câu hỏi.
 - Nếu ảnh nằm ngay sau câu dẫn hoặc cùng paragraph với marker `Câu ...`, phải kiểm tra mapping asset theo `question_number`; không để ảnh của Câu 18 bị gán sang Câu 19 hoặc ảnh công thức cấu tạo của Câu 21 bị gán sang Câu 22.
 - Câu có cụm `công thức cấu tạo như sau/như hình bên/hình dưới đây` bắt buộc phải có ảnh đi kèm, trừ khi công thức đã được viết lại đầy đủ bằng text.

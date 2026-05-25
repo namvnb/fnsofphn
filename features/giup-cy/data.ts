@@ -70,7 +70,10 @@ type ImportedQuestion = {
   question_type: GiupCyExamQuestionRow["question_type"];
   prompt: string;
   options: Json;
+  correct_answer: Json;
   points: number;
+  explanation?: string | null;
+  needs_review?: boolean;
   sort_order: number;
 };
 
@@ -131,7 +134,10 @@ function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuesti
         question_type: sample.question_type,
         prompt: sample.prompt,
         options: sample.options,
+        correct_answer: includeAnswerKeys ? sample.correct_answer : question.correct_answer,
         points: sample.points,
+        explanation: includeAnswerKeys ? (sample.explanation ?? question.explanation) : question.explanation,
+        needs_review: includeAnswerKeys ? (sample.needs_review ?? question.needs_review) : question.needs_review,
         sort_order: sample.sort_order
       };
     });

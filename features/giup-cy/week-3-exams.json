@@ -682,7 +682,7 @@
         "section": "Phần III",
         "question_number": 24,
         "question_type": "short_answer",
-        "prompt": "Bia, rượu, giấm ăn đều có thể được sản xuất từ nguyên liệu ban đầu là tinh bột trong ngũ cốc theo sơ đồ phản ứng sau:\n(1)        (2)        (3)        (4)\nTinh bột → maltose → glucose → ethanol → acetic acid.\nPhản ứng nào trong chuỗi phản ứng trên thuộc loại phản ứng thuỷ phân? (Liệt kê đáp án theo số thứ tự phản ứng tăng dần).",
+        "prompt": "Bia, rượu, giấm ăn đều có thể được sản xuất từ nguyên liệu ban đầu là tinh bột trong ngũ cốc theo sơ đồ phản ứng sau:\nTinh bột --(1)→ maltose --(2)→ glucose --(3)→ ethanol --(4)→ acetic acid.\nPhản ứng nào trong chuỗi phản ứng trên thuộc loại phản ứng thuỷ phân? (Liệt kê đáp án theo số thứ tự phản ứng tăng dần).",
         "options": [],
         "correct_answer": "12",
         "points": 0.25,
@@ -753,7 +753,7 @@
         "section": "Phần I",
         "question_number": 1,
         "question_type": "single_choice",
-        "prompt": "Một gói làm nóng thức ăn (FRH) được sử dụng trong quân đội chứa 8 gam hỗn hợp (Mg 90%, Fe 4%, NaCl 6% về khối lượng), khi tiếp xúc với nước sẽ xảy ra phản ứng:\nMg(s) + 2H2O(l) → Mg(OH)2(s) + 2H2(g)\nCho biết: Phản ứng này tỏa ra nhiều nhiệt và làm nóng phần thức ăn đi kèm. Enthalpy tạo thành chuẩn (kJ mol-1) của Mg(OH)2(s) và H2O(l) lần lượt là -928,4 và -285,8. Nhiệt dung riêng của nước, C = 4,2 J g-1 K-1; khối lượng riêng của nước là D = 1 g/mL. Phần nước được làm nóng chỉ nhận được tối đa 60% lượng nhiệt tỏa ra. Lượng nhiệt mà nước nhận được để thay đổi Δt (°C) được tính theo công thức Q = m.C.Δt. Nếu sử dụng gói FRH trên để làm nóng nước từ 25°C lên 100°C thì lượng nước tối đa theo mL được làm nóng là",
+        "prompt": "Một gói làm nóng thức ăn (FRH) được sử dụng trong quân đội chứa 8 gam hỗn hợp (Mg 90%, Fe 4%, NaCl 6% về khối lượng), khi tiếp xúc với nước sẽ xảy ra phản ứng:\nMg(s) + 2H2O(l) → Mg(OH)2(s) + 2H2(g)\nCho biết: Phản ứng này tỏa ra nhiều nhiệt và làm nóng phần thức ăn đi kèm.\nEnthalpy tạo thành chuẩn (kJ/mol) của Mg(OH)2(s) và H2O(l) lần lượt là -928,4 và -285,8.\nNhiệt dung riêng của nước, C = 4,2 J/(g.K); khối lượng riêng của nước là D = 1 g/mL.\nPhần nước được làm nóng chỉ nhận được tối đa 60% lượng nhiệt tỏa ra.\nLượng nhiệt mà nước nhận được để thay đổi Δt (°C) được tính theo công thức: Q = m.C.Δt.\nNếu sử dụng gói FRH trên để làm nóng nước từ 25°C lên 100°C thì lượng nước tối đa theo mL được làm nóng là",
         "options": [
           {
             "key": "A",
@@ -956,7 +956,7 @@
         "section": "Phần I",
         "question_number": 8,
         "question_type": "single_choice",
-        "prompt": "Trong bình phản ứng (có dung tích không đổi), ban đầu chứa N2O4 và NO2 với nồng độ mol/L bằng nhau. Xảy ra phản ứng thuận nghịch: N2O4(g) ⇌ 2NO2(g) Tại thời điểm cân bằng, nồng độ N2O4 giảm đi một nửa so với ban đầu. Phần trăm số mol NO2 trong hỗn hợp ở trạng thái cân bằng là",
+        "prompt": "Trong bình phản ứng (có dung tích không đổi), ban đầu chứa N2O4 và NO2 với nồng độ mol/L bằng nhau.\nXảy ra phản ứng thuận nghịch:\nN2O4(g) ⇌ 2NO2(g).\nTại thời điểm cân bằng, nồng độ N2O4 giảm đi một nửa so với ban đầu.\nPhần trăm số mol NO2 trong hỗn hợp ở trạng thái cân bằng là",
         "options": [
           {
             "key": "A",
@@ -1275,7 +1275,7 @@
         "section": "Phần II",
         "question_number": 19,
         "question_type": "true_false",
-        "prompt": "Methyl salicylate là hoạt chất có trong nhiều loại cây, được dùng làm thuốc giảm đau và chống viêm, có công thức như hình dưới đây: Methyl salicylate được điều chế bằng phương pháp cho salicylic acid phản ứng với methanol, xúc tác H2SO4 đặc theo phản ứng sau: HO-C6H4-COOH + CH3OH ⇌ HO-C6H4-COOCH3 + H2O (1) Sau khi phản ứng kết thúc, sản phẩm được tinh chế và làm khan trước khi sử dụng hoặc phân tích. Cho 13,8 gam salicylic acid phản ứng với 20 mL methanol (D = 0,79 g/mL), sau phản ứng",
+        "prompt": "Methyl salicylate là hoạt chất có trong nhiều loại cây, được dùng làm thuốc giảm đau và chống viêm, có công thức như hình dưới đây.\nMethyl salicylate được điều chế bằng phương pháp cho salicylic acid phản ứng với methanol, xúc tác H2SO4 đặc theo phản ứng sau:\nHO-C6H4-COOH + CH3OH ⇌ HO-C6H4-COOCH3 + H2O (1).\nSau khi phản ứng kết thúc, sản phẩm được tinh chế và làm khan trước khi sử dụng hoặc phân tích.\nCho 13,8 gam salicylic acid phản ứng với 20 mL methanol (D = 0,79 g/mL), sau phản ứng",
         "options": [
           {
             "key": "a",

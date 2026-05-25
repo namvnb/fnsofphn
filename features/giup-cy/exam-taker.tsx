@@ -45,6 +45,19 @@ function optionsFor(question: GiupCyExamQuestionRow) {
   return Array.isArray(question.options) ? (question.options as OptionItem[]) : [];
 }
 
+function splitPromptForAssets(text: string, hasAssets: boolean) {
+  if (!hasAssets) return { beforeAssets: text, afterAssets: "" };
+
+  const lines = text.split("\n");
+  const assetCueIndex = lines.findIndex((line) => /hình dưới đây|hình bên|công thức cấu tạo.*như sau|sơ đồ/i.test(line));
+  if (assetCueIndex < 0 || assetCueIndex >= lines.length - 1) return { beforeAssets: text, afterAssets: "" };
+
+  return {
+    beforeAssets: lines.slice(0, assetCueIndex + 1).join("\n"),
+    afterAssets: lines.slice(assetCueIndex + 1).join("\n")
+  };
+}
+
 function answerDone(question: GiupCyExamQuestionRow, answers: Record<string, Json>) {
   const answer = answers[question.id];
   if (question.question_type === "true_false") {
@@ -504,10 +517,11 @@ function QuestionCard({
   refNode: (node: HTMLDivElement | null) => void;
 }) {
   const hasSourceAssets = sourceAssets.length > 0;
+  const promptParts = splitPromptForAssets(question.prompt, hasSourceAssets);
 
   return (
     <div ref={refNode} className="scroll-mt-32" onFocusCapture={() => setCurrentQuestionId(question.id)} onClick={() => setCurrentQuestionId(question.id)}>
-      <PremiumCard hover={false} className={cn("rounded-2xl p-5 transition", isCurrent && "ring-2 ring-primary-indigo/60")}>
+      <PremiumCard hover={false} className={cn("rounded-2xl p-5 font-['Times_New_Roman',Times,serif] transition", isCurrent && "ring-2 ring-primary-indigo/60")}>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="neutral">{question.section}</Badge>
@@ -530,10 +544,10 @@ function QuestionCard({
         </button>
       </div>
 
-      <PromptContent text={question.prompt} />
+      <PromptContent text={promptParts.beforeAssets} />
 
       {hasSourceAssets ? (
-        <div className="mt-4 overflow-hidden rounded-xl border border-border-soft bg-white">
+        <div className="my-4 overflow-hidden rounded-xl border border-border-soft bg-white">
           <div className="grid gap-3 overflow-auto bg-white p-3">
             {sourceAssets.map((asset, assetIndex) => (
               <Image
@@ -550,6 +564,8 @@ function QuestionCard({
         </div>
       ) : null}
 
+      {promptParts.afterAssets ? <PromptContent text={promptParts.afterAssets} /> : null}
+
       <div className="mt-5">
         <AnswerControl question={question} answers={answers} setAnswer={setAnswer} compact={false} fallbackOptions={optionsFor(question)} />
       </div>
@@ -560,6 +576,10 @@ function QuestionCard({
 
 function isTableLine(line: string) {
   return line.includes("|") && line.split("|").length >= 3;
+}
+
+function isEquationLine(line: string) {
+  return /[⇌→=]/.test(line) && /[A-Z][A-Za-z0-9()\-]+/.test(line);
 }
 
 function PromptContent({ text }: { text: string }) {
@@ -613,9 +633,19 @@ function PromptContent({ text }: { text: string }) {
         }
 
         return (
-          <p key={blockIndex} className="whitespace-pre-line">
-            <FormattedText text={block.lines.join("\n")} />
-          </p>
+          <div key={blockIndex} className="space-y-2">
+            {block.lines.filter(Boolean).map((line, lineIndex) =>
+              isEquationLine(line) ? (
+                <p key={lineIndex} className="overflow-x-auto rounded-xl bg-slate-50 px-4 py-2 text-center font-medium text-text-primary">
+                  <FormattedText text={line} />
+                </p>
+              ) : (
+                <p key={lineIndex}>
+                  <FormattedText text={line} />
+                </p>
+              )
+            )}
+          </div>
         );
       })}
     </div>

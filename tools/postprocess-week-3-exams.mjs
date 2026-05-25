@@ -101,8 +101,7 @@ if (haTinh) {
   if (q24) {
     q24.prompt = [
       "Bia, rượu, giấm ăn đều có thể được sản xuất từ nguyên liệu ban đầu là tinh bột trong ngũ cốc theo sơ đồ phản ứng sau:",
-      "(1)        (2)        (3)        (4)",
-      "Tinh bột → maltose → glucose → ethanol → acetic acid.",
+      "Tinh bột --(1)→ maltose --(2)→ glucose --(3)→ ethanol --(4)→ acetic acid.",
       "Phản ứng nào trong chuỗi phản ứng trên thuộc loại phản ứng thuỷ phân? (Liệt kê đáp án theo số thứ tự phản ứng tăng dần).",
     ].join("\n");
   }
@@ -147,6 +146,31 @@ if (haTinh) {
 }
 
 if (langSon) {
+  const q1 = question(langSon, 1);
+  if (q1) {
+    q1.prompt = [
+      "Một gói làm nóng thức ăn (FRH) được sử dụng trong quân đội chứa 8 gam hỗn hợp (Mg 90%, Fe 4%, NaCl 6% về khối lượng), khi tiếp xúc với nước sẽ xảy ra phản ứng:",
+      "Mg(s) + 2H2O(l) → Mg(OH)2(s) + 2H2(g)",
+      "Cho biết: Phản ứng này tỏa ra nhiều nhiệt và làm nóng phần thức ăn đi kèm.",
+      "Enthalpy tạo thành chuẩn (kJ/mol) của Mg(OH)2(s) và H2O(l) lần lượt là -928,4 và -285,8.",
+      "Nhiệt dung riêng của nước, C = 4,2 J/(g.K); khối lượng riêng của nước là D = 1 g/mL.",
+      "Phần nước được làm nóng chỉ nhận được tối đa 60% lượng nhiệt tỏa ra.",
+      "Lượng nhiệt mà nước nhận được để thay đổi Δt (°C) được tính theo công thức: Q = m.C.Δt.",
+      "Nếu sử dụng gói FRH trên để làm nóng nước từ 25°C lên 100°C thì lượng nước tối đa theo mL được làm nóng là",
+    ].join("\n");
+  }
+
+  const q8 = question(langSon, 8);
+  if (q8) {
+    q8.prompt = [
+      "Trong bình phản ứng (có dung tích không đổi), ban đầu chứa N2O4 và NO2 với nồng độ mol/L bằng nhau.",
+      "Xảy ra phản ứng thuận nghịch:",
+      "N2O4(g) ⇌ 2NO2(g).",
+      "Tại thời điểm cân bằng, nồng độ N2O4 giảm đi một nửa so với ban đầu.",
+      "Phần trăm số mol NO2 trong hỗn hợp ở trạng thái cân bằng là",
+    ].join("\n");
+  }
+
   const q20 = question(langSon, 20);
   if (q20) {
     q20.prompt = [
@@ -155,6 +179,17 @@ if (langSon) {
       "Bước 2. Rót khoảng 80 mL dung dịch NaCl bão hoà vào cốc rồi nhúng hai điện cực graphite vào dung dịch.",
       "Bước 3. Nối hai điện cực graphite với hai cực của nguồn điện và tiến hành điện phân trong khoảng 5 phút.",
       "Bước 4. Cho một mẫu cánh hoa màu hồng vào cốc chứa khoảng 5 mL dung dịch sau điện phân.",
+    ].join("\n");
+  }
+
+  const q19 = question(langSon, 19);
+  if (q19) {
+    q19.prompt = [
+      "Methyl salicylate là hoạt chất có trong nhiều loại cây, được dùng làm thuốc giảm đau và chống viêm, có công thức như hình dưới đây.",
+      "Methyl salicylate được điều chế bằng phương pháp cho salicylic acid phản ứng với methanol, xúc tác H2SO4 đặc theo phản ứng sau:",
+      "HO-C6H4-COOH + CH3OH ⇌ HO-C6H4-COOCH3 + H2O (1).",
+      "Sau khi phản ứng kết thúc, sản phẩm được tinh chế và làm khan trước khi sử dụng hoặc phân tích.",
+      "Cho 13,8 gam salicylic acid phản ứng với 20 mL methanol (D = 0,79 g/mL), sau phản ứng",
     ].join("\n");
   }
 

@@ -5,11 +5,12 @@ import { z } from "zod";
 import { gradeAttempt } from "@/features/giup-cy/grading";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
+import week3ExamData from "@/features/giup-cy/week-3-exams.json";
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
-import type { GiupCyExamQuestionRow, Json } from "@/types/database";
+import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 type ActionResult = {
   ok: boolean;
@@ -330,7 +331,7 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
 
   if (questionError) return { ok: false, message: questionError.message };
 
-  const normalizedQuestions = applyWeek2AnswerKeys(exam, (questions ?? []) as GiupCyExamQuestionRow[]);
+  const normalizedQuestions = applyWeek3AnswerKeys(exam, applyWeek2AnswerKeys(exam, (questions ?? []) as GiupCyExamQuestionRow[]));
   const grading = gradeAttempt(normalizedQuestions, parsed.data.answers as Record<string, Json>);
   const { error } = await supabase
     .from("giup_cy_exam_attempts")
@@ -362,6 +363,36 @@ export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
 }
 
 const HUNG_YEN_SLUG = "hung-yen-hki-hoa-12-2026-3d1d5844";
+
+type ImportedWeek3Exam = {
+  slugSuffix: string;
+  source_file_name: string;
+  questions: Array<{
+    question_number: number;
+    correct_answer: Json;
+    points: number;
+  }>;
+};
+
+function applyWeek3AnswerKeys(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">, questions: GiupCyExamQuestionRow[]) {
+  const slug = exam.slug.toLowerCase();
+  const source = (exam.source_file_name ?? "").toLowerCase();
+  const importedExam = (week3ExamData as ImportedWeek3Exam[]).find((sample) => slug.startsWith(sample.slugSuffix.toLowerCase())) ??
+    (week3ExamData as ImportedWeek3Exam[]).find((sample) => source === sample.source_file_name.toLowerCase());
+
+  if (!importedExam) return questions;
+  const answerByNumber = new Map(importedExam.questions.map((question) => [question.question_number, question]));
+  return questions.map((question) => {
+    const answer = answerByNumber.get(question.question_number);
+    if (!answer) return question;
+    return {
+      ...question,
+      correct_answer: answer.correct_answer,
+      points: answer.points,
+      needs_review: false
+    };
+  });
+}
 
 const HUNG_YEN_ANSWER_KEY: Array<{ question_number: number; correct_answer: Json; points: number }> = [
   { question_number: 1, correct_answer: "C", points: 0.25 },
