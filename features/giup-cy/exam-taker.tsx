@@ -579,7 +579,12 @@ function isTableLine(line: string) {
 }
 
 function isEquationLine(line: string) {
-  return /[⇌→=]/.test(line) && /[A-Z][A-Za-z0-9()\-]+/.test(line);
+  const trimmed = line.trim();
+  if (trimmed.length > 90) return false;
+  if (!/[⇌→]/.test(trimmed)) return false;
+  if (!/[A-Z][A-Za-z0-9()[\]\-]+/.test(trimmed)) return false;
+  if (/[à-ỹ]/i.test(trimmed)) return false;
+  return true;
 }
 
 function PromptContent({ text }: { text: string }) {
