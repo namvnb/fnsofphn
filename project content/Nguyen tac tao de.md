@@ -131,6 +131,7 @@ Các lỗi dưới đây đã từng xuất hiện khi tạo/import đề tuần
 - Ảnh phải gắn đúng số câu. Lỗi đã gặp: ảnh ARA của Câu 18 bị lệch sang câu khác; ảnh công thức cấu tạo nicotine của Câu 21 bị thiếu/lệch. Sau import phải kiểm tra mapping asset theo `question_number`.
 - Ảnh/công thức cấu tạo phải hiện ngay sau dòng/cụm dẫn có nhắc tới hình, không dồn xuống sau toàn bộ prompt khiến học sinh đọc sai mạch đề.
 - Công thức hóa học phải giữ chỉ số dưới, điện tích và dấu mũ: `H₂O`, `Mg(OH)₂`, `C₁₀H₁₅N₂`, `SO₄²⁻`, `Ni²⁺/Ni`, `Mg²⁺/Mg`.
+- Ký hiệu nhiệt tạo thành/biến thiên enthalpy phải giữ đủ chỉ số và ký hiệu chuẩn: `ΔfH°298`, `ΔrH°298`. Không để rơi thành `Δ Ho`, `ΔHo`, `f 298` nằm riêng dòng hoặc bảng bị vỡ mất `f`.
 - Ký hiệu thế điện cực phải giữ đúng `E°`, không thành `E0`, `Eo`, `EEo` hoặc mất cặp oxi hóa - khử. Ví dụ phải là `E°(Mg²⁺/Mg)` và `E°pin(T-X)`.
 - Cấu hình electron phải viết có số mũ: `1s² 2s² 2p⁶ 3s¹`, không để `1s2 2s2 2p6 3s1`.
 - Đơn vị thể tích/diện tích phải hiển thị rõ mũ: `cm³`, `dm³`, `m²`; không để `cm3`, `dm3`, `m2` trên giao diện.

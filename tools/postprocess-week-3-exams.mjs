@@ -134,6 +134,145 @@ if (haTinh) {
     ].join("\n");
   }
 
+  const q3 = question(haTinh, 3);
+  if (q3) {
+    q3.prompt = [
+      "Cho phản ứng hoá học xảy ra ở điều kiện chuẩn sau:",
+      "2NO2(g) (đỏ nâu) → N2O4(g) (không màu).",
+      "Biết NO2 và N2O4 có ΔfH°298 tương ứng là 33,18 kJ/mol và 9,16 kJ/mol.",
+      "Điều này chứng tỏ phản ứng",
+    ].join("\n");
+  }
+
+  const q4 = question(haTinh, 4);
+  if (q4) {
+    q4.prompt = [
+      "Cho các carbohydrate: glucose, fructose, saccharose, maltose, và các phát biểu:",
+      "(1) Cả 4 chất ở điều kiện thường đều là chất rắn, có vị ngọt, dễ tan trong nước.",
+      "(2) Có 2 cặp chất là đồng phân của nhau.",
+      "(3) Có 3 chất có tính khử và phản ứng được với thuốc thử Tollens.",
+      "(4) Có 3 chất phản ứng được với Cu(OH)2 trong môi trường kiềm, tạo thành dung dịch có màu xanh lam.",
+      "Số phát biểu đúng là",
+    ].join("\n");
+  }
+
+  const q6 = question(haTinh, 6);
+  if (q6) {
+    q6.prompt = [
+      "Một trong các hướng của phản ứng cracking nhiệt với butane là:",
+      "CH3-CH2-CH2-CH3 --t°→ CH2=CH2 + CH3-CH3. (*)",
+      "Giai đoạn đầu tiên của phản ứng trên xảy ra như sau:",
+      "CH3-CH2-CH2-CH3 → 2CH3-CH2•. (1)",
+      "Nhận định nào sau đây không đúng?",
+    ].join("\n");
+  }
+
+  const q7 = question(haTinh, 7);
+  if (q7) {
+    q7.prompt = [
+      "Phản ứng điều chế ethene từ ethanol theo phương trình hóa học:",
+      "C2H5OH --H2SO4 đặc, 170°C→ CH2=CH2 + H2O.",
+      "Đây là phản ứng",
+    ].join("\n");
+  }
+
+  const q10 = question(haTinh, 10);
+  if (q10) {
+    q10.prompt = "Thế điện cực chuẩn của cặp oxi hoá - khử Fe3+/Fe2+ và Cu2+/Cu lần lượt là +0,771 V và +0,340 V. Nhận định nào sau đây là đúng?";
+  }
+
+  const q14 = question(haTinh, 14);
+  if (q14) {
+    q14.prompt = "Ở điều kiện chuẩn, kim loại có giá trị thế điện cực chuẩn E°(Mⁿ⁺/M) như thế nào thì có thể tác dụng với các dung dịch acid (như HCl, H2SO4 loãng) giải phóng H2?";
+  }
+
+  const q15 = question(haTinh, 15);
+  if (q15) {
+    q15.prompt = [
+      "Để đề phòng nguy cơ gây cháy, nổ cần kiểm soát chặt chẽ các nguồn lửa, chất cháy, chất oxi hoá. Cho các biện pháp sau:",
+      "(a) Không bật lửa ở nơi cấm lửa, không đốt lửa trong rừng, không đốt rác bừa bãi; đổ nước vào khu vực lửa trại ngay khi kết thúc.",
+      "(b) Tập trung khi nấu nướng để tránh thiết bị quá nóng gây cháy hoặc quên tắt thiết bị gây chập điện.",
+      "(c) Không tàng trữ, chế tạo trái phép thuốc nổ, thuốc pháo.",
+      "(d) Sắp xếp hàng hoá, vật dụng dễ cháy cách xa nguồn lửa, nguồn nhiệt.",
+      "Các biện pháp nhằm loại trừ khả năng phát sinh ra nguồn lửa có khả năng gây hoả hoạn là",
+    ].join("\n");
+  }
+
+  const q20b = question(haTinh, 20);
+  if (q20b) {
+    q20b.prompt = [
+      "Hiện nay người ta dùng thiết bị breathalyzer để đo nồng độ cồn trong khí thở của người tham gia giao thông.",
+      "Khi có nồng độ cồn trong khí thở sẽ xảy ra phản ứng:",
+      "C2H5OH + K2Cr2O7 + H2SO4 --Ag+→ CH3COOH + Cr2(SO4)3 + K2SO4 + H2O. (*)",
+      "Tùy thuộc vào lượng K2Cr2O7 phản ứng, trên màn hình thiết bị sẽ xuất hiện số chỉ nồng độ cồn tương ứng.",
+      "Người đi xe máy có nồng độ cồn trong khí thở sẽ bị xử phạt theo khung sau đây (trích từ Nghị định 168/2024/NĐ-CP):",
+      "Nồng độ cồn (mg/1L khí thở) | Mức tiền phạt (VNĐ) | Hình phạt bổ sung | Trừ điểm GPLX",
+      "≤ 0,25 | 2 triệu - 3 triệu | - | Trừ 04 điểm",
+      "0,25 đến 0,4 | 6 triệu - 8 triệu | - | Trừ 10 điểm",
+      "> 0,4 | 8 triệu - 10 triệu | Tước quyền sử dụng GPLX từ 22 - 24 tháng | -",
+    ].join("\n");
+  }
+
+  const q21 = question(haTinh, 21);
+  if (q21) {
+    q21.prompt = "Các phát biểu sau về ứng dụng của tinh bột và cellulose là đúng hay sai?";
+    q21.options = q21.options.map((option) =>
+      option.key === "d" && !/[.!?]$/.test(option.text)
+        ? { ...option, text: `${option.text}.` }
+        : option
+    );
+  }
+
+  const q20Options = question(haTinh, 20);
+  if (q20Options) {
+    q20Options.options = q20Options.options.map((option) =>
+      option.key === "b"
+        ? { ...option, text: option.text.replace("rượu 40o", "rượu 40°") }
+        : option
+    );
+  }
+
+  const q23 = question(haTinh, 23);
+  if (q23) {
+    q23.prompt = [
+      "Pin nhiên liệu sử dụng ethanol được đặc biệt quan tâm do có nguồn nhiên liệu sinh học dồi dào.",
+      "Phản ứng xảy ra khi một pin ethanol oxygen phóng điện ở 25°C trong dung dịch chất điện li là potassium hydroxide như sau:",
+      "C2H5OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l).",
+      "Một pin ethanol - oxygen được dùng để thắp sáng 7 bóng đèn LED, mỗi bóng có công suất là 3 W (3 J/s) liên tục trong t giờ, tiêu thụ hết 34,5 gam ethanol với hiệu suất quá trình oxi hoá ethanol là 70%.",
+      "Cho biết nhiệt tạo thành chuẩn của các chất:",
+      "Chất | C2H5OH(l) | O2(g) | CO2(g) | H2O(l)",
+      "ΔfH°298 (kJ/mol) | -277,6 | 0 | -393,5 | -285,8",
+      "Giá trị của t bằng bao nhiêu? (Làm tròn kết quả đến hàng phần mười).",
+    ].join("\n");
+  }
+
+  const q26 = question(haTinh, 26);
+  if (q26) {
+    q26.prompt = [
+      "Một oleum có công thức H2SO4.nSO3.",
+      "Hoà tan 7,362 gam oleum vào nước thành 1,0 L dung dịch sulfuric acid.",
+      "Sau đó, rút 10,0 mL dung dịch acid cho vào bình tam giác, thêm vài giọt dung dịch phenolphthalein.",
+      "Nhỏ từ từ dung dịch NaOH 0,10 M chứa trên burette vào bình tam giác đến khi dung dịch xuất hiện màu hồng nhạt, đọc thể tích NaOH đã dùng trên burette.",
+      "Lặp lại thí nghiệm nhiều lần tính được giá trị thể tích NaOH trung bình là 18,0 mL.",
+      "Giá trị của n là bao nhiêu?",
+    ].join("\n");
+  }
+
+  const q27 = question(haTinh, 27);
+  if (q27) {
+    q27.prompt = [
+      "Peptide có nhiều vai trò quan trọng, đặc biệt trong chăm sóc da và tóc, như chống lão hóa, tăng cường sản xuất collagen và elastin, giảm nếp nhăn, sửa chữa các tổn thương...",
+      "Một peptide A có công thức như hình dưới đây.",
+      "Cho các phát biểu về peptide A:",
+      "(1) Peptide A có công thức phân tử là C7H14O5N2.",
+      "(2) Peptide A không có phản ứng màu biuret.",
+      "(3) Phân tử khối của peptide A là 236.",
+      "(4) Peptide A được cấu tạo bởi ba loại α-amino acid khác nhau.",
+      "(5) Khi thủy phân hoàn toàn 8,72 gam peptide A với dung dịch hydrochloric acid, thu được 12,36 gam hỗn hợp các muối Z, T.",
+      "Sắp xếp các phát biểu đúng theo chiều tăng dần.",
+    ].join("\n");
+  }
+
   applyTrueFalsePresentation(haTinh);
   applyAnswerKey(haTinh, {
     1: "D", 2: "C", 3: "D", 4: "D", 5: "C", 6: "A", 7: "D", 8: "C", 9: "D", 10: "A", 11: "D", 12: "B", 13: "A", 14: "A", 15: "A", 16: "B", 17: "D", 18: "C",
@@ -234,6 +373,11 @@ const langSonAssets = assets["51-so-gd-t-lang-son-lan-1"];
 if (langSonAssets) {
   moveAsset(langSonAssets, 19, 18, "rId10");
   moveAsset(langSonAssets, 22, 21, "rId15");
+}
+
+const haTinhAssets = assets["41-thpt-hau-loc-1-lan-1-ha-tinh"];
+if (haTinhAssets) {
+  delete haTinhAssets.questionAssets["8"];
 }
 
 fs.writeFileSync(examPath, JSON.stringify(exams, null, 2) + "\n", "utf8");

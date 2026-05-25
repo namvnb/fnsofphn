@@ -70,7 +70,7 @@
         "section": "Phần I",
         "question_number": 3,
         "question_type": "single_choice",
-        "prompt": "Cho phản ứng hoá học xảy ra ở điều kiện chuẩn sau: 2NO2(g) (đỏ nâu) →N2O4(g) (không màu) Biết NO2 và N2O4 có Δ Ho tương ứng là 33,18 kJ/mol và 9,16 kJ/mol. Điều này chứng tỏ phản ứng",
+        "prompt": "Cho phản ứng hoá học xảy ra ở điều kiện chuẩn sau:\n2NO2(g) (đỏ nâu) → N2O4(g) (không màu).\nBiết NO2 và N2O4 có ΔfH°298 tương ứng là 33,18 kJ/mol và 9,16 kJ/mol.\nĐiều này chứng tỏ phản ứng",
         "options": [
           {
             "key": "A",
@@ -99,7 +99,7 @@
         "section": "Phần I",
         "question_number": 4,
         "question_type": "single_choice",
-        "prompt": "Cho các carbohydrate: glucose, fructose, saccharose, maltose, và các phát biểu. Cả 4 chất ở điều kiện thường đều là chất rắn, có vị ngọt, dễ tan trong nước. Có 2 cặp chất là đồng phân của nhau. Có 3 chất có tính khử và phản ứng được với thuốc thử tollens. Có 3 chất phản ứng được với Cu(OH)2 trong môi trường kiềm, tạo thành dung dịch có màu xanh lam. Số phát biểu đúng là",
+        "prompt": "Cho các carbohydrate: glucose, fructose, saccharose, maltose, và các phát biểu:\n(1) Cả 4 chất ở điều kiện thường đều là chất rắn, có vị ngọt, dễ tan trong nước.\n(2) Có 2 cặp chất là đồng phân của nhau.\n(3) Có 3 chất có tính khử và phản ứng được với thuốc thử Tollens.\n(4) Có 3 chất phản ứng được với Cu(OH)2 trong môi trường kiềm, tạo thành dung dịch có màu xanh lam.\nSố phát biểu đúng là",
         "options": [
           {
             "key": "A",
@@ -157,7 +157,7 @@
         "section": "Phần I",
         "question_number": 6,
         "question_type": "single_choice",
-        "prompt": "Một trong các hướng của phản ứng cracking nhiệt với butane là: CH –CH –CH –CH to  CH =CH + CH –CH (*) 3 2 2 3  2 2 3 3 Giai đoạn đầu tiên của phản ứng trên xảy ra như sau: CH3 – CH2 – CH2 – CH3  Nhận định nào sau đây không đúng?  2CH3  C H2 (1)",
+        "prompt": "Một trong các hướng của phản ứng cracking nhiệt với butane là:\nCH3-CH2-CH2-CH3 --t°→ CH2=CH2 + CH3-CH3. (*)\nGiai đoạn đầu tiên của phản ứng trên xảy ra như sau:\nCH3-CH2-CH2-CH3 → 2CH3-CH2•. (1)\nNhận định nào sau đây không đúng?",
         "options": [
           {
             "key": "A",
@@ -186,7 +186,7 @@
         "section": "Phần I",
         "question_number": 7,
         "question_type": "single_choice",
-        "prompt": "Phản ứng điều chế ethene từ ethanol theo phương trình hóa học H2SO4 đặc, 170℃ C2H5OH / CH2=CH2 + H2O là phản ứng",
+        "prompt": "Phản ứng điều chế ethene từ ethanol theo phương trình hóa học:\nC2H5OH --H2SO4 đặc, 170°C→ CH2=CH2 + H2O.\nĐây là phản ứng",
         "options": [
           {
             "key": "A",
@@ -273,7 +273,7 @@
         "section": "Phần I",
         "question_number": 10,
         "question_type": "single_choice",
-        "prompt": "Thế điện cực chuẩn của cặp oxi hoá - khử Fe3+ /Fe2+ và Cu2+/Cu lần lượt là +0,771 V và +0,340 V. Nhận định nào sau đây là đúng?",
+        "prompt": "Thế điện cực chuẩn của cặp oxi hoá - khử Fe3+/Fe2+ và Cu2+/Cu lần lượt là +0,771 V và +0,340 V. Nhận định nào sau đây là đúng?",
         "options": [
           {
             "key": "A",
@@ -389,7 +389,7 @@
         "section": "Phần I",
         "question_number": 14,
         "question_type": "single_choice",
-        "prompt": "Ở điều kiện chuẩn, kim loại có giá trị thế điện cực chuẩn ( Eo ) như thế nào thì có thể tác dụng với các dung dịch acid (như HCl, H2SO4 loãng) giải phóng H2?",
+        "prompt": "Ở điều kiện chuẩn, kim loại có giá trị thế điện cực chuẩn E°(Mⁿ⁺/M) như thế nào thì có thể tác dụng với các dung dịch acid (như HCl, H2SO4 loãng) giải phóng H2?",
         "options": [
           {
             "key": "A",
@@ -418,7 +418,7 @@
         "section": "Phần I",
         "question_number": 15,
         "question_type": "single_choice",
-        "prompt": "Để đề phòng nguy cơ gây cháy, nổ cần kiểm soát chặt chẽ các nguồn lửa, chất cháy, chất oxi hoá. Cho các biện pháp sau: Không bật lửa ở nơi cấm lửa, không đốt lửa trong rừng, không đốt rác bừa bãi; đổ nước vào khu vực lửa trại ngay khi kết thúc. Tập trung khi nấu nướng để tránh thiết bị quá nóng gây cháy hoặc quên tắt thiết bị gây chập điện. Không tàng trữ, chế tạo trái phép thuốc nổ, thuốc pháo. Sắp xếp hàng hoá, vật dụng dễ cháy cách xa nguồn lửa, nguồn nhiệt. Các biện pháp nhằm loại trừ khả năng phát sinh ra nguồn lửa có khả năng gây hoả hoạn là",
+        "prompt": "Để đề phòng nguy cơ gây cháy, nổ cần kiểm soát chặt chẽ các nguồn lửa, chất cháy, chất oxi hoá. Cho các biện pháp sau:\n(a) Không bật lửa ở nơi cấm lửa, không đốt lửa trong rừng, không đốt rác bừa bãi; đổ nước vào khu vực lửa trại ngay khi kết thúc.\n(b) Tập trung khi nấu nướng để tránh thiết bị quá nóng gây cháy hoặc quên tắt thiết bị gây chập điện.\n(c) Không tàng trữ, chế tạo trái phép thuốc nổ, thuốc pháo.\n(d) Sắp xếp hàng hoá, vật dụng dễ cháy cách xa nguồn lửa, nguồn nhiệt.\nCác biện pháp nhằm loại trừ khả năng phát sinh ra nguồn lửa có khả năng gây hoả hoạn là",
         "options": [
           {
             "key": "A",
@@ -568,7 +568,7 @@
         "section": "Phần II",
         "question_number": 20,
         "question_type": "true_false",
-        "prompt": "Hiện nay người ta dùng thiết bị breathalyzer để đo nồng độ cồn trong khí thở của người tham gia giao thông. Khi có nồng độ cồn trong khí thở sẽ xảy ra phản ứng:  C2H5OH + K2Cr2O7 + H2SO4 Ag  CH COOH + Cr (SO ) + K SO + H O (*) Tùy thuộc vào lượng K2Cr2O7 phản ứng, trên màn hình thiết bị sẽ xuất hiện số chỉ nồng độ cồn tương ứng. Người đi xe máy có nồng độ cồn trong khí thở sẽ bị xử phạt theo khung sau đây (trích từ Nghị định 168/ 2024/NĐ-CP): Nồng độ cồn (mg/1L khí thở) | Mức tiền phạt (VNĐ) | Hình phạt bổ sung | Trừ điểm GPLX\n≤ 0,25 | 2 triệu - 3 triệu | - | Trừ 04 điểm\n0,25 đến 0,4 | 6 triệu - 8 triệu | - | Trừ 10 điểm\n> 0,4 | 8 triệu - 10 triệu | Tước quyền sử dụng GPLX từ 22-24 tháng | -",
+        "prompt": "Hiện nay người ta dùng thiết bị breathalyzer để đo nồng độ cồn trong khí thở của người tham gia giao thông.\nKhi có nồng độ cồn trong khí thở sẽ xảy ra phản ứng:\nC2H5OH + K2Cr2O7 + H2SO4 --Ag+→ CH3COOH + Cr2(SO4)3 + K2SO4 + H2O. (*)\nTùy thuộc vào lượng K2Cr2O7 phản ứng, trên màn hình thiết bị sẽ xuất hiện số chỉ nồng độ cồn tương ứng.\nNgười đi xe máy có nồng độ cồn trong khí thở sẽ bị xử phạt theo khung sau đây (trích từ Nghị định 168/2024/NĐ-CP):\nNồng độ cồn (mg/1L khí thở) | Mức tiền phạt (VNĐ) | Hình phạt bổ sung | Trừ điểm GPLX\n≤ 0,25 | 2 triệu - 3 triệu | - | Trừ 04 điểm\n0,25 đến 0,4 | 6 triệu - 8 triệu | - | Trừ 10 điểm\n> 0,4 | 8 triệu - 10 triệu | Tước quyền sử dụng GPLX từ 22 - 24 tháng | -",
         "options": [
           {
             "key": "a",
@@ -576,7 +576,7 @@
           },
           {
             "key": "b",
-            "text": "Theo khuyến cáo của ngành y tế, để đảm bảo sức khỏe mỗi người trưởng thành không nên uống quá 2 đơn vị cồn (Một đơn vị cồn tương đương 10 mL ethanol nguyên chất). Vì vậy mỗi người trưởng thành không nên uống quá 50 mL rượu 40o một ngày."
+            "text": "Theo khuyến cáo của ngành y tế, để đảm bảo sức khỏe mỗi người trưởng thành không nên uống quá 2 đơn vị cồn (Một đơn vị cồn tương đương 10 mL ethanol nguyên chất). Vì vậy mỗi người trưởng thành không nên uống quá 50 mL rượu 40° một ngày."
           },
           {
             "key": "c",
@@ -602,7 +602,7 @@
         "section": "Phần II",
         "question_number": 21,
         "question_type": "true_false",
-        "prompt": "Các phát biểu sau về ứng dụng của tinh bột và cellulose là đúng hay sai",
+        "prompt": "Các phát biểu sau về ứng dụng của tinh bột và cellulose là đúng hay sai?",
         "options": [
           {
             "key": "a",
@@ -618,7 +618,7 @@
           },
           {
             "key": "d",
-            "text": "Cellulose không thể dùng làm vật liệu xây dựng"
+            "text": "Cellulose không thể dùng làm vật liệu xây dựng."
           }
         ],
         "correct_answer": {
@@ -670,7 +670,7 @@
         "section": "Phần III",
         "question_number": 23,
         "question_type": "short_answer",
-        "prompt": "Pin nhiên liệu sử dụng ethanol được đặc biệt quan tâm do có nguồn nhiên liệu sinh học dồi dào. Phản ứng xảy ra khi một pin ethanol oxygen phóng điện ở 25 oC trong dung dịch chất điện li là potassium hydroxide như sau: C2H5OH(l) + 3O2 (g) → 2CO2(g) + 3H2O(l) Một pin ethanol – oxygen được dùng để thắp sáng 7 bóng đèn LED, mỗi bóng có công suất là 3 W (3 J/s) liên tục trong t giờ, tiêu thụ hết 34,5 gam ethanol với hiệu suất quá trình oxi hoá ethanol là 70%. Cho biết nhiệt tạo thành chuẩn của các chất: Chất C2H5OH(l) O2 (g) CO2(g) H2O(l) Δ Ho (kJ/mol) f 298 -277,6 0 -393,5 -285,8 Giá trị của t bằng bao nhiêu? (Làm tròn kết quả đến hàng phần mười).",
+        "prompt": "Pin nhiên liệu sử dụng ethanol được đặc biệt quan tâm do có nguồn nhiên liệu sinh học dồi dào.\nPhản ứng xảy ra khi một pin ethanol oxygen phóng điện ở 25°C trong dung dịch chất điện li là potassium hydroxide như sau:\nC2H5OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l).\nMột pin ethanol - oxygen được dùng để thắp sáng 7 bóng đèn LED, mỗi bóng có công suất là 3 W (3 J/s) liên tục trong t giờ, tiêu thụ hết 34,5 gam ethanol với hiệu suất quá trình oxi hoá ethanol là 70%.\nCho biết nhiệt tạo thành chuẩn của các chất:\nChất | C2H5OH(l) | O2(g) | CO2(g) | H2O(l)\nΔfH°298 (kJ/mol) | -277,6 | 0 | -393,5 | -285,8\nGiá trị của t bằng bao nhiêu? (Làm tròn kết quả đến hàng phần mười).",
         "options": [],
         "correct_answer": "9,5",
         "points": 0.25,
@@ -706,7 +706,7 @@
         "section": "Phần III",
         "question_number": 26,
         "question_type": "short_answer",
-        "prompt": "Một oleum có công thức H2SO4.nSO3. Hoà tan 7,362 gam oleum vào nước thành 1,0 L dung dịch sulfuric acid. Sau đó, rút 10,0 mL dung dịch acid cho vào bình tam giác, thêm vài giọt dung dịch phenolphathalein. Nhỏ từ từ dung dịch NaOH 0,10 M chứa trên burette vào bình tam giác đến khi dung dịch xuất hiện màu hồng nhạt, đọc thể tích NaOH đã dùng trên burette. Lặp lại thí nghiệm nhiều lần tính được giá trị thể tích NaOH trung bình là 18,0 mL. Giá trị của n là bao nhiêu?",
+        "prompt": "Một oleum có công thức H2SO4.nSO3.\nHoà tan 7,362 gam oleum vào nước thành 1,0 L dung dịch sulfuric acid.\nSau đó, rút 10,0 mL dung dịch acid cho vào bình tam giác, thêm vài giọt dung dịch phenolphthalein.\nNhỏ từ từ dung dịch NaOH 0,10 M chứa trên burette vào bình tam giác đến khi dung dịch xuất hiện màu hồng nhạt, đọc thể tích NaOH đã dùng trên burette.\nLặp lại thí nghiệm nhiều lần tính được giá trị thể tích NaOH trung bình là 18,0 mL.\nGiá trị của n là bao nhiêu?",
         "options": [],
         "correct_answer": "9",
         "points": 0.25,
@@ -718,7 +718,7 @@
         "section": "Phần III",
         "question_number": 27,
         "question_type": "short_answer",
-        "prompt": "Peptide có nhiều vai trò quan trọng, đặc biệt trong chăm sóc da và tóc, như chống lão hóa, tăng cường sản xuất collagen và elastin, giảm nếp nhăn, sửa chữa các tổn thương... Một peptide A có công thức sau: / Cho các phát biểu về peptide A: Peptide A có công thức phân tử là C7H14O5N2. Peptide A không có phản ứng màu biuret. Phân tử khối của peptide A là 236. Peptide A được cấu tạo bởi ba loại α-amino acid khác nhau. Khi thủy phân hoàn toàn 8,72 gam peptide A với dung dịch hydrochloric acid, thu được 12,36 gam hỗn hợp các muối Z, T. Sắp xếp các phát biểu đúng theo chiều tăng dần ?",
+        "prompt": "Peptide có nhiều vai trò quan trọng, đặc biệt trong chăm sóc da và tóc, như chống lão hóa, tăng cường sản xuất collagen và elastin, giảm nếp nhăn, sửa chữa các tổn thương...\nMột peptide A có công thức như hình dưới đây.\nCho các phát biểu về peptide A:\n(1) Peptide A có công thức phân tử là C7H14O5N2.\n(2) Peptide A không có phản ứng màu biuret.\n(3) Phân tử khối của peptide A là 236.\n(4) Peptide A được cấu tạo bởi ba loại α-amino acid khác nhau.\n(5) Khi thủy phân hoàn toàn 8,72 gam peptide A với dung dịch hydrochloric acid, thu được 12,36 gam hỗn hợp các muối Z, T.\nSắp xếp các phát biểu đúng theo chiều tăng dần.",
         "options": [],
         "correct_answer": "25",
         "points": 0.25,
