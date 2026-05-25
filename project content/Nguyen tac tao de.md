@@ -19,7 +19,13 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
   - `single_choice`: đáp án là một chữ cái như `A`, `B`, `C`, `D`.
   - `true_false`: đáp án là object JSON gồm các ý `a`, `b`, `c`, `d` với giá trị boolean.
   - `short_answer`: đáp án là chuỗi kết quả đã chuẩn hóa.
+- Khi tách câu đúng/sai, bốn lựa chọn `a`, `b`, `c`, `d` phải là bốn mệnh đề thật của cùng câu. Không được để tiêu đề phần như `PHẦN III`, `Câu trắc nghiệm trả lời ngắn`, `HẾT` bị trích nhầm thành lựa chọn, đặc biệt là lựa chọn `d`.
 - Điểm phải khớp cấu trúc đề thi. Ví dụ trắc nghiệm thường `0.25`, đúng/sai thường `1`, trả lời ngắn thường `0.25` nếu theo format hiện tại.
+
+- Với câu trắc nghiệm có đáp án nằm cùng một dòng kiểu `A. ... B. ... C. ... D. ...`, sau import phải kiểm tra đủ đúng 4 lựa chọn `A`, `B`, `C`, `D`, không trùng key, không thiếu `D`, và không để phần đuôi câu hỏi như công thức `Q = m.C.Δt` hoặc câu dẫn bị kéo nhầm thành một lựa chọn.
+- Nếu Word ngắt câu dẫn ngay trước dòng đáp án, ví dụ `Phương` ở cuối dòng trước rồi dòng sau là `pháp phù hợp...`, phải ghép đủ câu dẫn vào prompt trước khi tách options. Không được tạo option giả như `C. Phương` hoặc làm lệch key thành `C,A,B,C`.
+- Khi câu hỏi có công thức/phương trình ngay trước dòng đáp án, phải đối chiếu ranh giới giữa prompt và options trên giao diện làm bài; công thức thuộc đề phải nằm trong prompt, còn options chỉ chứa nội dung đáp án.
+- Nếu file gốc có phần `HƯỚNG DẪN GIẢI`/`Đáp án`, chỉ gán `correct_answer` sau khi đối chiếu giá trị đáp án với đúng lựa chọn trong câu hỏi. Ví dụ đáp án gốc ghi `203,9` thì phải map sang key `B` nếu lựa chọn `B` là `203,9`, không để null và không đoán theo tính toán riêng.
 
 ## 3. Đáp án và chấm điểm
 
@@ -36,10 +42,20 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
   - Chỉ số dưới: `H2O`, `Fe2O3`, `Al2O3`.
   - Điện tích ion: `SO4^2-`, `NH4+`, `Fe3+`.
   - Ký hiệu nhiệt động: `ΔfH°298`, `ΔrH°298`, `kJ.mol^-1`.
+  - Ký hiệu thế điện cực: phải giữ dạng `E°(Zn2+/Zn)`, `E°(Cu2+/Cu)`, `E°(Mg2+/Mg)`; không được để thành `Eo 2+`, mất tên kim loại trước dấu `/`, hoặc tách cặp điện cực khỏi giá trị.
+  - Ký hiệu sức điện động chuẩn của pin phải giữ đủ dạng `E°pin(T-X) = 2,46V`; không được để Word run làm mất pin đầu tiên, lặp `pin(T-X)`, hoặc biến thành `Eo o pin(...)`.
   - Mũ, phần trăm, dấu âm, dấu phẩy thập phân.
+  - Đơn vị diện tích/thể tích phải dùng số mũ dễ đọc khi hiển thị: `m²`, `cm³`, `dm³`; không để dạng phẳng `m2`, `cm3` nếu giao diện không render chỉ số trên. Với đơn vị vi mô giữ đúng `μm`.
+  - Cấu hình electron phải hiển thị số electron bằng số mũ: `1s² 2s² 2p⁶ 3s¹`; không để dạng phẳng `1s2 2s2 2p6 3s1` trên giao diện làm bài.
 - Không để công thức bị dính chữ hoặc mất chỉ số. Nếu công thức khó render, cần kiểm tra qua `FormattedText`.
 - Bảng dữ liệu phải giữ hàng/cột rõ ràng. Nếu bảng từ Word bị vỡ, chuyển thành Markdown table hoặc text có dòng phân tách dễ đọc.
+- Các câu có cụm `Cho các phát biểu sau`, `Cho các nhận định sau`, danh sách đánh số `(1)`, `(2)`, `(3)`, `(4)`, hoặc quy trình `Bước 1`, `Bước 2`, `Bước 3` phải giữ mỗi nhận định/bước trên một dòng riêng. Không gộp toàn bộ thành một đoạn văn dài vì học sinh rất khó đọc và dễ chọn sai.
 - Với hình ảnh/sơ đồ, phải kiểm tra asset tồn tại, render được và nằm đúng câu hỏi.
+- Nếu ảnh nằm ngay sau câu dẫn hoặc cùng paragraph với marker `Câu ...`, phải kiểm tra mapping asset theo `question_number`; không để ảnh của Câu 18 bị gán sang Câu 19 hoặc ảnh công thức cấu tạo của Câu 21 bị gán sang Câu 22.
+- Câu có cụm `công thức cấu tạo như sau/như hình bên/hình dưới đây` bắt buộc phải có ảnh đi kèm, trừ khi công thức đã được viết lại đầy đủ bằng text.
+- Các lựa chọn đúng/sai `a`, `b`, `c`, `d` phải viết hoa chữ cái đầu nội dung hiển thị, ví dụ `Thu được...`, không để `thu được...` ở đầu dòng.
+- Công thức phân tử/cấu tạo trong lựa chọn phải dùng chỉ số dưới hoặc ký hiệu dễ đọc khi cần: `C₁₀H₁₅N₂`, `SO₄²⁻`, `H₂`; không để mất số, mất dấu điện tích hoặc dính vào chữ thường.
+- Bảng dữ liệu khi render trong prompt phải có từng dòng riêng, ví dụ dòng tiêu đề `Cặp oxi hóa - khử ...` và dòng giá trị `Thế điện cực chuẩn ...`; không gộp cả bảng thành một câu dài.
 
 ## 5. Encoding và tiếng Việt
 
@@ -78,9 +94,14 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
 - Làm thử ít nhất một bài với đáp án đúng toàn bộ để kiểm tra điểm tối đa.
 - Làm thử một bài sai/một phần để kiểm tra chi tiết kết quả.
 - Kiểm tra 3 nhóm câu: trắc nghiệm, đúng/sai, trả lời ngắn.
+- Kiểm tra mọi câu có chữ `hình`, `sơ đồ`, `công thức cấu tạo` đều có asset tương ứng trong dữ liệu public.
+- Với câu đúng/sai cuối mỗi phần, kiểm tra riêng lựa chọn `d` để chắc tiêu đề phần kế tiếp không bị kéo vào làm đáp án.
 - Kiểm tra các câu có công thức, bảng, hình ảnh hoặc dữ kiện nhiều dòng.
+- Với bảng/câu thế điện cực chuẩn, kiểm tra lại từng cặp oxi hóa - khử và giá trị `E°` so với file gốc, đặc biệt các câu có bảng bị Word tách dòng.
+- Với câu có nhiều nhận định đánh số hoặc nhiều bước thí nghiệm, mở trang làm bài và xác nhận từng nhận định/bước nằm trên dòng riêng, không bị dính vào câu dẫn.
 - Kiểm tra tiếng Việt không lỗi encoding.
 - Kiểm tra reload trang admin không làm mất chỉnh sửa thủ công.
+- Trước khi bật chấm tự động, trích đáp án từ phần `HƯỚNG DẪN GIẢI`/`Đáp án`/`Đáp số` của file gốc, sau đó kiểm tra đủ 28 câu: trắc nghiệm là key `A-D`, đúng/sai là object `a-d`, trả lời ngắn là chuỗi đã chuẩn hóa.
 
 ## 10. Quy tắc khi sửa lỗi đề đã public
 
@@ -89,4 +110,3 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
 - Sửa ở nơi ổn định nhất: dữ liệu nguồn, script import, normalization runtime hoặc logic render/chấm điểm.
 - Sau khi sửa, kiểm tra lại cả trang admin, trang public và trang kết quả.
 - Ghi lại commit hoặc ghi chú thay đổi để lần sau biết lỗi nào đã được xử lý.
-

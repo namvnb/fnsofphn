@@ -38,6 +38,10 @@ function Normalize-Text([string]$value) {
   return ($value -replace "\s+", " ").Trim()
 }
 
+function Is-SectionHeading([string]$value) {
+  return $value -match "PH.{0,3}N\s*(I|II|III)\b"
+}
+
 function Get-WordParagraphTexts([string]$path) {
   $word = New-Object -ComObject Word.Application
   $word.Visible = $false
@@ -163,6 +167,60 @@ function New-Question([string]$section, [int]$localNumber, [string[]]$lines, [in
   }
 }
 
+function Repair-Week3QuestionText([string]$sourceFileName, $questions) {
+  if ((Get-Slug $sourceFileName) -notmatch "lang-son") { return $questions }
+
+  foreach ($question in $questions) {
+    if ($question.question_number -eq 1) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("TeG7mXQgZ8OzaSBsw6BtIG7Ds25nIHRo4bupYyDEg24gKEZSSCkgxJHGsOG7o2Mgc+G7rSBk4bulbmcgdHJvbmcgcXXDom4gxJHhu5lpIGNo4bupYSA4IGdhbSBo4buXbiBo4bujcCAoTWcgOTAlLCBGZSA0JSwgTmFDbCA2JSB24buBIGto4buRaSBsxrDhu6NuZyksIGtoaSB0aeG6v3AgeMO6YyB24bubaSBuxrDhu5tjIHPhur0geOG6o3kgcmEgcGjhuqNuIOG7qW5nOgpNZyhzKSArIDJIMk8obCkg4oaSIE1nKE9IKTIocykgKyAySDIoZykKQ2hvIGJp4bq/dDogUGjhuqNuIOG7qW5nIG7DoHkgdOG7j2EgcmEgbmhp4buBdSBuaGnhu4d0IHbDoCBsw6BtIG7Ds25nIHBo4bqnbiB0aOG7qWMgxINuIMSRaSBrw6htLiBFbnRoYWxweSB04bqhbyB0aMOgbmggY2h14bqpbiAoa0ogbW9sLTEpIGPhu6dhIE1nKE9IKTIocykgdsOgIEgyTyhsKSBs4bqnbiBsxrDhu6N0IGzDoCAtOTI4LDQgdsOgIC0yODUsOC4gTmhp4buHdCBkdW5nIHJpw6puZyBj4bunYSBuxrDhu5tjLCBDID0gNCwyIEogZy0xIEstMTsga2jhu5FpIGzGsOG7o25nIHJpw6puZyBj4bunYSBuxrDhu5tjIGzDoCBEID0gMSBnL21MLiBQaOG6p24gbsaw4bubYyDEkcaw4bujYyBsw6BtIG7Ds25nIGNo4buJIG5o4bqtbiDEkcaw4bujYyB04buRaSDEkWEgNjAlIGzGsOG7o25nIG5oaeG7h3QgdOG7j2EgcmEuIEzGsOG7o25nIG5oaeG7h3QgbcOgIG7GsOG7m2Mgbmjhuq1uIMSRxrDhu6NjIMSR4buDIHRoYXkgxJHhu5VpIM6UdCAowrBDKSDEkcaw4bujYyB0w61uaCB0aGVvIGPDtG5nIHRo4bupYyBRID0gbS5DLs6UdC4gTuG6v3Ugc+G7rSBk4bulbmcgZ8OzaSBGUkggdHLDqm4gxJHhu4MgbMOgbSBuw7NuZyBuxrDhu5tjIHThu6sgMjXCsEMgbMOqbiAxMDDCsEMgdGjDrCBsxrDhu6NuZyBuxrDhu5tjIHThu5FpIMSRYSB0aGVvIG1MIMSRxrDhu6NjIGzDoG0gbsOzbmcgbMOg"))
+      $question.options = @(
+        [ordered]@{ key = "A"; text = "175,6." },
+        [ordered]@{ key = "B"; text = "203,9." },
+        [ordered]@{ key = "C"; text = "169,9." },
+        [ordered]@{ key = "D"; text = "187,5." }
+      )
+      $question.correct_answer = "B"
+    } elseif ($question.question_number -eq 3) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Q2hvIHPhu6ljIMSRaeG7h24gxJHhu5luZyBjaHXhuqluIGPhu6dhIGPDoWMgcGluIMSRaeG7h24gaG/DoTogRcKwcGluKFQtWCkgPSAyLDQ2VjsgRcKwcGluKFQtWSkgPSAyLDAwVjsgRcKwcGluKFotWSkgPSAwLDk2ViAoduG7m2kgWCwgWSwgWiwgVCBsw6AgNCBraW0gbG/huqFpLCBraW0gbG/huqFpIOG7nyBiw6puIHRyw6FpIHRyb25nIGvDrSBoaeG7h3UgcGluIMSRw7NuZyB2YWkgdHLDsiBhbm9kZSkuIETDo3kgc+G6r3AgeOG6v3AgY8OhYyBraW0gbG/huqFpIHRoZW8gY2hp4buBdSB0xINuZyBk4bqnbiB0w61uaCBraOG7rSBsw6A="))
+      $question.options = @(
+        [ordered]@{ key = "A"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("WiA8IFggPCBZIDwgVC4=")) },
+        [ordered]@{ key = "B"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("WCA8IFkgPCBaIDwgVC4=")) },
+        [ordered]@{ key = "C"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("VCA8IFogPCBZIDwgWC4=")) },
+        [ordered]@{ key = "D"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("WSA8IFQgPCBaIDwgWC4=")) }
+      )
+      $question.correct_answer = "B"
+    } elseif ($question.question_number -eq 4) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("VGnhur9uIGjDoG5oIHRow60gbmdoaeG7h20gdGhlbyBjw6FjIGLGsOG7m2Mgc2F1OgpCxrDhu5tjIDE6IENobyA1IGdp4buNdCBkdW5nIGThu4tjaCBDdVNPNCAwLDUlIHbDoG8g4buRbmcgbmdoaeG7h20gc+G6oWNoLgpCxrDhu5tjIDI6IFRow6ptIDEgbUwgZHVuZyBk4buLY2ggTmFPSCAxMCUgdsOgbyDhu5FuZyBuZ2hp4buHbSwgbOG6r2MgxJHhu4F1OyBn4bqhbiBwaOG6p24gZHVuZyBk4buLY2gsIGdp4buvIGzhuqFpIGvhur90IHThu6dhLgpCxrDhu5tjIDM6IFRow6ptIHRp4bq/cCAyIG1MIGR1bmcgZOG7i2NoIGdsdWNvc2UgMSUgdsOgbyDhu5FuZyBuZ2hp4buHbSwgbOG6r2MgxJHhu4F1LgpQaMOhdCBiaeG7g3UgbsOgbyBzYXUgxJHDonkgbMOgIMSRw7puZz8="))
+      $question.correct_answer = "B"
+    } elseif ($question.question_number -eq 11) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Tmhp4buHdCDEkeG7mSBzw7RpIGPhu6dhIHLGsOG7o3UgKHRow6BuaCBwaOG6p24gY2jDrW5oIGzDoCBldGhhbm9sKSBsw6AgNzjCsEMgdsOgIGPhu6dhIG7GsOG7m2MgbMOgIDEwMMKwQy4gUGjGsMahbmcgcGjDoXAgcGjDuSBo4bujcCDEkeG7gyB0w6FjaCByxrDhu6N1IHJhIGto4buPaSBuxrDhu5tjIGzDoA=="))
+      $question.options = @(
+        [ordered]@{ key = "A"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("bOG7jWMu")) },
+        [ordered]@{ key = "B"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("a+G6v3QgdGluaC4=")) },
+        [ordered]@{ key = "C"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Y2jGsG5nIGPhuqV0Lg==")) },
+        [ordered]@{ key = "D"; text = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Y2hp4bq/dC4=")) }
+      )
+      $question.correct_answer = "C"
+    } elseif ($question.question_number -eq 13) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("xJDhu4MgdHLDoW5nIG3hu5l0IHPhu5EgbMaw4bujbmcgZ8awxqFuZyBzb2kgY8OzIGRp4buHbiB0w61jaCBi4buBIG3hurd0IDAsNDUgbcKyIHbhu5tpIMSR4buZIGTDoHkgMCwyIM68bSBuZ8aw4budaSB0YSDEkXVuIG7Ds25nIGR1bmcgZOG7i2NoIGNo4bupYSA0NSBnYW0gZ2x1Y29zZSB24bubaSBt4buZdCBsxrDhu6NuZyBkdW5nIGThu4tjaCBBZ05PMyB0cm9uZyBOSDMuIEJp4bq/dCBraOG7kWkgbMaw4bujbmcgcmnDqm5nIGPhu6dhIGLhuqFjIGzDoCAxMCw0OSBnL2NtwrMsIGhp4buHdSBzdeG6pXQgcGjhuqNuIOG7qW5nIHRyw6FuZyBnxrDGoW5nIGzDoCA3MCUgKHTDrW5oIHRoZW8gZ2x1Y29zZSkuIFPhu5EgbMaw4bujbmcgZ8awxqFuZyBzb2kgdOG7kWkgxJFhIHPhuqNuIHh14bqldCDEkcaw4bujYyBsw6A="))
+      $question.correct_answer = "B"
+    } elseif ($question.question_number -eq 15) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Tmd1ecOqbiB04butIG5ndXnDqm4gdOG7kSBYIGPDsyBj4bqldSBow6xuaCBlbGVjdHJvbjogMXPCsiAyc8KyIDJw4oG2IDNzwrkuIFPhu5EgaGnhu4d1IG5ndXnDqm4gdOG7rSBj4bunYSBYIGzDoA=="))
+      $question.correct_answer = "B"
+    } elseif ($question.question_number -eq 22) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("TeG7mXQgcGluIEdhbHZhbmkgWm4g4oCTIEN1IGPDsyBj4bqldSB04bqhbyBuaMawIHNhdTogVHJvbmcgxJHDsywgbcOgbmcgYsOhbiB0aOG6pW0gY2jhu4kgY2hvIG7GsOG7m2MgdsOgIGPDoWMgYW5pb24gxJFpIHF1YS4gQmnhur90IHLhurFuZyB0aOG7gyB0w61jaCBj4bunYSBjw6FjIGR1bmcgZOG7i2NoIMSR4buBdSBsw6AgMCw1MCBMIHbDoCBu4buTbmcgxJHhu5kgY2jhuqV0IHRhbiB0cm9uZyBkdW5nIGThu4tjaCBsw6AgMSwwMCBNLiBDaG8gYmnhur90IEXCsChabjIrL1puKSA9IC0wLDc2M1Y7IEXCsChDdTIrL0N1KSA9ICswLDM0MFYu"))
+    } elseif ($question.question_number -eq 24) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("TOG6r3AgcGluIMSRaeG7h24gaMOzYSBNZy1OaSDhu58gxJFp4buBdSBraeG7h24gY2h14bqpbi4gQ2hvIGJp4bq/dCBjw6FjIGdpw6EgdHLhu4sgdGjhur8gxJFp4buHbiBj4buxYyBjaHXhuqluOiBFwrAoTWcyKy9NZykgPSAtMiwzNTZWIHbDoCBFwrAoTmkyKy9OaSkgPSAtMCwyNTdWLiBT4bupYyDEkWnhu4duIMSR4buZbmcgY2h14bqpbiBj4bunYSBwaW4gxJFp4buHbiBow7NhIHRyw6puIGzDoCBiYW8gbmhpw6p1PyAoTMOgbSB0csOybiBr4bq/dCBxdeG6oyDEkeG6v24gaMOgbmcgcGjhuqduIG3GsOG7nWkp"))
+    } elseif ($question.question_number -eq 25) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("Q2hvIGJp4bq/dDogfCBD4bq3cCBveGkgaMOzYSAtIGto4butIHwgQ3UyKy9DdSB8IEFnKy9BZyB8IEZlMisvRmUgfCBNZzIrL01nIHwgMkgrL0gyIHwgfCBUaOG6vyDEkWnhu4duIGPhu7FjIGNodeG6qW4gRcKwLCBWIHwgKzAsMzQwIHwgKzAsNzk5IHwgLTAsNDQgfCAtMiwzNTYgfCAwLDAwMCB8IFRyb25nIGPDoWMga2ltIGxv4bqhaSBDdSwgQWcsIEZlIHbDoCBNZywgc+G7kSBraW0gbG/huqFpIGto4butIMSRxrDhu6NjIGlvbiBIKyB0cm9uZyBkdW5nIGThu4tjaCDhu58gxJFp4buBdSBraeG7h24gY2h14bqpbiBsw6AgYmFvIG5oacOqdT8="))
+    } elseif ($question.question_number -eq 26) {
+      $question.prompt = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("S+G6v3QgcXXhuqMgcGjDom4gdMOtY2ggbmd1ecOqbiB04buRIGPhu6dhIG3hu5l0IGFtaW5vIGFjaWQgWCBuaMawIHNhdTogJUMgPSA0MCw0NSU7ICVIID0gNyw4NyU7ICVOID0gMTUsNzQlICh24buBIGto4buRaSBsxrDhu6NuZyk7IGPDsm4gbOG6oWkgbMOgIG94eWdlbi4gQuG6sW5nIHBo4buVIGto4buRaSBsxrDhu6NuZyAoTVMpLCB4w6FjIMSR4buLbmggxJHGsOG7o2MgcGjDom4gdOG7rSBraOG7kWkgY+G7p2EgWCBi4bqxbmcgODkuIENobyBjw6FjIHBow6F0IGJp4buDdSBzYXU6CigxKSBDw7RuZyB0aOG7qWMgcGjDom4gdOG7rSBj4bunYSBYIGzDoCBDNEg5TzJOLgooMikgS2hpIMSR4bq3dCBYIMSRxrDhu6NjIMSRaeG7gXUgY2jhu4luaCDEkeG6v24gcEggPSA2LDAgdHJvbmcgxJFp4buHbiB0csaw4budbmcgdGjDrCBYIHPhur0gZGkgY2h1eeG7g24gduG7gSBj4buxYyBkxrDGoW5nLgooMykgQ8OzIDIgYW1pbm8gYWNpZCDEkeG7k25nIHBow6JuIGPhuqV1IHThuqFvIOG7qW5nIHbhu5tpIGPDtG5nIHRo4bupYyBwaMOibiB04butIGPhu6dhIFguCig0KSBUcm9uZyBwaMOibiB04butIFggY8OzIDEgbmjDs20gLU5IMiB2w6AgMSBuaMOzbSAtQ09PSC4KTGnhu4d0IGvDqiBjw6FjIHBow6F0IGJp4buDdSDEkcO6bmcgdGhlbyBz4buRIHRo4bupIHThu7EgdMSDbmcgZOG6p24u"))
+    }
+  }
+
+  return $questions
+}
+
 function Get-ImageSize([string]$path) {
   $bitmap = [Drawing.Bitmap]::FromFile($path)
   try {
@@ -286,6 +344,7 @@ foreach ($file in $files) {
       if ($questionCandidates.Count -eq 0) {
         if ($sectionIIMatch.Success) { $currentSection = $sectionIIText }
         if ($sectionIIIMatch.Success) { $currentSection = $sectionIIIText }
+        if (Is-SectionHeading $clean) { continue }
         if ($null -ne $currentLocal) { $currentLines.Add($clean) }
       } else {
         for ($candidateIndex = 0; $candidateIndex -lt $questionCandidates.Count; $candidateIndex++) {
@@ -295,7 +354,7 @@ foreach ($file in $files) {
 
           if ($candidateIndex -eq 0 -and $null -ne $currentLocal -and $questionMatch.Index -gt 0) {
             $leading = $clean.Substring(0, $questionMatch.Index).Trim()
-            if ($leading) { $currentLines.Add($leading) }
+            if ($leading -and -not (Is-SectionHeading $leading)) { $currentLines.Add($leading) }
           }
 
           if ($null -ne $currentLocal -and $currentLines.Count -gt 0) {
@@ -343,6 +402,7 @@ foreach ($file in $files) {
         $questions[$questionIndex].section = $sectionIIIText
       }
     }
+    $questions = @(Repair-Week3QuestionText $file.Name $questions)
 
     $assetQuestions = [ordered]@{}
     foreach ($questionNumber in ($questionImages.Keys | Sort-Object { [int]$_ })) {
@@ -376,6 +436,8 @@ foreach ($file in $files) {
 $jsonOptions = @{ Depth = 100; Compress = $false }
 [IO.File]::WriteAllText($dataPath, ($exams | ConvertTo-Json @jsonOptions), [Text.UTF8Encoding]::new($false))
 [IO.File]::WriteAllText($assetPath, ($assets | ConvertTo-Json @jsonOptions), [Text.UTF8Encoding]::new($false))
+
+node (Join-Path $PSScriptRoot "postprocess-week-3-exams.mjs")
 
 Write-Host "Generated $($exams.Count) week 3 exams from $SourceDir -> $dataPath"
 Write-Host "Generated original embedded image assets -> $assetPath"
