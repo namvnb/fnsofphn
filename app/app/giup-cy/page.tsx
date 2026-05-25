@@ -2,10 +2,9 @@ import { FileText, UsersRound } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { PageTransition } from "@/components/shared/page-transition";
 import { FloatingStatCard } from "@/components/shared/floating-stat-card";
-import { PremiumCard } from "@/components/shared/premium-card";
-import { Badge } from "@/components/ui/badge";
 import { GiupCyAdminDashboard } from "@/features/giup-cy/admin-dashboard";
 import { getAdminExams } from "@/features/giup-cy/data";
+import { SampleExamManager } from "@/features/giup-cy/sample-exam-manager";
 import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { requireUser } from "@/lib/auth/guards";
 
@@ -35,28 +34,7 @@ export default async function GiupCyPage() {
         <FloatingStatCard icon={UsersRound} label="Bài đã nộp" value={String(attemptCount)} helper="Tổng bài làm đã lưu." tone="gold" />
       </section>
 
-      {publicSampleExams.length ? (
-        <section className="space-y-4">
-          <div>
-            <h2 className="text-2xl font-bold text-text-primary">Đề public trong app</h2>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">Các đề này được đọc trực tiếp từ dữ liệu đã deploy, không cần seed database.</p>
-          </div>
-          <div className="grid gap-4 lg:grid-cols-2">
-            {publicSampleExams.map((exam) => (
-              <PremiumCard key={exam.slugSuffix} hover={false} className="rounded-2xl">
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <Badge variant={exam.is_active ? "cyan" : "neutral"}>{exam.is_active ? "Đang mở" : "Đang tắt"}</Badge>
-                  <Badge variant="neutral">{exam.questions.length} câu</Badge>
-                  <Badge variant="neutral">{exam.duration_minutes} phút</Badge>
-                </div>
-                <h3 className="text-xl font-bold text-text-primary">{exam.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-text-secondary">{exam.description}</p>
-                <p className="mt-2 break-all text-xs text-text-secondary">Nguồn: {exam.source_file_name}</p>
-              </PremiumCard>
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {publicSampleExams.length ? <SampleExamManager exams={publicSampleExams} /> : null}
 
       <GiupCyAdminDashboard exams={exams} />
     </PageTransition>

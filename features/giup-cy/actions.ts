@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { gradeAttempt } from "@/features/giup-cy/grading";
+import { sampleGiupCyExams } from "@/features/giup-cy/sample-exams";
 import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
@@ -56,6 +57,13 @@ const importExamSchema = z.object({
   description: z.string().optional(),
   durationMinutes: z.coerce.number().int().min(1).max(300),
   jsonText: z.string().min(2)
+});
+
+const publishSampleExamSchema = z.object({
+  sourceFileName: z.string().trim().min(1),
+  title: z.string().trim().min(1).max(180).optional(),
+  description: z.string().trim().max(1200).optional(),
+  durationMinutes: z.coerce.number().int().min(1).max(300).optional()
 });
 
 function parseCorrectAnswer(questionType: "single_choice" | "true_false" | "short_answer", rawValue?: string): Json {
@@ -181,6 +189,90 @@ export async function deleteExam(input: unknown): Promise<ActionResult> {
   if (error) return { ok: false, message: error.message };
   revalidatePath("/app/giup-cy");
   return { ok: true, message: "Đã xóa đề và các bài làm liên quan." };
+}
+
+export async function publishSampleExam(input: unknown): Promise<ActionResult & { examId?: string; slug?: string }> {
+  const parsed = publishSampleExamSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, message: "Không xác định được đề cần public." };
+
+  const sampleExam = sampleGiupCyExams.find((exam) => exam.source_file_name === parsed.data.sourceFileName);
+  if (!sampleExam) return { ok: false, message: "Không tìm thấy dữ liệu đề trong app." };
+
+  const workspace = await getGiupCyWorkspace(await requireUser());
+  const slug = `${sampleExam.slugSuffix}-${workspace.ownerUser.id.slice(0, 8)}`;
+  const title = parsed.data.title ?? sampleExam.title;
+  const description = parsed.data.description ?? sampleExam.description;
+  const durationMinutes = parsed.data.durationMinutes ?? sampleExam.duration_minutes;
+
+  const questionRows = (examId: string) =>
+    sampleExam.questions.map((question) => ({
+      exam_id: examId,
+      section: question.section,
+      question_number: question.question_number,
+      question_type: question.question_type,
+      prompt: question.prompt,
+      options: question.options,
+      correct_answer: question.correct_answer,
+      points: question.points,
+      explanation: null,
+      needs_review: question.needs_review ?? false,
+      sort_order: question.sort_order
+    }));
+
+  const { data: existingExam, error: existingError } = await workspace.supabase
+    .from("giup_cy_exams")
+    .select("id,slug")
+    .eq("user_id", workspace.ownerUser.id)
+    .eq("slug", slug)
+    .maybeSingle();
+
+  if (existingError) return { ok: false, message: existingError.message };
+
+  if (existingExam) {
+    const { error } = await workspace.supabase
+      .from("giup_cy_exams")
+      .update({
+        title,
+        description,
+        duration_minutes: durationMinutes,
+        subject: sampleExam.subject,
+        source_file_name: sampleExam.source_file_name,
+        is_active: true
+      })
+      .eq("id", existingExam.id)
+      .eq("user_id", workspace.ownerUser.id);
+
+    if (error) return { ok: false, message: error.message };
+    revalidatePath("/app/giup-cy");
+    revalidatePath(`/app/giup-cy/${existingExam.id}`);
+    revalidatePath(`/exam/${existingExam.slug}`);
+    return { ok: true, message: "Đã cập nhật đề.", examId: existingExam.id, slug: existingExam.slug };
+  }
+
+  const { data: exam, error: examError } = await workspace.supabase
+    .from("giup_cy_exams")
+    .insert({
+      user_id: workspace.ownerUser.id,
+      title,
+      description,
+      subject: sampleExam.subject,
+      duration_minutes: durationMinutes,
+      slug,
+      source_file_name: sampleExam.source_file_name,
+      is_active: true
+    })
+    .select("id,slug")
+    .single();
+
+  if (examError) return { ok: false, message: examError.message };
+
+  const { error: questionError } = await workspace.supabase.from("giup_cy_exam_questions").insert(questionRows(exam.id));
+  if (questionError) return { ok: false, message: questionError.message };
+
+  revalidatePath("/app/giup-cy");
+  revalidatePath(`/app/giup-cy/${exam.id}`);
+  revalidatePath(`/exam/${exam.slug}`);
+  return { ok: true, message: "Đã đưa đề vào quản trị.", examId: exam.id, slug: exam.slug };
 }
 
 export async function updateQuestionAnswer(input: unknown): Promise<ActionResult> {
