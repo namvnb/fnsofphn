@@ -1,5 +1,6 @@
 import type { GiupCyExamRow } from "@/types/database";
 import week2AssetsData from "./week-2-assets.json";
+import week3AssetsData from "./week-3-assets.json";
 
 export type ExamPageAsset = {
   pageNumber: number;
@@ -13,7 +14,7 @@ export type ExamDocumentAsset = {
   pages: ExamPageAsset[];
 };
 
-type Week2Asset = {
+type ImportedAsset = {
   slug: string;
   sourceFileName: string;
   questionAssets: Record<string, ExamPageAsset | ExamPageAsset[]>;
@@ -21,7 +22,10 @@ type Week2Asset = {
 
 const ASSET_VERSION = "student-clean-20260516";
 const CROP_ASSET_VERSION = "question-crops-20260519b";
-const week2Assets = week2AssetsData as Record<string, Week2Asset>;
+const importedAssets = {
+  ...(week2AssetsData as Record<string, ImportedAsset>),
+  ...(week3AssetsData as Record<string, ImportedAsset>)
+};
 
 function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {
   return Array.from({ length: count }, (_, index) => {
@@ -35,9 +39,9 @@ function buildPages(basePath: string, count: number, width: number, height: numb
   });
 }
 
-function getWeek2Asset(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
+function getImportedAsset(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
   const source = `${exam.slug} ${exam.source_file_name ?? ""}`.toLowerCase();
-  return Object.values(week2Assets).find((asset) => source.includes(asset.slug) || source.includes(asset.sourceFileName.toLowerCase())) ?? null;
+  return Object.values(importedAssets).find((asset) => source.includes(asset.slug) || source.includes(asset.sourceFileName.toLowerCase())) ?? null;
 }
 
 export function getExamDocumentAsset(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">): ExamDocumentAsset | null {
@@ -69,10 +73,10 @@ export function getQuestionSourceAsset(exam: Pick<GiupCyExamRow, "slug" | "sourc
 }
 
 export function getQuestionSourceAssets(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">, questionNumber: number): ExamPageAsset[] {
-  const week2Asset = getWeek2Asset(exam);
-  const week2QuestionAsset = week2Asset?.questionAssets[String(questionNumber)];
-  if (Array.isArray(week2QuestionAsset)) return week2QuestionAsset;
-  if (week2QuestionAsset) return [week2QuestionAsset];
+  const importedAsset = getImportedAsset(exam);
+  const importedQuestionAsset = importedAsset?.questionAssets[String(questionNumber)];
+  if (Array.isArray(importedQuestionAsset)) return importedQuestionAsset;
+  if (importedQuestionAsset) return [importedQuestionAsset];
 
   const documentAsset = getExamDocumentAsset(exam);
   if (!documentAsset) return [];

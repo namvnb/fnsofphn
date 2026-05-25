@@ -1,5 +1,6 @@
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import week2ExamData from "@/features/giup-cy/week-2-exams.json";
+import week3ExamData from "@/features/giup-cy/week-3-exams.json";
 import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import { gradeAttempt } from "@/features/giup-cy/grading";
 import { GIUP_CY_OWNER_EMAIL, GIUP_CY_OWNER_USER_ID, isGiupCySharedManagerEmail } from "@/lib/auth/access";
@@ -63,7 +64,7 @@ const hungYenQ21Prompt =
   "Tơ nylon-6,6 là loại tơ có tính dai, bền, mềm mại, óng mượt, ít thấm nước, giặt mau khô và được sử dụng để dệt vải may mặc, làm dây dù, đan lưới. Tơ nylon-6,6 được tổng hợp theo phương trình hóa học:\nn H2N-[CH2]6-NH2 + n HOOC-[CH2]4-COOH -> (-HN-[CH2]6-NH-CO-[CH2]4-CO-)n + 2n H2O.";
 
 
-type Week2Question = {
+type ImportedQuestion = {
   section: string;
   question_number: number;
   question_type: GiupCyExamQuestionRow["question_type"];
@@ -73,52 +74,54 @@ type Week2Question = {
   sort_order: number;
 };
 
-type Week2Exam = {
+type ImportedExam = {
   title: string;
   description: string;
   subject: string;
   duration_minutes: number;
   slugSuffix: string;
   source_file_name: string;
-  questions: Week2Question[];
+  questions: ImportedQuestion[];
 };
 
-const week2Exams = week2ExamData as Week2Exam[];
-const defaultWeek2Description =
-  "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.";
+const importedExams = [...(week2ExamData as ImportedExam[]), ...(week3ExamData as ImportedExam[])];
+const defaultImportedDescriptions = [
+  "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.",
+  "Đề tuần 3 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai."
+];
 
-function getWeek2ExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
+function getImportedExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
   const slug = exam.slug.toLowerCase();
   const source = (exam.source_file_name ?? "").toLowerCase();
   return (
-    week2Exams.find((sample) => slug.startsWith(sample.slugSuffix.toLowerCase())) ??
-    week2Exams.find((sample) => source === sample.source_file_name.toLowerCase()) ??
+    importedExams.find((sample) => slug.startsWith(sample.slugSuffix.toLowerCase())) ??
+    importedExams.find((sample) => source === sample.source_file_name.toLowerCase()) ??
     null
   );
 }
 
 function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
-  const week2Exam = getWeek2ExamPatch(exam);
-  if (!week2Exam) return exam;
+  const importedExam = getImportedExamPatch(exam);
+  if (!importedExam) return exam;
   const currentDescription = (exam.description ?? "").trim();
   const shouldPatchDescription =
     !currentDescription ||
-    currentDescription === defaultWeek2Description ||
+    defaultImportedDescriptions.includes(currentDescription) ||
     currentDescription.includes("Bản dữ liệu 2026-05-17") ||
     currentDescription.includes("ảnh trích từ nguồn Word");
 
   return {
     ...exam,
-    description: shouldPatchDescription ? week2Exam.description : exam.description,
-    subject: week2Exam.subject,
-    source_file_name: week2Exam.source_file_name
+    description: shouldPatchDescription ? importedExam.description : exam.description,
+    subject: importedExam.subject,
+    source_file_name: importedExam.source_file_name
   };
 }
 function normalizeExamQuestions(exam: GiupCyExamRow, questions: GiupCyExamQuestionRow[], { includeAnswerKeys = true } = {}) {
   let normalizedQuestions = questions;
-  const week2Exam = getWeek2ExamPatch(exam);
-  if (week2Exam) {
-    const sampleByNumber = new Map(week2Exam.questions.map((question) => [question.question_number, question]));
+  const importedExam = getImportedExamPatch(exam);
+  if (importedExam) {
+    const sampleByNumber = new Map(importedExam.questions.map((question) => [question.question_number, question]));
     normalizedQuestions = questions.map((question) => {
       const sample = sampleByNumber.get(question.question_number);
       if (!sample) return question;

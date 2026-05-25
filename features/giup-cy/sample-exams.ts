@@ -1,5 +1,6 @@
 import type { Json } from "@/types/database";
 import week2ExamData from "./week-2-exams.json";
+import week3ExamData from "./week-3-exams.json";
 
 export type SampleQuestion = {
   section: string;
@@ -442,6 +443,7 @@ const hungYenQuestions: SampleQuestion[] = [
   { section: "Phần III", question_number: 28, question_type: "short_answer", prompt: "Dung dịch saccharose không phản ứng với thuốc thử Tollens, nhưng khi đun nóng với dung dịch acid loãng thì tạo thành dung dịch phản ứng với thuốc thử Tollens. Thủy phân hoàn toàn 0,5 mol saccharose thu được dung dịch X. X tác dụng hoàn toàn với dung dịch AgNO3/NH3 dư thu được a mol Ag. Giá trị của a là bao nhiêu?", options: [], correct_answer: "2", points: 0.5, sort_order: 28 }
 ];
 const week2Exams = week2ExamData as SampleExam[];
+const week3Exams = week3ExamData as SampleExam[];
 
 export const sampleGiupCyExams: SampleExam[] = [
   {
@@ -466,5 +468,6 @@ export const sampleGiupCyExams: SampleExam[] = [
     is_active: true,
     questions: camPhaQuestions
   },
-  ...week2Exams
+  ...week2Exams,
+  ...week3Exams
 ];
