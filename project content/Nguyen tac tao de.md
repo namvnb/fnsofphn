@@ -112,3 +112,39 @@ Tài liệu này dùng cho các lần tạo/import đề thi mới trong module 
 - Sửa ở nơi ổn định nhất: dữ liệu nguồn, script import, normalization runtime hoặc logic render/chấm điểm.
 - Sau khi sửa, kiểm tra lại cả trang admin, trang public và trang kết quả.
 - Ghi lại commit hoặc ghi chú thay đổi để lần sau biết lỗi nào đã được xử lý.
+
+## 11. Nhật ký lỗi đã gặp ở đề tuần 3 và quy tắc bắt buộc áp dụng lần sau
+
+Các lỗi dưới đây đã từng xuất hiện khi tạo/import đề tuần 3. Lần sau tạo đề mới phải dùng danh sách này như checklist bắt buộc, không chỉ đọc lướt.
+
+- Không seed lại dữ liệu khi chỉ cần public/sửa giao diện. Seed có thể làm người dùng không thấy dữ liệu mới, hoặc ghi đè tên, mô tả, thời lượng, trạng thái và chỉnh sửa thủ công của admin.
+- Đề public trong app phải đọc trực tiếp từ dữ liệu đã deploy hoặc runtime normalization ổn định. Nếu database cũ vẫn thiếu dữ liệu, phải có lớp overlay rõ ràng, không để màn Giúp Cy chỉ hiển thị đề cũ.
+- Tính năng admin cho từng đề phải đủ: copy link, xem/tải kết quả từng người, sửa tên, sửa mô tả, sửa thời lượng, bật/tắt đề và lưu không bị mất sau reload.
+- Câu đúng/sai không được kéo nhầm tiêu đề phần sau vào lựa chọn `d`. Lỗi đã gặp: option `d` thành `PHẦN III. Câu trắc nghiệm trả lời ngắn...`.
+- Câu trắc nghiệm phải có đúng bốn lựa chọn `A`, `B`, `C`, `D`; không trùng key, không thiếu `D`, không tạo option giả từ phần đuôi câu dẫn hoặc chữ bị ngắt dòng trong Word.
+- Nếu Word/PDF tách option sai, ví dụ tạo `C. Phương` hoặc key bị thành `C,A,B,C`, phải đối chiếu file gốc và sửa ranh giới prompt/options trước khi public.
+- Câu có đáp án số phải map đáp án theo giá trị trong phần đáp án gốc, không đoán theo key. Ví dụ đáp án gốc `203,9` thì phải tìm option chứa `203,9` rồi gán key tương ứng.
+- Hai đề tuần 3 phải có đủ đáp án chấm tự động `28/28`. Admin chi tiết không được hiển thị `Có đáp án: 0`; nếu DB còn null thì runtime phải áp đáp án từ JSON import khi xem chi tiết và khi nộp bài.
+- Khi thêm đáp án tự động, phải trích từ phần sau của file gốc như `HƯỚNG DẪN GIẢI`, `Đáp án`, `Đáp số`; không nhập theo trí nhớ.
+- Sau khi sửa đáp án, phải test cả hai hướng: xem thống kê admin có đủ đáp án và nộp bài mẫu để chắc hệ thống chấm đúng.
+- Câu nhắc tới `hình bên`, `hình dưới đây`, `công thức cấu tạo như sau`, `sơ đồ` bắt buộc phải có asset tương ứng, render được trong trang làm bài.
+- Ảnh phải gắn đúng số câu. Lỗi đã gặp: ảnh ARA của Câu 18 bị lệch sang câu khác; ảnh công thức cấu tạo nicotine của Câu 21 bị thiếu/lệch. Sau import phải kiểm tra mapping asset theo `question_number`.
+- Ảnh/công thức cấu tạo phải hiện ngay sau dòng/cụm dẫn có nhắc tới hình, không dồn xuống sau toàn bộ prompt khiến học sinh đọc sai mạch đề.
+- Công thức hóa học phải giữ chỉ số dưới, điện tích và dấu mũ: `H₂O`, `Mg(OH)₂`, `C₁₀H₁₅N₂`, `SO₄²⁻`, `Ni²⁺/Ni`, `Mg²⁺/Mg`.
+- Ký hiệu thế điện cực phải giữ đúng `E°`, không thành `E0`, `Eo`, `EEo` hoặc mất cặp oxi hóa - khử. Ví dụ phải là `E°(Mg²⁺/Mg)` và `E°pin(T-X)`.
+- Cấu hình electron phải viết có số mũ: `1s² 2s² 2p⁶ 3s¹`, không để `1s2 2s2 2p6 3s1`.
+- Đơn vị thể tích/diện tích phải hiển thị rõ mũ: `cm³`, `dm³`, `m²`; không để `cm3`, `dm3`, `m2` trên giao diện.
+- Đơn vị năng lượng và nhiệt dung phải dễ đọc: ưu tiên `kJ/mol`, `J/(g.K)` hoặc `J/(g·K)`. Không để dạng dễ nhầm như `kJ mol-1`, `KJ.mol^-1`, `J g-1 K-1`.
+- Phương trình phản ứng trong câu dài phải xuống một dòng riêng. Trước phương trình nên có dấu `:` nếu là câu dẫn; sau phương trình hoặc câu mô tả phải có dấu `.` khi kết thúc ý.
+- Chỉ căn giữa các dòng phương trình/sơ đồ phản ứng ngắn. Không căn giữa câu dẫn, dữ kiện, nhận định, câu hỏi hoặc đoạn văn dài chỉ vì có dấu `=`, `E°`, công thức hóa học hay số liệu.
+- Các đoạn văn, dữ kiện, nhận định đánh số và yêu cầu của đề phải căn trái để giống đề gốc và dễ đọc. Không để các câu văn dài nằm trong khối nền xám căn giữa.
+- Với câu dài, phải tách thành đoạn rõ: mở bài, hình/công thức, phản ứng, dữ kiện, câu hỏi. Không dồn tất cả vào một đoạn làm giao diện xấu và khó đọc.
+- Các bước thí nghiệm phải xuống dòng từng bước: `Bước 1`, `Bước 2`, `Bước 3`... Không nối bằng dấu `/` hoặc gom thành một đoạn dài.
+- Các nhận định/phát biểu đánh số `(1)`, `(2)`, `(3)`, `(4)` phải mỗi ý một dòng riêng. Không để các ý xen kẽ căn giữa/căn trái thất thường.
+- Sơ đồ phản ứng có nhãn `(1)`, `(2)`, `(3)`, `(4)` không được căn bằng khoảng trắng vì HTML sẽ làm mất khoảng cách. Phải viết lại thành dòng có mũi tên rõ hoặc bảng/sơ đồ dễ đọc.
+- Bảng dữ liệu từ Word phải được dựng lại thành bảng hoặc các dòng tách rõ cột/hàng; không gộp thành một câu dài mất cấu trúc.
+- Lựa chọn đúng/sai `a)`, `b)`, `c)`, `d)` phải viết hoa chữ đầu nội dung hiển thị, ví dụ `Thu được...`, không để `thu được...` ở đầu dòng.
+- Font nội dung đề trên trang làm bài nên dùng `Times New Roman` để gần với đề gốc. UI điều hướng có thể dùng font app, nhưng phần prompt/options phải ưu tiên tính giống đề thi.
+- Khi chỉnh render cho đẹp, phải kiểm tra lại trên nhiều câu: phương trình cần căn giữa, nhưng câu thường phải căn trái; ảnh phải nằm đúng vị trí; option không bị lệch hoặc mất nội dung.
+- Trước khi push/deploy, phải kiểm tra từng câu của cả hai đề tuần 3 trên trang làm bài, ưu tiên các câu đã từng lỗi: 1, 3, 4, 8, 11, 13, 15, 18, 19, 21, 24, 25, 26.
+- Sau khi push, phải xác nhận deployment mới đã chạy và kiểm tra lại URL public. Nếu deploy xong nhưng giao diện chưa đổi, kiểm tra commit hash/deployment đang được phục vụ trước khi kết luận dữ liệu sai.
