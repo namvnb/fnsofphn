@@ -1,0 +1,1444 @@
+[
+  {
+    "title": "01.06.01",
+    "description": "Đề tuần 4 được nhập từ file Word gốc. Câu hỏi và hình ảnh được giữ theo nguồn; đáp án để rà soát trước khi bật chấm tự động.",
+    "subject": "Hóa học",
+    "duration_minutes": 50,
+    "slugSuffix": "ha-tinh-week-4",
+    "source_file_name": "HÀ_TĨNH.docx",
+    "is_active": true,
+    "questions": [
+      {
+        "section": "Phần I",
+        "question_number": 1,
+        "question_type": "single_choice",
+        "prompt": "Hợp chất vô cơ X có thể được sử dụng để điều trị chứng dư acid ở dạ dày, điều chỉnh vị chua của nước giải khát, làm tăng độ xốp của bánh, làm mềm thực phẩm. Chất X là",
+        "options": [
+          {
+            "key": "A",
+            "text": "NaHCO3."
+          },
+          {
+            "key": "B",
+            "text": "NaCl."
+          },
+          {
+            "key": "C",
+            "text": "NaOH."
+          },
+          {
+            "key": "D",
+            "text": "Na2CO3."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 1
+      },
+      {
+        "section": "Phần I",
+        "question_number": 2,
+        "question_type": "single_choice",
+        "prompt": "Ngâm hoa quả làm siro thuộc loại tách biệt và tinh chế nào?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Phương pháp kết tinh."
+          },
+          {
+            "key": "B",
+            "text": "Phương pháp chưng cất."
+          },
+          {
+            "key": "C",
+            "text": "Phương pháp chiết."
+          },
+          {
+            "key": "D",
+            "text": "Sắc kí cột."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 2
+      },
+      {
+        "section": "Phần I",
+        "question_number": 3,
+        "question_type": "single_choice",
+        "prompt": "Đun nóng dung dịch lòng trắng trứng, có hiện tượng",
+        "options": [
+          {
+            "key": "A",
+            "text": "kết tủa màu vàng."
+          },
+          {
+            "key": "B",
+            "text": "tạo dung dịch màu xanh lam."
+          },
+          {
+            "key": "C",
+            "text": "kết tủa màu trắng."
+          },
+          {
+            "key": "D",
+            "text": "tạo dung dịch màu tím."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 3
+      },
+      {
+        "section": "Phần I",
+        "question_number": 4,
+        "question_type": "single_choice",
+        "prompt": "Phản ứng hóa học của ethylene với dung dịch Br2 được cho bởi phương trình: CH2 = CH2 + Br2 → CH2Br – CH2Br Cơ chế của phản ứng trên xảy ra, như sau: Phát biểu nào sai?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Hiện tượng của phản ứng là nước bromine bị mất màu."
+          },
+          {
+            "key": "B",
+            "text": "Giai đoạn 1, liên kết đôi phản ứng với tác nhân Brσ+ tạo thành phần tử mang điện dương."
+          },
+          {
+            "key": "C",
+            "text": "Phản ứng trên thuộc loại phản ứng thế."
+          },
+          {
+            "key": "D",
+            "text": "Giai đoạn 2, phần tử mang điện dương kết hợp với anion Br– tạo thành sản phẩm."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 4
+      },
+      {
+        "section": "Phần I",
+        "question_number": 5,
+        "question_type": "single_choice",
+        "prompt": "Chất X là CH3COOC2H5. Tên của X là",
+        "options": [
+          {
+            "key": "A",
+            "text": "ethyl acetate."
+          },
+          {
+            "key": "B",
+            "text": "methyl formate."
+          },
+          {
+            "key": "C",
+            "text": "isoamyl acetate."
+          },
+          {
+            "key": "D",
+            "text": "acetic acid."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 5
+      },
+      {
+        "section": "Phần I",
+        "question_number": 6,
+        "question_type": "single_choice",
+        "prompt": "Phản ứng dùng để điều chế kim loại iron (Fe) trong công nghiệp là: Fe2O3 + 3CO to 2Fe + 3CO2. Phương pháp tách kim loại đã được sử dụng trong quá trình trên là",
+        "options": [
+          {
+            "key": "A",
+            "text": "phương pháp thủy luyện."
+          },
+          {
+            "key": "B",
+            "text": "phương pháp điện phân nóng chảy."
+          },
+          {
+            "key": "C",
+            "text": "phương pháp điện phân dung dịch."
+          },
+          {
+            "key": "D",
+            "text": "phương pháp nhiệt luyện."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 6
+      },
+      {
+        "section": "Phần I",
+        "question_number": 7,
+        "question_type": "single_choice",
+        "prompt": "Hợp chất nào sau đây là amine?",
+        "options": [
+          {
+            "key": "A",
+            "text": "CH3NHCH2CH3."
+          },
+          {
+            "key": "B",
+            "text": "H2NCH2COOCH3."
+          },
+          {
+            "key": "C",
+            "text": "H2NCH2COOH."
+          },
+          {
+            "key": "D",
+            "text": "HOCH2COOH."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 7
+      },
+      {
+        "section": "Phần I",
+        "question_number": 8,
+        "question_type": "single_choice",
+        "prompt": "Kim loại tungsten (W) được sử dụng làm dây tóc bóng điện. Ứng dụng này được dựa trên tính chất vật lí nào sau đây của tungsten?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tính dẫn nhiệt."
+          },
+          {
+            "key": "B",
+            "text": "Nhiệt độ nóng chảy."
+          },
+          {
+            "key": "C",
+            "text": "Tính cứng."
+          },
+          {
+            "key": "D",
+            "text": "Tính dẻo."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 8
+      },
+      {
+        "section": "Phần I",
+        "question_number": 9,
+        "question_type": "single_choice",
+        "prompt": "Phát biểu nào sai?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Bồ kết là một loại chất giặt rửa tổng hợp."
+          },
+          {
+            "key": "B",
+            "text": "Các chất CH3[CH2]10CH2C6H4SO3Na và CH3[CH2]10CH2OSO3Na là chất giặt rửa tổng hợp."
+          },
+          {
+            "key": "C",
+            "text": "Xà phòng bị giảm hoặc mất tác dụng giặt rửa khi dùng với nước cứng vì tạo kết tủa với cation Ca2+, Mg2+."
+          },
+          {
+            "key": "D",
+            "text": "Xà phòng dễ bị các vi sinh vật phân hủy nên thân thiện với môi trường."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 9
+      },
+      {
+        "section": "Phần I",
+        "question_number": 10,
+        "question_type": "single_choice",
+        "prompt": "Cho các dung dịch: (1) mật ong, (2) nước mía, (3) nước ép quả nho chín, (4) nước ép củ cải đường, (5) rượu gạo. Số dung dịch có khả năng hòa tan Cu(OH)2 là",
+        "options": [
+          {
+            "key": "A",
+            "text": "1."
+          },
+          {
+            "key": "B",
+            "text": "2."
+          },
+          {
+            "key": "C",
+            "text": "3."
+          },
+          {
+            "key": "D",
+            "text": "4."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 10
+      },
+      {
+        "section": "Phần I",
+        "question_number": 11,
+        "question_type": "single_choice",
+        "prompt": "Nguồn điện nào sau đây không dựa vào năng lượng từ các phản ứng hoá học?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Acquy."
+          },
+          {
+            "key": "B",
+            "text": "Pin mặt trời."
+          },
+          {
+            "key": "C",
+            "text": "Pin nhiên liệu."
+          },
+          {
+            "key": "D",
+            "text": "Pin Galvani."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 11
+      },
+      {
+        "section": "Phần I",
+        "question_number": 12,
+        "question_type": "single_choice",
+        "prompt": "Hợp chất A là một 𝛼-amino acid, có phân tử khối 89 u. A có tên gọi là",
+        "options": [
+          {
+            "key": "A",
+            "text": "Valine."
+          },
+          {
+            "key": "B",
+            "text": "Alanine."
+          },
+          {
+            "key": "C",
+            "text": "Glycine."
+          },
+          {
+            "key": "D",
+            "text": "Aniline."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 12
+      },
+      {
+        "section": "Phần I",
+        "question_number": 13,
+        "question_type": "single_choice",
+        "prompt": "Cho biết: Cặp oxi hoá – khử Cu2+/Cu Ag+/Ag Fe2+/Fe Ni2+/Ni Thế điện cực chuẩn, V +0,340 +0,799 –0,44 –0,257 Trong các kim loại Cu, Ag, Fe và Ni. Số kim loại khử được ion H+ trong dung dịch ở điều kiện chuẩn là",
+        "options": [
+          {
+            "key": "A",
+            "text": "4."
+          },
+          {
+            "key": "B",
+            "text": "2."
+          },
+          {
+            "key": "C",
+            "text": "3."
+          },
+          {
+            "key": "D",
+            "text": "1."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 13
+      },
+      {
+        "section": "Phần I",
+        "question_number": 14,
+        "question_type": "single_choice",
+        "prompt": "Bơ thực vật (margarine) là loại được điều chế từ dầu thực vật. Để chuyển hoá dầu thực vật thành bơ thực vật người ta thực hiện phản ứng ...(1)... nhằm chuyển chất béo không no thành chất béo no. Nội dung phù hợp với chỗ trống (1) là",
+        "options": [
+          {
+            "key": "A",
+            "text": "hydrate hóa."
+          },
+          {
+            "key": "B",
+            "text": "oxi hóa."
+          },
+          {
+            "key": "C",
+            "text": "hydrogen hóa."
+          },
+          {
+            "key": "D",
+            "text": "xà phòng hóa."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 14
+      },
+      {
+        "section": "Phần I",
+        "question_number": 15,
+        "question_type": "single_choice",
+        "prompt": "LDPE là một chất dẻo dễ tạo màng, có tính dai bền nên được sử dụng làm túi nylon, màng bọc, bao gói thực phẩm. LDPE thuộc nhóm nhựa PE (polyethylene). LDPE được tổng hợp từ monomer nào đây?",
+        "options": [
+          {
+            "key": "A",
+            "text": "CH2=CH-Cl."
+          },
+          {
+            "key": "B",
+            "text": "CH2=CH2."
+          },
+          {
+            "key": "C",
+            "text": "CH2=CH-CH3."
+          },
+          {
+            "key": "D",
+            "text": "CH2=CH-C6H5."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 15
+      },
+      {
+        "section": "Phần I",
+        "question_number": 16,
+        "question_type": "single_choice",
+        "prompt": "Phát biểu nào sau đây sai?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Saccharose tham gia phản ứng tráng bạc."
+          },
+          {
+            "key": "B",
+            "text": "Maltose là disaccharide."
+          },
+          {
+            "key": "C",
+            "text": "Fructose có nhiều trong mật ong và có vị ngọt đậm."
+          },
+          {
+            "key": "D",
+            "text": "Phân tử cellulose gồm nhiều gốc β-glucose liên kết với nhau tạo thành chuỗi không có nhánh."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 16
+      },
+      {
+        "section": "Phần I",
+        "question_number": 17,
+        "question_type": "single_choice",
+        "prompt": "Phát biểu nào sai?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sự đóng cặn calcium carbonate trong bình nóng lạnh gây lãng phí điện năng."
+          },
+          {
+            "key": "B",
+            "text": "Đun sôi nước có thể làm mềm nước cứng toàn phần."
+          },
+          {
+            "key": "C",
+            "text": "Nước chứa nhiều Ca(HCO3)2 là nước cứng tạm thời."
+          },
+          {
+            "key": "D",
+            "text": "Có thể sử dụng Na2CO3, Na3PO4 để làm mềm nước cứng vĩnh cửu."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 17
+      },
+      {
+        "section": "Phần I",
+        "question_number": 18,
+        "question_type": "single_choice",
+        "prompt": "Khi xảy ra cháy xăng dầu, tuyệt đối không được dùng nước để dập lửa vì có thể khiến lửa lan rộng hơn. Thay vào đó, cần sử dụng bọt chữa cháy hoặc cát khô để dập tắt đám cháy. Cho các phát biểu sau: Xăng dầu nhẹ hơn nước nên sẽ nổi lên trên và tiếp tục cháy nếu dùng nước để dập lửa. Bọt chữa cháy có tác dụng cách ly nhiên liệu với không khí, giúp dập lửa hiệu quả. Khi cháy, xăng dầu có thể tạo ra các khí độc như CO, NO2, SO2. Có thể dùng chăn bông ướt dập tắt đám cháy xăng dầu nhỏ. Số phát biểu đúng là",
+        "options": [
+          {
+            "key": "A",
+            "text": "1"
+          },
+          {
+            "key": "B",
+            "text": "2"
+          },
+          {
+            "key": "C",
+            "text": "3"
+          },
+          {
+            "key": "D",
+            "text": "4"
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 18
+      },
+      {
+        "section": "Phần II",
+        "question_number": 19,
+        "question_type": "true_false",
+        "prompt": "Trong quá trình lên men glucose thành ethanol, nấm men là chất xúc tác giúp chuyển hóa glucose thành ethanol và khí CO₂ trong điều kiện yếm khí (không có oxygen), quá trình lên men tỏa nhiệt. Từ 300 gam glucose, thực hiện quá trình lên men rượu trong phòng thí nghiệm, kết quả biểu diễn theo đồ thị sau: Kết quả nghiên cứu nhận thấy: Tốc độ phản ứng tăng lên và dung dịch trở nên đặc và nhiệt độ dung dịch tăng dần. Sau ngày thứ 10, phản ứng hầu như dừng lại mặc dù trong dung dịch vẫn còn glucose chưa bị chuyển hóa hết. Ngoài ethanol (C₂H₅OH), trong quá trình lên men, có thể sinh ra các sản phẩm phụ như acetaldehyde (CH₃CHO), acetic acid (CH₃COOH) hoặc ethyl acetate (CH₃COOC₂H₅) tùy theo các điều kiện của quá trình lên men.",
+        "options": [
+          {
+            "key": "a",
+            "text": "Từ 300gam glucose, sau 12 ngày thực hiện quá trình lên men rượu trong phòng thí nghiệm"
+          },
+          {
+            "key": "b",
+            "text": "Thì thu được 2mol ethyl alcohol."
+          },
+          {
+            "key": "c",
+            "text": "Hiệu suất của quá trình lên men tại ngày thứ 10 là 85%.(Làm tròn đến hàng đơn vị)"
+          },
+          {
+            "key": "d",
+            "text": "Trong quá trình trên, men rượu có tác dụng làm tăng hiệu suất phản ứng tạo ethanol."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 19
+      },
+      {
+        "section": "Phần II",
+        "question_number": 20,
+        "question_type": "true_false",
+        "prompt": "Bộ dụng cụ dưới đây được sử dụng để điện phân nước với chất điện li được sử dụng là H2SO4.",
+        "options": [
+          {
+            "key": "a",
+            "text": "Điện cực R xảy ra quá trình khử ion H+."
+          },
+          {
+            "key": "b",
+            "text": "Ống Q thu được khí H2."
+          },
+          {
+            "key": "c",
+            "text": "Thay dung dịch H2SO4 bằng dung dịch HCl thì khí thu được ở hai điện cực là không đổi."
+          },
+          {
+            "key": "d",
+            "text": "Nếu ở ống Q thu được 50 mL khí thì ống P sẽ thu được 100 mL khí (trong cùng điều kiện nhiệt độ, áp suất)."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 20
+      },
+      {
+        "section": "Phần II",
+        "question_number": 21,
+        "question_type": "true_false",
+        "prompt": "Trong công nghiệp, sodium hydrogencarbonate (baking soda) và sodium carbonate (soda) được sản xuất bằng phương pháp Solvay từ nguyên liệu chính là đá vôi, muối ăn, ammonia và nước theo sơ đồ sau:",
+        "options": [
+          {
+            "key": "a",
+            "text": "NH4Cl được nhiệt phân để thu hồi NH3 đưa trở lại quá trình sản xuất."
+          },
+          {
+            "key": "b",
+            "text": "CO2 cung cấp cho quá trình Solvay được lấy từ nhiệt phân đá vôi."
+          },
+          {
+            "key": "c",
+            "text": "Độ tan của NaHCO3 ở 20 °C và ở 40 °C lần lượt là 9,6 g/100 g nước và 12,7 g/100 g nước. Khi giảm nhiệt độ của 450,8 gam dung dịch NaHCO3 bão hoà từ 40 °C về 20 °C thì khối lượng muối NaHCO3 kết tinh là 12,4 gam. (Làm tròn đến hàng phần mười)"
+          },
+          {
+            "key": "d",
+            "text": "Quy trình sản xuất theo sơ đồ trên không gây tiêu tốn NH3 và CO2 (bỏ qua sự thất thoát ra môi trường)."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 21
+      },
+      {
+        "section": "Phần II",
+        "question_number": 22,
+        "question_type": "true_false",
+        "prompt": "Tơ capron là loại tơ có tính dai, độ đàn hồi và độ bóng cao, ít thấm nước và được sử dụng để dệt vải may mặc, chỉ khâu. Tơ capron được tổng hợp từ caprolactam theo phương trình hóa học sau:",
+        "options": [
+          {
+            "key": "a",
+            "text": "Do tơ capron có các nhóm -CO-NH– nên tơ capron là polypeptide."
+          },
+          {
+            "key": "b",
+            "text": "Khi đun nóng tơ capron trong môi trường kiềm xảy ra phản ứng cắt mạch polymer."
+          },
+          {
+            "key": "c",
+            "text": "Phản ứng (1) là phản ứng trùng hợp."
+          },
+          {
+            "key": "d",
+            "text": "Một loại chỉ khâu có chứa 95% về khối lượng là tơ capron. Để sản xuất được 100 cuộn chỉ khâu cùng loại, mỗi cuộn chỉ có khối lượng 500 gam (chỉ gồm chỉ khâu) thì cần 47,5 kg caprolactam với hiệu suất toàn bộ quá trình là 90%. (Làm tròn đến hàng phần mười)"
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 22
+      },
+      {
+        "section": "Phần III",
+        "question_number": 23,
+        "question_type": "short_answer",
+        "prompt": "Một nhà máy chuyên sản xuất thép (chứa 1%C theo khối lượng) với công nghệ lò luyện thép Martin. Sơ đồ phản ứng luyện thép trong lò là FexOy + C to Fe + CO2. Nguyên liệu nhà máy trên sử dụng để luyện thép gồm sắt phế liệu (chứa 50%Fe3O4; 49%Fe;1%C theo khối lượng) và gang (chứa 4% khối lượng C còn lại là Fe). Một mẻ luyện thép cần 5 tấn gang và m tấn sắt phế liệu (hiệu suất của quá trình là 100%). Tính giá trị m. (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị)",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 23
+      },
+      {
+        "section": "Phần III",
+        "question_number": 24,
+        "question_type": "short_answer",
+        "prompt": "Cho các chất: methylamine, glycine, aniline, acetic acid, glutamic acid. Có bao nhiêu chất phản ứng với dung dịch HCl tạo muối?",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 24
+      },
+      {
+        "section": "Phần III",
+        "question_number": 25,
+        "question_type": "short_answer",
+        "prompt": "Khi thực hiện phản ứng ester hóa 1 mol CH3COOH và 1 mol C2H5OH, lượng ester lớn nhất thu được là 2 mol. Để đạt hiệu suất cực đại là 90% (tính theo acid). Khi tiến hành ester hóa 1 3 mol CH3COOH cần số mol C2H5OH là bao nhiêu? (biết các phản ứng ester hoá thực hiện ở cùng nhiệt độ). (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm).",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 25
+      },
+      {
+        "section": "Phần III",
+        "question_number": 26,
+        "question_type": "short_answer",
+        "prompt": "Cho dãy các kim loại: Mg, Zn, Fe, Na, K, Ca. Có bao nhiêu kim loại trong dãy tác dụng được với nước ở nhiệt độ thường tạo dung dịch base mạnh?",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 26
+      },
+      {
+        "section": "Phần III",
+        "question_number": 27,
+        "question_type": "short_answer",
+        "prompt": "Cho các phát biểu sau: Aniline là amine bậc 1. Hợp chất (CH3)2NH có tên thay thế là dimethylamine. Nhúng giấy quỳ tím vào dung dịch methylamine thấy quỳ tím chuyển màu xanh. Ethylamine tan tốt trong nước do phân tử tạo được liên kết hydrogen với nước. Dung dịch methylamine có thể hòa tan được Cu(OH)2 tạo dung dịch màu tím đặc trưng. Trong phản ứng methylamine với HNO2 thì methylamine thể hiện tính base. Sắp xếp các phát biểu đúng theo thứ tự tăng dần (ví dụ: 123,1235...)",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 27
+      },
+      {
+        "section": "Phần III",
+        "question_number": 28,
+        "question_type": "short_answer",
+        "prompt": "Sản phẩm của quá trình nung vôi có nhiều ứng dụng trong thực tế, CaO sinh ra được sử dụng trong công nghiệp luyện kim và làm nguyên liệu cho công nghiệp hoá học, được dùng để khử chua đất trồng trọt, xử lí nước thải công nghiệp, khử độc môi trường. Còn CO2 được dùng sản xuất CO2 lỏng phục vụ cho nhu cầu công nghiệp và dân sinh. Quá trình nung vôi xảy ra theo phương trình hóa học (1) như sau: CaCO (s) to CaO(s) + CO (g) (1) Phản ứng (1) là phản ứng thu nhiệt mạnh. Lượng nhiệt này được cung cấp từ quá trình đốt cháy hoàn toàn khí thiên nhiên hóa lỏng (chứa 96% methane, 4% ethane về thể tích) theo phương trình hóa học (2) và (3): CH (g) + 2O (g) to CO (g) + 2H O(g) (2) C H (g) + 3,5O (g) to 2CO (g) + 3H O(g) (3) Xét các phản ứng ở điều kiện chuẩn và hiệu suất chuyển hóa của CaCO3 là 100%. Khối lượng khí thiên nhiên hóa lỏng là m tấn cần thiết để sản xuất 560 tấn CaO(s) trong giai đoạn trên. Biết 92% tổng lượng nhiệt tỏa ra từ phản ứng (2), (3) được cung cấp cho phản ứng (1) và các giá trị nhiệt tạo thành (∆fHo ) của các chất, năng lượng liên kết trung bình của một số liên kết hóa học ở điều kiện chuẩn được cho trong bảng sau: Nhiệt tạo thành chuẩn của các chất: Chất CaCO3(s) CaO(s) CO2(g) ∆fHo (kJ mol-1) 298 -1207,6 -634,9 -393,5 Năng lượng liên kết trung bình của một số liên kết hóa học ở điều kiện chuẩn: Liên kết C–H C–C O=O C=O (CO2) O–H Eb (kJ mol-1) 414 347 498 799 464 Giá trị của m (theo tấn) là bao nhiêu (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị). ------ HẾT ------",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 28
+      }
+    ]
+  },
+  {
+    "title": "01.06.02",
+    "description": "Đề tuần 4 được nhập từ file Word gốc. Câu hỏi và hình ảnh được giữ theo nguồn; đáp án để rà soát trước khi bật chấm tự động.",
+    "subject": "Hóa học",
+    "duration_minutes": 50,
+    "slugSuffix": "luong-the-vinh-lan-1-ha-noi-week-4",
+    "source_file_name": "LƯƠNG_THẾ_VINH_LẦN_1_HÀ_NỘI.docx",
+    "is_active": true,
+    "questions": [
+      {
+        "section": "Phần I",
+        "question_number": 1,
+        "question_type": "single_choice",
+        "prompt": "Cho quỳ tím vào mỗi dung dịch sau: H2NCH2COONa, C6H5NH2, H2NCH2COOH, ClNH3CH2COOH, H2NCH2CH2CH(NH2)COOH. Số dung dịch làm quỳ tím đổi màu là",
+        "options": [
+          {
+            "key": "A",
+            "text": "5."
+          },
+          {
+            "key": "B",
+            "text": "4."
+          },
+          {
+            "key": "C",
+            "text": "6."
+          },
+          {
+            "key": "D",
+            "text": "3."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 1
+      },
+      {
+        "section": "Phần I",
+        "question_number": 2,
+        "question_type": "single_choice",
+        "prompt": "Cho thứ tự sắp xếp các cặp oxi hoá - khử trong dãy điện hoá: Mg²⁺/Mg, H2O/H2, 2H⁺/H2, Ag⁺/Ag. Cặp oxi hoá – khử có giá trị thế điện cực chuẩn lớn nhất trong dãy là",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ag⁺/Ag."
+          },
+          {
+            "key": "B",
+            "text": "Mg2+/Mg."
+          },
+          {
+            "key": "C",
+            "text": "H2O/H2."
+          },
+          {
+            "key": "D",
+            "text": "2H⁺/H2."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 2
+      },
+      {
+        "section": "Phần I",
+        "question_number": 3,
+        "question_type": "single_choice",
+        "prompt": "Phát biểu nào sau đây đúng?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ở nhiệt độ thường tất cả các amine đều tan nhiều trong nước."
+          },
+          {
+            "key": "B",
+            "text": "Methylamine là chất khí, không màu, không mùi."
+          },
+          {
+            "key": "C",
+            "text": "Aniline làm quỳ tím ẩm chuyển thành màu xanh."
+          },
+          {
+            "key": "D",
+            "text": "Có thể dùng dung dịch HCl để rửa sạch ống nghiệm có dính aniline."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 3
+      },
+      {
+        "section": "Phần I",
+        "question_number": 4,
+        "question_type": "single_choice",
+        "prompt": "Cho một pin Galvani được tạo thành bởi hai điện cực: copper (Cu) trong dung dịch copper(II) sulfate (CuSO4) 1,0M và lead (Pb) trong dung dịch lead(II) nitrate (Pb(NO3)2) 1,0M. Biết sức điện động của pin (Eo ) là 0,47V và thế điện cực chuẩn của cặp Cu2+/Cu là +0,34 V. Giá trị thế điện cực chuẩn của cặp Pb2+/Pb là:",
+        "options": [
+          {
+            "key": "A",
+            "text": "0,81V."
+          },
+          {
+            "key": "B",
+            "text": "-0,13V."
+          },
+          {
+            "key": "C",
+            "text": "-0,81V."
+          },
+          {
+            "key": "D",
+            "text": "0,13V."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 4
+      },
+      {
+        "section": "Phần I",
+        "question_number": 5,
+        "question_type": "single_choice",
+        "prompt": "Tiến hành điện phân nóng chảy alluminium oxide, ở anode thu được chất nào sau đây?",
+        "options": [
+          {
+            "key": "A",
+            "text": "F2."
+          },
+          {
+            "key": "B",
+            "text": "Al."
+          },
+          {
+            "key": "C",
+            "text": "O2."
+          },
+          {
+            "key": "D",
+            "text": "H2."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 5
+      },
+      {
+        "section": "Phần I",
+        "question_number": 6,
+        "question_type": "single_choice",
+        "prompt": "Thuốc thử được dùng để phân biệt hai dung dịch Ala-Ala-Gly với Gly-Ala là",
+        "options": [
+          {
+            "key": "A",
+            "text": "NaOH."
+          },
+          {
+            "key": "B",
+            "text": "Cu(OH)2."
+          },
+          {
+            "key": "C",
+            "text": "NaCl."
+          },
+          {
+            "key": "D",
+            "text": "HCl."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 6
+      },
+      {
+        "section": "Phần I",
+        "question_number": 7,
+        "question_type": "single_choice",
+        "prompt": "Cho các hợp kim sau: Cu - Fe (1); Zn - Fe (2); Fe - C (3); Sn - Fe (4). Khi tiếp xúc với dung dịch chất điện li thì các hợp kim mà trong đó Fe đều bị ăn mòn trước là:",
+        "options": [
+          {
+            "key": "A",
+            "text": "(1), (3) và (4)."
+          },
+          {
+            "key": "B",
+            "text": "(1), (2) và (4)."
+          },
+          {
+            "key": "C",
+            "text": "(1), (2) và (3)."
+          },
+          {
+            "key": "D",
+            "text": "(2), (3) và (4)."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 7
+      },
+      {
+        "section": "Phần I",
+        "question_number": 8,
+        "question_type": "single_choice",
+        "prompt": "Methyl acrylate là một chất kích thích mạnh, có thể gây chóng mặt, đau đầu, hoa mắt và khó thở khi tiếp xúc với da hoặc hít phải, ester này có công thức cấu tạo thu gọn là",
+        "options": [
+          {
+            "key": "A",
+            "text": "CH3COOC2H5."
+          },
+          {
+            "key": "B",
+            "text": "CH3COOCH3."
+          },
+          {
+            "key": "C",
+            "text": "C2H5COOC2H3."
+          },
+          {
+            "key": "D",
+            "text": "CH2=CHCOOCH3."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 8
+      },
+      {
+        "section": "Phần I",
+        "question_number": 9,
+        "question_type": "single_choice",
+        "prompt": "Biết độ tan trong nước của monosodium glutamate (mì chính hay bột ngọt) ở 60oC là 112 gam trong 100 gam nước; ở 25oC là 74 gam trong 100 gam nước. Có bao nhiêu gam monosodium glutamate kết tinh khi làm nguội 1000 gam dung dịch monosodium glutamate bão hoà ở 60oC xuống 25oC? (giả thiết lượng nước bay hơi không đáng kể)",
+        "options": [
+          {
+            "key": "A",
+            "text": "38 gam."
+          },
+          {
+            "key": "B",
+            "text": "179,24 gam."
+          },
+          {
+            "key": "C",
+            "text": "145,67 gam."
+          },
+          {
+            "key": "D",
+            "text": "103,1 gam."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 9
+      },
+      {
+        "section": "Phần I",
+        "question_number": 10,
+        "question_type": "single_choice",
+        "prompt": "Cho các phản ứng sau: CuO + H2 → Cu + H2O 2CuSO4 + 2H2O → 2Cu + O2 + 2H2SO4 Fe + CuSO4 → FeSO4 + Cu 2Al + Cr2O3 → Al2O3 + 2Cr Số phản ứng dùng để điều chế kim loại bằng phương pháp nhiệt luyện là",
+        "options": [
+          {
+            "key": "A",
+            "text": "1."
+          },
+          {
+            "key": "B",
+            "text": "2."
+          },
+          {
+            "key": "C",
+            "text": "3."
+          },
+          {
+            "key": "D",
+            "text": "4."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 10
+      },
+      {
+        "section": "Phần I",
+        "question_number": 11,
+        "question_type": "single_choice",
+        "prompt": "Polypropylene là chất dẻo được sử dụng phổ biến thứ 2 sau polyethylene. Trùng hợp chất nào sau đây thu được Polypropylene?",
+        "options": [
+          {
+            "key": "A",
+            "text": "CH2=CH-CH3."
+          },
+          {
+            "key": "B",
+            "text": "CH2=CH-C6H5."
+          },
+          {
+            "key": "C",
+            "text": "CH2=CH-Cl."
+          },
+          {
+            "key": "D",
+            "text": "CH2=CH2."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 11
+      },
+      {
+        "section": "Phần I",
+        "question_number": 12,
+        "question_type": "single_choice",
+        "prompt": "Glucose quan trọng đối với cơ thể sống vì nó",
+        "options": [
+          {
+            "key": "A",
+            "text": "xúc tác cho các quá trình sinh hoá."
+          },
+          {
+            "key": "B",
+            "text": "làm giảm quá trình oxi hoá của gốc tự do."
+          },
+          {
+            "key": "C",
+            "text": "là nguồn cung cấp nước và carbon dioxide."
+          },
+          {
+            "key": "D",
+            "text": "cung cấp năng lượng cho quá trình sinh hoá tế bào."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 12
+      },
+      {
+        "section": "Phần I",
+        "question_number": 13,
+        "question_type": "single_choice",
+        "prompt": "Có 4 ester no, đơn chức, mạch hở được kí hiệu ngẫu nhiên lần lượt là X, Y, Z, T. Phân tử ester của mỗi chất nêu trên đều tạo bởi các carboxylic acid mạch không phân nhánh và ethyl alcohol. Độ tan của 4 ester được cho ở bảng sau: Ester X Y Z T Độ tan (g/100 g nước, ở 25oC) 8,7 10,5 2,2 4,9 Trong số 4 ester trên, ester có nhiều nguyên tử carbon nhất trong phân tử là",
+        "options": [
+          {
+            "key": "A",
+            "text": "Y."
+          },
+          {
+            "key": "B",
+            "text": "T."
+          },
+          {
+            "key": "C",
+            "text": "Z."
+          },
+          {
+            "key": "D",
+            "text": "X."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 13
+      },
+      {
+        "section": "Phần I",
+        "question_number": 14,
+        "question_type": "single_choice",
+        "prompt": "Carbohydrate nào dưới đây không có nhóm -OH hemiacetal (hoặc hemiketal)?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Saccharose."
+          },
+          {
+            "key": "B",
+            "text": "Fructose."
+          },
+          {
+            "key": "C",
+            "text": "Maltose."
+          },
+          {
+            "key": "D",
+            "text": "Glucose."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 14
+      },
+      {
+        "section": "Phần I",
+        "question_number": 15,
+        "question_type": "single_choice",
+        "prompt": "Hợp chất C6H5CH2NH2 có tên thay thế là",
+        "options": [
+          {
+            "key": "A",
+            "text": "phenylamine."
+          },
+          {
+            "key": "B",
+            "text": "phenylmethanamine."
+          },
+          {
+            "key": "C",
+            "text": "benzylamine."
+          },
+          {
+            "key": "D",
+            "text": "benzenamine."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 15
+      },
+      {
+        "section": "Phần I",
+        "question_number": 16,
+        "question_type": "single_choice",
+        "prompt": "Lên men 800 kg tinh bột, thu được V lít rượu 38o. Biết hiệu suất của cả quá trình sản xuất rượu là 72% và khối lượng riêng của ethyl alcohol là 0,8 g/ml. Giá trị của V là",
+        "options": [
+          {
+            "key": "A",
+            "text": "1868."
+          },
+          {
+            "key": "B",
+            "text": "1345."
+          },
+          {
+            "key": "C",
+            "text": "2076."
+          },
+          {
+            "key": "D",
+            "text": "1076."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 16
+      },
+      {
+        "section": "Phần I",
+        "question_number": 17,
+        "question_type": "single_choice",
+        "prompt": "Ô nhiễm môi trường do chất dẻo và rác thải nhựa đang là vấn đề được quan tâm. Cho các phát biểu sau: Các loại nhựa được tạo ra từ chất dẻo khi thải ra môi trường mất nhiều thời gian để phân hủy. Rác thải nhựa sau thu gom nên đốt hoặc chôn lấp để giảm thiểu lượng rác thải. Sử dụng vật liệu phân hủy sinh học để thay thế một số loại chất dẻo. Nên phân loại rác thải tại các nguồn để đưa ra cách xử lí. Số phát biểu đúng là",
+        "options": [
+          {
+            "key": "A",
+            "text": "3."
+          },
+          {
+            "key": "B",
+            "text": "4."
+          },
+          {
+            "key": "C",
+            "text": "1."
+          },
+          {
+            "key": "D",
+            "text": "2."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 17
+      },
+      {
+        "section": "Phần I",
+        "question_number": 18,
+        "question_type": "single_choice",
+        "prompt": "Đun nóng chất H2NCH2CONHCH(CH3)CONHCH2COOH trong dung dịch HCl (dư), sau khi các phản ứng kết thúc thu được sản phẩm là: H2NCH2COOH, H2NCH(CH3)COOH.",
+        "options": [
+          {
+            "key": "A",
+            "text": "H3N+CH2COOHCl-, H3N+CH(CH3)COOHCl-."
+          },
+          {
+            "key": "B",
+            "text": "H2NCH2COOH, H2NCH2CH2COOH."
+          },
+          {
+            "key": "C",
+            "text": "H3N+CH2COOHCl-, H3N+CH2CH2COOHCl-."
+          },
+          {
+            "key": "D",
+            "text": "ở mỗi câu. Thí sinh chọn đúng hoặc sai."
+          }
+        ],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 18
+      },
+      {
+        "section": "Phần II",
+        "question_number": 19,
+        "question_type": "true_false",
+        "prompt": "Nhựa PVC là một loại nhựa nhiệt dẻo được sử dụng rộng rãi trong nhiều ngành công nghiệp khác nhau. Nó có nhiều tính chất ưu việt như độ bền, khả năng chống chịu hoá chất, giá thành rẻ. Ngoài ra để tăng cường khả năng chịu nhiệt và kháng hoá chất của PVC, người ta thường Chlorine hoá PVC.",
+        "options": [
+          {
+            "key": "a",
+            "text": "PVC được điều chế bằng phản ứng trùng hợp monomer có công thức là CH2=CHCl."
+          },
+          {
+            "key": "b",
+            "text": "Khi Chlorine hoá PVC thu được sản phẩm X có chứa 66,18% chlorine theo khối lượng, như vậy trung bình cứ 2 mắt xích PVC phản ứng được với một phân tử chlorine."
+          },
+          {
+            "key": "c",
+            "text": "PVC được dùng sản xuất ống dẫn nước, áo che mưa, da nhân tạo."
+          },
+          {
+            "key": "d",
+            "text": "Khi PVC bị cháy thì không có khói đen, khí thoát ra không gây độc hại."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 19
+      },
+      {
+        "section": "Phần II",
+        "question_number": 20,
+        "question_type": "true_false",
+        "prompt": "Cho sơ đồ (1) biểu diễn sự điện phân dung dịch CuSO4 (aq) với điện cực trơ, sơ đồ (2) biểu diễn quá trình tinh luyện đồng (Cu) bằng phương pháp điện phân. Trong sơ đồ (2), các khối đồng có độ tinh khiết thấp được gắn với một điện cực của nguồn điện, các thanh đồng mỏng có độ tinh khiết cao được gắn với một điện cực của nguồn điện. Dung dịch điện phân là dung dịch CuSO4. còn thanh Cu tinh khiết được nối vào cathode, khi đó khối lượng Cu tan ra từ anode bằng khối lượng Cu bám vào cathode.",
+        "options": [
+          {
+            "key": "a",
+            "text": "Khi điện phân xảy ra ở sơ đồ (2), nồng độ ion Cu2+ trong dung dịch sẽ giảm dần theo thời"
+          },
+          {
+            "key": "b",
+            "text": "Gian."
+          },
+          {
+            "key": "c",
+            "text": "Trong sơ đồ (1), điện cực âm được gọi là cathode và điện cực dương gọi là anode."
+          },
+          {
+            "key": "d",
+            "text": "Khi điện phân xảy ra ở sơ đồ (1), thì ban đầu ở cực âm xảy ra quá trình oxi hoá Cu và ở cực dương xảy ra quá trình khử H2O."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 20
+      },
+      {
+        "section": "Phần II",
+        "question_number": 21,
+        "question_type": "true_false",
+        "prompt": "Triglyceride đóng vai trò là nguồn cung cấp năng lượng và chuyên chở các chất béo trong quá trình trao đổi chất. Cho triglyceride X có công thức cấu tạo như hình sau:",
+        "options": [
+          {
+            "key": "a",
+            "text": "Xà phòng hóa hoàn toàn 170,8 kg triglyceride X bằng NaOH thu được 176,4 kg muối."
+          },
+          {
+            "key": "b",
+            "text": "Triglyceride X công thức phân tử C55H98O6."
+          },
+          {
+            "key": "c",
+            "text": "Triglyceride X làm mất màu dung dịch bromine."
+          },
+          {
+            "key": "d",
+            "text": "Acid béo có gốc kí hiệu (2) thuộc loại acid béo omega-3."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 21
+      },
+      {
+        "section": "Phần II",
+        "question_number": 22,
+        "question_type": "true_false",
+        "prompt": "Melamine là một hợp chất hữu cơ có hàm lượng nitrogen cao, chính vì vậy mà thường được nhà sản xuất thêm vào sữa để làm tăng hàm lượng protein biểu kiến trong sữa. Tuy nhiên, melamine xâm nhập vào cơ thể lâu ngày sẽ dẫn đến tác hại về sinh sản, sỏi bàng quang hoặc suy thận và sỏi thận, có thể gây ung thư bàng quang. Bộ Y tế đã ban hành Quyết định 38/2008/QĐ-BYT về việc quy định mức giới hạn tối đa nhiễm chéo melamine trong thực phẩm, theo đó lượng melamine có trong các chế phẩm sữa cho trẻ em dưới 36 tháng tuổi không vượt quá 1mg/kg thực phẩm (tương đương với 1 ppm) Trong công nghiệp, melamine được điều chế từ phân đạm urea như sau theo quy trình sau: (NH2)2CO → HCNO + NH3 6HCNO → Melamine + 3CO2 Melamine khi tác dụng với base trong máu tạo ra muối kết tủa là nguyên nhân gây sỏi ở thận và bàng quang.",
+        "options": [
+          {
+            "key": "a",
+            "text": "Melamine có công thức phân tử là C3H6N6."
+          },
+          {
+            "key": "b",
+            "text": "Melamine là một base hữu cơ."
+          },
+          {
+            "key": "c",
+            "text": "Để điều chế 1 tấn melamine (hiệu suất cả quá trình là 40%) cần 7,143 tấn urea (làm tròn đến"
+          },
+          {
+            "key": "d",
+            "text": "3 chữ số sau dấu phẩy)."
+          }
+        ],
+        "correct_answer": null,
+        "points": 1,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 22
+      },
+      {
+        "section": "Phần III",
+        "question_number": 23,
+        "question_type": "short_answer",
+        "prompt": "Để tráng 150 chiếc gương soi có diện tích bề mặt 0,4 m2 với độ dày 0,2 μm, người ta cho m gam glucose thực hiện phản ứng với lượng dư dung dịch silver nitrate trong ammonia. Biết khối lượng riêng của silver là 10,49 g/cm3 và hiệu suất của quá trình là 65%. Tính m. (làm tròn đến hàng đơn vị).",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 23
+      },
+      {
+        "section": "Phần III",
+        "question_number": 24,
+        "question_type": "short_answer",
+        "prompt": "Cho m gam bột Zn vào 500 mL dung dịch Fe2(SO4)3 0,24 M. Sau khi các phản ứng xảy ra hoàn toàn, khối lượng dung dịch tăng thêm 8,88 gam so với khối lượng dung dịch ban đầu. Tính giá trị của m.",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 24
+      },
+      {
+        "section": "Phần III",
+        "question_number": 25,
+        "question_type": "short_answer",
+        "prompt": "Một học sinh tiến hành thí nghiệm điều chế ester bằng cách đun hỗn hợp gồm acetic acid với một alcohol (ROH) sử dụng sulfuric acid đặc làm xúc tác. CH3COOH + ROH/CH3COOR + H2O Sau thí nghiệm, phân tách sản phẩm và tiến hành đo phổ khối lượng (MS) của ester vừa thu được. Kết quả phân tích phổ MS cho thấy ester này có phân tử khối là 88. Số nguyên tử hydrogen có trong phân tử alcohol trên là bao nhiêu?.",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 25
+      },
+      {
+        "section": "Phần III",
+        "question_number": 26,
+        "question_type": "short_answer",
+        "prompt": "Để xác định hàm lượng oxygen (O2) tan trong nước, người ta lấy 100,0 mL nước rồi cho ngay manganese sulphate (MnSO4, dư) và sodium hydroxide (NaOH) vào nước. Sau khi lắc kĩ (không cho tiếp xúc với không khí), manganese(II) hydroxide (Mn(OH)2) bị O2 oxi hóa thành manganese oxohydroxide (MnO(OH)2). Thêm acid (dư) và cho tiếp potassium iodide (KI, dư) vào hỗn hợp, thì ion idodine (I-) bị MnO(OH)2 oxi hóa thành ioddine (I2). Lượng I2 sinh ra phản ứng vừa đủ với 10,5 mL dung dịch Na2S2O3 0,01M (sodium thiosulphate). Biết các phản ứng xảy ra như sau: Mn2+ + OH- → Mn(OH)2 (1) Mn(OH)2 + O2 → MnO(OH)2 (2) MnO(OH)2 + I- + H+ → Mn2+ + I2 + H2O (3) I2 + Na2S2O3 → Na2S4O6 + NaI (4) Hàm lượng O2 tan trong nước (tính theo mg O2/1L) là a. Giá trị của a là bao nhiêu? (Làm tròn kết quả đến hàng phần mười).",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 26
+      },
+      {
+        "section": "Phần III",
+        "question_number": 27,
+        "question_type": "short_answer",
+        "prompt": "Một vết nứt trên đường ray tàu hỏa có thể tích 1,68 cm3. Dùng hỗn hợp tecmite (Al và Fe2O3 theo tỉ lệ mol tương ứng 3: 1) để hàn vết nứt trên. Biết: lượng Fe cần hàn cho vết nứt bằng 78,5% lượng Fe sinh ra; khối lượng riêng của sắt là 7,85 gam/cm3; chỉ xảy ra phản ứng khử Fe2O3 thành Fe với hiệu suất của phản ứng bằng 80%. Khối lượng của hỗn hợp tecmite tối thiểu cần dùng là bao nhiêu gam? (Kết quả làm tròn đến 1 chữ số sau dấu phẩy).",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 27
+      },
+      {
+        "section": "Phần III",
+        "question_number": 28,
+        "question_type": "short_answer",
+        "prompt": "Cho các phát biểu sau: Polypropylene là một polymer có cấu trúc mạch phân nhánh. Cao su sau khi lưu hoá có các tính chất vật lí tốt hơn cao su ban đầu. Tơ nylon - 6,6 kém bền trong môi trường kiềm mạnh. Cao su buna - S thu được khi cho cao su buna tác dụng với sulfur. Vật liệu cốt đảm bảo cho composite có được các đặc tính cơ học cần thiết. Thứ tự tăng dần của các phát biểu đúng lần lượt là? (ví dụ 1234, 2345 …) ----HẾT----",
+        "options": [],
+        "correct_answer": null,
+        "points": 0.25,
+        "needs_review": true,
+        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "sort_order": 28
+      }
+    ]
+  }
+]

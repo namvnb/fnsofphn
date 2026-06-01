@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { CheckCircle2, Clipboard, Eye, FileJson, Power, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,19 @@ type Props = {
   exams: ExamWithStats[];
 };
 
+function settingsFromExams(exams: ExamWithStats[]) {
+  return Object.fromEntries(
+    exams.map((exam) => [
+      exam.id,
+      {
+        title: exam.title,
+        description: exam.description ?? "",
+        durationMinutes: String(exam.duration_minutes)
+      }
+    ])
+  );
+}
+
 export function GiupCyAdminDashboard({ exams }: Props) {
   const router = useRouter();
   const [visibleExams, setVisibleExams] = useState(exams);
@@ -25,18 +38,12 @@ export function GiupCyAdminDashboard({ exams }: Props) {
   const [importTitle, setImportTitle] = useState("");
   const [importDuration, setImportDuration] = useState("50");
   const [importJson, setImportJson] = useState("");
-  const [settings, setSettings] = useState(() =>
-    Object.fromEntries(
-      exams.map((exam) => [
-        exam.id,
-        {
-          title: exam.title,
-          description: exam.description ?? "",
-          durationMinutes: String(exam.duration_minutes)
-        }
-      ])
-    )
-  );
+  const [settings, setSettings] = useState(() => settingsFromExams(exams));
+
+  useEffect(() => {
+    setVisibleExams(exams);
+    setSettings(settingsFromExams(exams));
+  }, [exams]);
 
   async function copyLink(slug: string) {
     const url = `${window.location.origin}/exam/${slug}`;
@@ -75,8 +82,15 @@ export function GiupCyAdminDashboard({ exams }: Props) {
     });
   }
 
-  function saveSettings(exam: ExamWithStats) {
-    const next = settings[exam.id] ?? { title: exam.title, description: exam.description ?? "", durationMinutes: String(exam.duration_minutes) };
+  function saveSettings(event: React.FormEvent<HTMLFormElement>, exam: ExamWithStats) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const next = {
+      title: String(formData.get("title") ?? settings[exam.id]?.title ?? exam.title),
+      description: String(formData.get("description") ?? settings[exam.id]?.description ?? exam.description ?? ""),
+      durationMinutes: String(formData.get("durationMinutes") ?? settings[exam.id]?.durationMinutes ?? exam.duration_minutes)
+    };
+
     setPendingId(exam.id);
     startImport(async () => {
       const result = await updateExamSettings({
@@ -145,8 +159,10 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                 <p className="mt-2 text-xs text-text-secondary">
                   {exam.duration_minutes} phút · Nguồn: {exam.source_file_name ?? "Import thủ công"}
                 </p>
-                <div className="mt-4 grid gap-2 md:grid-cols-[minmax(0,1fr)_120px_auto]">
+                <form className="mt-4 grid gap-2 md:grid-cols-[minmax(0,1fr)_120px_auto]" onSubmit={(event) => saveSettings(event, exam)}>
                   <Input
+                    id={`exam-title-${exam.id}`}
+                    name="title"
                     value={settings[exam.id]?.title ?? exam.title}
                     onChange={(event) =>
                       setSettings((current) => ({
@@ -161,6 +177,8 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                     aria-label={`Sửa tiêu đề ${exam.title}`}
                   />
                   <Input
+                    id={`exam-duration-${exam.id}`}
+                    name="durationMinutes"
                     type="number"
                     min={1}
                     max={300}
@@ -177,11 +195,13 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                     }
                     aria-label={`Sửa thời gian ${exam.title}`}
                   />
-                  <Button type="button" variant="secondary" size="sm" disabled={pendingId === exam.id} onClick={() => saveSettings(exam)}>
+                  <Button type="submit" variant="secondary" size="sm" disabled={pendingId === exam.id}>
                     <Save className="size-4" />
                     Lưu
                   </Button>
                   <Textarea
+                    id={`exam-description-${exam.id}`}
+                    name="description"
                     className="md:col-span-3"
                     rows={3}
                     value={settings[exam.id]?.description ?? exam.description ?? ""}
@@ -198,7 +218,7 @@ export function GiupCyAdminDashboard({ exams }: Props) {
                     aria-label={`Sửa mô tả ${exam.title}`}
                     placeholder="Mô tả hiển thị ở màn chờ trước khi làm bài"
                   />
-                </div>
+                </form>
               </div>
               <div className="flex flex-wrap gap-2">
                 <Button type="button" variant="secondary" size="sm" onClick={() => copyLink(exam.slug)}>

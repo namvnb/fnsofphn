@@ -10,6 +10,7 @@ import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { hasSupabaseEnv } from "@/lib/supabase/env";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 type ActionResult = {
@@ -311,6 +312,41 @@ export async function updateQuestionAnswer(input: unknown): Promise<ActionResult
 export async function submitExamAttempt(input: unknown): Promise<ActionResult> {
   const parsed = submitAttemptSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: "Bài nộp chưa hợp lệ." };
+
+  if (!hasSupabaseEnv()) {
+    const slug = parsed.data.examId.replace(/^sample-/, "");
+    const sampleExam = sampleGiupCyExams.find((exam) => exam.slugSuffix === slug);
+    if (!sampleExam) return { ok: false, message: "Khong tim thay de mau local." };
+
+    const now = new Date(0).toISOString();
+    const questions = sampleExam.questions.map((question) => ({
+      id: `sample-${sampleExam.slugSuffix}-q-${question.question_number}`,
+      exam_id: `sample-${sampleExam.slugSuffix}`,
+      section: question.section,
+      question_number: question.question_number,
+      question_type: question.question_type,
+      prompt: question.prompt,
+      options: question.options,
+      correct_answer: question.correct_answer,
+      points: question.points,
+      explanation: question.explanation ?? null,
+      needs_review: question.needs_review ?? false,
+      sort_order: question.sort_order,
+      created_at: now,
+      updated_at: now
+    })) as GiupCyExamQuestionRow[];
+    const grading = gradeAttempt(questions, parsed.data.answers as Record<string, Json>);
+
+    return {
+      ok: true,
+      message: "Da nop bai local. Ket qua khong luu vao database vi thieu Supabase.",
+      score: grading.score,
+      maxScore: grading.maxScore,
+      correctCount: grading.correctCount,
+      gradedCount: grading.gradedCount,
+      totalCount: grading.totalCount
+    };
+  }
 
   const supabase = await createClient();
   const { data: exam, error: examError } = await supabase

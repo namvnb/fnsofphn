@@ -10,6 +10,9 @@ export type AuthUser = {
 
 export async function getAuthenticatedUser(): Promise<AuthUser | null> {
   if (!hasSupabaseEnv()) {
+    if (process.env.NODE_ENV !== "production") {
+      return { id: "local-dev-user", email: "local-dev@example.com" };
+    }
     return null;
   }
 

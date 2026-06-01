@@ -45,3 +45,4 @@ tsconfig.tsbuildinfo
 .temp
 
 .vercel
+.env*.local

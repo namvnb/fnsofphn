@@ -1,6 +1,7 @@
 import type { Json } from "@/types/database";
 import week2ExamData from "./week-2-exams.json";
 import week3ExamData from "./week-3-exams.json";
+import week4ExamData from "./week-4-exams.json";
 
 export type SampleQuestion = {
   section: string;
@@ -444,6 +445,7 @@ const hungYenQuestions: SampleQuestion[] = [
 ];
 const week2Exams = week2ExamData as SampleExam[];
 const week3Exams = week3ExamData as SampleExam[];
+const week4Exams = week4ExamData as SampleExam[];
 
 export const sampleGiupCyExams: SampleExam[] = [
   {
@@ -469,5 +471,6 @@ export const sampleGiupCyExams: SampleExam[] = [
     questions: camPhaQuestions
   },
   ...week2Exams,
-  ...week3Exams
+  ...week3Exams,
+  ...week4Exams
 ];

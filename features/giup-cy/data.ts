@@ -1,12 +1,15 @@
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import week2ExamData from "@/features/giup-cy/week-2-exams.json";
 import week3ExamData from "@/features/giup-cy/week-3-exams.json";
+import week4ExamData from "@/features/giup-cy/week-4-exams.json";
 import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import { gradeAttempt } from "@/features/giup-cy/grading";
+import { sampleGiupCyExams, type SampleExam, type SampleQuestion } from "@/features/giup-cy/sample-exams";
 import { GIUP_CY_OWNER_EMAIL, GIUP_CY_OWNER_USER_ID, isGiupCySharedManagerEmail } from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { hasSupabaseEnv } from "@/lib/supabase/env";
 import type { GiupCyExamAttemptRow, GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
 
 export type ExamWithStats = GiupCyExamRow & {
@@ -87,11 +90,69 @@ type ImportedExam = {
   questions: ImportedQuestion[];
 };
 
-const importedExams = [...(week2ExamData as ImportedExam[]), ...(week3ExamData as ImportedExam[])];
+const importedExams = [...(week2ExamData as ImportedExam[]), ...(week3ExamData as ImportedExam[]), ...(week4ExamData as ImportedExam[])];
 const defaultImportedDescriptions = [
   "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.",
   "Đề tuần 3 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai."
 ];
+
+function sampleExamId(sample: Pick<SampleExam, "slugSuffix">) {
+  return `sample-${sample.slugSuffix}`;
+}
+
+function sampleQuestionId(sample: Pick<SampleExam, "slugSuffix">, question: Pick<SampleQuestion, "question_number">) {
+  return `${sampleExamId(sample)}-q-${question.question_number}`;
+}
+
+function sampleToExamRow(sample: SampleExam): GiupCyExamRow {
+  const now = new Date(0).toISOString();
+  return {
+    id: sampleExamId(sample),
+    user_id: "local-dev-user",
+    created_at: now,
+    updated_at: now,
+    title: sample.title,
+    description: sample.description,
+    subject: sample.subject,
+    duration_minutes: sample.duration_minutes,
+    slug: sample.slugSuffix,
+    source_file_name: sample.source_file_name,
+    is_active: sample.is_active
+  };
+}
+
+function sampleToQuestionRows(sample: SampleExam, includeAnswerKeys = true): GiupCyExamQuestionRow[] {
+  const now = new Date(0).toISOString();
+  return sample.questions.map((question) => ({
+    id: sampleQuestionId(sample, question),
+    exam_id: sampleExamId(sample),
+    section: question.section,
+    question_number: question.question_number,
+    question_type: question.question_type,
+    prompt: question.prompt,
+    options: question.options,
+    correct_answer: includeAnswerKeys ? question.correct_answer : null,
+    points: question.points,
+    explanation: includeAnswerKeys ? (question.explanation ?? null) : null,
+    needs_review: includeAnswerKeys ? (question.needs_review ?? false) : true,
+    sort_order: question.sort_order,
+    created_at: now,
+    updated_at: now
+  }));
+}
+
+function getSampleExamBySlug(slug: string) {
+  const normalizedSlug = slug.toLowerCase();
+  return sampleGiupCyExams.find((sample) => sample.slugSuffix.toLowerCase() === normalizedSlug) ?? null;
+}
+
+function getLocalSampleExamStats(): ExamWithStats[] {
+  return sampleGiupCyExams.map((sample) => ({
+    ...sampleToExamRow(sample),
+    questionCount: sample.questions.length,
+    attemptCount: 0
+  }));
+}
 
 function getImportedExamPatch(exam: Pick<GiupCyExamRow, "slug" | "source_file_name">) {
   const slug = exam.slug.toLowerCase();
@@ -108,7 +169,7 @@ function normalizeExam(exam: GiupCyExamRow): GiupCyExamRow {
   if (!importedExam) return exam;
   const currentDescription = (exam.description ?? "").trim();
   const shouldPatchDescription =
-    !currentDescription ||
+    exam.description == null ||
     defaultImportedDescriptions.includes(currentDescription) ||
     currentDescription.includes("Bản dữ liệu 2026-05-17") ||
     currentDescription.includes("ảnh trích từ nguồn Word");
@@ -189,6 +250,10 @@ function normalizeExamAttempts(questions: GiupCyExamQuestionRow[], attempts: Giu
 }
 
 export async function getAdminExams(user: AuthUser) {
+  if (!hasSupabaseEnv()) {
+    return getLocalSampleExamStats();
+  }
+
   try {
     const { ownerUser, supabase } = await getGiupCyWorkspace(user);
     const { data: exams, error } = await supabase
@@ -232,6 +297,16 @@ export async function getAdminExams(user: AuthUser) {
 }
 
 export async function getAdminExamDetail(user: AuthUser, examId: string) {
+  if (!hasSupabaseEnv()) {
+    const sample = sampleGiupCyExams.find((item) => sampleExamId(item) === examId);
+    if (!sample) return null;
+    return {
+      exam: sampleToExamRow(sample),
+      questions: sampleToQuestionRows(sample),
+      attempts: []
+    };
+  }
+
   const { ownerUser, supabase } = await getGiupCyWorkspace(user);
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")
@@ -261,6 +336,10 @@ export async function getAdminExamDetail(user: AuthUser, examId: string) {
 }
 
 export async function getPublicActiveExams() {
+  if (!hasSupabaseEnv()) {
+    return getLocalSampleExamStats().filter((exam) => exam.is_active);
+  }
+
   const fetchExams = async (useAdmin: boolean) => {
     const supabase = useAdmin ? createAdminClient() : await createClient();
     let query = supabase.from("giup_cy_exams").select("*").order("created_at", { ascending: false });
@@ -306,6 +385,16 @@ export async function getPublicActiveExams() {
 }
 
 export async function getPublicExamResults(examId: string) {
+  if (!hasSupabaseEnv()) {
+    const sample = sampleGiupCyExams.find((item) => sampleExamId(item) === examId);
+    if (!sample) return null;
+    return {
+      exam: sampleToExamRow(sample),
+      questions: sampleToQuestionRows(sample),
+      attempts: []
+    };
+  }
+
   const supabase = createAdminClient();
   const [{ data: exam, error: examError }, { data: questions, error: questionError }, { data: attempts, error: attemptError }] = await Promise.all([
     supabase.from("giup_cy_exams").select("*").eq("id", examId).maybeSingle(),
@@ -328,6 +417,15 @@ export async function getPublicExamResults(examId: string) {
 }
 
 export async function getPublicExam(slug: string) {
+  if (!hasSupabaseEnv()) {
+    const sample = getSampleExamBySlug(slug);
+    if (!sample || !sample.is_active) return null;
+    return {
+      exam: sampleToExamRow(sample),
+      questions: stripAnswerKeys(sampleToQuestionRows(sample, false))
+    };
+  }
+
   const supabase = await createClient();
   const { data: exam, error: examError } = await supabase
     .from("giup_cy_exams")

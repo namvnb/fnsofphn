@@ -2,6 +2,7 @@ import { AppShell } from "@/components/shared/app-shell";
 import { getHiddenNavItems, isGiupCyOnlyEmail } from "@/lib/auth/access";
 import { ensureUserBootstrap } from "@/lib/auth/bootstrap";
 import { requireUser } from "@/lib/auth/guards";
+import { hasSupabaseEnv } from "@/lib/supabase/env";
 import { createClient } from "@/lib/supabase/server";
 import type { QuickNoteRow } from "@/types/database";
 
@@ -11,6 +12,14 @@ export default async function ProtectedAppLayout({ children }: { children: React
   const user = await requireUser();
   const giupCyOnly = isGiupCyOnlyEmail(user.email);
   const hiddenNavItems = getHiddenNavItems(user.email);
+
+  if (!hasSupabaseEnv()) {
+    return (
+      <AppShell profile={{ full_name: "Local dev", email: user.email }} quickNotes={[]} giupCyOnly={true} hiddenNavItems={hiddenNavItems}>
+        {children}
+      </AppShell>
+    );
+  }
 
   if (!giupCyOnly) {
     await ensureUserBootstrap(user);

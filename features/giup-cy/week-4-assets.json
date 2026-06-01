@@ -1,0 +1,122 @@
+{
+  "ha-tinh": {
+    "slug": "ha-tinh",
+    "sourceFileName": "HÀ_TĨNH.docx",
+    "questionAssets": {
+      "4": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q4-rId5.jpeg?v=week-4-20260601",
+          "width": 958,
+          "height": 203
+        }
+      ],
+      "6": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q6-rId7.png?v=week-4-20260601",
+          "width": 25,
+          "height": 14
+        }
+      ],
+      "19": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q19-rId11.png?v=week-4-20260601",
+          "width": 630,
+          "height": 354
+        }
+      ],
+      "20": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q20-rId14.jpeg?v=week-4-20260601",
+          "width": 508,
+          "height": 271
+        }
+      ],
+      "21": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q21-rId15.jpeg?v=week-4-20260601",
+          "width": 916,
+          "height": 190
+        }
+      ],
+      "22": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q22-rId17.jpeg?v=week-4-20260601",
+          "width": 976,
+          "height": 233
+        }
+      ],
+      "23": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q23-rId7.png?v=week-4-20260601",
+          "width": 25,
+          "height": 14
+        }
+      ],
+      "28": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q28-rId21.png?v=week-4-20260601",
+          "width": 26,
+          "height": 14
+        },
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q28-rId7.png?v=week-4-20260601",
+          "width": 25,
+          "height": 14
+        },
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/ha-tinh/media/q28-rId21.png?v=week-4-20260601",
+          "width": 26,
+          "height": 14
+        }
+      ]
+    }
+  },
+  "luong-the-vinh-lan-1-ha-noi": {
+    "slug": "luong-the-vinh-lan-1-ha-noi",
+    "sourceFileName": "LƯƠNG_THẾ_VINH_LẦN_1_HÀ_NỘI.docx",
+    "questionAssets": {
+      "20": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/luong-the-vinh-lan-1-ha-noi/media/q20-rId10.jpeg?v=week-4-20260601",
+          "width": 990,
+          "height": 303
+        }
+      ],
+      "26": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/luong-the-vinh-lan-1-ha-noi/media/q26-rId13.jpeg?v=week-4-20260601",
+          "width": 933,
+          "height": 227
+        }
+      ],
+      "27": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/luong-the-vinh-lan-1-ha-noi/media/q27-rId14.jpeg?v=week-4-20260601",
+          "width": 295,
+          "height": 235
+        }
+      ],
+      "28": [
+        {
+          "pageNumber": 1,
+          "url": "/exam-assets/week-4/luong-the-vinh-lan-1-ha-noi/media/q28-rId17.png?v=week-4-20260601",
+          "width": 130,
+          "height": 36
+        }
+      ]
+    }
+  }
+}
