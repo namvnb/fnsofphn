@@ -994,7 +994,7 @@
         "section": "Phần I",
         "question_number": 10,
         "question_type": "single_choice",
-        "prompt": "Cho các phản ứng sau: CuO + H2 → Cu + H2O 2CuSO4 + 2H2O → 2Cu + O2 + 2H2SO4 Fe + CuSO4 → FeSO4 + Cu 2Al + Cr2O3 → Al2O3 + 2Cr Số phản ứng dùng để điều chế kim loại bằng phương pháp nhiệt luyện là",
+        "prompt": "Cho các phản ứng sau:\nCuO + H2 → Cu + H2O\n2CuSO4 + 2H2O → 2Cu + O2 + 2H2SO4\nFe + CuSO4 → FeSO4 + Cu\n2Al + Cr2O3 → Al2O3 + 2Cr\nSố phản ứng dùng để điều chế kim loại bằng phương pháp nhiệt luyện là",
         "options": [
           {
             "key": "A",
