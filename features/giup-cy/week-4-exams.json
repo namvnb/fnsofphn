@@ -820,7 +820,7 @@
         "section": "Phần I",
         "question_number": 4,
         "question_type": "single_choice",
-        "prompt": "Cho một pin Galvani được tạo thành bởi hai điện cực: copper (Cu) trong dung dịch copper(II) sulfate (CuSO4) 1,0 M và lead (Pb) trong dung dịch lead(II) nitrate (Pb(NO3)2) 1,0 M. Biết sức điện động của pin (E°) là 0,47 V và thế điện cực chuẩn của cặp Cu2+/Cu là +0,34 V. Giá trị thế điện cực chuẩn của cặp Pb2+/Pb là:",
+        "prompt": "Cho một pin Galvani được tạo thành bởi hai điện cực:\ncopper (Cu) trong dung dịch copper(II) sulfate (CuSO4) 1,0 M và lead (Pb) trong dung dịch lead(II) nitrate (Pb(NO3)2) 1,0 M.\nBiết sức điện động của pin (E°) là 0,47 V và thế điện cực chuẩn của cặp Cu2+/Cu là +0,34 V.\nGiá trị thế điện cực chuẩn của cặp Pb2+/Pb là:",
         "options": [
           {
             "key": "A",
@@ -1197,7 +1197,7 @@
         "section": "Phần I",
         "question_number": 17,
         "question_type": "single_choice",
-        "prompt": "Ô nhiễm môi trường do chất dẻo và rác thải nhựa đang là vấn đề được quan tâm. Cho các phát biểu sau: Các loại nhựa được tạo ra từ chất dẻo khi thải ra môi trường mất nhiều thời gian để phân hủy. Rác thải nhựa sau thu gom nên đốt hoặc chôn lấp để giảm thiểu lượng rác thải. Sử dụng vật liệu phân hủy sinh học để thay thế một số loại chất dẻo. Nên phân loại rác thải tại các nguồn để đưa ra cách xử lí. Số phát biểu đúng là",
+        "prompt": "Ô nhiễm môi trường do chất dẻo và rác thải nhựa đang là vấn đề được quan tâm. Cho các phát biểu sau:\n(1) Các loại nhựa được tạo ra từ chất dẻo khi thải ra môi trường mất nhiều thời gian để phân hủy.\n(2) Rác thải nhựa sau thu gom nên đốt hoặc chôn lấp để giảm thiểu lượng rác thải.\n(3) Sử dụng vật liệu phân hủy sinh học để thay thế một số loại chất dẻo.\n(4) Nên phân loại rác thải tại các nguồn để đưa ra cách xử lí.\nSố phát biểu đúng là",
         "options": [
           {
             "key": "A",
