@@ -1,7 +1,7 @@
 [
   {
     "title": "01.06.01",
-    "description": "Đề tuần 4 được nhập từ file Word gốc. Câu hỏi và hình ảnh được giữ theo nguồn; đáp án để rà soát trước khi bật chấm tự động.",
+    "description": "Đề tuần 4 được nhập từ file Word gốc; câu hỏi, hình ảnh và đáp án đã được đối chiếu.",
     "subject": "Hóa học",
     "duration_minutes": 50,
     "slugSuffix": "ha-tinh-week-4",
@@ -31,10 +31,10 @@
             "text": "Na2CO3."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 1
       },
       {
@@ -60,10 +60,10 @@
             "text": "Sắc kí cột."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 2
       },
       {
@@ -89,10 +89,10 @@
             "text": "tạo dung dịch màu tím."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 3
       },
       {
@@ -118,10 +118,10 @@
             "text": "Giai đoạn 2, phần tử mang điện dương kết hợp với anion Br– tạo thành sản phẩm."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 4
       },
       {
@@ -147,10 +147,10 @@
             "text": "acetic acid."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 5
       },
       {
@@ -176,10 +176,10 @@
             "text": "phương pháp nhiệt luyện."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 6
       },
       {
@@ -205,10 +205,10 @@
             "text": "HOCH2COOH."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 7
       },
       {
@@ -234,10 +234,10 @@
             "text": "Tính dẻo."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 8
       },
       {
@@ -263,10 +263,10 @@
             "text": "Xà phòng dễ bị các vi sinh vật phân hủy nên thân thiện với môi trường."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 9
       },
       {
@@ -292,10 +292,10 @@
             "text": "4."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 10
       },
       {
@@ -321,10 +321,10 @@
             "text": "Pin Galvani."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 11
       },
       {
@@ -350,10 +350,10 @@
             "text": "Aniline."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 12
       },
       {
@@ -379,10 +379,10 @@
             "text": "1."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 13
       },
       {
@@ -408,10 +408,10 @@
             "text": "xà phòng hóa."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 14
       },
       {
@@ -437,10 +437,10 @@
             "text": "CH2=CH-C6H5."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 15
       },
       {
@@ -466,10 +466,10 @@
             "text": "Phân tử cellulose gồm nhiều gốc β-glucose liên kết với nhau tạo thành chuỗi không có nhánh."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 16
       },
       {
@@ -495,10 +495,10 @@
             "text": "Có thể sử dụng Na2CO3, Na3PO4 để làm mềm nước cứng vĩnh cửu."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 17
       },
       {
@@ -524,10 +524,10 @@
             "text": "4"
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 18
       },
       {
@@ -553,10 +553,15 @@
             "text": "Ngoài ethanol, trong quá trình lên men có thể sinh ra sản phẩm phụ tùy theo điều kiện của quá trình lên men."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": false,
+          "c": false,
+          "d": true
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 19
       },
       {
@@ -582,10 +587,15 @@
             "text": "Nếu ở ống Q thu được 50 mL khí thì ống P sẽ thu được 100 mL khí (trong cùng điều kiện nhiệt độ, áp suất)."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": false,
+          "c": false,
+          "d": true
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 20
       },
       {
@@ -611,10 +621,15 @@
             "text": "Quy trình sản xuất theo sơ đồ trên không gây tiêu tốn NH3 và CO2 (bỏ qua sự thất thoát ra môi trường)."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": false,
+          "b": true,
+          "c": true,
+          "d": false
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 21
       },
       {
@@ -640,22 +655,27 @@
             "text": "Một loại chỉ khâu có chứa 95% về khối lượng là tơ capron. Để sản xuất được 100 cuộn chỉ khâu cùng loại, mỗi cuộn chỉ có khối lượng 500 gam (chỉ gồm chỉ khâu) thì cần 47,5 kg caprolactam với hiệu suất toàn bộ quá trình là 90%. (Làm tròn đến hàng phần mười)"
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": false,
+          "b": true,
+          "c": true,
+          "d": false
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 22
       },
       {
         "section": "Phần III",
         "question_number": 23,
         "question_type": "short_answer",
-        "prompt": "Một nhà máy chuyên sản xuất thép (chứa 1% C theo khối lượng) với công nghệ lò luyện thép Martin. Sơ đồ phản ứng luyện thép trong lò là:\nFexOy + C → Fe + CO2\nNguyên liệu nhà máy trên sử dụng để luyện thép gồm sắt phế liệu (chứa 50% Fe3O4; 49% Fe; 1% C theo khối lượng) và gang (chứa 4% khối lượng C, còn lại là Fe). Một mẻ luyện thép cần 5 tấn gang và m tấn sắt phế liệu (hiệu suất của quá trình là 100%). Tính giá trị m. (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị)",
+        "prompt": "Một nhà máy chuyên sản xuất thép (chứa 1% C theo khối lượng) với công nghệ lò luyện thép Martin. Sơ đồ phản ứng luyện thép trong lò là:\nFeₓOᵧ + C → Fe + CO₂\nNguyên liệu nhà máy trên sử dụng để luyện thép gồm sắt phế liệu (chứa 50% Fe₃O₄; 49% Fe; 1% C theo khối lượng) và gang (chứa 4% khối lượng C, còn lại là Fe). Một mẻ luyện thép cần 5 tấn gang và m tấn sắt phế liệu (hiệu suất của quá trình là 100%). Tính giá trị m. (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị)",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "3",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 23
       },
       {
@@ -664,22 +684,22 @@
         "question_type": "short_answer",
         "prompt": "Cho các chất: methylamine, glycine, aniline, acetic acid, glutamic acid. Có bao nhiêu chất phản ứng với dung dịch HCl tạo muối?",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "4",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 24
       },
       {
         "section": "Phần III",
         "question_number": 25,
         "question_type": "short_answer",
-        "prompt": "Khi thực hiện phản ứng ester hóa 1 mol CH3COOH và 1 mol C2H5OH, lượng ester lớn nhất thu được là 2 mol. Để đạt hiệu suất cực đại là 90% (tính theo acid), khi tiến hành ester hóa 1/3 mol CH3COOH cần số mol C2H5OH là bao nhiêu? (Biết các phản ứng ester hóa thực hiện ở cùng nhiệt độ). (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm).",
+        "prompt": "Khi thực hiện phản ứng ester hóa 1 mol CH₃COOH và 1 mol C₂H₅OH, lượng ester lớn nhất thu được là 2/3 mol. Để đạt hiệu suất cực đại là 90% (tính theo acid), khi tiến hành ester hóa 1 mol CH₃COOH cần số mol C₂H₅OH là bao nhiêu? (Biết các phản ứng ester hóa thực hiện ở cùng nhiệt độ). (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "2,93",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 25
       },
       {
@@ -688,10 +708,10 @@
         "question_type": "short_answer",
         "prompt": "Cho dãy các kim loại: Mg, Zn, Fe, Na, K, Ca. Có bao nhiêu kim loại trong dãy tác dụng được với nước ở nhiệt độ thường tạo dung dịch base mạnh?",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "3",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 26
       },
       {
@@ -700,10 +720,10 @@
         "question_type": "short_answer",
         "prompt": "Cho các phát biểu sau:\n(1) Aniline là amine bậc 1.\n(2) Hợp chất (CH3)2NH có tên thay thế là dimethylamine.\n(3) Nhúng giấy quỳ tím vào dung dịch methylamine thấy quỳ tím chuyển màu xanh.\n(4) Ethylamine tan tốt trong nước do phân tử tạo được liên kết hydrogen với nước.\n(5) Dung dịch methylamine có thể hòa tan được Cu(OH)2 tạo dung dịch màu tím đặc trưng.\n(6) Trong phản ứng methylamine với HNO2 thì methylamine thể hiện tính base.\nSắp xếp các phát biểu đúng theo thứ tự tăng dần (ví dụ: 123, 1235...).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "3",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 27
       },
       {
@@ -712,17 +732,17 @@
         "question_type": "short_answer",
         "prompt": "Sản phẩm của quá trình nung vôi có nhiều ứng dụng trong thực tế, CaO sinh ra được sử dụng trong công nghiệp luyện kim và làm nguyên liệu cho công nghiệp hóa học, được dùng để khử chua đất trồng trọt, xử lí nước thải công nghiệp, khử độc môi trường. Còn CO2 được dùng sản xuất CO2 lỏng phục vụ cho nhu cầu công nghiệp và dân sinh. Quá trình nung vôi xảy ra theo phương trình hóa học (1) như sau:\nCaCO3(s) → CaO(s) + CO2(g) (1)\nPhản ứng (1) là phản ứng thu nhiệt mạnh. Lượng nhiệt này được cung cấp từ quá trình đốt cháy hoàn toàn khí thiên nhiên hóa lỏng (chứa 96% methane, 4% ethane về thể tích) theo phương trình hóa học (2) và (3):\nCH4(g) + 2O2(g) → CO2(g) + 2H2O(g) (2)\nC2H6(g) + 3,5O2(g) → 2CO2(g) + 3H2O(g) (3)\nXét các phản ứng ở điều kiện chuẩn và hiệu suất chuyển hóa của CaCO3 là 100%. Khối lượng khí thiên nhiên hóa lỏng là m tấn cần thiết để sản xuất 560 tấn CaO(s) trong giai đoạn trên. Biết 92% tổng lượng nhiệt tỏa ra từ phản ứng (2), (3) được cung cấp cho phản ứng (1) và các giá trị nhiệt tạo thành (∆fH°298) của các chất, năng lượng liên kết trung bình của một số liên kết hóa học ở điều kiện chuẩn được cho trong bảng sau:\n| Chất | CaCO3(s) | CaO(s) | CO2(g) |\n| ∆fH°298 (kJ/mol) | -1207,6 | -634,9 | -393,5 |\n| Liên kết | C-H | C-C | O=O | C=O (CO2) | O-H |\n| Eb (kJ/mol) | 414 | 347 | 498 | 799 | 464 |\nGiá trị của m (theo tấn) là bao nhiêu? (Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "39",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 28
       }
     ]
   },
   {
     "title": "01.06.02",
-    "description": "Đề tuần 4 được nhập từ file Word gốc. Câu hỏi và hình ảnh được giữ theo nguồn; đáp án để rà soát trước khi bật chấm tự động.",
+    "description": "Đề tuần 4 được nhập từ file Word gốc; câu hỏi, hình ảnh và đáp án đã được đối chiếu.",
     "subject": "Hóa học",
     "duration_minutes": 50,
     "slugSuffix": "luong-the-vinh-lan-1-ha-noi-week-4",
@@ -752,10 +772,10 @@
             "text": "3."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 1
       },
       {
@@ -781,10 +801,10 @@
             "text": "2H⁺/H2."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 2
       },
       {
@@ -810,10 +830,10 @@
             "text": "Có thể dùng dung dịch HCl để rửa sạch ống nghiệm có dính aniline."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 3
       },
       {
@@ -839,10 +859,10 @@
             "text": "0,13V."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 4
       },
       {
@@ -868,10 +888,10 @@
             "text": "H2."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 5
       },
       {
@@ -897,10 +917,10 @@
             "text": "HCl."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 6
       },
       {
@@ -926,10 +946,10 @@
             "text": "(2), (3) và (4)."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 7
       },
       {
@@ -955,10 +975,10 @@
             "text": "CH2=CHCOOCH3."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 8
       },
       {
@@ -984,10 +1004,10 @@
             "text": "103,1 gam."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 9
       },
       {
@@ -1013,10 +1033,10 @@
             "text": "4."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 10
       },
       {
@@ -1042,10 +1062,10 @@
             "text": "CH2=CH2."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 11
       },
       {
@@ -1071,10 +1091,10 @@
             "text": "cung cấp năng lượng cho quá trình sinh hoá tế bào."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 12
       },
       {
@@ -1100,10 +1120,10 @@
             "text": "X."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "C",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 13
       },
       {
@@ -1129,10 +1149,10 @@
             "text": "Glucose."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 14
       },
       {
@@ -1158,10 +1178,10 @@
             "text": "benzenamine."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 15
       },
       {
@@ -1187,10 +1207,10 @@
             "text": "1076."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "D",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 16
       },
       {
@@ -1216,10 +1236,10 @@
             "text": "2."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "A",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 17
       },
       {
@@ -1245,10 +1265,10 @@
             "text": "H3N+CH2COOHCl-, H3N+CH2CH2COOHCl-."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": "B",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 18
       },
       {
@@ -1274,10 +1294,15 @@
             "text": "Khi PVC bị cháy thì không có khói đen, khí thoát ra không gây độc hại."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": false,
+          "c": true,
+          "d": false
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 19
       },
       {
@@ -1303,10 +1328,15 @@
             "text": "Khi điện phân xảy ra ở sơ đồ (1), thì ban đầu ở cực âm xảy ra quá trình oxi hóa Cu và ở cực dương xảy ra quá trình khử H2O."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": false,
+          "c": true,
+          "d": false
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 20
       },
       {
@@ -1332,10 +1362,15 @@
             "text": "Acid béo có gốc kí hiệu (2) thuộc loại acid béo omega-3."
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": true,
+          "c": true,
+          "d": false
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 21
       },
       {
@@ -1361,10 +1396,15 @@
             "text": "Để điều chế 1 tấn melamine (hiệu suất cả quá trình là 40%) cần 7,143 tấn urea. (Làm tròn đến 3 chữ số sau dấu phẩy)"
           }
         ],
-        "correct_answer": null,
+        "correct_answer": {
+          "a": true,
+          "b": true,
+          "c": false,
+          "d": true
+        },
         "points": 1,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 22
       },
       {
@@ -1373,10 +1413,10 @@
         "question_type": "short_answer",
         "prompt": "Để tráng 150 chiếc gương soi có diện tích bề mặt 0,4 m² với độ dày 0,2 μm, người ta cho m gam glucose thực hiện phản ứng với lượng dư dung dịch silver nitrate trong ammonia. Biết khối lượng riêng của silver là 10,49 g/cm³ và hiệu suất của quá trình là 65%. Tính m. (làm tròn đến hàng đơn vị).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "161",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 23
       },
       {
@@ -1385,22 +1425,22 @@
         "question_type": "short_answer",
         "prompt": "Cho m gam bột Zn vào 500 mL dung dịch Fe2(SO4)3 0,24 M. Sau khi các phản ứng xảy ra hoàn toàn, khối lượng dung dịch tăng thêm 8,88 gam so với khối lượng dung dịch ban đầu. Tính giá trị của m.",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "20,8",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 24
       },
       {
         "section": "Phần III",
         "question_number": 25,
         "question_type": "short_answer",
-        "prompt": "Một học sinh tiến hành thí nghiệm điều chế ester bằng cách đun hỗn hợp gồm acetic acid với một alcohol (ROH) sử dụng sulfuric acid đặc làm xúc tác.\nCH3COOH + ROH ⇌ CH3COOR + H2O\nSau thí nghiệm, phân tách sản phẩm và tiến hành đo phổ khối lượng (MS) của ester vừa thu được. Kết quả phân tích phổ MS cho thấy ester này có phân tử khối là 88. Số nguyên tử hydrogen có trong phân tử alcohol trên là bao nhiêu?",
+        "prompt": "Một học sinh tiến hành thí nghiệm điều chế ester bằng cách đun hỗn hợp gồm acetic acid với một alcohol (ROH) sử dụng sulfuric acid đặc làm xúc tác.\nCH₃COOH + ROH ⇌ CH₃COOR + H₂O\nSau thí nghiệm, phân tách sản phẩm và tiến hành đo phổ khối lượng (MS) của ester vừa thu được. Kết quả phân tích phổ MS cho thấy ester này có phân tử khối là 88. Số nguyên tử hydrogen có trong phân tử alcohol trên là bao nhiêu?",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "8",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 25
       },
       {
@@ -1409,10 +1449,10 @@
         "question_type": "short_answer",
         "prompt": "Để xác định hàm lượng oxygen (O2) tan trong nước, người ta lấy 100,0 mL nước rồi cho ngay manganese sulphate (MnSO4, dư) và sodium hydroxide (NaOH) vào nước. Sau khi lắc kĩ (không cho tiếp xúc với không khí), manganese(II) hydroxide (Mn(OH)2) bị O2 oxi hóa thành manganese oxohydroxide (MnO(OH)2). Thêm acid (dư) và cho tiếp potassium iodide (KI, dư) vào hỗn hợp, thì ion iodine (I-) bị MnO(OH)2 oxi hóa thành iodine (I2). Lượng I2 sinh ra phản ứng vừa đủ với 10,5 mL dung dịch Na2S2O3 0,01 M (sodium thiosulphate). Biết các phản ứng xảy ra như sau:\nMn2+ + OH- → Mn(OH)2 (1)\nMn(OH)2 + O2 → MnO(OH)2 (2)\nMnO(OH)2 + I- + H+ → Mn2+ + I2 + H2O (3)\nI2 + Na2S2O3 → Na2S4O6 + NaI (4)\nHàm lượng O2 tan trong nước (tính theo mg O2/1 L) là a. Giá trị của a là bao nhiêu? (Làm tròn kết quả đến hàng phần mười).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "8,4",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 26
       },
       {
@@ -1421,10 +1461,10 @@
         "question_type": "short_answer",
         "prompt": "Một vết nứt trên đường ray tàu hỏa có thể tích 1,68 cm³. Dùng hỗn hợp tecmite (Al và Fe2O3 theo tỉ lệ mol tương ứng 3 : 1) để hàn vết nứt trên. Biết: lượng Fe cần hàn cho vết nứt bằng 78,5% lượng Fe sinh ra; khối lượng riêng của sắt là 7,85 gam/cm³; chỉ xảy ra phản ứng khử Fe2O3 thành Fe với hiệu suất của phản ứng bằng 80%. Khối lượng của hỗn hợp tecmite tối thiểu cần dùng là bao nhiêu gam? (Kết quả làm tròn đến 1 chữ số sau dấu phẩy).",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "45,2",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 27
       },
       {
@@ -1433,10 +1473,10 @@
         "question_type": "short_answer",
         "prompt": "Cho các phát biểu sau:\n(1) Polypropylene là một polymer có cấu trúc mạch phân nhánh.\n(2) Cao su sau khi lưu hóa có các tính chất vật lí tốt hơn cao su ban đầu.\n(3) Tơ nylon-6,6 kém bền trong môi trường kiềm mạnh.\n(4) Cao su buna-S thu được khi cho cao su buna tác dụng với sulfur.\n(5) Vật liệu cốt đảm bảo cho composite có được các đặc tính cơ học cần thiết.\nThứ tự tăng dần của các phát biểu đúng lần lượt là? (Ví dụ: 1234, 2345...)",
         "options": [],
-        "correct_answer": null,
+        "correct_answer": "235",
         "points": 0.25,
-        "needs_review": true,
-        "explanation": "Đề tuần 4 nhập từ Word; cần đối chiếu đáp án chính thức trước khi chấm tự động.",
+        "needs_review": false,
+        "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải trong file Word gốc.",
         "sort_order": 28
       }
     ]
