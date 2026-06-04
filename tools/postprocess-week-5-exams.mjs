@@ -88,6 +88,11 @@ function tfOptions(a, b, c, d) {
   ];
 }
 
+function setPrompt(exam, questionNumber, prompt) {
+  const question = exam.questions.find((item) => item.question_number === questionNumber);
+  if (question) question.prompt = prompt;
+}
+
 for (const exam of exams) {
   exam.description =
     "Đề tuần 5 được nhập từ file Word gốc; câu hỏi, hình ảnh và đáp án đã được đối chiếu.";
@@ -96,6 +101,59 @@ for (const exam of exams) {
   exam.is_active = true;
 
   if (exam.slugSuffix.includes("60-chuyen-khtn")) {
+    setPrompt(
+      exam,
+      25,
+      `Hợp chất KMnO₄ có thể được điều chế từ MnO₂ theo các bước sau:
+
+Bước 1: Đun nóng hỗn hợp gồm KClO₃, KOH và 30,20 gam MnO₂ trong chén nickel để thực hiện phản ứng:
+3MnO₂ + KClO₃ + 6KOH → 3K₂MnO₄ + KCl + 3H₂O (1)
+
+Bước 2: Để nguội hỗn hợp, cho nước vào chén nickel, khuấy đều, lọc lấy phần dung dịch. Tiếp đó, sục khí Cl₂ dư vào dung dịch nước lọc:
+2K₂MnO₄ + Cl₂ → 2KMnO₄ + 2KCl (2)
+
+Bước 3: Làm lạnh để sản phẩm kết tinh, lọc thu lấy tinh thể, sấy khô, thu được 49,95 gam sản phẩm X gồm KMnO₄ có lẫn một lượng nhỏ KCl.
+
+Để xác định hiệu suất tổng hợp và độ tinh khiết của sản phẩm KMnO₄ thu được ở trên, người ta hòa tan 1,6 gam X vào nước và định mức thành 50 mL dung dịch Y. Chuyển Y lên burette để thực hiện quá trình chuẩn độ 10,0 mL dung dịch H₂C₂O₄ 0,5M thì cần vừa đủ 10,0 mL dung dịch Y theo phản ứng:
+5H₂C₂O₄ + 2KMnO₄ + 3H₂SO₄ → 10CO₂ + K₂SO₄ + 2MnSO₄ + 8H₂O (3)
+
+Hiệu suất quá trình tổng hợp KMnO₄ và độ tinh khiết của KMnO₄ trong X lần lượt là x và y (x, y được làm tròn đến hàng đơn vị). Hãy tính tổng (x + y).
+
+(KCl nồng độ nhỏ coi như không có phản ứng với dung dịch KMnO₄/H₂SO₄).`
+    );
+
+    setPrompt(
+      exam,
+      26,
+      `Xăng RON₉₅ (chỉ số octane bằng 95) có khả năng chịu nén và chống kích nổ tương đương với hỗn hợp hơi xăng gồm 5% heptane (C₇H₁₆) và 95% iso-octane (C₈H₁₈) về thể tích. Năng suất tỏa nhiệt của một loại xăng RON₉₅ là a.10³ kJ/kg, giả thiết loại xăng này có tỉ lệ hơi xăng gồm 5% heptane và 95% iso-octane về thể tích.
+
+Biến thiên enthalpy hình thành chuẩn của các chất được cho ở bảng dưới đây:
+
+| Chất | C₇H₁₆(g) | C₈H₁₈(g) | CO₂(g) | H₂O(l) | O₂(g) |
+| ΔfH°₂₉₈ (kJ/mol) | -187,8 | -224,2 | -393,5 | -285,8 | 0,0 |
+
+Hãy tính giá trị của a. Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị.`
+    );
+
+    setPrompt(
+      exam,
+      27,
+      `Một nhà máy chuyên sản xuất thép (chứa 1% C theo khối lượng) với công nghệ lò luyện thép Martin. Sơ đồ phản ứng luyện thép trong lò là:
+FeₓOᵧ + C → Fe + CO₂
+
+Nguyên liệu nhà máy trên sử dụng để luyện thép gồm:
+- Sắt phế liệu: chứa 50% Fe₃O₄, 49% Fe, 1% C theo khối lượng.
+- Gang: chứa 5% khối lượng C, còn lại là Fe.
+
+Một mẻ luyện thép cần 4 tấn gang và m tấn sắt phế liệu (hiệu suất của quá trình là 100%). Tính giá trị m. Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần mười.`
+    );
+
+    setPrompt(
+      exam,
+      28,
+      "Cho m₁ gam dung dịch H₂SO₄ 91% hấp thụ hết m₂ gam SO₃ tạo thành một loại oleum (H₂SO₄.nSO₃) có chứa 50% khối lượng là SO₃. Tính tỉ lệ m₂/m₁. Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần mười."
+    );
+
     const q22 = exam.questions.find((item) => item.question_number === 22);
     if (q22) {
       q22.prompt =
@@ -110,6 +168,43 @@ for (const exam of exams) {
   }
 
   if (exam.slugSuffix.includes("70-chuyen-tran-phu")) {
+    setPrompt(
+      exam,
+      25,
+      `Tiến hành các thí nghiệm sau:
+
+(1) Sục khí CO₂ dư vào dung dịch Ca(OH)₂.
+(2) Cho dung dịch NaOH dư vào dung dịch Ba(HCO₃)₂.
+(3) Đun sôi một mẫu nước có tính cứng tạm thời.
+(4) Cho dung dịch KHSO₄ vào dung dịch Ba(OH)₂.
+
+Khi kết thúc phản ứng, số thí nghiệm thu được kết tủa là bao nhiêu?`
+    );
+
+    setPrompt(
+      exam,
+      27,
+      `Thuốc aspirin thuộc nhóm thuốc kháng viêm non-steroid có tác dụng giảm đau, hạ sốt. Thuốc aspirin được tổng hợp từ các nguyên liệu theo phương trình hóa học trong hình (hiệu suất phản ứng tính theo salicylic acid là 60%).
+
+Để sản xuất một lô thuốc aspirin gồm 10 triệu viên nén, mỗi viên nén chứa 81 mg aspirin, thì khối lượng salicylic acid cần dùng là bao nhiêu kg?`
+    );
+
+    setPrompt(
+      exam,
+      28,
+      `Một nhà máy luyện kim sản xuất zinc (Zn) từ 60 tấn quặng zinc blende (chứa 80% ZnS về khối lượng, còn lại là tạp chất không chứa zinc) với hiệu suất cả quá trình đạt 95%. Phương trình hóa học được cho như sau:
+
+2ZnS + 3O₂ → 2ZnO + 2SO₂
+ZnO + C → Zn + CO
+
+Toàn bộ lượng Zn tạo ra được đúc thành n thanh Zn hình hộp chữ nhật:
+- Chiều dài: 120 cm.
+- Chiều rộng: 25 cm.
+- Chiều cao: 15 cm.
+
+Biết khối lượng riêng của kẽm là 7,14 g/cm³, hãy xác định giá trị của n. Không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng đơn vị.`
+    );
+
     const q21 = exam.questions.find((item) => item.question_number === 21);
     if (q21) {
       q21.prompt =
