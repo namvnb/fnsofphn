@@ -109,6 +109,14 @@ for (const exam of exams) {
   if (exam.slugSuffix.includes("60-chuyen-khtn")) {
     setPrompt(
       exam,
+      19,
+      `Poly(ethylene terephthalate) (PET) là một polymer nhiệt dẻo phổ biến với nhiều ứng dụng nhờ vào tính chất trong suốt, nhẹ và độ bền cao. PET được tổng hợp theo phương trình hóa học sau:
+
+nHOCH₂CH₂OH + n(p-HOOC-C₆H₄-COOH) (xt, t°) → [-CH₂CH₂-OOC-C₆H₄-COO-]ₙ + 2nH₂O`
+    );
+
+    setPrompt(
+      exam,
       20,
       `Quặng vàng tồn tại trong tự nhiên thường có hàm lượng vàng thấp. Phương pháp tách vàng phù hợp hiện nay là phương pháp Cyanide. Theo phương pháp này, để thu hồi vàng từ quặng, người ta thường nghiền nhỏ quặng rồi hòa tan trong dung dịch KCN (potassium cyanide, rất độc) cùng với dòng không khí liên tục được thổi vào. Khi đó, vàng bị hòa tan tạo thành phức chất (các chất khác trong quặng không phản ứng với KCN):
 
@@ -271,7 +279,7 @@ Có bao nhiêu quá trình là quá trình reforming?`
     setPrompt(
       exam,
       19,
-      `Methyl salicylate là thành phần chính của các loại thuốc xoa bóp, dầu gió giúp giảm đau cơ và khớp. Hợp chất này được tổng hợp bằng cách đun hồi lưu hỗn hợp gồm salicylic acid và methyl alcohol với xúc tác H₂SO₄ đậm đặc theo phương trình hóa học sau.
+      `Methyl salicylate là thành phần chính của các loại thuốc xoa bóp, dầu gió giúp giảm đau cơ và khớp. Hợp chất này được tổng hợp bằng cách đun hồi lưu hỗn hợp gồm salicylic acid và methyl alcohol với xúc tác H₂SO₄ đậm đặc theo phương trình hóa học trong hình dưới đây.
 
 Sau khi kết thúc thí nghiệm, tiến hành tách và tinh chế sản phẩm. Phương pháp phổ hồng ngoại (IR) được sử dụng để kiểm tra cấu tạo của các hợp chất hữu cơ có trong hỗn hợp sau phản ứng. Bảng số liệu về số sóng hấp thụ đặc trưng (cm⁻¹) của một số liên kết trên phổ IR được như sau:
 
@@ -497,7 +505,7 @@ Lưu ý: Mỗi lần hiệu chuẩn hoặc đo đều phải rửa điện cực
     setPrompt(
       exam,
       27,
-      `Thuốc aspirin thuộc nhóm thuốc kháng viêm non-steroid có tác dụng giảm đau, hạ sốt. Thuốc aspirin được tổng hợp từ các nguyên liệu theo phương trình hóa học sau (hiệu suất phản ứng tính theo salicylic acid là 60%).
+      `Thuốc aspirin thuộc nhóm thuốc kháng viêm non-steroid có tác dụng giảm đau, hạ sốt. Thuốc aspirin được tổng hợp từ các nguyên liệu theo phương trình hóa học trong hình dưới đây (hiệu suất phản ứng tính theo salicylic acid là 60%).
 
 Để sản xuất một lô thuốc aspirin gồm 10 triệu viên nén, mỗi viên nén chứa 81 mg aspirin, thì khối lượng salicylic acid cần dùng là bao nhiêu kg?`
     );
