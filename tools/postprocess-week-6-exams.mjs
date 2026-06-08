@@ -144,11 +144,11 @@ function cleanChemistryText(text) {
     .replace(/\bH\s*2SO\s*4\b/g, "H₂SO₄")
     .replace(/\bMgCl\s*2\b/g, "MgCl₂")
     .replace(/\bKCl\.MgCl₂\s*\.\s*6H\s*2\s*O\b/g, "KCl.MgCl₂.6H₂O")
-    .replace(/\bC\s*6\s*H\s*12\s*O\s*6\b/g, "C₆H₁₂O₆")
-    .replace(/\bC\s*3\s*H\s*6\s*O\s*3\b/g, "C₃H₆O₃")
-    .replace(/\bC\s*2\s*H\s*5OH\b/g, "C₂H₅OH")
-    .replace(/\bC\s*2\s*H\s*4\s*O\s*3\b/g, "C₂H₄O₃")
-    .replace(/\bAl\s*2O\s*3\b/g, "Al₂O₃")
+    .replace(/C\s*6\s*H\s*12\s*O\s*6/g, "C₆H₁₂O₆")
+    .replace(/C\s*3\s*H\s*6\s*O\s*3/g, "C₃H₆O₃")
+    .replace(/C\s*2\s*H\s*5\s*OH/g, "C₂H₅OH")
+    .replace(/C\s*2\s*H\s*4\s*O\s*3/g, "C₂H₄O₃")
+    .replace(/\bAl\s*2\s*O\s*3\b/g, "Al₂O₃")
     .replace(/\bFe\s*3O\s*4\b/g, "Fe₃O₄")
     .replace(/\bFe\s*2O\s*3\b/g, "Fe₂O₃")
     .replace(/\bH\s*2O\b/g, "H₂O")
@@ -167,7 +167,17 @@ function cleanChemistryText(text) {
     .replace(/\bSO\s*4\b/g, "SO₄")
     .replace(/\bNO\s*3\b/g, "NO₃")
     .replace(/\bCH\s*3\b/g, "CH₃")
-    .replace(/\bCH\s*2\b/g, "CH₂");
+    .replace(/\bCH\s*2\b/g, "CH₂")
+    .replace(/Ca\(OH\)\s*2/g, "Ca(OH)₂")
+    .replace(/NO\s*a\b/g, "NOₐ")
+    .replace(/C\s*x\s*H\s*y\b/g, "CₓHᵧ")
+    .replace(/M\s+([XYZ])\b/g, "M_$1")
+    .replace(/Δ\s*H\s*o/g, "ΔH°")
+    .replace(/c\s+ác/g, "các")
+    .replace(/\b(\d+)\s*oC\b/g, "$1 °C")
+    .replace(/\boC\b/g, "°C")
+    .replace(/cm\s*[–-]\s*1/g, "cm⁻¹")
+    .replace(/\s+\)/g, ")");
 }
 
 function moveSharedAssets(assetEntry, fromQuestion, toQuestions) {
@@ -440,6 +450,24 @@ Gán số thứ tự của thí nghiệm trên tương ứng với các hiện t
 (5) Cho một dây bạc sạch vào ống nghiệm chứa 2 mL dung dịch CuSO₄ 0,2 M.
 
 Liệt kê theo thứ tự tăng dần số thí nghiệm xuất hiện ăn mòn điện hóa.`
+    );
+
+    setPrompt(
+      exam,
+      26,
+      `Phản ứng lên men lactic là quá trình chuyển hóa đường glucose thành lactic acid (C₃H₆O₃) nhờ vi khuẩn lactic trong điều kiện kỵ khí, thường gặp trong thực phẩm lên men và cơ bắp khi thiếu oxygen.
+
+Lên men lactic gồm hai dạng chính:
+
+Lên men lactic đồng hình:
+C₆H₁₂O₆(aq) → 2C₃H₆O₃(aq); ΔH° = -115 kJ
+
+Lên men lactic dị hình:
+C₆H₁₂O₆(aq) → C₃H₆O₃(aq) + C₂H₅OH(aq) + CO₂(g); ΔH° = -91,5 kJ
+
+Khi vận động mạnh cơ thể không đủ cung cấp oxygen, thì cơ thể sẽ chuyển hóa glucose thành lactic acid từ các tế bào để cung cấp năng lượng cho cơ thể. Biết rằng cơ thể chỉ cung cấp 98% năng lượng nhờ oxygen, năng lượng còn lại nhờ vào sự chuyển hóa glucose thành lactic acid. Giả sử một người chạy bộ trong một thời gian tiêu tốn 400 kcal và glucose lên men đồng hình và dị hình theo tỷ lệ mol 1 : 1.
+
+Tính khối lượng glucose tham gia vào quá trình chuyển hóa đó (biết 1 cal = 4,184 J). Kết quả làm tròn đến hàng phần mười.`
     );
 
     setPrompt(

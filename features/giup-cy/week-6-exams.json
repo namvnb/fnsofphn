@@ -534,7 +534,7 @@
         "section": "Phần II",
         "question_number": 19,
         "question_type": "true_false",
-        "prompt": "Áp dụng kiến thức về các yếu tố ảnh hưởng đến tốc độ phản ứng trong phần tổng hợp ester, một nhóm học sinh dự đoán: \"Nhiệt độ càng cao, hiệu suất ester hóa càng cao\". Để kiểm chứng, nhóm tiến hành phản ứng tổng hợp propyl acetate từ alcohol và acid tương ứng với nồng độ không đổi ở các nhiệt độ khác nhau:\n\nCH₃COOH + CH₃CH₂CH₂OH ⇌ CH₃COOCH₂CH₂CH₃ + H₂O (1)\n\nKết quả thu được:\nNhiệt độ (oC) | 60 | 65 | 70 | 75 | 80 | 85\nThể tích ester (mL) | 26,0 | 30,5 | 35,0 | 40,0 | 36,5 | 31,0\n\nĐộ tan trong 100 gam nước ở 25 oC:\nChất | CH₃COOH | CH₃CH₂CH₂OH | CH₃COOCH₂CH₂CH₃\nĐộ tan (gam) | Vô hạn | Vô hạn | 1,6",
+        "prompt": "Áp dụng kiến thức về các yếu tố ảnh hưởng đến tốc độ phản ứng trong phần tổng hợp ester, một nhóm học sinh dự đoán: \"Nhiệt độ càng cao, hiệu suất ester hóa càng cao\". Để kiểm chứng, nhóm tiến hành phản ứng tổng hợp propyl acetate từ alcohol và acid tương ứng với nồng độ không đổi ở các nhiệt độ khác nhau:\n\nCH₃COOH + CH₃CH₂CH₂OH ⇌ CH₃COOCH₂CH₂CH₃ + H₂O (1)\n\nKết quả thu được:\nNhiệt độ (°C) | 60 | 65 | 70 | 75 | 80 | 85\nThể tích ester (mL) | 26,0 | 30,5 | 35,0 | 40,0 | 36,5 | 31,0\n\nĐộ tan trong 100 gam nước ở 25 °C:\nChất | CH₃COOH | CH₃CH₂CH₂OH | CH₃COOCH₂CH₂CH₃\nĐộ tan (gam) | Vô hạn | Vô hạn | 1,6",
         "options": [
           {
             "key": "a",
@@ -592,11 +592,11 @@
         "section": "Phần II",
         "question_number": 21,
         "question_type": "true_false",
-        "prompt": "Khí thải động cơ xăng (hoặc dầu) ngoài thành phần là carbon dioxide và hơi nước, còn có thể có carbon monoxide, các oxide của nitrogen (NO a ) và hydrocarbon (C x H y ) chưa bị cháy hết. Để giảm bớt tác hại của khí thải với môi trường, bên cạnh việc tăng hiệu quả đốt cháy, người ta còn sử dụng bộ chuyển đổi xúc tác (đưa chất xúc tác vào ống xả của động cơ) giúp chuyển hóa c ác chất ô nhiễm, chất độc hại trong khí thải thành những chất ít gây hại hơn. Một bộ chuyển đổi xúc tác được minh họa như hình sau:",
+        "prompt": "Khí thải động cơ xăng (hoặc dầu) ngoài thành phần là carbon dioxide và hơi nước, còn có thể có carbon monoxide, các oxide của nitrogen (NOₐ) và hydrocarbon (CₓHᵧ) chưa bị cháy hết. Để giảm bớt tác hại của khí thải với môi trường, bên cạnh việc tăng hiệu quả đốt cháy, người ta còn sử dụng bộ chuyển đổi xúc tác (đưa chất xúc tác vào ống xả của động cơ) giúp chuyển hóa các chất ô nhiễm, chất độc hại trong khí thải thành những chất ít gây hại hơn. Một bộ chuyển đổi xúc tác được minh họa như hình sau:",
         "options": [
           {
             "key": "a",
-            "text": "Phản ứng tổng quát xảy ra trong bộ chuyển đổi xúc tác là CxHy + NOa → H₂O + CO₂ + N₂."
+            "text": "Phản ứng tổng quát xảy ra trong bộ chuyển đổi xúc tác là CₓHᵧ + NOₐ → H₂O + CO₂ + N₂."
           },
           {
             "key": "b",
@@ -686,7 +686,7 @@
         "section": "Phần III",
         "question_number": 26,
         "question_type": "short_answer",
-        "prompt": "Phản ứng lên men lactic là quá trình chuyển hóa đường glucose thành lactic acid (C₃H₆O₃ ) nhờ vi khuẩn lactic trong điều kiện kỵ khí, thường gặp trong thực phẩm lên men và cơ bắp khi thiếu oxygen. Lên men lactic gồm hai dạng chính: đồng hình, chỉ tạo lactic acid và dị hình, tạo lactic acid cùng một số sản phẩm khác, được mô tả trong hai sơ đồ sau với đúng tỉ lệ mol: Lên men lactic đồng hình: C₆H₁₂O₆ (aq) → 2C 3 H 6 O 3 (aq) Δ H o = - 115kJ. Lên men lactic dị hình: C₆H₁₂O₆ (aq) → C₃H₆O₃ (aq) + C 2 H 5 OH (aq) + CO₂ (g) Δ H o = - 91,5kJ. Khi vận động mạnh cơ thể không đủ cung cấp oxygen, thì cơ thể sẽ chuyển hoá glucose thành lactic acid từ các tế bào để cung cấp năng lượng cho cơ thể. Biết rằng cơ thể chỉ cung cấp 98% năng lượng nhờ oxygen, năng lượng còn lại nhờ vào sự chuyển hoá glucose thành lactic acid. Giả sử một người chạy bộ trong một thời gian tiêu tốn 400 kcal và glucose lên men đồng hình và dị hình theo tỷ lệ mol 1 : 1. Tính khối lượng glucose tham gia vào quá trình chuyển hóa đó (biết 1 cal = 4,184 J). ( kết quả làm tròn đến hàng phần mười )",
+        "prompt": "Phản ứng lên men lactic là quá trình chuyển hóa đường glucose thành lactic acid (C₃H₆O₃) nhờ vi khuẩn lactic trong điều kiện kỵ khí, thường gặp trong thực phẩm lên men và cơ bắp khi thiếu oxygen.\n\nLên men lactic gồm hai dạng chính:\n\nLên men lactic đồng hình:\nC₆H₁₂O₆(aq) → 2C₃H₆O₃(aq); ΔH° = -115 kJ\n\nLên men lactic dị hình:\nC₆H₁₂O₆(aq) → C₃H₆O₃(aq) + C₂H₅OH(aq) + CO₂(g); ΔH° = -91,5 kJ\n\nKhi vận động mạnh cơ thể không đủ cung cấp oxygen, thì cơ thể sẽ chuyển hóa glucose thành lactic acid từ các tế bào để cung cấp năng lượng cho cơ thể. Biết rằng cơ thể chỉ cung cấp 98% năng lượng nhờ oxygen, năng lượng còn lại nhờ vào sự chuyển hóa glucose thành lactic acid. Giả sử một người chạy bộ trong một thời gian tiêu tốn 400 kcal và glucose lên men đồng hình và dị hình theo tỷ lệ mol 1 : 1.\n\nTính khối lượng glucose tham gia vào quá trình chuyển hóa đó (biết 1 cal = 4,184 J). Kết quả làm tròn đến hàng phần mười.",
         "options": [],
         "correct_answer": "57,5",
         "points": 0.25,
@@ -710,7 +710,7 @@
         "section": "Phần III",
         "question_number": 28,
         "question_type": "short_answer",
-        "prompt": "Muối Mohr là một dạng muối kép có tác dụng chống lại quá trình oxi hóa bằng không khí. Muối Mohr được tạo thành từ hỗn hợp E cùng số mol gồm iron(II) sulfate ngậm 7 phân tử nước và ammonium sulfate khan. Cân 7,35 gam muối Mohr trên rồi hòa tan vào nước, sau đó định mức trong bình 50 mL.\n\nChuẩn độ 5 mL dung dịch vừa pha cần dùng 12,5 mL dung dịch KMnO₄ 0,03 M trong môi trường H₂SO₄ loãng, dư theo phương trình:\n\nFe²⁺ + MnO₄⁻ + H⁺ → Fe³⁺ + Mn²⁺ + H₂O (1)\n\nTừ m gam E người ta điều chế muối Mohr với hiệu suất 65%; hòa tan muối Mohr này vào nước thu được dung dịch F. Hạ dần nhiệt độ F xuống 20 oC thu được 74,93 gam dung dịch và 31,2 gam muối Mohr kết tinh. Cho biết độ tan muối Mohr ở 20 oC là 27 gam. (Chỉ làm tròn đến phép tính cuối cùng, các kết quả làm tròn đến hàng phần mười.)\n\nCho các phát biểu sau:\n(1) Giá trị của m bằng 75,8.\n(2) Phần trăm khối lượng của Fe trong muối Mohr tạo thành ở trên bằng 14,3%.\n(3) Tổng hệ số cân bằng (nguyên, tối giản) trong phản ứng (1) bằng 24.\n(4) Để bảo quản muối Mohr, có thể bảo quản trong dung dịch có môi trường kiềm.\n\nLiệt kê các phát biểu đúng theo số thứ tự tăng dần.",
+        "prompt": "Muối Mohr là một dạng muối kép có tác dụng chống lại quá trình oxi hóa bằng không khí. Muối Mohr được tạo thành từ hỗn hợp E cùng số mol gồm iron(II) sulfate ngậm 7 phân tử nước và ammonium sulfate khan. Cân 7,35 gam muối Mohr trên rồi hòa tan vào nước, sau đó định mức trong bình 50 mL.\n\nChuẩn độ 5 mL dung dịch vừa pha cần dùng 12,5 mL dung dịch KMnO₄ 0,03 M trong môi trường H₂SO₄ loãng, dư theo phương trình:\n\nFe²⁺ + MnO₄⁻ + H⁺ → Fe³⁺ + Mn²⁺ + H₂O (1)\n\nTừ m gam E người ta điều chế muối Mohr với hiệu suất 65%; hòa tan muối Mohr này vào nước thu được dung dịch F. Hạ dần nhiệt độ F xuống 20 °C thu được 74,93 gam dung dịch và 31,2 gam muối Mohr kết tinh. Cho biết độ tan muối Mohr ở 20 °C là 27 gam. (Chỉ làm tròn đến phép tính cuối cùng, các kết quả làm tròn đến hàng phần mười.)\n\nCho các phát biểu sau:\n(1) Giá trị của m bằng 75,8.\n(2) Phần trăm khối lượng của Fe trong muối Mohr tạo thành ở trên bằng 14,3%.\n(3) Tổng hệ số cân bằng (nguyên, tối giản) trong phản ứng (1) bằng 24.\n(4) Để bảo quản muối Mohr, có thể bảo quản trong dung dịch có môi trường kiềm.\n\nLiệt kê các phát biểu đúng theo số thứ tự tăng dần.",
         "options": [],
         "correct_answer": "124",
         "points": 0.25,
@@ -1068,7 +1068,7 @@
           },
           {
             "key": "D",
-            "text": "Bón vôi toả (Ca(OH) 2 ) trước, vài ngày sau mới bón đạm."
+            "text": "Bón vôi toả (Ca(OH)₂) trước, vài ngày sau mới bón đạm."
           }
         ],
         "correct_answer": "D",
@@ -1081,7 +1081,7 @@
         "section": "Phần I",
         "question_number": 13,
         "question_type": "single_choice",
-        "prompt": "Cho bảng nhiệt độ sôi (oC) đo ở áp suất 1 atm như sau:\n\nCông thức chất | C₂H₅OH | CH₃COOH | H₂O | CH₃COOC₂H₅ | H₂SO₄\nNhiệt độ sôi | 78,3 | 118 | 100 | 77 | 337\n\nEthyl acetate được điều chế bằng cách đun nóng hỗn hợp gồm acetic acid, ethanol và dung dịch H₂SO₄ 98%, đựng trong bình cầu có nhánh. Nhiệt độ phản ứng được thiết lập ở 80 oC. Mô hình điều chế và tách ethyl acetate được thực hiện như hình.\n\nNhận định nào sau đây không đúng?",
+        "prompt": "Cho bảng nhiệt độ sôi (°C) đo ở áp suất 1 atm như sau:\n\nCông thức chất | C₂H₅OH | CH₃COOH | H₂O | CH₃COOC₂H₅ | H₂SO₄\nNhiệt độ sôi | 78,3 | 118 | 100 | 77 | 337\n\nEthyl acetate được điều chế bằng cách đun nóng hỗn hợp gồm acetic acid, ethanol và dung dịch H₂SO₄ 98%, đựng trong bình cầu có nhánh. Nhiệt độ phản ứng được thiết lập ở 80 °C. Mô hình điều chế và tách ethyl acetate được thực hiện như hình.\n\nNhận định nào sau đây không đúng?",
         "options": [
           {
             "key": "A",
@@ -1097,7 +1097,7 @@
           },
           {
             "key": "D",
-            "text": "Ở 80 oC, phần hơi tách ra từ bình cầu có nhánh sang bình hứng chỉ gồm ethyl acetate và nước."
+            "text": "Ở 80 °C, phần hơi tách ra từ bình cầu có nhánh sang bình hứng chỉ gồm ethyl acetate và nước."
           }
         ],
         "correct_answer": "B",
@@ -1300,7 +1300,7 @@
           },
           {
             "key": "d",
-            "text": "Trên phổ hồng ngoại của benzoic acid, tín hiệu (peak) ở 1690 cm-1 đặc trưng cho liên kết O-H."
+            "text": "Trên phổ hồng ngoại của benzoic acid, tín hiệu (peak) ở 1690 cm⁻¹ đặc trưng cho liên kết O-H."
           }
         ],
         "correct_answer": "TTFF",
@@ -1313,7 +1313,7 @@
         "section": "Phần II",
         "question_number": 21,
         "question_type": "true_false",
-        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố như sau: 47,06%C; 5,88%H và 47,06%O. Phổ hồng ngoại (IR) của E có vùng hấp thụ với peak đặc trưng của liên kết C=O (số sóng 1750–1735 cm –1 ), liên kết C–O (số sóng 1300–1000 cm –1 ) và không có vùng hấp thụ với peak đặc trưng của liên kết O–H (số sóng 3650–3200 cm –1 ). Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204. Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M X < M Y < M Z ). Acid hóa Z thu được chất hữu cơ T (C₂H₄O₃ ). Cho hơi X đi qua bột Al 2 O 3 nung nóng, thu được alkene F. Biết E phản ứng được với thuốc thử Tollens.",
+        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố như sau: 47,06%C; 5,88%H và 47,06%O. Phổ hồng ngoại (IR) của E có vùng hấp thụ với peak đặc trưng của liên kết C=O (số sóng 1750–1735 cm⁻¹), liên kết C–O (số sóng 1300–1000 cm⁻¹) và không có vùng hấp thụ với peak đặc trưng của liên kết O–H (số sóng 3650–3200 cm⁻¹). Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204. Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M_X < M_Y < M_Z). Acid hóa Z thu được chất hữu cơ T (C₂H₄O₃). Cho hơi X đi qua bột Al₂O₃ nung nóng, thu được alkene F. Biết E phản ứng được với thuốc thử Tollens.",
         "options": [
           {
             "key": "a",
@@ -1371,7 +1371,7 @@
         "section": "Phần III",
         "question_number": 23,
         "question_type": "short_answer",
-        "prompt": "Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng. Dòng điện sử dụng có cường độ 10A (ampe) được duy trì trong thời gian 2 giờ 8 phút 40 giây. Hiệu suất điện phân đạt 85%. Sau quá trình điện phân, đồng bám đồng đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm như nhau ở mọi vị trí. Biết khối lượng riêng của Cu (D = 8,9 g/cm³); Điện lượng Q được xác định theo công thức: Q = n.F = I.t, trong đó: n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (ampe), t là thời gian (giây), F = 96500 C.mol⁻¹; M Cu = 64. Tính tổng diện tích bề mặt tấm sắt được mạ. ( Kết quả làm tròn đến hàng đơn vị, đơn vị cm² )",
+        "prompt": "Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng. Dòng điện sử dụng có cường độ 10A (ampe) được duy trì trong thời gian 2 giờ 8 phút 40 giây. Hiệu suất điện phân đạt 85%. Sau quá trình điện phân, đồng bám đồng đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm như nhau ở mọi vị trí. Biết khối lượng riêng của Cu (D = 8,9 g/cm³); Điện lượng Q được xác định theo công thức: Q = n.F = I.t, trong đó: n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (ampe), t là thời gian (giây), F = 96500 C.mol⁻¹; M Cu = 64. Tính tổng diện tích bề mặt tấm sắt được mạ. ( Kết quả làm tròn đến hàng đơn vị, đơn vị cm²)",
         "options": [],
         "correct_answer": "153",
         "points": 0.25,
