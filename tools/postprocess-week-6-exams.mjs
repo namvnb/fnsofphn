@@ -705,6 +705,23 @@ Có bao nhiêu thí nghiệm xảy ra phản ứng oxi hóa-khử?`
 
     setPrompt(
       exam,
+      27,
+      `Một nhóm học sinh tiến hành nghiên cứu tốc độ của phản ứng thủy phân methyl acetate trong môi trường kiềm (dung dịch NaOH) ở một nhiệt độ xác định. Kết quả xác định nồng độ NaOH (CNaOH) theo thời gian (t) được ghi lại trong bảng sau:
+
+t (phút) | 0 | 3 | 5 | 7 | 10 | 15 | 25
+CNaOH (M) | 0,01000 | 0,00740 | 0,00634 | 0,00550 | 0,00464 | 0,00363 | 0,00254
+
+Tại thời điểm t = 0, nồng độ methyl acetate là 0,01000 M. Cho các nhận định sau:
+(1) Tốc độ tiêu thụ methyl acetate bằng tốc độ tiêu thụ NaOH.
+(2) Tốc độ phản ứng trung bình trong khoảng thời gian từ t = 7 phút tới t = 10 phút gấp hơn 3 lần tốc độ phản ứng trung bình trong khoảng thời gian từ t = 15 phút tới t = 25 phút.
+(3) Trong hỗn hợp thu được tại thời điểm t = 25 phút chỉ có một hợp chất hữu cơ.
+(4) Sau 10 phút, 53,6% lượng methyl acetate ban đầu đã bị thủy phân.
+
+Liệt kê các nhận định đúng theo số thứ tự tăng dần.`
+    );
+
+    setPrompt(
+      exam,
       28,
       `Xà phòng, chất giặt rửa được sử dụng rộng rãi trong đời sống: rửa tay, giặt quần áo, rửa chén bát, lau sàn,... Sơ đồ dưới đây mô tả cơ chế giặt rửa của xà phòng và các chất giặt rửa.
 
