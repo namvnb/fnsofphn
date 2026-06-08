@@ -728,6 +728,31 @@ Biết rằng thế điện cực của một cặp oxi hóa-khử ở nồng đ
 
     setPrompt(
       exam,
+      23,
+      `Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng.
+
+Các dữ kiện:
+- Cường độ dòng điện: I = 10 A.
+- Thời gian điện phân: 2 giờ 8 phút 40 giây.
+- Hiệu suất điện phân: 85%.
+- Đồng bám đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm.
+- Khối lượng riêng của Cu: D = 8,9 g/cm³.
+- MCu = 64.
+
+Điện lượng Q được xác định theo công thức:
+Q = n.F = I.t
+
+Trong đó:
+- n là số mol electron đi qua dây dẫn.
+- I là cường độ dòng điện (ampe).
+- t là thời gian (giây).
+- F = 96500 C.mol⁻¹.
+
+Tính tổng diện tích bề mặt tấm sắt được mạ. Kết quả làm tròn đến hàng đơn vị, đơn vị cm².`
+    );
+
+    setPrompt(
+      exam,
       25,
       `Cho các cân bằng sau:
 

@@ -1371,7 +1371,7 @@
         "section": "Phần III",
         "question_number": 23,
         "question_type": "short_answer",
-        "prompt": "Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng. Dòng điện sử dụng có cường độ 10A (ampe) được duy trì trong thời gian 2 giờ 8 phút 40 giây. Hiệu suất điện phân đạt 85%. Sau quá trình điện phân, đồng bám đồng đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm như nhau ở mọi vị trí. Biết khối lượng riêng của Cu (D = 8,9 g/cm³); Điện lượng Q được xác định theo công thức: Q = n.F = I.t, trong đó: n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (ampe), t là thời gian (giây), F = 96500 C.mol⁻¹; M Cu = 64. Tính tổng diện tích bề mặt tấm sắt được mạ. ( Kết quả làm tròn đến hàng đơn vị, đơn vị cm²)",
+        "prompt": "Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng.\n\nCác dữ kiện:\n- Cường độ dòng điện: I = 10 A.\n- Thời gian điện phân: 2 giờ 8 phút 40 giây.\n- Hiệu suất điện phân: 85%.\n- Đồng bám đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm.\n- Khối lượng riêng của Cu: D = 8,9 g/cm³.\n- MCu = 64.\n\nĐiện lượng Q được xác định theo công thức:\nQ = n.F = I.t\n\nTrong đó:\n- n là số mol electron đi qua dây dẫn.\n- I là cường độ dòng điện (ampe).\n- t là thời gian (giây).\n- F = 96500 C.mol⁻¹.\n\nTính tổng diện tích bề mặt tấm sắt được mạ. Kết quả làm tròn đến hàng đơn vị, đơn vị cm².",
         "options": [],
         "correct_answer": "153",
         "points": 0.25,
