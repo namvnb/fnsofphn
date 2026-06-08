@@ -16,19 +16,19 @@
         "options": [
           {
             "key": "A",
-            "text": "C 15 H 31 COONa."
+            "text": "C₁₅H₃₁COONa."
           },
           {
             "key": "B",
-            "text": "C 15 H 31 COOCH 3 ."
+            "text": "C₁₅H₃₁COOCH₃."
           },
           {
             "key": "C",
-            "text": "CH 3 [CH 2 ] 11 OSO 3 Na."
+            "text": "CH₃[CH₂]₁₁OSO₃Na."
           },
           {
             "key": "D",
-            "text": "CH 3 COOK."
+            "text": "CH₃COOK."
           }
         ],
         "correct_answer": "C",
@@ -128,23 +128,23 @@
         "section": "Phần I",
         "question_number": 5,
         "question_type": "single_choice",
-        "prompt": "Cho một pin điện hoá được tạo bởi các cặp oxi hoá khử Cu 2+ /Cu, Ag + /Ag ở điều kiện chuẩn. Quá trình xảy ra ở cathode khi pin hoạt động là",
+        "prompt": "Cho một pin điện hoá được tạo bởi các cặp oxi hoá khử Cu²⁺/Cu, Ag⁺/Ag ở điều kiện chuẩn. Quá trình xảy ra ở cathode khi pin hoạt động là",
         "options": [
           {
             "key": "A",
-            "text": "Ag + + 1e → Ag."
+            "text": "Ag⁺ + 1e → Ag."
           },
           {
             "key": "B",
-            "text": "Ag → Ag + + 1e."
+            "text": "Ag → Ag⁺ + 1e."
           },
           {
             "key": "C",
-            "text": "Cu → Cu 2+ + 2e."
+            "text": "Cu → Cu²⁺ + 2e."
           },
           {
             "key": "D",
-            "text": "Cu 2+ + 2e → Cu."
+            "text": "Cu²⁺ + 2e → Cu."
           }
         ],
         "correct_answer": "A",
@@ -157,7 +157,7 @@
         "section": "Phần I",
         "question_number": 6,
         "question_type": "single_choice",
-        "prompt": "Cho khối lượng riêng của các chất như bảng sau: Chất Li Na K Ca Dầu hỏa Khối lượng riêng (gam.mL - 1 ) 0,53 0,97 0,86 1,54 0,80 Để bảo quản một số kim loại mạnh, người ta thường ngâm chìm kim loại đó trong dầu hỏa. Trong số các kim loại trên, có bao nhiêu kim loại bảo quản được trong dầu hỏa?",
+        "prompt": "Cho khối lượng riêng của các chất như bảng sau:\n\nChất | Li | Na | K | Ca | Dầu hỏa\nKhối lượng riêng (g/mL) | 0,53 | 0,97 | 0,86 | 1,54 | 0,80\n\nĐể bảo quản một số kim loại mạnh, người ta thường ngâm chìm kim loại đó trong dầu hỏa. Trong số các kim loại trên, có bao nhiêu kim loại bảo quản được trong dầu hỏa?",
         "options": [
           {
             "key": "A",
@@ -194,7 +194,7 @@
           },
           {
             "key": "B",
-            "text": "Nước chứa nhiều ion Ca 2+ , Mg 2+ , HCO 3 - , Cl - , SO 4 2- thuộc loại nước có tính cứng toàn phần."
+            "text": "Nước chứa nhiều ion Ca²⁺, Mg²⁺, HCO₃⁻, Cl⁻, SO₄²⁻ thuộc loại nước có tính cứng toàn phần."
           },
           {
             "key": "C",
@@ -202,7 +202,7 @@
           },
           {
             "key": "D",
-            "text": "Sự tạo thành thạch nhũ trong hang động là do CaCO 3 bị phân huỷ thành CaO."
+            "text": "Sự tạo thành thạch nhũ trong hang động là do CaCO₃ bị phân hủy thành CaO."
           }
         ],
         "correct_answer": "D",
@@ -273,15 +273,15 @@
         "section": "Phần I",
         "question_number": 10,
         "question_type": "single_choice",
-        "prompt": "Trong quá trình Solvay, ở giai đoạn tạo thành NaHCO 3 tồn tại cân bằng sau: NaCl(aq) + NH 3 (aq) + CO 2 (g) + H 2 O(l) → NaHCO 3 (s) + NH 4 Cl(aq) Khi làm lạnh dung dịch trên, muối bị tách ra khỏi dung dịch là",
+        "prompt": "Trong quá trình Solvay, ở giai đoạn tạo thành NaHCO₃ tồn tại cân bằng sau:\n\nNaCl(aq) + NH₃(aq) + CO₂(g) + H₂O(l) ⇌ NaHCO₃(s) + NH₄Cl(aq)\n\nKhi làm lạnh dung dịch trên, muối bị tách ra khỏi dung dịch là",
         "options": [
           {
             "key": "A",
-            "text": "NaHCO 3"
+            "text": "NaHCO₃."
           },
           {
             "key": "B",
-            "text": "NH 4 Cl"
+            "text": "NH₄Cl."
           },
           {
             "key": "C",
@@ -289,7 +289,7 @@
           },
           {
             "key": "D",
-            "text": "NH 4 HCO 3 ."
+            "text": "NH₄HCO₃."
           }
         ],
         "correct_answer": "A",
@@ -302,7 +302,7 @@
         "section": "Phần I",
         "question_number": 11,
         "question_type": "single_choice",
-        "prompt": "Hạt nhân 238 U sau một chuỗi các quá trình phóng xạ α  4 He  và β   0 e  liên tiếp biến 92 92 2 2  1  1 đổi thành hạt nhân 206 Pb bền theo phương trình chuỗi phản ứng: 238 U  206 Pb  x 4 He  y 0 e . Trong 82 92 82 2  1 đó, x và y lần lượt là số lần phóng xạ α và β trong chuỗi phóng xạ. Tất cả các phản ứng hạt nhân đều tuân theo định luật bảo toàn số khối và điện tích. Giá trị của y là",
+        "prompt": "Hạt nhân ²³⁸₉₂U sau một chuỗi các quá trình phóng xạ α (⁴₂He) và β⁻ (⁰₋₁e) liên tiếp biến đổi thành hạt nhân ²⁰⁶₈₂Pb bền theo phương trình chuỗi phản ứng:\n\n²³⁸₉₂U → ²⁰⁶₈₂Pb + x⁴₂He + y⁰₋₁e\n\nTrong đó, x và y lần lượt là số lần phóng xạ α và β trong chuỗi phóng xạ. Tất cả các phản ứng hạt nhân đều tuân theo định luật bảo toàn số khối và điện tích. Giá trị của y là",
         "options": [
           {
             "key": "A",
@@ -331,7 +331,7 @@
         "section": "Phần I",
         "question_number": 12,
         "question_type": "single_choice",
-        "prompt": "Trong công nghiệp năng lượng, hydrogen (H 2 ) được sản xuất từ khí tổng hợp thông qua phản ứng water gas shift (WGS): CO(g) + H 2 O(g) ⇌ CO 2 (g) + H 2 (g) o Δ H Δ H r 298 Δ H Δ H   41, 2 kJ / mol Khảo sát ảnh hưởng của tỉ lệ hơi nước/CO (R) lên độ chuyển hóa của CO theo nhiệt độ được biểu diễn qua đồ thị bên cạnh: Phát biểu nào sau đây đúng?",
+        "prompt": "Trong công nghiệp năng lượng, hydrogen (H₂) được sản xuất từ khí tổng hợp thông qua phản ứng water gas shift (WGS):\n\nCO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g)\nΔrH°₂₉₈ = -41,2 kJ/mol\n\nKhảo sát ảnh hưởng của tỉ lệ hơi nước/CO (R) lên độ chuyển hóa của CO theo nhiệt độ được biểu diễn qua đồ thị bên cạnh.\n\nPhát biểu nào sau đây đúng?",
         "options": [
           {
             "key": "A",
@@ -364,7 +364,7 @@
         "options": [
           {
             "key": "A",
-            "text": "X tác dụng với dung dịch NaOH theo tỷ lệ mol n X : n NaOH = 1 : 5."
+            "text": "X tác dụng với dung dịch NaOH theo tỉ lệ mol nX : nNaOH = 1 : 5."
           },
           {
             "key": "B",
@@ -376,7 +376,7 @@
           },
           {
             "key": "D",
-            "text": "X phản ứng được với Cu(OH) 2 trong môi trường kiềm tạo dung dịch màu tím đặc trưng."
+            "text": "X phản ứng được với Cu(OH)₂ trong môi trường kiềm tạo dung dịch màu tím đặc trưng."
           }
         ],
         "correct_answer": "A",
@@ -418,7 +418,7 @@
         "section": "Phần I",
         "question_number": 15,
         "question_type": "single_choice",
-        "prompt": "Cho biết Mg (Z = 12) và Al (Z = 13) là những kim loại quen thuộc. Hợp kim 5005 chứa 99,2% Al và 0,8% Mg theo khối lượng, được ứng dụng làm vật liệu kim loại nhờ các đặc tính như nhẹ và bền. Cho các nhận định sau: Bán kính nguyên tử của Mg lớn hơn bán kính nguyên tử của Al. Trong hợp kim 5005, tỉ lệ số nguyên tử Al : Mg bằng 124 : 1. Do đặc tính bền và nhẹ nên hợp kim 5005 được ứng dụng trong kiến trúc (ốp mặt tiền, trần nhà, ...) Hợp kim 5005 không bị ăn mòn trong dung dịch acid hoặc kiềm. Các nhận định đúng là",
+        "prompt": "Cho biết Mg (Z = 12) và Al (Z = 13) là những kim loại quen thuộc. Hợp kim 5005 chứa 99,2% Al và 0,8% Mg theo khối lượng, được ứng dụng làm vật liệu kim loại nhờ các đặc tính như nhẹ và bền.\n\nCho các nhận định sau:\n(a) Bán kính nguyên tử của Mg lớn hơn bán kính nguyên tử của Al.\n(b) Trong hợp kim 5005, tỉ lệ số nguyên tử Al : Mg bằng 124 : 1.\n(c) Do đặc tính bền và nhẹ nên hợp kim 5005 được ứng dụng trong kiến trúc (ốp mặt tiền, trần nhà,...).\n(d) Hợp kim 5005 không bị ăn mòn trong dung dịch acid hoặc kiềm.\n\nCác nhận định đúng là",
         "options": [
           {
             "key": "A",
@@ -447,7 +447,7 @@
         "section": "Phần I",
         "question_number": 16,
         "question_type": "single_choice",
-        "prompt": "Có 5 kim loại X, Y, Z, T, Q, tất cả đều có hóa trị II. Tiến hành thí nghiệm như sau: Thí nghiệm 1. Cho 5 kim loại vào dung dịch hydrochloric acid. Chỉ có Q không có phản ứng, 4 kim loại còn đều có hiện tượng sủi bọt khí. Thí nghiệm 2. Kim loại X, Y không phản ứng với dung dịch Z 2+ . Thí nghiệm 3. Từ 5 kim loại trên, thiết lập các pin điện hóa dạng: M (s)/ M 2+ (aq) //N 2+ (aq) /N (s) . Pin có suất điện động chuẩn lớn nhất là pin của T-Q Cho các phát biểu sau: T là kim loại có tính khử mạnh nhất. Z 2+ có tính oxi hóa mạnh nhất trong các ion của 5 kim loại trên. Q có tính oxi hóa mạnh hơn Y. Thế điện cực chuẩn của cặp X 2+ /X lớn hơn Q 2+ /Q. Thế điện cực chuẩn của cặp Y 2+ /Y lớn hơn Z 2+ /Z. Số phát biểu sai là",
+        "prompt": "Có 5 kim loại X, Y, Z, T, Q, tất cả đều có hóa trị II. Tiến hành thí nghiệm như sau:\n\nThí nghiệm 1: Cho 5 kim loại vào dung dịch hydrochloric acid. Chỉ có Q không có phản ứng, 4 kim loại còn đều có hiện tượng sủi bọt khí.\nThí nghiệm 2: Kim loại X, Y không phản ứng với dung dịch Z²⁺.\nThí nghiệm 3: Từ 5 kim loại trên, thiết lập các pin điện hóa dạng M(s)/M²⁺(aq)//N²⁺(aq)/N(s). Pin có suất điện động chuẩn lớn nhất là pin của T-Q.\n\nCho các phát biểu sau:\n(1) T là kim loại có tính khử mạnh nhất.\n(2) Z²⁺ có tính oxi hóa mạnh nhất trong các ion của 5 kim loại trên.\n(3) Q có tính oxi hóa mạnh hơn Y.\n(4) Thế điện cực chuẩn của cặp X²⁺/X lớn hơn Q²⁺/Q.\n(5) Thế điện cực chuẩn của cặp Y²⁺/Y lớn hơn Z²⁺/Z.\n\nSố phát biểu sai là",
         "options": [
           {
             "key": "A",
@@ -476,7 +476,7 @@
         "section": "Phần I",
         "question_number": 17,
         "question_type": "single_choice",
-        "prompt": "Giá trị của a bằng ( kết quả các phép tính trung gian không được làm tròn, kết quả làm tròn đến hàng phần mười )",
+        "prompt": "Sử dụng thông tin dưới đây để trả lời câu 17 và câu 18:\n\nNhựa PET (poly(ethylene terephthalate), kí hiệu số 1 như hình bên) là một polymer được điều chế từ terephthalic acid và ethylene glycol. PET được sử dụng để làm chai lọ, bao bì nhưng rất khó phân hủy trong tự nhiên.\n\nGần đây, các nhà khoa học đã phát hiện chủng vi khuẩn Ideonella sakaiensis có khả năng tiết ra enzyme phân hủy loại nhựa này.\n\nĐể nghiên cứu tốc độ phân hủy nhựa PET, người ta cho một mảnh nhựa PET dạng tấm hình vuông (cạnh 4,0 cm, độ dày 0,03 cm và khối lượng riêng 1,45 g/cm³) vào một bể chứa lượng lớn vi khuẩn Ideonella sakaiensis. Do mật độ vi khuẩn lớn, chúng bám kín toàn bộ bề mặt của mảnh nhựa nên tốc độ phân hủy nhựa PET đạt mức cực đại và gần như không đổi. Thực nghiệm xác định khối lượng nhựa bị phân hủy trung bình là 8,12 mg/ngày. Sau 12 ngày liên tục, mảnh nhựa trên đã bị vi khuẩn phân hủy a% về khối lượng.\n\nThực hiện thí nghiệm tương tự với những mảnh nhựa PET có độ kết tinh khác nhau, thu được kết quả như đồ thị bên cạnh.\n\nGiá trị của a bằng bao nhiêu? (Không làm tròn các phép tính trung gian, kết quả cuối cùng làm tròn đến hàng phần mười.)",
         "options": [
           {
             "key": "A",
@@ -505,7 +505,7 @@
         "section": "Phần I",
         "question_number": 18,
         "question_type": "single_choice",
-        "prompt": "Cho các phát biểu sau về nhựa PET Phản ứng tổng hợp PET từ terephthalic acid và ethylene glicol thuộc loại phản ứng trùng ngưng. PET rất khó phân hủy trong tự nhiên vì bền trong môi trường acid. Tơ được chế tạo từ PET thuộc loại tơ bán tổng hợp. Số 1 trong kí hiệu nhận dạng cho biết đồ dùng làm từ PET chỉ sử dụng một lần. Độ kết tinh của nhựa và tốc độ phân huỷ tỷ lệ thuận với nhau. Số nhận định đúng là",
+        "prompt": "Sử dụng thông tin dưới đây để trả lời câu 17 và câu 18:\n\nNhựa PET (poly(ethylene terephthalate), kí hiệu số 1 như hình bên) là một polymer được điều chế từ terephthalic acid và ethylene glycol. PET được sử dụng để làm chai lọ, bao bì nhưng rất khó phân hủy trong tự nhiên.\n\nGần đây, các nhà khoa học đã phát hiện chủng vi khuẩn Ideonella sakaiensis có khả năng tiết ra enzyme phân hủy loại nhựa này.\n\nĐể nghiên cứu tốc độ phân hủy nhựa PET, người ta cho một mảnh nhựa PET dạng tấm hình vuông (cạnh 4,0 cm, độ dày 0,03 cm và khối lượng riêng 1,45 g/cm³) vào một bể chứa lượng lớn vi khuẩn Ideonella sakaiensis. Do mật độ vi khuẩn lớn, chúng bám kín toàn bộ bề mặt của mảnh nhựa nên tốc độ phân hủy nhựa PET đạt mức cực đại và gần như không đổi. Thực nghiệm xác định khối lượng nhựa bị phân hủy trung bình là 8,12 mg/ngày. Sau 12 ngày liên tục, mảnh nhựa trên đã bị vi khuẩn phân hủy a% về khối lượng.\n\nThực hiện thí nghiệm tương tự với những mảnh nhựa PET có độ kết tinh khác nhau, thu được kết quả như đồ thị bên cạnh.\n\nCho các phát biểu sau về nhựa PET:\n(1) Phản ứng tổng hợp PET từ terephthalic acid và ethylene glycol thuộc loại phản ứng trùng ngưng.\n(2) PET rất khó phân hủy trong tự nhiên vì bền trong môi trường acid.\n(3) Tơ được chế tạo từ PET thuộc loại tơ bán tổng hợp.\n(4) Số 1 trong kí hiệu nhận dạng cho biết đồ dùng làm từ PET chỉ sử dụng một lần.\n(5) Độ kết tinh của nhựa và tốc độ phân hủy tỉ lệ thuận với nhau.\n\nSố nhận định đúng là",
         "options": [
           {
             "key": "A",
@@ -534,7 +534,7 @@
         "section": "Phần II",
         "question_number": 19,
         "question_type": "true_false",
-        "prompt": "Áp dụng kiến thức về các yếu tố ảnh hưởng đến tốc độ phản ứng trong phần tổng hợp ester, một nhóm học sinh dự đoán “nhiệt độ càng cao, hiệu suất ester hóa càng cao”. Để kiểm chứng cho dự đoán trên, nhóm đã tiến hành thí nghiệm phản ứng tổng hợp propyl acetate từ alcohol và acid tương ứng với nồng độ không đổi ở các điều kiện nhiệt độ khác nhau tương ứng theo phương trình: CH 3 COOH + CH 3 CH 2 CH 2 OH CH 3 COOCH 2 CH 2 CH 3 + H 2 O (1) Kết quả thu được như bảng: Nhiệt độ ( o C) 60 65 70 75 80 85 Thể tích ester (mL) 26,0 30,5 35,0 40,0 36,5 31,0 Cho độ tan trong 100 gam nước của các chất như bảng sau Chất CH 3 COOH CH 3 CH 2 CH 2 OH CH 3 COOCH 2 CH 2 CH 3 Độ tan (gam - ở 25 o C) Vô hạn Vô hạn 1,6",
+        "prompt": "Áp dụng kiến thức về các yếu tố ảnh hưởng đến tốc độ phản ứng trong phần tổng hợp ester, một nhóm học sinh dự đoán: \"Nhiệt độ càng cao, hiệu suất ester hóa càng cao\". Để kiểm chứng, nhóm tiến hành phản ứng tổng hợp propyl acetate từ alcohol và acid tương ứng với nồng độ không đổi ở các nhiệt độ khác nhau:\n\nCH₃COOH + CH₃CH₂CH₂OH ⇌ CH₃COOCH₂CH₂CH₃ + H₂O (1)\n\nKết quả thu được:\nNhiệt độ (oC) | 60 | 65 | 70 | 75 | 80 | 85\nThể tích ester (mL) | 26,0 | 30,5 | 35,0 | 40,0 | 36,5 | 31,0\n\nĐộ tan trong 100 gam nước ở 25 oC:\nChất | CH₃COOH | CH₃CH₂CH₂OH | CH₃COOCH₂CH₂CH₃\nĐộ tan (gam) | Vô hạn | Vô hạn | 1,6",
         "options": [
           {
             "key": "a",
@@ -542,23 +542,18 @@
           },
           {
             "key": "b",
-            "text": "Trong phản ứng (1), H 2 O được tạo thành từ -OH của acid và -H của alcohol."
+            "text": "Trong phản ứng (1), H₂O được tạo thành từ -OH của acid và -H của alcohol."
           },
           {
             "key": "c",
-            "text": "Có thể dùng phương pháp chiết lỏng – lỏng để tách CH 3 COOCH 2 CH 2 CH 3 ra khỏi hỗn hợp sản phẩm."
+            "text": "Có thể dùng phương pháp chiết lỏng-lỏng để tách CH₃COOCH₂CH₂CH₃ ra khỏi hỗn hợp sản phẩm."
           },
           {
             "key": "d",
-            "text": "Vì CH 3 COOH và CH 3 CH 2 CH 2 OH đều có nhóm – OH nên không thể dùng phương pháp phổ hồng ngoại (IR) để nhận biết 2 chất trên."
+            "text": "Vì CH₃COOH và CH₃CH₂CH₂OH đều có nhóm -OH nên không thể dùng phương pháp phổ hồng ngoại (IR) để nhận biết hai chất trên."
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": true,
-          "c": true,
-          "d": false
-        },
+        "correct_answer": "TTTF",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -568,7 +563,7 @@
         "section": "Phần II",
         "question_number": 20,
         "question_type": "true_false",
-        "prompt": "Trong công nghiệp, kim loại magnesium (Mg) được sản xuất từ quặng carnalite (có thành phần chính là KCl.MgCl 2 .6H 2 O) bằng phương pháp điện phân nóng chảy. Trước khi điện phân, carnalite được nung nóng để loại bỏ nước. Khi điện phân, KCl có vai trò hạ nhiệt độ nóng chảy của hỗn hợp, giúp giảm chi phí sản xuất. Sơ đồ thiết bị quá trình điện phân được mô tả như hình bên:",
+        "prompt": "Trong công nghiệp, kim loại magnesium (Mg) được sản xuất từ quặng carnalite (có thành phần chính là KCl.MgCl₂.6H₂O) bằng phương pháp điện phân nóng chảy. Trước khi điện phân, carnalite được nung nóng để loại bỏ nước. Khi điện phân, KCl có vai trò hạ nhiệt độ nóng chảy của hỗn hợp, giúp giảm chi phí sản xuất. Sơ đồ thiết bị quá trình điện phân được mô tả như hình bên:",
         "options": [
           {
             "key": "a",
@@ -580,19 +575,14 @@
           },
           {
             "key": "c",
-            "text": "Khối lượng riêng của kim loại Mg nóng chảy nhỏ hơn khối lượng riêng của hỗn hợp MgCl 2 và KCl nóng chảy."
+            "text": "Khối lượng riêng của kim loại Mg nóng chảy nhỏ hơn khối lượng riêng của hỗn hợp MgCl₂ và KCl nóng chảy."
           },
           {
             "key": "d",
-            "text": "Bằng phương pháp trên, nếu dùng 1 tấn quặng carnalite (chứa 43% KCl.MgCl 2 .6H 2 O về khối lượng, còn lại là tạp chất không chứa magnesium) với hiệu suất cả quá trình sản xuất là 75% thì thu được 27,9 kg magnesium. ( Kết quả làm tròn đến hàng phần mười )"
+            "text": "Bằng phương pháp trên, nếu dùng 1 tấn quặng carnalite (chứa 43% KCl.MgCl₂.6H₂O về khối lượng, còn lại là tạp chất không chứa magnesium) với hiệu suất cả quá trình sản xuất là 75% thì thu được 27,9 kg magnesium. (Kết quả làm tròn đến hàng phần mười.)"
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": false,
-          "c": true,
-          "d": true
-        },
+        "correct_answer": "TFTT",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -606,11 +596,11 @@
         "options": [
           {
             "key": "a",
-            "text": "Phản ứng tổng quát xảy ra trong bộ chuyển đổi xúc tác là C x H y + NO a → H 2 O + CO 2 + N 2 ."
+            "text": "Phản ứng tổng quát xảy ra trong bộ chuyển đổi xúc tác là CxHy + NOa → H₂O + CO₂ + N₂."
           },
           {
             "key": "b",
-            "text": "Hàm lượng khí thải chứa nhiều CO 2 là nguyên nhân chính gây ra hiện tượng mưa acid."
+            "text": "Hàm lượng khí thải chứa nhiều CO₂ là nguyên nhân chính gây ra hiện tượng mưa acid."
           },
           {
             "key": "c",
@@ -618,15 +608,10 @@
           },
           {
             "key": "d",
-            "text": "Một xe ô tô chạy 100 km tiêu thụ hết 5L xăng (coi như xăng chỉ chứa C 8 H 18 ), với khối lượng riêng 0,8 gam/mL. Quá trình cháy hoàn toàn lượng xăng nói trên tạo ra hỗn hợp khí thải chứa tỉ lệ số mol như sau: n CO2 : n CO : n NO = 8 : 2 : 3. Thể tích khí oxygen đã tham gia vào các phản ứng trên (đkc) bằng 11221 Lít. ( các phép tính trung gian không làm tròn, kết quả làm tròn đến hàng đơn vị )"
+            "text": "Một xe ô tô chạy 100 km tiêu thụ hết 5 L xăng (coi như xăng chỉ chứa C₈H₁₈), với khối lượng riêng 0,8 g/mL. Quá trình cháy hoàn toàn lượng xăng nói trên tạo ra hỗn hợp khí thải chứa tỉ lệ số mol nCO₂ : nCO : nNO = 8 : 2 : 3. Thể tích khí oxygen đã tham gia vào các phản ứng trên (đkc) bằng 11221 lít. (Không làm tròn các phép tính trung gian, kết quả làm tròn đến hàng đơn vị.)"
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": false,
-          "c": true,
-          "d": false
-        },
+        "correct_answer": "TFTF",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -636,7 +621,7 @@
         "section": "Phần II",
         "question_number": 22,
         "question_type": "true_false",
-        "prompt": "Một nhóm học sinh thiết lập pin điện hoá với điện cực Cu a+ /Cu và Ag + /Ag ở điều kiện chuẩn theo sơ đồ như hình dưới. Các giá trị thế điện cực chuẩn và biến thiên enthalpy chuẩn của một số cặp oxi hoá – khử được cho ở trong bảng: Bán phản ứng E o (V) Bán phản ứng E o (V) Cu 2+ (aq) + 1e → Cu + (aq) +0,15 Cu + (aq) + 1e → Cu(s) +0,52 Cu 2+( aq) + 2e → Cu(s) +0,34 Ag +( aq) + 1e → Ag(s) +0,80",
+        "prompt": "Một nhóm học sinh thiết lập pin điện hóa với điện cực Cuᵃ⁺/Cu và Ag⁺/Ag ở điều kiện chuẩn theo sơ đồ trong hình.\n\nCác giá trị thế điện cực chuẩn của một số cặp oxi hóa-khử:\nBán phản ứng | E° (V)\nCu²⁺(aq) + 1e → Cu⁺(aq) | +0,15\nCu⁺(aq) + 1e → Cu(s) | +0,52\nCu²⁺(aq) + 2e → Cu(s) | +0,34\nAg⁺(aq) + 1e → Ag(s) | +0,80",
         "options": [
           {
             "key": "a",
@@ -644,7 +629,7 @@
           },
           {
             "key": "b",
-            "text": "Với a = 2 sức điện động chuẩn của pin đo được bằng 0,46 V."
+            "text": "Với a = 2, sức điện động chuẩn của pin đo được bằng 0,46 V."
           },
           {
             "key": "c",
@@ -652,15 +637,10 @@
           },
           {
             "key": "d",
-            "text": "Cầu muối có vai trò khép kín mạch điện và trung hoà điện tích ở hai điện cực."
+            "text": "Cầu muối có vai trò khép kín mạch điện và trung hòa điện tích ở hai điện cực."
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": true,
-          "c": false,
-          "d": true
-        },
+        "correct_answer": "TTFT",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -682,7 +662,7 @@
         "section": "Phần III",
         "question_number": 24,
         "question_type": "short_answer",
-        "prompt": "Thực hiện các thí nghiệm được đánh số theo thứ tự sau: Cho 2 mL dung dịch NaOH 10% vào ống nghiệm, thêm 0,5 mL dung dịch CuSO 4 5% vào, lắc nhẹ. Thêm tiếp 3 mL dung dịch saccharose 5% vào ống nghiệm, lắc đều. Cho khoảng 2 mL dung dịch NaOH 10% và khoảng 0,5 mL dung dịch CuSO 4 5% vào ống nghiệm, lắc nhẹ. Cho tiếp khoảng 3 mL dung dịch glucose 2% vào ống nghiệm và lắc đều. Đun nóng nhẹ hỗn hợp trong ống nghiệm trên ngọn lửa đèn cồn vài phút. Cho khoảng 1 mL nước bromine vào ống nghiệm sau đó thêm vài giọt aniline loãng vào ống nghiệm. Cho vào ống nghiệm khoảng 1 mL dung dịch I 2 trong KI và khoảng 1mL dung dịch NaOH 10%. Nhỏ từ từ 5 giọt acetaldehyde vào ống nghiệm, lắc đều. Gán số thứ tự của thí nghiệm trên tương ứng với các hiện tượng a, b, c, d được mô tả bên dưới. xuất hiện kết tủa màu vàng. xuất hiện dung dịch màu xanh lam. xuất hiện kết tủa màu trắng xuất hiện kết tủa đỏ gạch.",
+        "prompt": "Thực hiện các thí nghiệm được đánh số theo thứ tự sau:\n\n(1) Cho 2 mL dung dịch NaOH 10% vào ống nghiệm, thêm 0,5 mL dung dịch CuSO₄ 5%, lắc nhẹ. Thêm tiếp 3 mL dung dịch saccharose 5% vào ống nghiệm, lắc đều.\n(2) Cho khoảng 2 mL dung dịch NaOH 10% và khoảng 0,5 mL dung dịch CuSO₄ 5% vào ống nghiệm, lắc nhẹ. Cho tiếp khoảng 3 mL dung dịch glucose 2% vào ống nghiệm và lắc đều. Đun nóng nhẹ hỗn hợp trên ngọn lửa đèn cồn vài phút.\n(3) Cho khoảng 1 mL nước bromine vào ống nghiệm, sau đó thêm vài giọt aniline loãng.\n(4) Cho vào ống nghiệm khoảng 1 mL dung dịch I₂ trong KI và khoảng 1 mL dung dịch NaOH 10%. Nhỏ từ từ 5 giọt acetaldehyde vào ống nghiệm, lắc đều.\n\nGán số thứ tự của thí nghiệm trên tương ứng với các hiện tượng a, b, c, d:\n(a) Xuất hiện kết tủa màu vàng.\n(b) Xuất hiện dung dịch màu xanh lam.\n(c) Xuất hiện kết tủa màu trắng.\n(d) Xuất hiện kết tủa đỏ gạch.",
         "options": [],
         "correct_answer": "4132",
         "points": 0.25,
@@ -694,7 +674,7 @@
         "section": "Phần III",
         "question_number": 25,
         "question_type": "short_answer",
-        "prompt": "Thực hiện các thí nghiệm sau: Cho một dây Zinc (Zn) sạch vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M. Cho một dây Zinc (Zn) sạch vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M nhỏ thêm vài giọt dung dịch CuSO 4 . Quấn sợi dây đồng trên một đinh sắt, sau đó nhúng vào cốc đựng 2mL dung dịch NaCl. Cho một đoạn dây thép vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M. Cho một dây bạc sạch vào ống nghiệm chứa 2 mL dung dịch CuSO 4 0,2 M. Liệt kê (theo thứ tự tăng dần) số thí nghiệm xuất hiện ăn mòn điện hóa?",
+        "prompt": "Thực hiện các thí nghiệm sau:\n\n(1) Cho một dây zinc (Zn) sạch vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M.\n(2) Cho một dây zinc (Zn) sạch vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M, nhỏ thêm vài giọt dung dịch CuSO₄.\n(3) Quấn sợi dây đồng trên một đinh sắt, sau đó nhúng vào cốc đựng 2 mL dung dịch NaCl.\n(4) Cho một đoạn dây thép vào ống nghiệm chứa 2 mL dung dịch HCl 0,2 M.\n(5) Cho một dây bạc sạch vào ống nghiệm chứa 2 mL dung dịch CuSO₄ 0,2 M.\n\nLiệt kê theo thứ tự tăng dần số thí nghiệm xuất hiện ăn mòn điện hóa.",
         "options": [],
         "correct_answer": "234",
         "points": 0.25,
@@ -706,7 +686,7 @@
         "section": "Phần III",
         "question_number": 26,
         "question_type": "short_answer",
-        "prompt": "Phản ứng lên men lactic là quá trình chuyển hóa đường glucose thành lactic acid (C 3 H 6 O 3 ) nhờ vi khuẩn lactic trong điều kiện kỵ khí, thường gặp trong thực phẩm lên men và cơ bắp khi thiếu oxygen. Lên men lactic gồm hai dạng chính: đồng hình, chỉ tạo lactic acid và dị hình, tạo lactic acid cùng một số sản phẩm khác, được mô tả trong hai sơ đồ sau với đúng tỉ lệ mol: Lên men lactic đồng hình: C 6 H 12 O 6 (aq) → 2C 3 H 6 O 3 (aq) Δ H o = - 115kJ. Lên men lactic dị hình: C 6 H 12 O 6 (aq) → C 3 H 6 O 3 (aq) + C 2 H 5 OH (aq) + CO 2 (g) Δ H o = - 91,5kJ. Khi vận động mạnh cơ thể không đủ cung cấp oxygen, thì cơ thể sẽ chuyển hoá glucose thành lactic acid từ các tế bào để cung cấp năng lượng cho cơ thể. Biết rằng cơ thể chỉ cung cấp 98% năng lượng nhờ oxygen, năng lượng còn lại nhờ vào sự chuyển hoá glucose thành lactic acid. Giả sử một người chạy bộ trong một thời gian tiêu tốn 400 kcal và glucose lên men đồng hình và dị hình theo tỷ lệ mol 1 : 1. Tính khối lượng glucose tham gia vào quá trình chuyển hóa đó (biết 1 cal = 4,184 J). ( kết quả làm tròn đến hàng phần mười )",
+        "prompt": "Phản ứng lên men lactic là quá trình chuyển hóa đường glucose thành lactic acid (C₃H₆O₃ ) nhờ vi khuẩn lactic trong điều kiện kỵ khí, thường gặp trong thực phẩm lên men và cơ bắp khi thiếu oxygen. Lên men lactic gồm hai dạng chính: đồng hình, chỉ tạo lactic acid và dị hình, tạo lactic acid cùng một số sản phẩm khác, được mô tả trong hai sơ đồ sau với đúng tỉ lệ mol: Lên men lactic đồng hình: C₆H₁₂O₆ (aq) → 2C 3 H 6 O 3 (aq) Δ H o = - 115kJ. Lên men lactic dị hình: C₆H₁₂O₆ (aq) → C₃H₆O₃ (aq) + C 2 H 5 OH (aq) + CO₂ (g) Δ H o = - 91,5kJ. Khi vận động mạnh cơ thể không đủ cung cấp oxygen, thì cơ thể sẽ chuyển hoá glucose thành lactic acid từ các tế bào để cung cấp năng lượng cho cơ thể. Biết rằng cơ thể chỉ cung cấp 98% năng lượng nhờ oxygen, năng lượng còn lại nhờ vào sự chuyển hoá glucose thành lactic acid. Giả sử một người chạy bộ trong một thời gian tiêu tốn 400 kcal và glucose lên men đồng hình và dị hình theo tỷ lệ mol 1 : 1. Tính khối lượng glucose tham gia vào quá trình chuyển hóa đó (biết 1 cal = 4,184 J). ( kết quả làm tròn đến hàng phần mười )",
         "options": [],
         "correct_answer": "57,5",
         "points": 0.25,
@@ -718,7 +698,7 @@
         "section": "Phần III",
         "question_number": 27,
         "question_type": "short_answer",
-        "prompt": "Có hai dung dịch X và Y mỗi dung dịch chỉ chứa hai loại cation và hai loại anion trong số các ion sau (X, Y không chứa cùng loại ion): Ion K + Mg 2+ Na + H + - HCO 3 2- SO 4 - NO 3 2- CO 3 Số mol 0,15 0,2 0,25 0,15 0,1 0,15 0,25 0,15 Biết dung dịch Y hoà tan được Fe 2 O 3 . Nếu đun đến cạn dung dịch X thì thu được m gam chất rắn khan. Giá trị m là bao nhiêu? ( Kết quả làm tròn đến hàng phần mười )",
+        "prompt": "Có hai dung dịch X và Y, mỗi dung dịch chỉ chứa hai loại cation và hai loại anion trong số các ion sau (X, Y không chứa cùng loại ion):\n\nIon | K⁺ | Mg²⁺ | Na⁺ | H⁺ | HCO₃⁻ | SO₄²⁻ | NO₃⁻ | CO₃²⁻\nSố mol | 0,15 | 0,2 | 0,25 | 0,15 | 0,1 | 0,15 | 0,25 | 0,15\n\nBiết dung dịch Y hòa tan được Fe₂O₃. Nếu đun đến cạn dung dịch X thì thu được m gam chất rắn khan. Giá trị m là bao nhiêu? (Kết quả làm tròn đến hàng phần mười.)",
         "options": [],
         "correct_answer": "23,6",
         "points": 0.25,
@@ -730,7 +710,7 @@
         "section": "Phần III",
         "question_number": 28,
         "question_type": "short_answer",
-        "prompt": "Muối Mohr là một dạng muối kép có tác dụng chống lại quá tr ình oxi hóa bằng không khí. Muối Mohr được tạo thành từ hỗn hợp E cùng số mol gồm iron(II) sulfate ngậm 7 phân tử nước và ammonium sulfate khan. Cân 7,35 gam muối Mohr trên rồi hòa tan vào nước, sau đó định mức trong bình 50 mL. Chuẩn độ 5 mL dung dịch vừa pha cần dùng 12,5 mL dung dịch KMnO 4 0,03M trong môi trường H 2 SO 4 loãng, dư theo phương trình: Fe 2+ + MnO 4 - + H + → Fe 3+ + Mn 2+ + H 2 O (1) Từ m gam E người ta điều chế muối Mohr với hiệu suất 65%; hòa tan muối Mohr này vào nước thu được dung dịch F . Hạ dần nhiệt độ F xuống 20 o C thu được 74,93 gam dung dịch và 31,2 gam muối Mohr kết tinh. Cho biết độ tan muối Mohr ở 20 o C là 27 gam. ( chỉ làm tròn đến phép tính cuối cùng, các kết quả làm tròn đến hàng phần mười ) Cho các phát biểu sau: Giá trị của m bằng 75,8. Phần trăm khối lượng của Fe trong muối Mohr tạo thành ở trên bằng 14,3%. Trong quá trình chuẩn độ Fe 2+ bằng KMnO 4 , có thể thay dung dịch H 2 SO 4 loãng bằng dung dịch HCl. Tổng hệ số cân bằng (nguyên – tối giản) trong phản ứng (1) bằng 24. Để bảo quản muối Mohr, có thể bảo quản trong dung dịch có môi trường kiềm. Liệt kê các phát biểu đúng theo số thứ tự tăng dần. ---------HẾT-------- -",
+        "prompt": "Muối Mohr là một dạng muối kép có tác dụng chống lại quá trình oxi hóa bằng không khí. Muối Mohr được tạo thành từ hỗn hợp E cùng số mol gồm iron(II) sulfate ngậm 7 phân tử nước và ammonium sulfate khan. Cân 7,35 gam muối Mohr trên rồi hòa tan vào nước, sau đó định mức trong bình 50 mL.\n\nChuẩn độ 5 mL dung dịch vừa pha cần dùng 12,5 mL dung dịch KMnO₄ 0,03 M trong môi trường H₂SO₄ loãng, dư theo phương trình:\n\nFe²⁺ + MnO₄⁻ + H⁺ → Fe³⁺ + Mn²⁺ + H₂O (1)\n\nTừ m gam E người ta điều chế muối Mohr với hiệu suất 65%; hòa tan muối Mohr này vào nước thu được dung dịch F. Hạ dần nhiệt độ F xuống 20 oC thu được 74,93 gam dung dịch và 31,2 gam muối Mohr kết tinh. Cho biết độ tan muối Mohr ở 20 oC là 27 gam. (Chỉ làm tròn đến phép tính cuối cùng, các kết quả làm tròn đến hàng phần mười.)\n\nCho các phát biểu sau:\n(1) Giá trị của m bằng 75,8.\n(2) Phần trăm khối lượng của Fe trong muối Mohr tạo thành ở trên bằng 14,3%.\n(3) Tổng hệ số cân bằng (nguyên, tối giản) trong phản ứng (1) bằng 24.\n(4) Để bảo quản muối Mohr, có thể bảo quản trong dung dịch có môi trường kiềm.\n\nLiệt kê các phát biểu đúng theo số thứ tự tăng dần.",
         "options": [],
         "correct_answer": "124",
         "points": 0.25,
@@ -753,7 +733,7 @@
         "section": "Phần I",
         "question_number": 1,
         "question_type": "single_choice",
-        "prompt": "Cho biết: E o 2+ = ―0,440V ; E o 2+ = +0,340V . Sức điện động chuẩn của pin điện hoá Fe-Cu là Fe /Fe Cu /Cu",
+        "prompt": "Cho biết: E°(Fe²⁺/Fe) = -0,440 V; E°(Cu²⁺/Cu) = +0,340 V. Sức điện động chuẩn của pin điện hóa Fe-Cu là",
         "options": [
           {
             "key": "A",
@@ -782,7 +762,7 @@
         "section": "Phần I",
         "question_number": 2,
         "question_type": "single_choice",
-        "prompt": "Một pin Galvani được cấu tạo bởi hai cặp oxi hoá – khử sau: Ag Ag Ag + + 1e → Ag E o + /Ag = 0,799V Ag Ag Ni Ni Ni 2+ + 2e → Ni E o 2+ = ―0,257V Ni Ni /Ni Khi pin làm việc ở điều kiện chuẩn, nhận định nào sau đây là đúng?",
+        "prompt": "Một pin Galvani được cấu tạo bởi hai cặp oxi hóa-khử sau:\n\nCặp oxi hóa-khử | Bán phản ứng | E° (V)\nAg⁺/Ag | Ag⁺ + 1e → Ag | +0,799\nNi²⁺/Ni | Ni²⁺ + 2e → Ni | -0,257\n\nKhi pin làm việc ở điều kiện chuẩn, nhận định nào sau đây là đúng?",
         "options": [
           {
             "key": "A",
@@ -790,15 +770,15 @@
           },
           {
             "key": "B",
-            "text": "Ag được tạo ra ở cực dương, Ni 2+ được tạo ra ở cực âm."
+            "text": "Ag được tạo ra ở cực dương, Ni²⁺ được tạo ra ở cực âm."
           },
           {
             "key": "C",
-            "text": "Ag+ được tạo ra ở cực âm và Ni được tạo ra ở cực dương."
+            "text": "Ag⁺ được tạo ra ở cực âm và Ni được tạo ra ở cực dương."
           },
           {
             "key": "D",
-            "text": "Ag được tạo ra ở cực âm và Ni 2+ được tạo ra ở cực dương."
+            "text": "Ag được tạo ra ở cực âm và Ni²⁺ được tạo ra ở cực dương."
           }
         ],
         "correct_answer": "B",
@@ -873,19 +853,19 @@
         "options": [
           {
             "key": "A",
-            "text": "CH 3 COOC 2 H 5 ."
+            "text": "CH₃COOC₂H₅."
           },
           {
             "key": "B",
-            "text": "CH 3 COOCH 3 ."
+            "text": "CH₃COOCH₃."
           },
           {
             "key": "C",
-            "text": "HCOOCH 3 ."
+            "text": "HCOOCH₃."
           },
           {
             "key": "D",
-            "text": "HCOOC 2 H 5 ."
+            "text": "HCOOC₂H₅."
           }
         ],
         "correct_answer": "B",
@@ -931,19 +911,19 @@
         "options": [
           {
             "key": "A",
-            "text": "các electron hóa trị nằm ở giữa các nguyên tử kim loại cạnh nhau."
+            "text": "Các electron hóa trị nằm ở giữa các nguyên tử kim loại cạnh nhau."
           },
           {
             "key": "B",
-            "text": "các electron hóa trị ở các nút mạng và các ion dương kim loại chuyển động tự do."
+            "text": "Các electron hóa trị ở các nút mạng và các ion dương kim loại chuyển động tự do."
           },
           {
             "key": "C",
-            "text": "các electron hóa trị và các ion dương kim loại chuyển động tự do trong toàn bộ mạng tinh"
+            "text": "Các electron hóa trị và các ion dương kim loại chuyển động tự do trong toàn bộ mạng tinh thể."
           },
           {
             "key": "D",
-            "text": "các ion dương kim loại nằm ở các nút mạng tinh thể và các electron hóa trị chuyển động tự"
+            "text": "Các ion dương kim loại nằm ở các nút mạng tinh thể và các electron hóa trị chuyển động tự do xung quanh."
           }
         ],
         "correct_answer": "D",
@@ -985,7 +965,7 @@
         "section": "Phần I",
         "question_number": 9,
         "question_type": "single_choice",
-        "prompt": "Phản ứng hóa học của ethylene với HCl được cho bởi phương trình: CH 2 =CH 2 + HCl → CH 3 CH 2 Cl (*) Cơ chế phản ứng và giản đồ năng lượng được đề xuất cho phản ứng trên như sau: Cơ chế phản ứng Giản đồ năng lượng Giai đoạn 1: Giai đoạn 2: Nhận định nào sau đây không đúng?",
+        "prompt": "Phản ứng hóa học của ethylene với HCl được cho bởi phương trình:\n\nCH₂=CH₂ + HCl → CH₃CH₂Cl (*)\n\nCơ chế phản ứng và giản đồ năng lượng được đề xuất cho phản ứng trên như hình.\n\nNhận định nào sau đây không đúng?",
         "options": [
           {
             "key": "A",
@@ -997,7 +977,7 @@
           },
           {
             "key": "C",
-            "text": "Liên kết C – Cl trong phân tử CH 3 CH 2 Cl là liên kết σ, được hình thành do sự xen phủ trục của các obitan nguyên tử."
+            "text": "Liên kết C-Cl trong phân tử CH₃CH₂Cl là liên kết σ, được hình thành do sự xen phủ trục của các obitan nguyên tử."
           },
           {
             "key": "D",
@@ -1101,11 +1081,11 @@
         "section": "Phần I",
         "question_number": 13,
         "question_type": "single_choice",
-        "prompt": "Cho bảng nhiệt độ sôi (oC) đo ở áp suất 1 atm như sau:\n\nCông thức chất | C2H5OH | CH3COOH | H2O | CH3COOC2H5 | H2SO4\nNhiệt độ sôi | 78,3 | 118 | 100 | 77 | 337\n\nEthyl acetate được điều chế bằng cách đun nóng hỗn hợp gồm acetic acid, ethanol và dung dịch H2SO4 98%, đựng trong bình cầu có nhánh. Nhiệt độ phản ứng được thiết lập ở 80 oC. Mô hình điều chế và tách ethyl acetate được thực hiện như hình. Phát biểu nào sau đây không đúng?",
+        "prompt": "Cho bảng nhiệt độ sôi (oC) đo ở áp suất 1 atm như sau:\n\nCông thức chất | C₂H₅OH | CH₃COOH | H₂O | CH₃COOC₂H₅ | H₂SO₄\nNhiệt độ sôi | 78,3 | 118 | 100 | 77 | 337\n\nEthyl acetate được điều chế bằng cách đun nóng hỗn hợp gồm acetic acid, ethanol và dung dịch H₂SO₄ 98%, đựng trong bình cầu có nhánh. Nhiệt độ phản ứng được thiết lập ở 80 oC. Mô hình điều chế và tách ethyl acetate được thực hiện như hình.\n\nNhận định nào sau đây không đúng?",
         "options": [
           {
             "key": "A",
-            "text": "H2SO4 đặc đóng vai trò vừa là chất xúc tác, vừa là chất hút nước, làm cân bằng phản ứng chuyển dịch theo chiều tạo ester, từ đó tăng hiệu suất phản ứng."
+            "text": "H₂SO₄ đặc đóng vai trò vừa là chất xúc tác, vừa là chất hút nước, làm cân bằng phản ứng chuyển dịch theo chiều tạo ester, từ đó tăng hiệu suất phản ứng."
           },
           {
             "key": "B",
@@ -1113,7 +1093,7 @@
           },
           {
             "key": "C",
-            "text": "Phản ứng điều chế ethyl acetate từ ethanol và acetic acid (có mặt H2SO4 đặc) được gọi là phản ứng ester hóa."
+            "text": "Phản ứng điều chế ethyl acetate từ ethanol và acetic acid (có mặt H₂SO₄ đặc) được gọi là phản ứng ester hóa."
           },
           {
             "key": "D",
@@ -1130,7 +1110,7 @@
         "section": "Phần I",
         "question_number": 14,
         "question_type": "single_choice",
-        "prompt": "Tên thay thế của amine CH 3 -NH-CH 2 -CH 2 -CH 3 là",
+        "prompt": "Tên thay thế của amine CH₃-NH-CH₂-CH₂-CH₃ là",
         "options": [
           {
             "key": "A",
@@ -1138,15 +1118,15 @@
           },
           {
             "key": "B",
-            "text": "N- propylmethanamine."
+            "text": "N-propylmethanamine."
           },
           {
             "key": "C",
-            "text": "N-methylpropan-3- amine."
+            "text": "N-methylpropan-3-amine."
           },
           {
             "key": "D",
-            "text": "N-methylpropan-1- amine."
+            "text": "N-methylpropan-1-amine."
           }
         ],
         "correct_answer": "D",
@@ -1159,23 +1139,23 @@
         "section": "Phần I",
         "question_number": 15,
         "question_type": "single_choice",
-        "prompt": "Phản ứng nào sau đây là phản ứng thu nhiệt? 298 298",
+        "prompt": "Phản ứng nào sau đây là phản ứng thu nhiệt?",
         "options": [
           {
             "key": "A",
-            "text": "NaOH(aq) + HCl(aq) → NaCl(aq) + H 2 O(l) ∆ r H o = ― 57,9 kJ ."
+            "text": "NaOH(aq) + HCl(aq) → NaCl(aq) + H₂O(l); ΔrH°₂₉₈ = -57,9 kJ."
           },
           {
             "key": "B",
-            "text": "CH 4 (g) + 2O 2 (g) → CO 2 (g) + 2H 2 O(l) ∆ r H o = ― 890,36 kJ ."
+            "text": "CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l); ΔrH°₂₉₈ = -890,36 kJ."
           },
           {
             "key": "C",
-            "text": "C 3 H 8 (g) + 5O 2 (g) → 3CO 2 (g) + 4H 2 O(l) ∆ r H o = ― 2220kJ ."
+            "text": "C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l); ΔrH°₂₉₈ = -2220 kJ."
           },
           {
             "key": "D",
-            "text": "ZnSO 4 (s) → ZnO(s) + SO 2 (g) ∆ r H o = + 235,21 kJ ."
+            "text": "ZnSO₄(s) → ZnO(s) + SO₂(g); ΔrH°₂₉₈ = +235,21 kJ."
           }
         ],
         "correct_answer": "D",
@@ -1233,7 +1213,7 @@
           },
           {
             "key": "D",
-            "text": "Công thức phân tử của X là C 4 H 9 O 2 N."
+            "text": "Công thức phân tử của X là C₄H₉O₂N."
           }
         ],
         "correct_answer": "C",
@@ -1275,31 +1255,26 @@
         "section": "Phần II",
         "question_number": 19,
         "question_type": "true_false",
-        "prompt": "Sulfur dioxide (SO 2 ) tác dụng với nitrogen dioxide (NO 2 ) khi có xúc tác tạo thành nitrogen oxide (NO) và sulfur trioxide (SO 3 ) theo phương trình phản ứng: 298 298 SO 2 (g) + NO 2 (g) SO 3 (g) + NO(g) ∆ r H o 298 298 = ― 41,8 kJ (*)",
+        "prompt": "Sulfur dioxide (SO₂) tác dụng với nitrogen dioxide (NO₂) khi có xúc tác tạo thành nitrogen oxide (NO) và sulfur trioxide (SO₃) theo phản ứng:\n\nSO₂(g) + NO₂(g) ⇌ SO₃(g) + NO(g); ΔrH°₂₉₈ = -41,8 kJ (*)",
         "options": [
           {
             "key": "a",
-            "text": "Biết nhiệt tạo thành chuẩn của NO 2 (g), NO(g), SO 3 (g) lần lượt là 33,2 kJ/mol, 91,3 kJ/mol, -329 kJ/mol, khi đó nhiệt tạo thành chuẩn của SO 2 (g) là 229,1 kJ/mol."
+            "text": "Biết nhiệt tạo thành chuẩn của NO₂(g), NO(g), SO₃(g) lần lượt là 33,2 kJ/mol, 91,3 kJ/mol, -329 kJ/mol, khi đó nhiệt tạo thành chuẩn của SO₂(g) là 229,1 kJ/mol."
           },
           {
             "key": "b",
-            "text": "Các chất SO 3 và NO sinh ra có thể hấp thụ bởi CaO."
+            "text": "Các chất SO₃ và NO sinh ra có thể hấp thụ bởi CaO."
           },
           {
             "key": "c",
-            "text": "Ở 298 K, trong bình kín dung tích 1 lít, hệ phản ứng (*) đang ở trạng thái cân bằng. Tất cả các chất đều ở trạng thái khí và có nồng độ lần lượt: [SO₃] = 3,0 M; [NO] = 2,0 M; [SO₂] = 4,0 M; [NO₂] = 0,5 M. Nếu thêm 1,50 mol NO₂ vào bình (giữ nguyên nhiệt độ và thể tích) thì nồng độ NO ở trạng thái cân bằng mới là 2,84 M. ( Kết quả làm tròn đến hàng phần trăm )"
+            "text": "Ở 298 K, trong bình kín dung tích 1 lít, hệ phản ứng (*) đang ở trạng thái cân bằng. Tất cả các chất đều ở trạng thái khí và có nồng độ lần lượt: [SO₃] = 3,0 M; [NO] = 2,0 M; [SO₂] = 4,0 M; [NO₂] = 0,5 M. Nếu thêm 1,50 mol NO₂ vào bình (giữ nguyên nhiệt độ và thể tích) thì nồng độ NO ở trạng thái cân bằng mới là 2,84 M. (Kết quả làm tròn đến hàng phần trăm.)"
           },
           {
             "key": "d",
             "text": "Phản ứng (*) là phản ứng tỏa nhiệt."
           }
         ],
-        "correct_answer": {
-          "a": false,
-          "b": false,
-          "c": true,
-          "d": true
-        },
+        "correct_answer": "FFTT",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -1309,31 +1284,26 @@
         "section": "Phần II",
         "question_number": 20,
         "question_type": "true_false",
-        "prompt": "Trong phòng thí nghiệm, benzoic acid được điều chế từ toluene theo sơ đồ gồm hai giai đoạn được đánh số (1) và (2) như sau: Trong một thí nghiệm tổng hợp benzoic acid theo sơ đồ trên, từ 4,0 mL toluene (khối lượng riêng bằng 0,867 g. mL⁻¹) thu được 2,0 gam benzoic acid (biết KMnO 4 và HCl được lấy dư). Hiệu suất của quá trình tổng hợp benzoic acid từ toluene là h%. Cho biết số sóng hấp thụ đặc trưng của một số liên kết trên phổ hồng ngoại như sau: Liên kết O–H (alcohol) O–H (carboxylic acid) C=O (ester, carboxylic acid) Số sóng (cm⁻¹) 3650–3200 3300–2500 1780–1650 Trong phản ứng ở giai đoạn (2), anion C 6 H 5 COO⁻ là một base theo thuyết Bronsted – Lowry.",
+        "prompt": "Trong phòng thí nghiệm, benzoic acid được điều chế từ toluene theo sơ đồ gồm hai giai đoạn được đánh số (1) và (2) như hình.\n\nTrong một thí nghiệm tổng hợp benzoic acid theo sơ đồ trên, từ 4,0 mL toluene (khối lượng riêng 0,867 g/mL) thu được 2,0 gam benzoic acid (biết KMnO₄ và HCl được lấy dư). Hiệu suất của quá trình tổng hợp benzoic acid từ toluene là h%.\n\nSố sóng hấp thụ đặc trưng của một số liên kết trên phổ hồng ngoại:\nLiên kết | O-H (alcohol) | O-H (carboxylic acid) | C=O (ester, carboxylic acid)\nSố sóng (cm⁻¹) | 3650-3200 | 3300-2500 | 1780-1650",
         "options": [
           {
             "key": "a",
-            "text": "Trong phản ứng ở giai đoạn (2), anion C6H5COO- là một base theo thuyết Bronsted-Lowry."
+            "text": "Trong phản ứng ở giai đoạn (2), anion C₆H₅COO⁻ là một base theo thuyết Bronsted-Lowry."
           },
           {
             "key": "b",
-            "text": "Giá trị của h là 43,5. (Kết quả làm tròn đến hàng phần mười)."
+            "text": "Giá trị của h là 43,5. (Kết quả làm tròn đến hàng phần mười.)"
           },
           {
             "key": "c",
-            "text": "Trong phản ứng với KMnO4(aq) ở giai đoạn (1), toluene đóng vai trò là chất oxi hóa."
+            "text": "Trong phản ứng với KMnO₄(aq) ở giai đoạn (1), toluene đóng vai trò là chất oxi hóa."
           },
           {
             "key": "d",
             "text": "Trên phổ hồng ngoại của benzoic acid, tín hiệu (peak) ở 1690 cm-1 đặc trưng cho liên kết O-H."
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": true,
-          "c": false,
-          "d": false
-        },
+        "correct_answer": "TTFF",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -1343,15 +1313,15 @@
         "section": "Phần II",
         "question_number": 21,
         "question_type": "true_false",
-        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố như sau: 47,06%C; 5,88%H và 47,06%O. Phổ hồng ngoại (IR) của E có vùng hấp thụ với peak đặc trưng của liên kết C=O (số sóng 1750–1735 cm –1 ), liên kết C–O (số sóng 1300–1000 cm –1 ) và không có vùng hấp thụ với peak đặc trưng của liên kết O–H (số sóng 3650–3200 cm –1 ). Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204. Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M X < M Y < M Z ). Acid hóa Z thu được chất hữu cơ T (C 2 H 4 O 3 ). Cho hơi X đi qua bột Al 2 O 3 nung nóng, thu được alkene F. Biết E phản ứng được với thuốc thử Tollens.",
+        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố như sau: 47,06%C; 5,88%H và 47,06%O. Phổ hồng ngoại (IR) của E có vùng hấp thụ với peak đặc trưng của liên kết C=O (số sóng 1750–1735 cm –1 ), liên kết C–O (số sóng 1300–1000 cm –1 ) và không có vùng hấp thụ với peak đặc trưng của liên kết O–H (số sóng 3650–3200 cm –1 ). Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204. Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M X < M Y < M Z ). Acid hóa Z thu được chất hữu cơ T (C₂H₄O₃ ). Cho hơi X đi qua bột Al 2 O 3 nung nóng, thu được alkene F. Biết E phản ứng được với thuốc thử Tollens.",
         "options": [
           {
             "key": "a",
-            "text": "Khi cho a mol T tác dụng với Na dư, thu được a mol khí H 2 ."
+            "text": "Khi cho a mol T tác dụng với Na dư, thu được a mol khí H₂."
           },
           {
             "key": "b",
-            "text": "Chất X tác dụng được với Cu(OH) 2 ở điều kiện thường, tạo dung dịch màu xanh lam."
+            "text": "Chất X tác dụng được với Cu(OH)₂ ở điều kiện thường, tạo dung dịch màu xanh lam."
           },
           {
             "key": "c",
@@ -1362,12 +1332,7 @@
             "text": "Chất E có ba cấu tạo thỏa mãn."
           }
         ],
-        "correct_answer": {
-          "a": true,
-          "b": false,
-          "c": true,
-          "d": false
-        },
+        "correct_answer": "TFTF",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -1377,7 +1342,7 @@
         "section": "Phần II",
         "question_number": 22,
         "question_type": "true_false",
-        "prompt": "Tại 25°C, một pin điện hoá được thiết lập bởi một điện cực Ni nhúng trong dung dịch Ni(NO 3 ) 2 1,0 M và một điện cực Cu nhúng trong dung dịch Cu(NO 3 ) 2 0,4 M (mô tả như hình vẽ). Khi pin bắt đầu hoạt động, dưới tác dụng của điện trường trong dung dịch điện li, các ion A và B di chuyển ngược chiều nhau về các điện cực. Cu Cu Thế điện cực chuẩn của các cặp oxi hoá – khử như sau: E o Cu Cu 2+ /Cu = +0,34V và E o 2+ /Ni Ni Ni = ―0,257V Ni Ni Biết rằng thế điện cực của một cặp oxi hoá – khử ở nồng độ bất kì được tính theo phương trình Nernst: Khi giảm nồng độ ion kim loại trong dung dịch thì thế điện cực của kim loại không thay đổi. Cu đóng vai trò là cực âm (anode), Ni đóng vai trò là cực dương (cathode).",
+        "prompt": "Tại 25°C, một pin điện hóa được thiết lập bởi một điện cực Ni nhúng trong dung dịch Ni(NO₃)₂ 1,0 M và một điện cực Cu nhúng trong dung dịch Cu(NO₃)₂ 0,4 M (mô tả như hình vẽ). Khi pin bắt đầu hoạt động, dưới tác dụng của điện trường trong dung dịch điện li, các ion A và B di chuyển ngược chiều nhau về các điện cực.\n\nThế điện cực chuẩn:\nE°(Cu²⁺/Cu) = +0,34 V\nE°(Ni²⁺/Ni) = -0,257 V\n\nBiết rằng thế điện cực của một cặp oxi hóa-khử ở nồng độ bất kì được tính theo phương trình Nernst như hình.",
         "options": [
           {
             "key": "a",
@@ -1393,15 +1358,10 @@
           },
           {
             "key": "d",
-            "text": "A là cation K+ và B là anion NO3-."
+            "text": "A là cation K⁺ và B là anion NO₃⁻."
           }
         ],
-        "correct_answer": {
-          "a": false,
-          "b": false,
-          "c": false,
-          "d": true
-        },
+        "correct_answer": "FFFT",
         "points": 1,
         "needs_review": false,
         "explanation": "Đáp án đã đối chiếu từ phần hướng dẫn giải/đáp án trong file Word gốc.",
@@ -1411,7 +1371,7 @@
         "section": "Phần III",
         "question_number": 23,
         "question_type": "short_answer",
-        "prompt": "Điện phân dung dịch CuSO 4 với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng. Dòng điện sử dụng có cường độ 10A (ampe) được duy trì trong thời gian 2 giờ 8 phút 40 giây. Hiệu suất điện phân đạt 85%. Sau quá trình điện phân, đồng bám đồng đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm như nhau ở mọi vị trí. Biết khối lượng riêng của Cu (D = 8,9 g/cm³); Điện lượng Q được xác định theo công thức: Q = n.F = I.t, trong đó: n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (ampe), t là thời gian (giây), F = 96500 C.mol⁻¹; M Cu = 64. Tính tổng diện tích bề mặt tấm sắt được mạ. ( Kết quả làm tròn đến hàng đơn vị, đơn vị cm² )",
+        "prompt": "Điện phân dung dịch CuSO₄ với anode là thanh Cu nguyên chất và cathode là một tấm sắt cần mạ đồng. Dòng điện sử dụng có cường độ 10A (ampe) được duy trì trong thời gian 2 giờ 8 phút 40 giây. Hiệu suất điện phân đạt 85%. Sau quá trình điện phân, đồng bám đồng đều trên toàn bộ bề mặt tấm sắt với độ dày 0,16 mm như nhau ở mọi vị trí. Biết khối lượng riêng của Cu (D = 8,9 g/cm³); Điện lượng Q được xác định theo công thức: Q = n.F = I.t, trong đó: n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (ampe), t là thời gian (giây), F = 96500 C.mol⁻¹; M Cu = 64. Tính tổng diện tích bề mặt tấm sắt được mạ. ( Kết quả làm tròn đến hàng đơn vị, đơn vị cm² )",
         "options": [],
         "correct_answer": "153",
         "points": 0.25,
@@ -1435,7 +1395,7 @@
         "section": "Phần III",
         "question_number": 25,
         "question_type": "short_answer",
-        "prompt": "Cho các cân bằng sau: H 2(𝑔) + 𝐼 2(𝑔) ⇌2HI (𝑔) (1) 2NO (g) + O 2(g) ⇌2NO 2(g) (2) CaCO 3(𝑠) ⇌CaO (𝑠) + CO 2(𝑔) (3) Fe (s) +4H 2 O (g) ⇌Fe 3 O 4(s) +4H 2(g) (4) CO (𝑔) + Cl 2(𝑔) ⇌COCl 2(𝑔) (5) Khi tăng áp suất, có bao nhiêu cân bằng chuyển dịch theo chiều thuận?",
+        "prompt": "Cho các cân bằng sau:\n\n(1) H₂(g) + I₂(g) ⇌ 2HI(g)\n(2) 2NO(g) + O₂(g) ⇌ 2NO₂(g)\n(3) CaCO₃(s) ⇌ CaO(s) + CO₂(g)\n(4) Fe(s) + 4H₂O(g) ⇌ Fe₃O₄(s) + 4H₂(g)\n(5) CO(g) + Cl₂(g) ⇌ COCl₂(g)\n\nKhi tăng áp suất, có bao nhiêu cân bằng chuyển dịch theo chiều thuận?",
         "options": [],
         "correct_answer": "2",
         "points": 0.25,
@@ -1447,7 +1407,7 @@
         "section": "Phần III",
         "question_number": 26,
         "question_type": "short_answer",
-        "prompt": "Cho các thí nghiệm sau: Glucose phản ứng thuốc thử Tollens. Glucose phản ứng với nước bromine. Glucose phản ứng với copper(II) hydroxide trong môi trường kiềm, đun nóng. Saccharose phản ứng với copper(II) hydroxide trong môi trường kiềm ở điều kiện thường. Cellulose phản ứng với dung dịch HNO 3 đặc có mặt H 2 SO 4 đặc, đun nóng. Có bao nhiêu thí nghiệm xảy ra phản ứng oxi hóa – khử?",
+        "prompt": "Cho các thí nghiệm sau:\n\n(1) Glucose phản ứng với thuốc thử Tollens.\n(2) Glucose phản ứng với nước bromine.\n(3) Glucose phản ứng với copper(II) hydroxide trong môi trường kiềm, đun nóng.\n(4) Saccharose phản ứng với copper(II) hydroxide trong môi trường kiềm ở điều kiện thường.\n(5) Cellulose phản ứng với dung dịch HNO₃ đặc có mặt H₂SO₄ đặc, đun nóng.\n\nCó bao nhiêu thí nghiệm xảy ra phản ứng oxi hóa-khử?",
         "options": [],
         "correct_answer": "3",
         "points": 0.25,
@@ -1471,7 +1431,7 @@
         "section": "Phần III",
         "question_number": 28,
         "question_type": "short_answer",
-        "prompt": "Xà phòng, chất giặt rửa được sử dụng rộng rãi trong đời sống: rửa tay, giặt quần áo, rửa chén bát, lau sàn,… Sơ đồ dưới đây mô tả cơ chế giặt rửa của xà phòng và các chất giặt rửa: Cho các nhận định sau: Các chất CH 3 [CH 2 ] 10 CH 2 -C 6 H 4 -SO 3 Na và CH 3 [CH 2 ] 10 CH 2 OSO 3 Na đều là chất giặt rửa tổng hợp. Cấu tạo chung của xà phòng và chất giặt rửa gồm một phần ưa nước nối với một phần kị nước; trong đó phần ưa nước là các gốc hydrocarbon mạch dài tan nhiều trong nước. Khi tan trong nước, phần kị nước của phân tử xà phòng thâm nhập vào vết bẩn dầu mỡ; phần ưa nước hướng ra ngoài tiếp xúc với nước, làm cho vết bẩn bị chia nhỏ, phân tán vào nước và bị rửa trôi. Chất giặt rửa tổng hợp bị giảm hoặc mất tác dụng giặt rửa khi dùng với nước cứng vì tạo kết tủa với cation Ca 2+ , Mg 2+ . Các chất giặt rửa có tính hoạt động bề mặt cao, làm giảm sức căng bề mặt của nước, giúp vải sợi dễ thấm ướt và tăng hiệu quả giặt rửa. Liệt kê các nhận định đúng theo số thứ tự tăng dần. -------------------- HẾT ------------------- -",
+        "prompt": "Xà phòng, chất giặt rửa được sử dụng rộng rãi trong đời sống: rửa tay, giặt quần áo, rửa chén bát, lau sàn,... Sơ đồ dưới đây mô tả cơ chế giặt rửa của xà phòng và các chất giặt rửa.\n\nCho các nhận định sau:\n(1) Các chất CH₃[CH₂]₁₀CH₂-C₆H₄-SO₃Na và CH₃[CH₂]₁₀CH₂OSO₃Na đều là chất giặt rửa tổng hợp.\n(2) Cấu tạo chung của xà phòng và chất giặt rửa gồm một phần ưa nước nối với một phần kị nước; trong đó phần ưa nước là các gốc hydrocarbon mạch dài tan nhiều trong nước.\n(3) Khi tan trong nước, phần kị nước của phân tử xà phòng thâm nhập vào vết bẩn dầu mỡ; phần ưa nước hướng ra ngoài tiếp xúc với nước, làm cho vết bẩn bị chia nhỏ, phân tán vào nước và bị rửa trôi.\n(4) Chất giặt rửa tổng hợp bị giảm hoặc mất tác dụng giặt rửa khi dùng với nước cứng vì tạo kết tủa với cation Ca²⁺, Mg²⁺.\n(5) Các chất giặt rửa có tính hoạt động bề mặt cao, làm giảm sức căng bề mặt của nước, giúp vải sợi dễ thấm ướt và tăng hiệu quả giặt rửa.\n\nLiệt kê các nhận định đúng theo số thứ tự tăng dần.",
         "options": [],
         "correct_answer": "1345",
         "points": 0.25,
