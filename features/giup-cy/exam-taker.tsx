@@ -73,6 +73,20 @@ function questionTypeLabel(type: GiupCyExamQuestionRow["question_type"]) {
   return type;
 }
 
+function shortAnswerPlaceholder(question: GiupCyExamQuestionRow) {
+  const prompt = question.prompt.toLowerCase();
+
+  if (prompt.includes("liệt kê") || prompt.includes("gán số") || prompt.includes("số thứ tự")) {
+    return "Nhập số liền nhau, không cách. VD: 1345";
+  }
+
+  if (prompt.includes("làm tròn") || prompt.includes("hàng phần mười") || prompt.includes("hàng đơn vị")) {
+    return "Nhập số theo đề; số thập phân dùng dấu phẩy. VD: 23,6";
+  }
+
+  return "Nhập đúng format đáp án. VD: 1345 hoặc 23,6";
+}
+
 function formatDuration(seconds: number) {
   const safeSeconds = Math.max(0, seconds);
   const hours = Math.floor(safeSeconds / 3600);
@@ -725,7 +739,7 @@ function AnswerControl({
   }
 
   if (question.question_type === "short_answer") {
-    return <Input value={String(answers[question.id] ?? "")} onChange={(event) => setAnswer(question.id, event.target.value)} placeholder="Nhập đáp án" />;
+    return <Input value={String(answers[question.id] ?? "")} onChange={(event) => setAnswer(question.id, event.target.value)} placeholder={shortAnswerPlaceholder(question)} />;
   }
 
   return <Textarea rows={3} value={String(answers[question.id] ?? "")} onChange={(event) => setAnswer(question.id, event.target.value)} />;
