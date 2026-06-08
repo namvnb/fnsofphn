@@ -3,6 +3,7 @@ import week2ExamData from "./week-2-exams.json";
 import week3ExamData from "./week-3-exams.json";
 import week4ExamData from "./week-4-exams.json";
 import week5ExamData from "./week-5-exams.json";
+import week6ExamData from "./week-6-exams.json";
 
 export type SampleQuestion = {
   section: string;
@@ -448,6 +449,7 @@ const week2Exams = week2ExamData as SampleExam[];
 const week3Exams = week3ExamData as SampleExam[];
 const week4Exams = week4ExamData as SampleExam[];
 const week5Exams = week5ExamData as SampleExam[];
+const week6Exams = week6ExamData as SampleExam[];
 
 export const sampleGiupCyExams: SampleExam[] = [
   {
@@ -475,5 +477,6 @@ export const sampleGiupCyExams: SampleExam[] = [
   ...week2Exams,
   ...week3Exams,
   ...week4Exams,
-  ...week5Exams
+  ...week5Exams,
+  ...week6Exams
 ];

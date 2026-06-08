@@ -3,6 +3,7 @@ import week2AssetsData from "./week-2-assets.json";
 import week3AssetsData from "./week-3-assets.json";
 import week4AssetsData from "./week-4-assets.json";
 import week5AssetsData from "./week-5-assets.json";
+import week6AssetsData from "./week-6-assets.json";
 
 export type ExamPageAsset = {
   pageNumber: number;
@@ -28,7 +29,8 @@ const importedAssets = {
   ...(week2AssetsData as Record<string, ImportedAsset>),
   ...(week3AssetsData as Record<string, ImportedAsset>),
   ...(week4AssetsData as Record<string, ImportedAsset>),
-  ...(week5AssetsData as Record<string, ImportedAsset>)
+  ...(week5AssetsData as Record<string, ImportedAsset>),
+  ...(week6AssetsData as Record<string, ImportedAsset>)
 };
 
 function buildPages(basePath: string, count: number, width: number, height: number, padded = true) {

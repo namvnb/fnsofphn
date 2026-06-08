@@ -2,6 +2,8 @@ import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import week2ExamData from "@/features/giup-cy/week-2-exams.json";
 import week3ExamData from "@/features/giup-cy/week-3-exams.json";
 import week4ExamData from "@/features/giup-cy/week-4-exams.json";
+import week5ExamData from "@/features/giup-cy/week-5-exams.json";
+import week6ExamData from "@/features/giup-cy/week-6-exams.json";
 import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import { gradeAttempt } from "@/features/giup-cy/grading";
 import { sampleGiupCyExams, type SampleExam, type SampleQuestion } from "@/features/giup-cy/sample-exams";
@@ -90,7 +92,13 @@ type ImportedExam = {
   questions: ImportedQuestion[];
 };
 
-const importedExams = [...(week2ExamData as ImportedExam[]), ...(week3ExamData as ImportedExam[]), ...(week4ExamData as ImportedExam[])];
+const importedExams = [
+  ...(week2ExamData as ImportedExam[]),
+  ...(week3ExamData as ImportedExam[]),
+  ...(week4ExamData as ImportedExam[]),
+  ...(week5ExamData as ImportedExam[]),
+  ...(week6ExamData as ImportedExam[])
+];
 const defaultImportedDescriptions = [
   "Đề tuần 2 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai.",
   "Đề tuần 3 được nhập từ file Word gốc. Các câu có công thức/hình được giữ nhúng từ Word; đáp án đang để rà soát để tránh chấm sai."
