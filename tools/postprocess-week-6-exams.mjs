@@ -629,6 +629,29 @@ Nhận định nào sau đây không đúng?`
       )
     );
 
+    setPrompt(
+      exam,
+      21,
+      `Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố:
+
+C | H | O
+47,06% | 5,88% | 47,06%
+
+Phổ hồng ngoại (IR) của E:
+Liên kết | Tín hiệu đặc trưng
+C=O | 1750-1735 cm⁻¹
+C-O | 1300-1000 cm⁻¹
+O-H | Không có vùng hấp thụ 3650-3200 cm⁻¹
+
+Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204.
+
+Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M_X < M_Y < M_Z).
+Acid hóa Z thu được chất hữu cơ T (C₂H₄O₃).
+Cho hơi X đi qua bột Al₂O₃ nung nóng, thu được alkene F.
+
+Biết E phản ứng được với thuốc thử Tollens.`
+    );
+
     setOptions(
       exam,
       21,

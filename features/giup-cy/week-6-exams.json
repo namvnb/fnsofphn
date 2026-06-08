@@ -1313,7 +1313,7 @@
         "section": "Phần II",
         "question_number": 21,
         "question_type": "true_false",
-        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố như sau: 47,06%C; 5,88%H và 47,06%O. Phổ hồng ngoại (IR) của E có vùng hấp thụ với peak đặc trưng của liên kết C=O (số sóng 1750–1735 cm⁻¹), liên kết C–O (số sóng 1300–1000 cm⁻¹) và không có vùng hấp thụ với peak đặc trưng của liên kết O–H (số sóng 3650–3200 cm⁻¹). Từ phổ khối lượng (MS), xác định được phân tử khối của E là 204. Thủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M_X < M_Y < M_Z). Acid hóa Z thu được chất hữu cơ T (C₂H₄O₃). Cho hơi X đi qua bột Al₂O₃ nung nóng, thu được alkene F. Biết E phản ứng được với thuốc thử Tollens.",
+        "prompt": "Hợp chất hữu cơ đa chức, mạch hở E có thành phần phần trăm khối lượng các nguyên tố:\n\nC | H | O\n47,06% | 5,88% | 47,06%\n\nPhổ hồng ngoại (IR) của E:\nLiên kết | Tín hiệu đặc trưng\nC=O | 1750-1735 cm⁻¹\nC-O | 1300-1000 cm⁻¹\nO-H | Không có vùng hấp thụ 3650-3200 cm⁻¹\n\nTừ phổ khối lượng (MS), xác định được phân tử khối của E là 204.\n\nThủy phân hoàn toàn E trong dung dịch NaOH chỉ thu được ba sản phẩm gồm alcohol X, hai chất hữu cơ Y và Z (M_X < M_Y < M_Z).\nAcid hóa Z thu được chất hữu cơ T (C₂H₄O₃).\nCho hơi X đi qua bột Al₂O₃ nung nóng, thu được alkene F.\n\nBiết E phản ứng được với thuốc thử Tollens.",
         "options": [
           {
             "key": "a",
