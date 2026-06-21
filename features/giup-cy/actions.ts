@@ -8,7 +8,6 @@ import { applyWeek2AnswerKeys } from "@/features/giup-cy/week-2-answer-keys";
 import week3ExamData from "@/features/giup-cy/week-3-exams.json";
 import { getGiupCyWorkspace } from "@/features/giup-cy/workspace";
 import { requireUser } from "@/lib/auth/guards";
-import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseEnv } from "@/lib/supabase/env";
 import type { GiupCyExamQuestionRow, GiupCyExamRow, Json } from "@/types/database";
@@ -141,8 +140,13 @@ export async function togglePublicExamActive(input: unknown): Promise<ActionResu
   if (!parsed.success) return { ok: false, message: "Dữ liệu chưa hợp lệ." };
 
   try {
-    const supabase = createAdminClient();
-    const { error } = await supabase.from("giup_cy_exams").update({ is_active: parsed.data.isActive }).eq("id", parsed.data.examId);
+    const user = await requireUser();
+    const workspace = await getGiupCyWorkspace(user);
+    const { error } = await workspace.supabase
+      .from("giup_cy_exams")
+      .update({ is_active: parsed.data.isActive })
+      .eq("id", parsed.data.examId)
+      .eq("user_id", workspace.ownerUser.id);
 
     if (error) return { ok: false, message: error.message };
     revalidatePath("/giup-cy");
@@ -157,15 +161,17 @@ export async function updatePublicExamSettings(input: unknown): Promise<ActionRe
   if (!parsed.success) return { ok: false, message: "Tiêu đề hoặc thời gian chưa hợp lệ." };
 
   try {
-    const supabase = createAdminClient();
-    const { error } = await supabase
+    const user = await requireUser();
+    const workspace = await getGiupCyWorkspace(user);
+    const { error } = await workspace.supabase
       .from("giup_cy_exams")
       .update({
         title: parsed.data.title,
         description: parsed.data.description ?? "",
         duration_minutes: parsed.data.durationMinutes
       })
-      .eq("id", parsed.data.examId);
+      .eq("id", parsed.data.examId)
+      .eq("user_id", workspace.ownerUser.id);
 
     if (error) return { ok: false, message: error.message };
     revalidatePath("/giup-cy");

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -160,8 +160,8 @@ export function AppShell({ children, profile, quickNotes, giupCyOnly = false, hi
       </div>
       {giupCyOnly ? null : <QuickNoteDock initialNotes={quickNotes} />}
 
-      <nav className="fixed bottom-3 left-3 right-3 z-40 grid grid-cols-5 gap-1 rounded-[24px] border border-border-soft bg-white/82 p-2 shadow-[0_22px_70px_rgba(15,23,42,0.15)] backdrop-blur-2xl lg:hidden">
-        {visibleNavItems.slice(0, 5).map((item) => {
+      <nav className="fixed bottom-3 left-3 right-3 z-40 flex gap-1 overflow-x-auto rounded-[24px] border border-border-soft bg-white/82 p-2 shadow-[0_22px_70px_rgba(15,23,42,0.15)] backdrop-blur-2xl lg:hidden">
+        {visibleNavItems.map((item) => {
           const active = isActivePath(pathname, item.href);
           return (
             <Link
@@ -172,7 +172,7 @@ export function AppShell({ children, profile, quickNotes, giupCyOnly = false, hi
                 if (!active) setPendingHref(item.href);
               }}
               className={cn(
-                "grid place-items-center gap-1 rounded-2xl px-1 py-2 text-[11px] font-semibold transition",
+                "grid min-w-16 place-items-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-semibold transition",
                 active ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_12px_28px_rgba(91,108,255,0.25)]" : "text-text-secondary"
               )}
             >

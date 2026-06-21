@@ -14,17 +14,24 @@ export const GIUP_CY_SHARED_OWNER_ALIAS = "fnsofphn";
 export const GIUP_CY_CO_ADMIN_EMAILS = new Set(["namcy@gmail.com", "namcy102025@gmail.com"]);
 export const GIUP_CY_SHARED_MANAGER_EMAILS = GIUP_CY_CO_ADMIN_EMAILS;
 
+export function normalizeEmail(email: string | null | undefined) {
+  return email?.trim().toLowerCase() ?? "";
+}
+
 export function isGiupCyOnlyEmail(email: string | null | undefined) {
-  return Boolean(email && GIUP_CY_ONLY_EMAILS.has(email.toLowerCase()));
+  const normalized = normalizeEmail(email);
+  return Boolean(normalized && GIUP_CY_ONLY_EMAILS.has(normalized));
 }
 
 export function getHiddenNavItems(email: string | null | undefined): string[] {
-  if (!email) return [];
-  return HIDDEN_NAV_ITEMS[email.toLowerCase()] ?? [];
+  const normalized = normalizeEmail(email);
+  if (!normalized) return [];
+  return HIDDEN_NAV_ITEMS[normalized] ?? [];
 }
 
 export function isGiupCyCoAdmin(email: string | null | undefined) {
-  return Boolean(email && GIUP_CY_CO_ADMIN_EMAILS.has(email.toLowerCase()));
+  const normalized = normalizeEmail(email);
+  return Boolean(normalized && GIUP_CY_CO_ADMIN_EMAILS.has(normalized));
 }
 
 export function isGiupCySharedManagerEmail(email: string | null | undefined) {

@@ -16,6 +16,11 @@ export type TradingIdeaStatus = "researching" | "ready" | "testing" | "archived"
 export type TradingBacktestVerdict = "promising" | "observe" | "reject";
 export type ProjectAccountStatus = "active" | "paused" | "archived";
 export type GiupCyQuestionType = "single_choice" | "true_false" | "short_answer";
+export type GiupCyMemberRole = "owner" | "manager" | "viewer";
+export type GiupCyAccessScope = "full" | "results_only";
+export type GiupCyAssetKind = "source" | "crop" | "solution" | "attachment";
+export type SubscriptionPlan = "free" | "pro" | "team";
+export type SubscriptionStatus = "active" | "trialing" | "past_due" | "cancelled";
 
 type BaseRow = {
   id: string;
@@ -257,6 +262,53 @@ export type GiupCyExamAttemptRow = {
   created_at: string;
 };
 
+export type GiupCyMemberRow = {
+  id: string;
+  owner_user_id: string;
+  member_user_id: string | null;
+  member_email: string;
+  role: GiupCyMemberRole;
+  access_scope: GiupCyAccessScope;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export type GiupCyAuditLogRow = {
+  id: string;
+  owner_user_id: string;
+  actor_user_id: string | null;
+  actor_email: string | null;
+  action: string;
+  target_type: string;
+  target_id: string | null;
+  metadata: Json;
+  created_at: string;
+};
+
+export type GiupCyExamAssetRow = {
+  id: string;
+  exam_id: string;
+  question_id: string | null;
+  storage_bucket: string;
+  storage_path: string;
+  public_url: string | null;
+  asset_kind: GiupCyAssetKind;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+};
+
+export type UserSubscriptionPlanRow = {
+  id: string;
+  user_id: string;
+  plan: SubscriptionPlan;
+  status: SubscriptionStatus;
+  current_period_end: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 type TableDefinition<Row, Insert = Partial<Row>, Update = Partial<Row>> = {
   Row: Row;
   Insert: Insert;
@@ -289,12 +341,24 @@ export interface Database {
       giup_cy_exams: TableDefinition<GiupCyExamRow>;
       giup_cy_exam_questions: TableDefinition<GiupCyExamQuestionRow>;
       giup_cy_exam_attempts: TableDefinition<GiupCyExamAttemptRow>;
+      giup_cy_members: TableDefinition<GiupCyMemberRow>;
+      giup_cy_audit_logs: TableDefinition<GiupCyAuditLogRow>;
+      giup_cy_exam_assets: TableDefinition<GiupCyExamAssetRow>;
+      user_subscription_plans: TableDefinition<UserSubscriptionPlanRow>;
     };
     Views: Record<string, never>;
     Functions: {
       giup_cy_owner_user_id: {
         Args: Record<PropertyKey, never>;
         Returns: string | null;
+      };
+      is_giup_cy_admin: {
+        Args: Record<PropertyKey, never>;
+        Returns: boolean;
+      };
+      giup_cy_access_scope: {
+        Args: Record<PropertyKey, never>;
+        Returns: string;
       };
     };
     Enums: Record<string, never>;

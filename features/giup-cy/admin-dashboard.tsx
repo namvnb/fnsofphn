@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { CheckCircle2, Clipboard, Eye, FileJson, Power, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -40,10 +40,6 @@ export function GiupCyAdminDashboard({ exams }: Props) {
   const [importJson, setImportJson] = useState("");
   const [settings, setSettings] = useState(() => settingsFromExams(exams));
 
-  useEffect(() => {
-    setVisibleExams(exams);
-    setSettings(settingsFromExams(exams));
-  }, [exams]);
 
   async function copyLink(slug: string) {
     const url = `${window.location.origin}/exam/${slug}`;

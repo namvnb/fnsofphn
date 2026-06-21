@@ -24,8 +24,6 @@ let cachedOwnerUserId: string | null = null;
 export async function getGiupCyOwnerUserId(): Promise<string | null> {
   if (cachedOwnerUserId) return cachedOwnerUserId;
 
-  cachedOwnerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID || GIUP_CY_OWNER_USER_ID;
-  if (cachedOwnerUserId) return cachedOwnerUserId;
 
   try {
     const supabase = await createClient();
@@ -61,6 +59,8 @@ export async function getGiupCyOwnerUserId(): Promise<string | null> {
   } catch {
     cachedOwnerUserId = null;
   }
+
+  cachedOwnerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID || GIUP_CY_OWNER_USER_ID;
 
   return cachedOwnerUserId;
 }

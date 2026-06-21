@@ -1,4 +1,10 @@
-import { GIUP_CY_OWNER_USER_ID, GIUP_CY_SHARED_OWNER_ALIAS, GIUP_CY_SHARED_OWNER_EMAIL, isGiupCySharedManagerEmail } from "@/lib/auth/access";
+import {
+  GIUP_CY_OWNER_USER_ID,
+  GIUP_CY_SHARED_OWNER_ALIAS,
+  GIUP_CY_SHARED_OWNER_EMAIL,
+  isGiupCySharedManagerEmail,
+  normalizeEmail
+} from "@/lib/auth/access";
 import type { AuthUser } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -11,6 +17,12 @@ export type GiupCyWorkspace = {
   supabase: SupabaseClient;
 };
 
+export type GiupCyAccess = {
+  ownerUser: AuthUser;
+  role: "owner" | "manager" | "viewer" | "none";
+  accessScope: "full" | "results_only" | "none";
+};
+
 function tryCreateAdminClient() {
   try {
     return createAdminClient();
@@ -19,7 +31,27 @@ function tryCreateAdminClient() {
   }
 }
 
+async function findOwnerFromMembership(): Promise<AuthUser | null> {
+  const supabase = tryCreateAdminClient();
+  if (!supabase) return null;
+
+  const { data } = await supabase
+    .from("giup_cy_members")
+    .select("owner_user_id,member_email")
+    .eq("role", "owner")
+    .eq("is_active", true)
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+
+  if (!data?.owner_user_id) return null;
+  return { id: data.owner_user_id, email: data.member_email ?? GIUP_CY_SHARED_OWNER_EMAIL };
+}
+
 async function findSharedOwnerUser(): Promise<AuthUser | null> {
+  const ownerFromMembership = await findOwnerFromMembership();
+  if (ownerFromMembership) return ownerFromMembership;
+
   const ownerUserId = process.env.GIUP_CY_SHARED_OWNER_USER_ID || GIUP_CY_OWNER_USER_ID;
   const ownerEmail = (process.env.GIUP_CY_SHARED_OWNER_EMAIL ?? GIUP_CY_SHARED_OWNER_EMAIL).toLowerCase();
   const ownerAlias = (process.env.GIUP_CY_SHARED_OWNER_ALIAS ?? GIUP_CY_SHARED_OWNER_ALIAS).toLowerCase();
@@ -68,25 +100,53 @@ async function findSharedOwnerUser(): Promise<AuthUser | null> {
   return null;
 }
 
-export async function resolveGiupCyWorkspaceUser(user: AuthUser): Promise<AuthUser> {
-  if (!isGiupCySharedManagerEmail(user.email)) return user;
+export async function getGiupCyAccess(user: AuthUser): Promise<GiupCyAccess> {
+  const normalizedEmail = normalizeEmail(user.email);
+  const supabase = tryCreateAdminClient();
 
-  return (await findSharedOwnerUser()) ?? user;
-}
+  if (supabase && normalizedEmail) {
+    const { data: member } = await supabase
+      .from("giup_cy_members")
+      .select("owner_user_id,member_email,role,access_scope")
+      .eq("is_active", true)
+      .or(`member_user_id.eq.${user.id},member_email.ilike.${normalizedEmail}`)
+      .order("created_at", { ascending: true })
+      .limit(1)
+      .maybeSingle();
 
-export async function getGiupCyWorkspace(user: AuthUser): Promise<GiupCyWorkspace> {
-  if (!isGiupCySharedManagerEmail(user.email)) {
+    if (member?.owner_user_id) {
+      return {
+        ownerUser: { id: member.owner_user_id, email: member.member_email ?? user.email },
+        role: member.role,
+        accessScope: member.access_scope
+      };
+    }
+  }
+
+  if (isGiupCySharedManagerEmail(user.email)) {
     return {
-      ownerUser: user,
-      delegated: false,
-      supabase: await createClient()
+      ownerUser: (await findSharedOwnerUser()) ?? user,
+      role: "manager",
+      accessScope: "full"
     };
   }
 
-  const ownerUser = (await findSharedOwnerUser()) ?? user;
   return {
-    ownerUser,
-    delegated: true,
+    ownerUser: user,
+    role: "owner",
+    accessScope: "full"
+  };
+}
+
+export async function resolveGiupCyWorkspaceUser(user: AuthUser): Promise<AuthUser> {
+  return (await getGiupCyAccess(user)).ownerUser;
+}
+
+export async function getGiupCyWorkspace(user: AuthUser): Promise<GiupCyWorkspace> {
+  const access = await getGiupCyAccess(user);
+  return {
+    ownerUser: access.ownerUser,
+    delegated: access.ownerUser.id !== user.id,
     supabase: await createClient()
   };
 }

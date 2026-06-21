@@ -595,12 +595,10 @@ function isTableLine(line: string) {
 function isEquationLine(line: string) {
   const trimmed = line.trim();
   if (trimmed.length > 90) return false;
-  if (!/[⇌→]/.test(trimmed)) return false;
+  if (!/(?:->|=>|=|\u2192|\u21CC)/.test(trimmed)) return false;
   if (!/[A-Z][A-Za-z0-9()[\]\-]+/.test(trimmed)) return false;
-  if (/[à-ỹ]/i.test(trimmed)) return false;
   return true;
 }
-
 function PromptContent({ text }: { text: string }) {
   const lines = text.split("\n");
   const blocks: Array<{ type: "text"; lines: string[] } | { type: "table"; rows: string[][] }> = [];
